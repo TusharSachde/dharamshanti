@@ -55,6 +55,9 @@ a, .btn {
 .flex-direction-nav .flex-next {
   right: 0 !important;
 }
+.navbar {
+  margin-bottom: 0;
+}
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override";
