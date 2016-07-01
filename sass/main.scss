@@ -49,6 +49,12 @@ a, .btn {
   outline: 0;
   @include box-shadow(none);
 }
+.flex-direction-nav .flex-prev {
+  left: 0 !important;
+}
+.flex-direction-nav .flex-next {
+  right: 0 !important;
+}
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override";
