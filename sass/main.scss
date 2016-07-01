@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Hammersmith+One|Karla:400,700';
+
 @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
@@ -5,11 +7,19 @@
 @import "../bower_components/font-awesome/css/font-awesome.min.css";
 @import "../bower_components/fancyBox/source/jquery.fancybox.css";
 /* Bootstrap Variables Goes Here */
-$brand-primary: #0d9dff !default;
+$brand-primary: #f37021 !default;
 $brand-success: #84ce3c !default;
 $brand-warning: #ffec39 !default;
 $brand-danger: #fc483f !default;
 $brand-info: #000072 !default;
+
+$font-family-sans-serif: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif: "Hammersmith One", Georgia, "Times New Roman", Times, serif !default;
+
+$border-radius-base: 0 !default;
+$border-radius-large: 0 !default;
+$border-radius-small: 0 !default;
+
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 body {
   padding-top: 70px;
