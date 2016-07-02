@@ -125,6 +125,54 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
 
     })
+    .controller('DharmaTvCtrl', function($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService.changecontent("dharma-tv");
+        $scope.menutitle = NavigationService.makeactive("Dharma Tv");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+        $scope.video = [{
+            img: "img/movie/m1.jpg",
+            name: "Ae Dil hai mushkil"
+
+        }, {
+            img: "img/movie/m2.jpg",
+            name: "BAAR BAAR DEKHO"
+
+        }, {
+            img: "img/movie/m3.jpg",
+            name: "BADRINATH KI DULHANIYA"
+
+        }, {
+            img: "img/movie/m4.jpg",
+            name: "RAM LAKHAN"
+
+        }, {
+            img: "img/movie/m5.jpg",
+            name: "ok jaanu"
+
+        }, {
+            img: "img/movie/m1.jpg",
+            name: "Ae Dil hai mushkil"
+
+        }, {
+            img: "img/movie/m2.jpg",
+            name: "BAAR BAAR DEKHO"
+
+        }, {
+            img: "img/movie/m3.jpg",
+            name: "BADRINATH KI DULHANIYA"
+
+        }, {
+            img: "img/movie/m4.jpg",
+            name: "RAM LAKHAN"
+
+        }, {
+            img: "img/movie/m5.jpg",
+            name: "ok jaanu"
+
+        }]
+
+    })
     .controller('MoviesCtrl', function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("movies");
         $scope.menutitle = NavigationService.makeactive("Movies");

@@ -28,6 +28,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     templateUrl: "views/template.html",
     controller: 'AwardsCtrl'
   })
+    .state('dharma-tv', {
+    url: "/",
+    templateUrl: "views/template.html",
+    controller: 'DharmaTvCtrl'
+  })
     .state('overview', {
     url: "/",
     templateUrl: "views/template.html",
