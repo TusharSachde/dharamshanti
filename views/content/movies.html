@@ -1,0 +1,109 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="text-center">
+                <div class="head-title">
+                    <h1>Movies</h1>
+                </div>
+                <div class="search-movie ">
+                    <input type="search" name="name" value="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="upcoming-movie">
+                    <div class="title">
+                        <h1>UPCOMING RELEASES</h1>
+                    </div>
+                    <div class="upcoming-slider">
+                        <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="205" item-margin="25" animationloop="true" move="1">
+                            <li>
+                                <div class="video-box">
+                                    <div class="video-slide-img">
+                                        <img ng-src="{{item.img}}" alt="Dharma Productions">
+                                    </div>
+                                    <div class="video-name">
+                                        <span>{{item.name}}</span>
+                                    </div>
+
+
+                                </div>
+                            </li>
+                        </flex-slider>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="orange-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="upcoming-movie">
+                        <div class="title">
+                            <h1>RECENT RELEASES</h1>
+                        </div>
+                        <div class="upcoming-slider">
+                            <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="205" item-margin="25" animationloop="true" move="1">
+                                <li>
+                                    <div class="video-box">
+                                        <div class="video-slide-img">
+                                            <img ng-src="{{item.img}}" alt="Dharma Productions">
+                                        </div>
+                                        <div class="video-name">
+                                            <span>{{item.name}}</span>
+                                        </div>
+
+
+                                    </div>
+                                </li>
+                            </flex-slider>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="orange-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="upcoming-movie">
+                        <div class="title">
+                            <h1>PAST RELEASES</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-flex" ng-repeat="videos in allvideos">
+                <div class="col-flex" ng-repeat="item in videos track by $index">
+                    <div class="video-box">
+                        <div class="video-slide-img">
+                            <img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive">
+                        </div>
+                        <div class="video-name">
+                            <span>{{item.name}}</span>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+              <div class="btn-outline">
+                <button type="button" name="button">view all</button>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
