@@ -111,6 +111,13 @@ desc:"After four years, Varun Dhawan is back at Dharma’s office. Though everyt
     $(window).scrollTop(0);
   });
 })
+.controller('OverviewCtrl', function($scope, TemplateService,NavigationService) {
+  $scope.template = TemplateService.changecontent("overview");
+  $scope.menutitle = NavigationService.makeactive("Overview");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+
+})
 
 .controller('languageCtrl', function($scope, TemplateService,$translate,$rootScope) {
 
