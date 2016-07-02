@@ -44,6 +44,11 @@ var navigationservice = angular.module('navigationservice', [])
     classis: "active",
     anchor: "news-events",
     subnav: []
+  },{
+    name: "Contact Us",
+    classis: "active",
+    anchor: "Contact Us",
+    subnav: []
   }];
 
   return {

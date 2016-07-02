@@ -68,6 +68,12 @@ a, .btn {
 .navbar {
   margin-bottom: 0;
 }
+.row-flex {
+    @include display(flex);
+}
+.col-flex {
+    @include flex(1);
+}
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override";

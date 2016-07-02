@@ -14,6 +14,95 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     'img/banners/slide1.jpg',
     'img/banners/slide1.jpg'
   ];
+  $scope.movie = [
+    'img/movie/m1.jpg',
+    'img/movie/m2.jpg',
+    'img/movie/m3.jpg',
+    'img/movie/m4.jpg',
+    'img/movie/m5.jpg'
+  ];
+  $scope.video=[{
+img:"img/video/v1.jpg",
+name:"Director S.S. Rajamouli tells us why Katappa killed Bahubali"
+
+  },{
+img:"img/video/v2.jpg",
+name:"Kapoor & Sons | The Funny One: Fawad Khan"
+
+  },{
+img:"img/video/v3.jpg",
+name:"Arjun fights with his Bai? | Movie Review | Kapoor & Sons | Sidharth..."
+
+  },{
+img:"img/video/v4.jpg",
+name:"Kapoor & Sons | Rahul Meets Tia | Dialogue Promo | Fawad Khan..."
+
+  },{
+img:"img/video/v1.jpg",
+name:"Director S.S. Rajamouli tells us why Katappa killed Bahubali"
+
+  },{
+img:"img/video/v2.jpg",
+name:"Kapoor & Sons | The Funny One: Fawad Khan"
+
+  },{
+img:"img/video/v3.jpg",
+name:"Arjun fights with his Bai? | Movie Review | Kapoor & Sons | Sidharth..."
+
+  },{
+img:"img/video/v4.jpg",
+name:"Kapoor & Sons | Rahul Meets Tia | Dialogue Promo | Fawad Khan..."
+
+  }]
+  $scope.news=[{
+img:"img/news/n1.jpg",
+name:"Varun Dhawan shares picture of Dharma Productions new office",
+date:"21 Mar 2016",
+desc:"After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+
+  },{
+    img:"img/news/n2.jpg",
+    name:"Bahubali bags The Best Film Of 2015 National Award",
+    date:"21 Mar 2016",
+    desc:"SS Rajamouli's Bahubali: The Beginning (also spelt as Baahubali), starring Prabhas and Rana Daggubati, has won the Best Feature Film at the 63rd National Film Award (NFA). "
+
+  },{
+    img:"img/news/n3.jpg",
+    name:"Varun Dhawan shares picture of Dharma Productions new office",
+    date:"21 Mar 2016",
+    desc:"After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+
+  },{
+    img:"img/news/n1.jpg",
+    name:"Varun Dhawan shares picture of Dharma Productions new office",
+    date:"21 Mar 2016",
+    desc:"After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+
+  },{
+    img:"img/news/n2.jpg",
+    name:"Varun Dhawan shares picture of Dharma Productions new office",
+    date:"21 Mar 2016",
+    desc:"After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+
+  },{
+    img:"img/news/n3.jpg",
+    name:"Varun Dhawan shares picture of Dharma Productions new office",
+    date:"21 Mar 2016",
+    desc:"After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+
+  },{
+    img:"img/news/n1.jpg",
+    name:"Varun Dhawan shares picture of Dharma Productions new office",
+    date:"21 Mar 2016",
+    desc:"After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+
+  },{
+    img:"img/news/n2.jpg",
+    name:"Varun Dhawan shares picture of Dharma Productions new office",
+    date:"21 Mar 2016",
+    desc:"After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+
+  }]
 })
 
 .controller('headerctrl', function($scope, TemplateService) {
