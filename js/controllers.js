@@ -245,6 +245,62 @@ $scope.cast=[{
   name:"Aditya Roy Kapur",
   nick:"AVI"
 }]
+
+$scope.news = [{
+    img: "img/dharma-world/d5.jpg",
+    name: "Deepika scares me as an actor: Ranbir Kapoor",
+    date: "21 Mar 2016",
+desc: "New Delhi: Films as varied as Raajneeti, Rockstar, Yeh Jawaani Hai Deewani and Barfi! have been a window to his versatility. But Ranbir Kapoor says his Tamasha ..."
+
+}, {
+    img: "img/dharma-world/d6.jpg",
+    name: "Varun Dhawan shares picture of Dharma Productions new office",
+    date: "21 Mar 2016",
+    desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there. "
+
+}, {
+    img: "img/dharma-world/d7.jpg",
+    name: "Bahubali bags The Best Film Of 2015 National Award",
+    date: "21 Mar 2016",
+    desc: "SS Rajamouli's Bahubali: The Beginning (also spelt as Baahubali), starring Prabhas and Rana Daggubati, has won the Best Feature Film at the 63rd National Film Award (NFA). "
+
+}, {
+    img: "img/dharma-world/d8.jpg",
+    name: "Dharma production hints at first ever love franchise",
+    date: "21 Mar 2016",
+    desc: "Best known for producing films that grab the beauty of exotic locales across the globe and intricately weaving romance, Dharma Productions has hinted at a sequel to Bollywood’s first ever love franchise."
+
+}, {
+    img: "img/dharma-world/d9.jpg",
+    name: "Ranbir Kapoor to promote ‘Yeh Jawaani Hai Deewani’ in Russia",
+    date: "21 Mar 2016",
+    desc: "Mumbai: His grandfather, late cinema legend Raj Kapoor, continues to be a rage in Russia and now actor Ranbir Kapoor is set to promote his latest release ‘Yeh Jawaani Hai..."
+
+}, {
+    img: "img/dharma-world/d10.jpg",
+    name: "Arjun and SIddharth’s Dharma Office Darshan",
+    date: "21 Mar 2016",
+    desc: "Bollywood heartthrobs Arjun Kapoor and Sidharth Malhotra are spilling fun all over the new office of Karan Johar's Dharma Productions. "
+
+},{
+    img: "img/dharma-world/d5.jpg",
+    name: "Deepika scares me as an actor: Ranbir Kapoor",
+    date: "21 Mar 2016",
+    desc: "New Delhi: Films as varied as Raajneeti, Rockstar, Yeh Jawaani Hai Deewani and Barfi! have been a window to his versatility. But Ranbir Kapoor says his Tamasha ..."
+
+}, {
+    img: "img/dharma-world/d6.jpg",
+    name: "Varun Dhawan shares picture of Dharma Productions new office",
+    date: "21 Mar 2016",
+    desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there. "
+
+}, {
+    img: "img/dharma-world/d7.jpg",
+    name: "Bahubali bags The Best Film Of 2015 National Award",
+    date: "21 Mar 2016",
+    desc: "SS Rajamouli's Bahubali: The Beginning (also spelt as Baahubali), starring Prabhas and Rana Daggubati, has won the Best Feature Film at the 63rd National Film Award (NFA). "
+
+}]
     })
     .controller('ContactUsCtrl', function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("contact-us");
