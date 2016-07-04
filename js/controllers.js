@@ -131,6 +131,103 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
+
+                $scope.tab = 'synopsis';
+                $scope.classa = 'active-list';
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+
+                $scope.tabchange = function(tab, a) {
+                    //        console.log(tab);
+                    $scope.tab = tab;
+                    if (a == 1) {
+
+                        $scope.classa = "active-list";
+                        $scope.classb = '';
+                        $scope.classc = '';
+                        $scope.classd = '';
+                        $scope.classe = '';
+                        $scope.classf = '';
+                        $scope.classg = '';
+                        $scope.classh = '';
+                    } else if (a == 2) {
+
+                        $scope.classa = '';
+                        $scope.classb = "active-list";
+                        $scope.classc = "";
+                        $scope.classd = '';
+                        $scope.classe = '';
+                        $scope.classf = '';
+                        $scope.classg = '';
+                        $scope.classh = '';
+                    } else if (a==3){
+
+                        $scope.classa = '';
+                        $scope.classb = '';
+                        $scope.classc = "active-list";
+                        $scope.classd = '';
+                        $scope.classe = '';
+                        $scope.classf = '';
+                        $scope.classg = '';
+                        $scope.classh = '';
+                    }else if (a==4){
+
+                        $scope.classa = '';
+                        $scope.classb = '';
+                        $scope.classc = "";
+                        $scope.classd = 'active-list';
+                        $scope.classe = '';
+                        $scope.classf = '';
+                        $scope.classg = '';
+                        $scope.classh = '';
+                    }else if (a==5){
+
+                        $scope.classa = '';
+                        $scope.classb = '';
+                        $scope.classc = "";
+                        $scope.classd = '';
+                        $scope.classe = 'active-list';
+                        $scope.classf = '';
+                        $scope.classg = '';
+                        $scope.classh = '';
+                    }else if (a==6){
+
+                        $scope.classa = '';
+                        $scope.classb = '';
+                        $scope.classc = "";
+                        $scope.classd = '';
+                        $scope.classe = '';
+                        $scope.classf = 'active-list';
+                        $scope.classg = '';
+                        $scope.classh = '';
+                    }else if (a==7){
+
+                        $scope.classa = '';
+                        $scope.classb = '';
+                        $scope.classc = "";
+                        $scope.classd = '';
+                        $scope.classe = '';
+                        $scope.classf = '';
+                        $scope.classg = 'active-list';
+                        $scope.classh = '';
+                    }else if (a==8){
+
+                        $scope.classa = '';
+                        $scope.classb = '';
+                        $scope.classc = "";
+                        $scope.classd = '';
+                        $scope.classe = '';
+                        $scope.classf = '';
+                        $scope.classg = '';
+                        $scope.classh = 'active-list';
+                    }
+                };
+
 $scope.cast=[{
   img:"img/cast/c1.png",
   name:"Ranbir Kapoor",
