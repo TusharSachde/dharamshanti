@@ -43,6 +43,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     templateUrl: "views/template.html",
     controller: 'NewsEventsCtrl'
   })
+    .state('contact-us', {
+    url: "/",
+    templateUrl: "views/template.html",
+    controller: 'ContactUsCtrl'
+  })
     .state('overview', {
     url: "/",
     templateUrl: "views/template.html",
