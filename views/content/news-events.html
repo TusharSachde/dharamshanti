@@ -1,0 +1,68 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="dharma-sun">
+        <img src="img/sun.png" alt="Dharma World" class="img-responsive">
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="news-search">
+          <div class="search-box">
+            <input type="search" placeholder="search">
+          </div>
+          <div class="display-inline">
+            <select class="form-control">
+              <option  value="Month">Month</option>
+              <option  value="Jan">Jan</option>
+              <option  value="Feb">Feb</option>
+              <option  value="March">March</option>
+
+            </select>
+          </div>
+          <div class="display-inline">
+            <select class="form-control">
+              <option  value="Year">Year</option>
+              <option  value="2016">2016</option>
+              <option  value="2015">2015</option>
+              <option  value="2014">2014</option>
+
+            </select>
+          </div>
+          <div class="btn-go">
+            <button class="btn btn-default" type="submit">Go</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+<div class="container">
+  <div class="row">
+    <div class="all-movies">
+      <div masonry preserve-order column-width="350">
+          <div class="masonry-brick" ng-repeat="item in news track by $index">
+            <div class="masonry-box">
+                <img ng-src="{{item.img}}" alt="Dharma Production">
+                <div class="news-title">
+                  <h4>{{item.name}}</h4>
+                </div>
+                <div class="news-date">
+                  <span>{{item.date}}</span>
+                </div>
+                <div class="news-descp">
+                  <p>{{item.desc}}</p>
+                </div>
+            </div>
+          </div>
+      </div>
+      <div class="text-center">
+        <div class="btn-outline">
+          <button type="button" name="button">VIEW ALL</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

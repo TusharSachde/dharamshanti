@@ -38,6 +38,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     templateUrl: "views/template.html",
     controller: 'DharmaWorldCtrl'
   })
+    .state('news-events', {
+    url: "/",
+    templateUrl: "views/template.html",
+    controller: 'NewsEventsCtrl'
+  })
     .state('overview', {
     url: "/",
     templateUrl: "views/template.html",
