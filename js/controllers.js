@@ -131,6 +131,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
+$scope.cast=[{
+  img:"img/cast/c1.png",
+  name:"Ranbir Kapoor",
+  nick:"BUNNY"
+},{
+  img:"img/cast/c2.png",
+  name:"Deepika Padukone",
+  nick:"NAINA"
+},{
+  img:"img/cast/c3.png",
+  name:"Kalki Koechlin",
+  nick:"ADITI"
+},{
+  img:"img/cast/c4.png",
+  name:"Aditya Roy Kapur",
+  nick:"AVI"
+}]
     })
     .controller('ContactUsCtrl', function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("contact-us");

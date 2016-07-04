@@ -1,43 +1,154 @@
 <section>
-  <div class="movie-banner">
-    <img src="img/movie-banner.jpg" alt="Dharma Productions" class="img-responsive">
-  </div>
+    <div class="movie-banner">
+        <img src="img/movie-banner.jpg" alt="Dharma Productions" class="img-responsive">
+    </div>
 </section>
 <section>
-  <div class="container">
-  <div class="curve"></div>
-  <div class="movie-inner-bg">
-    <div class="row">
+    <div class="container">
+        <div class="curve"></div>
+        <div class="movie-inner-bg">
+            <div class="row">
 
-      <div class="movie-inside-date">
-          <div class="text-center">
-            <div class="m-title">
-              <h4>YEH JAWAANI HAI DEEWANI <span>(Theatrical Trailer)</span></h4>
+                <div class="movie-inside-date">
+                    <div class="text-center">
+                        <div class="m-title">
+                            <h4>YEH JAWAANI HAI DEEWANI <span>(Theatrical Trailer)</span></h4>
+                        </div>
+                        <div class="movie-trailor">
+                            <img src="img/movie-trailor.jpg" alt="Dharma Productions" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="movie-trailor">
-              <img src="img/movie-trailor.jpg" alt="Dharma Productions" class="img-responsive">
+            <div class="movie-tabs">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="all-tabs text-center">
+                            <div class="btn-group" role="group" aria-label="...">
+                                <button type="button" class="btn btn-default">Synopsis </button>
+                                <button type="button" class="btn btn-default"> CAST & CREDITS</button>
+                                <button type="button" class="btn btn-default"> News</button>
+                                <button type="button" class="btn btn-default">Gallery</button>
+                                <button type="button" class="btn btn-default"> BEHIND THE SCENE </button>
+                                <button type="button" class="btn btn-default"> VIDEOS </button>
+                                <button type="button" class="btn btn-default">WALLPAPERS </button>
+                                <button type="button" class="btn btn-default"> AWARDS </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="cast">
+                            <h4>CAST</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-3" ng-repeat="item in cast track by $index">
+                                <div class="all-cast">
+                                    <div class="cast-box">
+                                        <img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive">
+                                    </div>
+                                    <div class="cast-name">
+                                        <span>{{item.name}}</span>
+                                    </div>
+                                    <div class="role-name">
+                                        <span>{{item.nick}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="other-cast">
+                                <span>Poorna Jagannathan</span>
+                                <br>
+                                <span>RIYANA</span>
+                            </div>
+                            <div class="other-cast">
+                                <span>Naveen Kaushik</span>
+                                <br>
+                                <span>SUMER</span>
+                            </div>
+                            <div class="other-cast">
+                                <span>Kunaal Roy Kapoor</span>
+                                <br>
+                                <span>TARAN</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="social-share">
+                            <ul>
+                                <li>
+                                    <span>share</span>
+                                </li>
+                                <li>
+                                    <a href=""><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="fa fa-google-plus"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="bg-bottom-right">
+                    <div class="col-md-2">
+                      <div class="cast">
+                          <h4>CREW</h4>
+                      </div>
+                    </div>
+                    <div class="col-md-10">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="all-cast">
+                          <ul>
+                            <li>Story, Screenplay & Direction</li>
+                            <li>Produced By</li>
+                            <li>Co-Producer</li>
+                            <li>Director Of Photography</li>
+                            <li>Music</li>
+                            <li>Lyrics</li>
+                            <li>Executive Producer</li>
+                            <li>Production Design</li>
+                            <li>Editor</li>
+                            <li>Sound Design</li>
+                            <li>Dialogues</li>
+                            <li>Costume Design</li>
+                            <li>Casting Director</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="all-cast">
+                          <ul>
+                            <li>... Ayan Mukerji</li>
+                            <li>... Hiroo Yash Johar & Karan Johar</li>
+                            <li>... Apoorva Mehta</li>
+                            <li>... V. Manikandan</li>
+                            <li>... Pritam</li>
+                            <li>... Amitabh Bhattacharya</li>
+                            <li>... Marijke deSouza</li>
+                            <li>... Amrita Mahal Nakai, Rajnish Hedao</li>
+                            <li>... Akiv Ali</li>
+                            <li>... Nakul Kamte</li>
+                            <li>... Hussain Dalal</li>
+                            <li>... Manish Malhotra, Samidha Wangnoo</li>
+                            <li>... Nandini Shrikent</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
             </div>
-          </div>
-      </div>
-    </div>
-    <div class="movie-tabs">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="all-tabs text-center">
-            <div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default">Synopsis </button>
-  <button type="button" class="btn btn-default"> CAST & CREDITS</button>
-  <button type="button" class="btn btn-default"> News</button>
-  <button type="button" class="btn btn-default">Gallery</button>
-  <button type="button" class="btn btn-default"> BEHIND THE SCENE </button>
-  <button type="button" class="btn btn-default"> VIDEOS </button>
-  <button type="button" class="btn btn-default">WALLPAPERS </button>
-  <button type="button" class="btn btn-default"> AWARDS </button>
-</div>
-          </div>
         </div>
-      </div>
     </div>
-    </div>
-  </div>
 </section>
