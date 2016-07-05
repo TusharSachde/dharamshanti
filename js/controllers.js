@@ -131,6 +131,26 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
+        $scope.tabs = 'desktop';
+$scope.classp = 'active-list';
+$scope.classv= '';
+
+
+$scope.tabchanges = function(tabs, a) {
+    //        console.log(tab);
+    $scope.tabs = tabs;
+    if (a == 1) {
+
+        $scope.classp = "active-list";
+        $scope.classv = '';
+
+    } else {
+
+        $scope.classp = '';
+        $scope.classv = "active-list";
+    }
+};
+
 
                 $scope.tab = 'synopsis';
                 $scope.classa = 'active-list';
@@ -245,7 +265,56 @@ $scope.cast=[{
   name:"Aditya Roy Kapur",
   nick:"AVI"
 }]
+$scope.gallery=[
+  "img/gallery/g1.jpg",
+  "img/gallery/g2.jpg",
+  "img/gallery/g3.jpg",
+  "img/gallery/g4.jpg",
+   "img/gallery/g5.jpg",
+  "img/gallery/g6.jpg",
+  "img/gallery/g7.jpg",
+  "img/gallery/g8.jpg",
+  "img/gallery/g8.jpg"
+]
+$scope.desktop=[
+  "img/wallpapper/d1.jpg",
+  "img/wallpapper/d2.jpg",
+  "img/wallpapper/d3.jpg",
+  "img/wallpapper/d4.jpg",
+   "img/wallpapper/d5.jpg",
+  "img/wallpapper/d6.jpg"
 
+]
+$scope.mobile=[
+  "img/wallpapper/m1.jpg",
+  "img/wallpapper/m2.jpg",
+  "img/wallpapper/m3.jpg",
+  "img/wallpapper/m4.jpg",
+   "img/wallpapper/m1.jpg",
+  "img/wallpapper/m2.jpg",
+  "img/wallpapper/m3.jpg",
+  "img/wallpapper/m4.jpg"
+
+]
+$scope.allvideos=[{
+  img:"img/video/v5.jpg",
+  name:"KABIRA SONG"
+},{
+  img:"img/video/v6.jpg",
+  name:"BALAM PICHKARI SONG"
+},{
+  img:"img/video/v7.jpg",
+  name:"GHAGRA SONG"
+},{
+  img:"img/video/v8.jpg",
+  name:"BADTAMEEZ DIL SONG"
+},{
+  img:"img/video/v9.jpg",
+  name:"ILAHI SONG"
+},{
+  img:"img/video/v10.jpg",
+  name:"DILLIWAALI GIRLFRIEND SONG"
+}]
 $scope.news = [{
     img: "img/dharma-world/d5.jpg",
     name: "Deepika scares me as an actor: Ranbir Kapoor",

@@ -202,16 +202,73 @@
 
                 </div>
                 <div class="gallery" ng-if="tab=='gallery'">
+                  <div class="row">
+                      <div class="all-movies">
+                          <div masonry preserve-order>
+                              <div class="masonry-brick" ng-repeat="item in gallery track by $index">
+                                  <div class="masonry-box">
+                                      <img ng-src="{{item}}" alt="Dharma Production">
 
+                                  </div>
+                              </div>
+                          </div>
+
+                      </div>
+                  </div>
                 </div>
-                <div class="scene" ng-if="tab=='scene'">
-                    scene
-                </div>
+
                 <div class="video" ng-if="tab=='video'">
-                    video
+                  <div class="row">
+                    <div class="col-md-4" ng-repeat="item in allvideos track by $index">
+                      <div class="video-play-box">
+                        <img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive">
+                        <div class="overlay">
+                          <span>{{item.name}}</span>
+                        </div>
+                        <div class="bottom-right">
+                          <a href=""><img src="img/play-small-btn.jpg" alt="Dharma Productions"></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-center">
+                      <div class="btn-outline">
+                        <button type="button" name="button">View All</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="wallpapper" ng-if="tab=='wallpapper'">
-                    wallpapper
+                  <div class="row">
+                    .<div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default {{classp}}" ng-click="tabchanges('desktop',1)">Desktop</button>
+  <button type="button" class="btn btn-default {{classv}}" ng-click="tabchanges('mobile',2)">Mobile</button>
+
+</div>
+                  </div>
+                  <div class="desktop" ng-if="tabs=='desktop'">
+                    <div class="row">
+                      <div class="col-md-4" ng-repeat="item in desktop track by $index">
+                        <div class="desktop dh-relative">
+                          <img ng-src="{{item}}" alt="Dharma productions" class="img-responsive">
+                          <div class="download dh-absulate">
+                            <a href=""><img src="img/download.png" alt="Dharma productions"></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="desktop" ng-if="tabs=='mobile'">
+                    <div class="row">
+                      <div class="col-md-3" ng-repeat="item in mobile track by $index">
+                        <div class="desktop dh-relative">
+                          <img ng-src="{{item}}" alt="Dharma productions" class="img-responsive">
+                          <div class="download dh-absulate">
+                            <a href=""><img src="img/download.png" alt="Dharma productions"></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="awards" ng-if="tab=='awards'">
                     awards
