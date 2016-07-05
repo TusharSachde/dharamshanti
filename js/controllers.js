@@ -125,6 +125,33 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
 
     })
+    .controller('TvInsideCtrl', function($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService.changecontent("tv-inside");
+        $scope.menutitle = NavigationService.makeactive("TV Inside");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+        $scope.allvideos=[{
+          img:"img/tv/t1.jpg",
+          name:"Dhivara Full Video Song Baahubali (Hindi) "
+        },{
+          img:"img/tv/t2.jpg",
+          name:"Making of Bahubali - Bull Fight Sequence"
+        },{
+          img:"img/tv/t3.jpg",
+          name:"Baahubali Trailer | Prabhas,Rana Daggubati, Anushka, Tama..."
+        },{
+          img:"img/tv/t4.jpg",
+          name:"bahubali song Kaun Hain Voh Singers: Kailash Kher..."
+        },{
+          img:"img/tv/t5.jpg",
+          name:"Pacha Bottasi Full Video Song || Baahubali (Telugu) || Prabhas..."
+        },{
+          img:"img/tv/t6.jpg",
+          name:"Manohari song from Bahubali"
+        }]
+
+    })
     .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("movie-inside");
         $scope.menutitle = NavigationService.makeactive("Movie Inside");
