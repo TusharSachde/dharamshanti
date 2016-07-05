@@ -131,6 +131,29 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
+        $scope.accordian = [];
+$scope.accordian.push({
+  isFirstOpen: true,
+  isFirstDisabled: false
+});
+$scope.accordian.push({
+  isFirstOpen: true,
+  isFirstDisabled: false
+});
+$scope.accordian.push({
+  isFirstOpen: true,
+  isFirstDisabled: false
+});
+$scope.accordian.push({
+  isFirstOpen: true,
+  isFirstDisabled: false
+});
+$scope.accordian.push({
+  isFirstOpen: true,
+  isFirstDisabled: false
+});
+
+
         $scope.tabs = 'desktop';
 $scope.classp = 'active-list';
 $scope.classv= '';
