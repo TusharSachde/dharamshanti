@@ -272,16 +272,15 @@ a {
         opacity: 1;
     }
     .flex-control-nav {
-    bottom: 60px;
-     z-index: 99;
-}
-.flex-control-paging li a.flex-active{
-  background: #fff;
-}
-.flex-control-paging li a{
-  background: rgba(255, 255, 255, 0.5);
-
-}
+        bottom: 60px;
+        z-index: 99;
+    }
+    .flex-control-paging li a.flex-active {
+        background: #fff;
+    }
+    .flex-control-paging li a {
+        background: rgba(255, 255, 255, 0.5);
+    }
 }
 .dharma-tv-bg {
     background: url(../img/tv-bg.jpg)no-repeat;
@@ -368,6 +367,21 @@ a {
     @include transition(all 300ms ease);
     &:hover {
         @include button-variant($brand-primary, transparent, $brand-primary);
+        border: 2px solid $brand-primary;
+    }
+    &:focus {
+        outline: 0;
+    }
+    &:active {
+        outline: 0;
+    }
+}
+.btn-primary-outline {
+    @include button-variant($brand-primary, transparent, $brand-primary);
+    border: 2px solid $brand-primary;
+    @include transition(all 300ms ease);
+    &:hover {
+        @include button-variant($white, $brand-primary, $brand-primary);
         border: 2px solid $brand-primary;
     }
     &:focus {
@@ -491,48 +505,48 @@ a {
     background-size: cover;
     padding: 200px 0 50px;
 }
-.footer-data{
-  ul{
-    li{
-      border-right: 1px solid #b2b2b2;
-padding: 0px 6px;
-line-height: 100%;
-&:last-child{
-  border:none;
-}
-      a{
-        color:#b2b2b2;
-      }
-    }
-  }
-}
-.footer{
-  background-color: $black;
-  padding: 20px 0px;
-}
-.footer-social{
-  ul{
-    li{
-      padding: 0px 5px;
-      a{
-        i{
-          font-size: 22px;
-          background: #424242;
-          height: 35px;
-          width: 35px;
-          color:$black;
-          border-radius: 100%;
-          padding:6px;
+.footer-data {
+    ul {
+        li {
+            border-right: 1px solid #b2b2b2;
+            padding: 0 6px;
+            line-height: 100%;
+            &:last-child {
+                border: none;
+            }
+            a {
+                color: #b2b2b2;
+            }
         }
-      }
     }
-  }
 }
-.copy{
-  p{
-    color:#b2b2b2;
-    margin: 0px;
-  }
+.footer {
+    background-color: $black;
+    padding: 20px 0;
+}
+.footer-social {
+    ul {
+        li {
+            padding: 0 5px;
+            a {
+                i {
+                    font-size: 22px;
+                    background: #424242;
+                    height: 35px;
+                    width: 35px;
+                    color: $black;
+                    border-radius: 100%;
+                    padding: 6px;
+                }
+            }
+        }
+    }
+}
+.copy {
+    p {
+        color: #b2b2b2;
+        margin: 0;
+    }
 }
 .img-pads {
     background: #fff;
@@ -540,20 +554,54 @@ line-height: 100%;
     margin: 5px;
     box-shadow: 4px 4px 10px 1px #dcdcdc;
 }
-.movie-names{
-  h4{
-    text-align: left;
-    padding-left: 10px;
-  }
-}
-.movie-tab{
-  width: 100%;
-  bottom: 0px;
-  z-index: 99;
-  .btn-group{
-    .btn{
-      float: none;
+.movie-names {
+    h4 {
+        text-align: left;
+        padding-left: 10px;
     }
-  }
+}
+.movie-tab {
+    width: 100%;
+    bottom: -20px;
+    z-index: 99;
+    .btn-group {
+        .btn {
+            float: none;
+            color: $brand-primary;
+            background: #000;
+            border: none;
+            font-size: 25px;
+            padding: 9px 70px;
+            font-family: 'Hammersmith One';
+            &:first-child {
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+            }
+            &:last-child {
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
+            &:active {
+                outline: 0;
+            }
+            &:focus {
+                outline: 0;
+            }
+        }
+    }
+    .active-tab {
+        background: $brand-primary !important;
+        color: $white !important;
+    }
+}
+.pos-bottom {
+    position: absolute;
+    bottom: -42px;
+}
+.mr2 {
+    margin-right: -2px;
+}
+.tab-active {
+    padding: 70px 0 80px;
 }
 @import "fancybox-override";

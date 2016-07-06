@@ -3,19 +3,22 @@
         <flex-slider flex-slide="s in mySlides track by $index" prev-text="" next-text="">
             <li><img ng-src="{{s}}" alt="Dharma Productions"></li>
         </flex-slider>
-                  <div class="movie-tab text-center dh-absulate">
-                            <div class="btn-group" role="group" aria-label="...">
-                                <button type="button" class="btn btn-default {{classp}}" ng-click="tabchanges('upcoming',1)">UPCOMING</button>
-                                <button type="button" class="btn btn-default {{classv}}" ng-click="tabchanges('released',2)">RELEASED</button>
+        <div class="movie-tab text-center dh-absulate">
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default mr2 {{classp}}" ng-click="tabchanges('upcoming',1)">UPCOMING</button>
+                <button type="button" class="btn btn-default {{classv}}" ng-click="tabchanges('released',2)">RELEASED</button>
 
-                            </div>
-                        </div>
-  
+            </div>
+        </div>
+
     </div>
 </section>
 
 <section>
     <div class="container">
+      <div class="tab-active">
+
+
         <div class="upcoming" ng-if="tabs=='upcoming'">
             <div class="row-flex text-center">
                 <div class="col-flex" ng-repeat="item in movie track by $index">
@@ -27,8 +30,8 @@
                     </div>
                 </div>
             </div>
-            <div class="btn-view-more pull-right">
-                <button type="button" name="button">VIEW ALL</button>
+            <div class="btn-view-more pull-right mt15">
+                <button type="button" name="button" class="btn-primary-outline font-hammersmith btn-enter">VIEW ALL</button>
             </div>
         </div>
         <div class="release" ng-if="tabs=='released'">
@@ -42,14 +45,15 @@
                     </div>
                 </div>
             </div>
-            <div class="btn-view-more pull-right">
-                <button type="button" name="button">VIEW ALL</button>
+            <div class="btn-view-more pull-right mt15">
+                <button type="button" name="button" class="btn-primary-outline font-hammersmith btn-enter">VIEW ALL</button>
             </div>
+        </div>
         </div>
     </div>
 
 </section>
-<section>
+<section class="dh-relative">
     <div class="dharma-tv-bg">
         <div class="container">
             <div class="row">
@@ -90,39 +94,42 @@
                 </div>
             </div>
         </div>
+
     </div>
-</section>
-<section>
-    <div class="container-fluid">
-        <div class="subscribe">
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <div class="display-inline up-img">
-                        <img src="img/subscribe.png" alt="Dharma Productions" class="img-responsive">
+    <section class="pos-bottom ">
+        <div class="container-fluid">
+            <div class="subscribe">
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <div class="display-inline up-img">
+                            <img src="img/subscribe.png" alt="Dharma Productions" class="img-responsive">
+                        </div>
+                        <div class="sub-text display-inline mt20">
+                            <h3 class="font-hammersmith color-primary text-up margin0">SUBSCribe NOW </h3>
+                            <h3 class="font-hammersmith color-primary text-up margin0">for MORE UPDATES</h3>
+                        </div>
                     </div>
-                    <div class="sub-text display-inline mt20">
-                        <h3 class="font-hammersmith color-primary text-up margin0">SUBSCribe NOW </h3>
-                        <h3 class="font-hammersmith color-primary text-up margin0">for MORE UPDATES</h3>
-                    </div>
-                </div>
 
 
-                <div class="col-md-6">
-                    <div class="sub-input mt20">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Email">
-                            <span class="input-group-btn go-btn">
-      <button class="btn btn-default color-primary font-hammersmith" type="button">Go</button>
-    </span>
+                    <div class="col-md-6">
+                        <div class="sub-input mt20">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Email">
+                                <span class="input-group-btn go-btn">
+          <button class="btn btn-default color-primary font-hammersmith" type="button">Go</button>
+        </span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
+        </div>
+    </section>
 </section>
+
 <section class="bg-sun">
+
     <div class="news">
         <div class="title">
             <h1 class="f90 font-hammersmith color-white margin0 line45">NEWS</h1>
