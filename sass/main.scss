@@ -44,6 +44,26 @@ a {
     cursor: pointer;
     @include transition(all ease 300ms);
 }
+/* mixing*/
+@mixin placeholder {
+  $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+  @each $placeholder in $placeholders {
+    &:#{$placeholder}-placeholder {
+      @content;
+    }
+  }
+}
+@mixin transition($transition...) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+@mixin x-appearance ($value) {
+  -webkit-appearance: $value;
+  -moz-appearance: $value;
+  appearance: $value;
+}
 //bootstrap forms
 .btn,
 .form-control,
@@ -59,14 +79,7 @@ a {
     outline: 0;
     @include box-shadow(none);
 }
-.flex-direction-nav .flex-prev {
-    left: 0 !important;
-      opacity: 1;
-}
-.flex-direction-nav .flex-next {
-    right: 0 !important;
-      opacity: 1;
-}
+
 .navbar {
     margin-bottom: 0;
 }
@@ -219,6 +232,7 @@ a {
     margin: 0px;
     border: 0px solid rgba(255, 255, 255, 0);
     border-radius: 0px;
+    background: rgba(255, 255, 255, 0);
   }
   .home-slider{
     .flexslider:hover .flex-direction-nav .flex-prev:hover {
@@ -244,5 +258,78 @@ a {
     height: 100px;
     opacity: 1 !important;
 }
+.flex-direction-nav .flex-prev {
+    left: 0 !important;
+      opacity: 1;
+}
+.flex-direction-nav .flex-next {
+    right: 0 !important;
+      opacity: 1;
+}
   }
+  .dharma-tv-bg{
+    background: url(../img/tv-bg.jpg)no-repeat;
+    background-size: cover;
+        padding: 100px 0px 0px 0px;
+  }
+.f90{
+  font-size: 90px;
+
+}
+.line45{
+  line-height: 45%;
+}
+.mt30{
+  margin-top: 30px;
+}
+.text-shadow{
+  box-shadow: -30px -30px 70px -20px #000000;
+z-index: 999;
+position: relative;
+}
+.middle{
+  top: 50%;
+left: 50%;
+    @include transform(translate(-50%,-50%));
+}
+.slider-nav{
+  .flex-direction-nav a.flex-next:before {
+  content: '';
+  background: url("../img/right.png") no-repeat center;
+  width: 32px;
+  height: 55px;
+}
+.flex-direction-nav a.flex-prev:before {
+  content: '';
+  background: url("../img/left.png") no-repeat center;
+  width: 32px;
+  height: 55px;;
+}
+.flex-direction-nav a {
+  width: 32px;
+  height: 55px;
+  opacity: 1 !important;
+}
+.flex-direction-nav .flex-prev {
+    left: -50px !important;
+      opacity: 1;
+}
+.flex-direction-nav .flex-next {
+    right:-50px !important;
+      opacity: 1;
+}
+.flexslider:hover .flex-direction-nav .flex-prev {
+    opacity: 1;
+    left: -50px !important;
+    outline: 0;
+}
+.flexslider:hover .flex-direction-nav .flex-next {
+    opacity: 1;
+    right: -50px !important;
+    outline: 0;
+}
+.flex-control-nav{
+  display: none;
+}
+}
 @import "fancybox-override";

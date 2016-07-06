@@ -33,31 +33,38 @@
 <section>
   <div class="dharma-tv-bg">
     <div class="container">
-      <div class="dharma-title pull-right">
-        <h1>DHARMA TV</h1>
-      </div>
+<div class="row">
+  <div class="dharma-title pull-right titles mt30">
+    <h1 class="margin0 color-primary font-hammersmith line45 f90">DHARMA TV</h1>
+  </div>
+</div>
       <div class="row">
-        <div class="video-play">
+        <div class="video-play text-shadow">
           <img src="img/video-play.jpg" alt="Dharma Productions" class="img-responsive"/>
-          <div class="play-btn text-center">
-            <img src="img/play-btn.jpg" alt="Dharma Productions">
+          <div class="play-btn text-center dh-absulate middle">
+          <a href="">  <img src="img/play-btn.jpg" alt="Dharma Productions"></a>
           </div>
         </div>
-        <div class="video-slider">
-          <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="250" item-margin="60" animationloop="true" move="1">
-              <li>
-                <div class="video-box">
-                  <div class="video-slide-img">
-                    <img ng-src="{{item.img}}" alt="Dharma Productions" >
+
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="video-slider slider-nav mt30">
+            <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
+                <li>
+                  <div class="video-box">
+                    <div class="video-slide-img">
+                      <img ng-src="{{item.img}}" alt="Dharma Productions" >
+                    </div>
+                    <div class="video-name mt10">
+                      <span class="color-white">{{item.name}}</span>
+                    </div>
                   </div>
-                  <div class="video-name">
-                    <span>{{item.name}}</span>
-                  </div>
-                </div>
-              </li>
-          </flex-slider>
-          <div class="text-center btn-view-more">
-            <button type="button" name="button">VIEW ALL</button>
+                </li>
+            </flex-slider>
+            <div class="text-center btn-view-more mt30">
+              <button type="button" name="button">VIEW ALL</button>
+            </div>
           </div>
         </div>
       </div>
