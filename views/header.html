@@ -1,19 +1,47 @@
-<header>
+<header class="home">
    <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" ui-sref="home"><img src="img/logo.png" alt="Dharma Productions"></a>
+    <div class="container-fluid">
+      <div class="head-bg">
+        <div class="row">
+          <div class="col-md-2 text-center">
+            <div class="logo">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="" ui-sref="home"><img src="img/logo.png" alt="Dharma Productions" class="img-responsive logo-img"></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="collapse navbar-collapse text-center" id="nav-collapse">
+                   <div ng-include="template.menu" class="template menu"></div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="head-social dh-list pull-right mt15">
+              <ul class="padding0 margin0">
+                <li>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa fa-youtube"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
+<div class="head-curve">
+</div>
 
-        <div class="collapse navbar-collapse" id="nav-collapse">
-               <div ng-include="template.menu" class="template menu"></div>
-        </div>
+
     </div>
 </nav>
 </header>
