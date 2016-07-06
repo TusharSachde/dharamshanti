@@ -74,27 +74,26 @@
     </div>
 </section>
 <section>
-    <div class="container">
+    <div class="container-fluid">
         <div class="subscribe">
             <div class="row">
-                <div class="col-md-3">
-                    <div class="display-inline">
+                <div class="col-md-6 text-center">
+                    <div class="display-inline up-img">
                         <img src="img/subscribe.png" alt="Dharma Productions" class="img-responsive">
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="sub-text">
-                        <h4>SUBSCribe NOW </h4>
-                        <h4>for MORE UPDATES</h4>
+                    <div class="sub-text display-inline mt20">
+                        <h3 class="font-hammersmith color-primary text-up margin0">SUBSCribe NOW </h3>
+                        <h3 class="font-hammersmith color-primary text-up margin0">for MORE UPDATES</h3>
                     </div>
                 </div>
 
+
                 <div class="col-md-6">
-                    <div class="sub-input">
+                    <div class="sub-input mt20">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Email">
-                            <span class="input-group-btn">
-      <button class="btn btn-default" type="button">Go</button>
+                            <span class="input-group-btn go-btn">
+      <button class="btn btn-default color-primary font-hammersmith" type="button">Go</button>
     </span>
                         </div>
                     </div>
@@ -104,55 +103,64 @@
     </div>
     </div>
 </section>
-<section>
+<section class="bg-sun">
     <div class="news">
         <div class="title">
-            <h1>NEWS</h1>
+            <h1 class="f90 font-hammersmith color-white margin0 line45">NEWS</h1>
         </div>
-        <div class="news-slider">
+        <div class="news-slider slider-right">
             <flex-slider flex-slide="item in news track by $index" animation="slide" item-width="300" item-margin="60" animationloop="true" move="1">
                 <li>
-                    <div class="video-box">
-                        <div class="video-slide-img">
-                            <img ng-src="{{item.img}}" alt="Dharma Productions">
+                    <a href="">
+                        <div class="video-box ">
+                            <div class="video-slide-img">
+                                <img ng-src="{{item.img}}" alt="Dharma Productions">
+                            </div>
+                            <div class="video-name mt20">
+                                <h4 class="color-white margin0">{{item.name}}</h4>
+                            </div>
+                            <div class="video-date">
+                                <span class="color-black f12">{{item.date}}</span>
+                            </div>
+                            <div class="video-desc mt15 ">
+                                <p class="color-black">{{item.desc}}</p>
+                            </div>
                         </div>
-                        <div class="video-name">
-                            <span>{{item.name}}</span>
-                        </div>
-                        <div class="video-date">
-                            <span>{{item.date}}</span>
-                        </div>
-                        <div class="video-desc">
-                            <p>{{item.desc}}</p>
-                        </div>
-                    </div>
+                    </a>
                 </li>
             </flex-slider>
         </div>
     </div>
 </section>
 <section>
-    <div class="dhrarma-world">
+    <div class="dhrarma-world dh-relative">
         <img src="img/news-bg.jpg" alt="" class="img-responsive">
-        <div class="container">
+        <div class="container dh-absulate middle">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="dharma-world-text">
+                <div class="col-md-offset-1 col-md-10 text-center">
+                    <div class="dharma-world-text text-center">
                         <div class="text-center">
-                            <img src="img/dharma-img.png" alt="">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
-                            <div class="solid-btn">
-                                <button type="button" name="button">ENTER</button>
-                            </div>
+                            <img src="img/dharma-img.png" alt="Dharma Productions" class="img-responsive margin-auto">
+
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+              <div class="col-md-offset-2 col-md-8">
+              <div class="pad-inner">
+                <p class="color-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+                <div class="solid-btn text-center mt20">
+                    <button type="button" name="button" class="btn-primary font-hammersmith btn-enter">ENTER</button>
+                </div>
+              </div>
+              </div>
+            </div>
         </div>
-        <div class="top-right">
+        <div class="top-right dh-absulate">
             <img src="img/top-right.png" alt="">
         </div>
-        <div class="bottom-left">
+        <div class="bottom-left dh-absulate">
             <img src="img/bottom-left.png" alt="">
         </div>
     </div>
