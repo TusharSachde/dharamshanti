@@ -1,31 +1,50 @@
 <section>
-    <div class="home-slider">
+    <div class="home-slider dh-relative">
         <flex-slider flex-slide="s in mySlides track by $index" prev-text="" next-text="">
             <li><img ng-src="{{s}}" alt="Dharma Productions"></li>
         </flex-slider>
+                  <div class="movie-tab text-center dh-absulate">
+                            <div class="btn-group" role="group" aria-label="...">
+                                <button type="button" class="btn btn-default {{classp}}" ng-click="tabchanges('upcoming',1)">UPCOMING</button>
+                                <button type="button" class="btn btn-default {{classv}}" ng-click="tabchanges('released',2)">RELEASED</button>
+
+                            </div>
+                        </div>
+  
     </div>
 </section>
+
 <section>
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="movie-tab text-center">
-                    <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-default">UPCOMING</button>
-                        <button type="button" class="btn btn-default">RELEASED</button>
-
+        <div class="upcoming" ng-if="tabs=='upcoming'">
+            <div class="row-flex text-center">
+                <div class="col-flex" ng-repeat="item in movie track by $index">
+                    <div class="img-pads">
+                        <img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive">
+                    </div>
+                    <div class="movie-names">
+                        <h4 class="text-up color-grey">{{item.name}}</h4>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="row-flex text-center">
-            <div class="col-flex" ng-repeat="item in movie track by $index">
-                <img ng-src="{{item}}" alt="Dharma Productions" class="img-responsive">
+            <div class="btn-view-more pull-right">
+                <button type="button" name="button">VIEW ALL</button>
             </div>
         </div>
-        <div class="btn-view-more pull-right">
-            <button type="button" name="button">VIEW ALL</button>
+        <div class="release" ng-if="tabs=='released'">
+            <div class="row-flex text-center">
+                <div class="col-flex" ng-repeat="item in movie track by $index">
+                    <div class="img-pads">
+                        <img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive">
+                    </div>
+                    <div class="movie-name">
+                        <h4 class="text-up color-grey">{{item.name}}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-view-more pull-right">
+                <button type="button" name="button">VIEW ALL</button>
+            </div>
         </div>
     </div>
 
@@ -147,14 +166,14 @@
                 </div>
             </div>
             <div class="row">
-              <div class="col-md-offset-2 col-md-8">
-              <div class="pad-inner">
-                <p class="color-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
-                <div class="solid-btn text-center mt20">
-                    <button type="button" name="button" class="btn-primary font-hammersmith btn-enter">ENTER</button>
+                <div class="col-md-offset-2 col-md-8">
+                    <div class="pad-inner">
+                        <p class="color-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+                        <div class="solid-btn text-center mt20">
+                            <button type="button" name="button" class="btn-primary font-hammersmith btn-enter">ENTER</button>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              </div>
             </div>
         </div>
         <div class="top-right dh-absulate">

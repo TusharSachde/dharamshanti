@@ -14,13 +14,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         'img/banners/slide1.jpg',
         'img/banners/slide1.jpg'
     ];
-    $scope.movie = [
-        'img/movie/m1.jpg',
-        'img/movie/m2.jpg',
-        'img/movie/m3.jpg',
-        'img/movie/m4.jpg',
-        'img/movie/m5.jpg'
-    ];
+    $scope.movie = [{
+      img:"img/movie/m1.jpg",
+      name:"Ae Dil hai mushkil"
+    },{
+      img:"img/movie/m2.jpg",
+      name:"BAAR BAAR DEKHO"
+    },{
+      img:"img/movie/m3.jpg",
+      name:"BADRINATH KI DULHANIYA"
+    },{
+      img:"img/movie/m4.jpg",
+      name:"RAM LAKHAN"
+    },{
+      img:"img/movie/m5.jpg",
+      name:"ok jaanu"
+    }];
+
+
     $scope.video = [{
         img: "img/video/v1.jpg",
         name: "Director S.S. Rajamouli tells us why Katappa killed Bahubali"
@@ -103,6 +114,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
 
     }]
+
+    $scope.tabs = 'upcoming';
+$scope.classp = 'active-tab';
+$scope.classv= '';
+
+
+$scope.tabchanges = function(tabs, a) {
+//        console.log(tab);
+$scope.tabs = tabs;
+if (a == 1) {
+
+    $scope.classp = "active-tab";
+    $scope.classv = '';
+
+} else {
+
+    $scope.classp = '';
+    $scope.classv = "active-tab";
+}
+};
+
 })
 
 .controller('headerctrl', function($scope, TemplateService) {

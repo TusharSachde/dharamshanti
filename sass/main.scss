@@ -271,6 +271,17 @@ a {
         right: 0 !important;
         opacity: 1;
     }
+    .flex-control-nav {
+    bottom: 60px;
+     z-index: 99;
+}
+.flex-control-paging li a.flex-active{
+  background: #fff;
+}
+.flex-control-paging li a{
+  background: rgba(255, 255, 255, 0.5);
+
+}
 }
 .dharma-tv-bg {
     background: url(../img/tv-bg.jpg)no-repeat;
@@ -479,5 +490,70 @@ a {
     background: url(../img/dharma-title-bg.jpg)no-repeat;
     background-size: cover;
     padding: 200px 0 50px;
+}
+.footer-data{
+  ul{
+    li{
+      border-right: 1px solid #b2b2b2;
+padding: 0px 6px;
+line-height: 100%;
+&:last-child{
+  border:none;
+}
+      a{
+        color:#b2b2b2;
+      }
+    }
+  }
+}
+.footer{
+  background-color: $black;
+  padding: 20px 0px;
+}
+.footer-social{
+  ul{
+    li{
+      padding: 0px 5px;
+      a{
+        i{
+          font-size: 22px;
+          background: #424242;
+          height: 35px;
+          width: 35px;
+          color:$black;
+          border-radius: 100%;
+          padding:6px;
+        }
+      }
+    }
+  }
+}
+.copy{
+  p{
+    color:#b2b2b2;
+    margin: 0px;
+  }
+}
+.img-pads {
+    background: #fff;
+    padding: 10px;
+    margin: 5px;
+    box-shadow: 4px 4px 10px 1px #dcdcdc;
+}
+.movie-names{
+  h4{
+    text-align: left;
+    padding-left: 10px;
+  }
+}
+.movie-tab{
+  width: 100%;
+  bottom: 0px;
+  z-index: 99;
+  .btn-group{
+    .btn{
+      float: none;
+    }
+  }
 }
 @import "fancybox-override";
