@@ -43,6 +43,12 @@ nav li:hover .dropdown-menu {
 a {
     cursor: pointer;
     @include transition(all ease 300ms);
+    &:hover{
+      text-decoration: none;
+    }
+    &:focus{
+      text-decoration: none;
+    }
 }
 /* mixing*/
 @mixin placeholder {

@@ -1,9 +1,9 @@
 <section>
-  <div class="home-slider">
-    <flex-slider flex-slide="s in mySlides track by $index" prev-text="" next-text="">
-        <li><img ng-src="{{s}}" alt="Dharma Productions"></li>
-    </flex-slider>
-  </div>
+    <div class="home-slider">
+        <flex-slider flex-slide="s in mySlides track by $index" prev-text="" next-text="">
+            <li><img ng-src="{{s}}" alt="Dharma Productions"></li>
+        </flex-slider>
+    </div>
 </section>
 <section>
     <div class="container">
@@ -25,159 +25,161 @@
             </div>
         </div>
         <div class="btn-view-more pull-right">
-          <button type="button" name="button">VIEW ALL</button>
+            <button type="button" name="button">VIEW ALL</button>
         </div>
     </div>
 
 </section>
 <section>
-  <div class="dharma-tv-bg">
+    <div class="dharma-tv-bg">
+        <div class="container">
+            <div class="row">
+                <div class="dharma-title pull-right titles mt30">
+                    <h1 class="margin0 color-primary font-hammersmith line45 f90">DHARMA TV</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="video-play text-shadow">
+                    <img src="img/video-play.jpg" alt="Dharma Productions" class="img-responsive" />
+                    <div class="play-btn text-center dh-absulate middle">
+                        <a href=""> <img src="img/play-btn.jpg" alt="Dharma Productions"></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="video-slider slider-nav mt30">
+                        <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
+                            <li>
+                                <a href="">
+                                    <div class="video-box">
+                                        <div class="video-slide-img">
+                                            <img ng-src="{{item.img}}" alt="Dharma Productions">
+                                        </div>
+                                        <div class="video-name mt10">
+                                            <span class="color-white">{{item.name}}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </flex-slider>
+                        <div class="text-center btn-view-more mt30">
+                            <button type="button" name="button">VIEW ALL</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
     <div class="container">
-<div class="row">
-  <div class="dharma-title pull-right titles mt30">
-    <h1 class="margin0 color-primary font-hammersmith line45 f90">DHARMA TV</h1>
-  </div>
-</div>
-      <div class="row">
-        <div class="video-play text-shadow">
-          <img src="img/video-play.jpg" alt="Dharma Productions" class="img-responsive"/>
-          <div class="play-btn text-center dh-absulate middle">
-          <a href="">  <img src="img/play-btn.jpg" alt="Dharma Productions"></a>
-          </div>
-        </div>
-
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="video-slider slider-nav mt30">
-            <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
-                <li>
-                  <div class="video-box">
-                    <div class="video-slide-img">
-                      <img ng-src="{{item.img}}" alt="Dharma Productions" >
+        <div class="subscribe">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="display-inline">
+                        <img src="img/subscribe.png" alt="Dharma Productions" class="img-responsive">
                     </div>
-                    <div class="video-name mt10">
-                      <span class="color-white">{{item.name}}</span>
+                </div>
+                <div class="col-md-3">
+                    <div class="sub-text">
+                        <h4>SUBSCribe NOW </h4>
+                        <h4>for MORE UPDATES</h4>
                     </div>
-                  </div>
-                </li>
-            </flex-slider>
-            <div class="text-center btn-view-more mt30">
-              <button type="button" name="button">VIEW ALL</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="subscribe">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="display-inline">
-            <img src="img/subscribe.png" alt="Dharma Productions" class="img-responsive">
-          </div>
-        </div>
-          <div class="col-md-3">
-            <div class="sub-text">
-              <h4>SUBSCribe NOW </h4>
-              <h4>for MORE UPDATES</h4>
-            </div>
-          </div>
+                </div>
 
-        <div class="col-md-6">
-          <div class="sub-input">
-            <div class="input-group">
-    <input type="text" class="form-control" placeholder="Email">
-    <span class="input-group-btn">
+                <div class="col-md-6">
+                    <div class="sub-input">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Email">
+                            <span class="input-group-btn">
       <button class="btn btn-default" type="button">Go</button>
     </span>
-  </div>
-          </div>
-        </div>
-          </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="news">
-    <div class="title">
-      <h1>NEWS</h1>
-    </div>
-    <div class="news-slider">
-      <flex-slider flex-slide="item in news track by $index" animation="slide" item-width="300" item-margin="60" animationloop="true" move="1">
-          <li>
-            <div class="video-box">
-              <div class="video-slide-img">
-                <img ng-src="{{item.img}}" alt="Dharma Productions" >
-              </div>
-              <div class="video-name">
-                <span>{{item.name}}</span>
-              </div>
-              <div class="video-date">
-                <span>{{item.date}}</span>
-              </div>
-              <div class="video-desc">
-                <p>{{item.desc}}</p>
-              </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </li>
-      </flex-slider>
+        </div>
     </div>
-  </div>
+    </div>
 </section>
 <section>
-  <div class="dhrarma-world">
-    <img src="img/news-bg.jpg" alt="" class="img-responsive">
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="dharma-world-text">
-        <div class="text-center">
-          <img src="img/dharma-img.png" alt="">
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
-  <div class="solid-btn">
-    <button type="button" name="button">ENTER</button>
-  </div>
+    <div class="news">
+        <div class="title">
+            <h1>NEWS</h1>
         </div>
-      </div>
+        <div class="news-slider">
+            <flex-slider flex-slide="item in news track by $index" animation="slide" item-width="300" item-margin="60" animationloop="true" move="1">
+                <li>
+                    <div class="video-box">
+                        <div class="video-slide-img">
+                            <img ng-src="{{item.img}}" alt="Dharma Productions">
+                        </div>
+                        <div class="video-name">
+                            <span>{{item.name}}</span>
+                        </div>
+                        <div class="video-date">
+                            <span>{{item.date}}</span>
+                        </div>
+                        <div class="video-desc">
+                            <p>{{item.desc}}</p>
+                        </div>
+                    </div>
+                </li>
+            </flex-slider>
+        </div>
     </div>
-  </div>
-</div>
-<div class="top-right">
-  <img src="img/top-right.png" alt="">
-</div>
-<div class="bottom-left">
-  <img src="img/bottom-left.png" alt="">
-</div>
-  </div>
 </section>
 <section>
-  <div class="dharma-title-bg">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-oofset-4 col-md-4">
-          <div class="title">
-            <h1>LET’s TALK</h1>
-          </div>
+    <div class="dhrarma-world">
+        <img src="img/news-bg.jpg" alt="" class="img-responsive">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="dharma-world-text">
+                        <div class="text-center">
+                            <img src="img/dharma-img.png" alt="">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+                            <div class="solid-btn">
+                                <button type="button" name="button">ENTER</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.4068059855495!2d72.83437931533634!3d19.13366215512864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c90c2ccd1d8d%3A0xf30ad9209654b0b4!2sDharma+Productions!5e0!3m2!1sen!2sin!4v1467452593010" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="pull-right">
-          <div class="solid-btn">
-            <button type="button" name="button">know more</button>
-          </div>
+        <div class="top-right">
+            <img src="img/top-right.png" alt="">
         </div>
-      </div>
+        <div class="bottom-left">
+            <img src="img/bottom-left.png" alt="">
+        </div>
     </div>
-  </div>
+</section>
+<section>
+    <div class="dharma-title-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-oofset-4 col-md-4">
+                    <div class="title">
+                        <h1>LET’s TALK</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.4068059855495!2d72.83437931533634!3d19.13366215512864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c90c2ccd1d8d%3A0xf30ad9209654b0b4!2sDharma+Productions!5e0!3m2!1sen!2sin!4v1467452593010"
+                width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="pull-right">
+                    <div class="solid-btn">
+                        <button type="button" name="button">know more</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
