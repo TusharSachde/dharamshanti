@@ -276,7 +276,7 @@ a {
   .dharma-tv-bg{
     background: url(../img/tv-bg.jpg)no-repeat;
     background-size: cover;
-        padding: 100px 0px 0px 0px;
+        padding: 100px 0px 100px 0px;
   }
 .f90{
   font-size: 90px;
@@ -337,5 +337,26 @@ left: 50%;
 .flex-control-nav{
   display: none;
 }
+}
+.btn-grey {
+    @include button-variant($grey, transparent, $grey);
+    border: 2px solid $grey;
+      @include transition(all 300ms ease);
+    &:hover {
+      @include button-variant($black, $grey, $grey);
+        border: 2px solid $grey;
+    }
+    &:focus {
+        outline: 0;
+    }
+    &:active {
+        outline: 0;
+    }
+}
+.btn-padding{
+      padding: 7px 20px 2px 20px;
+}
+.mt40{
+  margin-top: 40px;
 }
 @import "fancybox-override";
