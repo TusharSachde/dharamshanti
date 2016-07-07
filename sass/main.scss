@@ -774,17 +774,73 @@ a {
     z-index: 9;
     background: rgba(0, 0, 0, 0.6);
     top: 0;
-    .pos-middle{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      @include transform(translate(-50%,-50%));
-      font-size: 18px;
-      width: 100%;
-      text-align: center;
+    .pos-middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%,-50%));
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
     }
 }
-.pad5{
-  padding: 5px;
+.pad5 {
+    padding: 5px;
+}
+.custom-tabs {
+    button {
+        background: transparent;
+        color: #838383;
+        line-height: 100%;
+        &:focus {
+            outline: 0;
+        }
+        &:active {
+            outline: 0;
+        }
+        &:hover {
+            color: $brand-primary;
+        }
+        &:first-child {
+            border-right: 2px solid #838383;
+        }
+    }
+    .btn {
+        &:active {
+            outline: 0;
+            background-image: none;
+            -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.125);
+            box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.125);
+        }
+    }
+    .active-list {
+        color: $brand-primary;
+    }
+}
+.desktop{
+.download{
+  top: 0;
+height: 100%;
+background: rgba(0, 0, 0, 0.55);
+width: 100%;
+display: none;
+  @include transition(all 0.3s ease-in-out);
+a{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%,-50%));
+  width: 100%;
+  text-align: center;
+}
+}
+
+}
+.all-wall{
+  &:hover{
+    .download{
+    display: block;
+    }
+}
 }
 @import "fancybox-override";

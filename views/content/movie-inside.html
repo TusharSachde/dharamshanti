@@ -258,39 +258,45 @@
                     </div>
                 </div>
                 <div class="wallpapper" ng-if="tab=='wallpapper'">
+                    <div class="movie-inside-date bg-cast cast-credit">
                     <div class="row">
                         .
-                        <div class="btn-group" role="group" aria-label="...">
-                            <button type="button" class="btn btn-default {{classp}}" ng-click="tabchanges('desktop',1)">Desktop</button>
-                            <button type="button" class="btn btn-default {{classv}}" ng-click="tabchanges('mobile',2)">Mobile</button>
+                        <div class="btn-group custom-tabs" role="group" aria-label="...">
+                            <button type="button" class="btn {{classp}} font-hammersmith f18" ng-click="tabchanges('desktop',1)">Desktop</button>
+                            <button type="button" class="btn {{classv}} font-hammersmith f18" ng-click="tabchanges('mobile',2)">Mobile</button>
 
                         </div>
                     </div>
-                    <div class="desktop" ng-if="tabs=='desktop'">
+                    <div class="desktop mt15" ng-if="tabs=='desktop'">
                         <div class="row">
-                            <div class="col-md-4" ng-repeat="item in desktop track by $index">
-                                <div class="desktop dh-relative">
-                                    <img ng-src="{{item}}" alt="Dharma productions" class="img-responsive">
-                                    <div class="download dh-absulate">
-                                        <a href=""><img src="img/download.png" alt="Dharma productions"></a>
-                                    </div>
-                                </div>
+                            <div class="col-md-4 pad5" ng-repeat="item in desktop track by $index">
+                            <div class="all-wall">
+                              <div class="desktop dh-relative">
+                                  <img ng-src="{{item}}" alt="Dharma productions" class="img-responsive">
+                                  <div class="download dh-absulate">
+                                      <a href="{{item}}" download><img src="img/download.png" alt="Dharma productions"></a>
+                                  </div>
+                              </div>
+                            </div>
                             </div>
                         </div>
                     </div>
-                    <div class="desktop" ng-if="tabs=='mobile'">
+                    <div class="desktop mt15" ng-if="tabs=='mobile'">
                         <div class="row">
-                            <div class="col-md-3" ng-repeat="item in mobile track by $index">
-                                <div class="desktop dh-relative">
-                                    <img ng-src="{{item}}" alt="Dharma productions" class="img-responsive">
-                                    <div class="download dh-absulate">
-                                        <a href=""><img src="img/download.png" alt="Dharma productions"></a>
-                                    </div>
+                            <div class="col-md-3 pad5" ng-repeat="item in mobile track by $index">
+                          <div class="all-wall">
+                            <div class="desktop dh-relative">
+                                <img ng-src="{{item}}" alt="Dharma productions" class="img-responsive">
+                                <div class="download dh-absulate">
+                                    <a href="{{item}}" download><img src="img/download.png" alt="Dharma productions"></a>
                                 </div>
+                            </div>
+                          </div>
                             </div>
                         </div>
                     </div>
                 </div>
+              </div>
                 <div class="awards" ng-if="tab=='awards'">
                     <div class="row">
                         <div class="col-md-12">
