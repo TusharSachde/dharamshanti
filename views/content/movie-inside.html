@@ -212,19 +212,23 @@
                     </div>
                 </div>
                 <div class="gallery" ng-if="tab=='gallery'">
+                  <div class="movie-inside-date bg-cast cast-credit">
                     <div class="row">
-                        <div class="all-movies">
-                            <div masonry preserve-order>
-                                <div class="masonry-brick" ng-repeat="item in gallery track by $index">
-                                    <div class="masonry-box">
-                                        <img ng-src="{{item}}" alt="Dharma Production">
+              <div class="col-md-12">
+                <div class="all-movies masonry-width">
+                    <div masonry preserve-order column-width="320">
+                        <div class="masonry-brick" ng-repeat="item in gallery track by $index">
+                            <div class="masonry-box">
+                                <img ng-src="{{item}}" alt="Dharma Production">
 
-                                    </div>
-                                </div>
                             </div>
-
                         </div>
                     </div>
+
+                </div>
+              </div>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="video" ng-if="tab=='video'">

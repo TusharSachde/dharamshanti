@@ -760,4 +760,12 @@ a {
 .padd20{
   padding: 0px 10px;
 }
+.masonry-width{
+  .masonry-box{
+    width: 310px;
+  }
+}
+.masonry-brick{
+  margin-bottom: 10px;
+}
 @import "fancybox-override";
