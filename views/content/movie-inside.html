@@ -212,41 +212,47 @@
                     </div>
                 </div>
                 <div class="gallery" ng-if="tab=='gallery'">
-                  <div class="movie-inside-date bg-cast cast-credit">
-                    <div class="row">
-              <div class="col-md-12">
-                <div class="all-movies masonry-width">
-                    <div masonry preserve-order column-width="320">
-                        <div class="masonry-brick" ng-repeat="item in gallery track by $index">
-                            <div class="masonry-box">
-                                <img ng-src="{{item}}" alt="Dharma Production">
+                    <div class="movie-inside-date bg-cast cast-credit">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="all-movies masonry-width">
+                                    <div masonry preserve-order column-width="320">
+                                        <div class="masonry-brick" ng-repeat="item in gallery track by $index">
+                                            <div class="masonry-box">
+                                                <img ng-src="{{item}}" alt="Dharma Production">
 
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                </div>
-              </div>
-                    </div>
-                  </div>
                 </div>
 
                 <div class="video" ng-if="tab=='video'">
-                    <div class="row">
-                        <div class="col-md-4" ng-repeat="item in allvideos track by $index">
-                            <div class="video-play-box">
-                                <img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive">
-                                <div class="overlay">
-                                    <span>{{item.name}}</span>
-                                </div>
-                                <div class="bottom-right">
-                                    <a href=""><img src="img/play-small-btn.jpg" alt="Dharma Productions"></a>
+                    <div class="movie-inside-date bg-cast cast-credit">
+                        <div class="row">
+                            <div class="col-md-4 pad5" ng-repeat="item in allvideos track by $index">
+                                <div class="video-play-box dh-relative">
+                                    <img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive">
+                                    <div class="overlay dh-absulate">
+                                      <div class="pos-middle">
+                                          <span class="color-white font-hammersmith">{{item.name}}</span>
+                                      </div>
+
+                                    <div class="bottom-right dh-absulate ply-post">
+                                        <a href=""><img src="img/play-small-btn.jpg" alt="Dharma Productions"></a>
+                                    </div>
+                                      </div>
                                 </div>
                             </div>
+
                         </div>
-                        <div class="text-center">
+                        <div class="text-center mt30">
                             <div class="btn-outline">
-                                <button type="button" name="button">View All</button>
+                                <button type="button" name="button" class="btn-primary-outline font-hammersmith btn-enter">VIEW ALL</button>
                             </div>
                         </div>
                     </div>

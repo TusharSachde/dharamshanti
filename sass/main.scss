@@ -701,8 +701,8 @@ a {
     font-size: 18px;
 }
 .cast-credit {
-  padding-top: 20px;
-  padding-bottom: 60px;
+    padding-top: 20px;
+    padding-bottom: 60px;
 }
 .mt60 {
     margin-top: 60px;
@@ -757,15 +757,34 @@ a {
 .color-light-grey {
     color: #838383;
 }
-.padd20{
-  padding: 0px 10px;
+.padd20 {
+    padding: 0 10px;
 }
-.masonry-width{
-  .masonry-box{
-    width: 310px;
-  }
+.masonry-width {
+    .masonry-box {
+        width: 310px;
+    }
 }
-.masonry-brick{
-  margin-bottom: 10px;
+.masonry-brick {
+    margin-bottom: 10px;
+}
+.overlay {
+    height: 100%;
+    width: 100%;
+    z-index: 9;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    .pos-middle{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include transform(translate(-50%,-50%));
+      font-size: 18px;
+      width: 100%;
+      text-align: center;
+    }
+}
+.pad5{
+  padding: 5px;
 }
 @import "fancybox-override";
