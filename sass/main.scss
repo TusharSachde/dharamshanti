@@ -121,7 +121,7 @@ a {
     display: inline-block;
 }
 .masonry-box {
-    width: 340px;
+    width: 300px;
     img {
         width: 100%;
     }
@@ -756,5 +756,8 @@ a {
 }
 .color-light-grey {
     color: #838383;
+}
+.padd20{
+  padding: 0px 10px;
 }
 @import "fancybox-override";

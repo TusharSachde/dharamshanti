@@ -168,29 +168,48 @@
 
                 </div>
                 <div class="news" ng-if="tab=='news'">
-
-                    <div class="row">
-                        <div class="all-movies">
-                            <div masonry>
-                                <div class="masonry-brick" ng-repeat="item in news track by $index">
-                                    <div class="masonry-box">
-                                        <img ng-src="{{item.img}}" alt="Dharma Production">
-                                        <div class="news-title">
-                                            <h4>{{item.name}}</h4>
-                                        </div>
-                                        <div class="news-date">
-                                            <span>{{item.date}}</span>
-                                        </div>
-                                        <div class="news-descp">
-                                            <p>{{item.desc}}</p>
+                    <div class="movie-inside-date bg-cast cast-credit">
+                        <div class="row">
+                            <div class="col-md-11">
+                                <div class="all-movies">
+                                    <div masonry column-width="300" preserve-order>
+                                        <div class="masonry-brick" ng-repeat="item in news track by $index">
+                                            <div class="masonry-box padd20">
+                                                <img ng-src="{{item.img}}" alt="Dharma Production">
+                                                <div class="news-title mt10">
+                                                    <h4 class="margin0 color-black font-karla">{{item.name}}</h4>
+                                                </div>
+                                                <div class="news-date">
+                                                    <span class="color-black f12 font-karla">{{item.date}}</span>
+                                                </div>
+                                                <div class="news-descp mt15">
+                                                    <p class="color-black font-karla">{{item.desc}}</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
+                            <div class="col-md-1">
+                                <div class="social-share pull-right">
+                                    <span class="font-karla font-bold color-light-grey f18">share</span>
+                                    <ul class="padding0">
 
+                                        <li>
+                                            <a href=""><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href=""><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href=""><i class="fa fa-google-plus"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="gallery" ng-if="tab=='gallery'">
                     <div class="row">
