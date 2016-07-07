@@ -14,6 +14,7 @@ $brand-info: #000072 !default;
 $white: #ffffff !default;
 $black: #171717 !default;
 $grey: #6f6f6e !default;
+$dark-black: #383838 !default;
 $font-family-sans-serif: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif: "Hammersmith One", Georgia, "Times New Roman", Times, serif !default;
 $border-radius-base: 0 !default;
@@ -48,6 +49,7 @@ a {
     }
     &:focus {
         text-decoration: none;
+        outline: 0;
     }
 }
 /* mixing*/
@@ -675,7 +677,7 @@ a {
 .cast {
     h1 {
         font-size: 40px;
-        color: #383838;
+        color: $dark-black;
     }
 }
 .cast-box {
@@ -692,7 +694,7 @@ a {
     }
 }
 .color-dark {
-    color: #383838;
+    color: $dark-black;
 }
 .font-bold {
     font-weight: 700;
@@ -720,7 +722,7 @@ a {
             list-style: none;
             font-size: 18px;
             line-height: 240%;
-            color: #383838;
+            color: $dark-black;
         }
     }
 }
@@ -817,30 +819,75 @@ a {
         color: $brand-primary;
     }
 }
-.desktop{
-.download{
-  top: 0;
-height: 100%;
-background: rgba(0, 0, 0, 0.55);
-width: 100%;
-display: none;
-  @include transition(all 0.3s ease-in-out);
-a{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  @include transform(translate(-50%,-50%));
-  width: 100%;
-  text-align: center;
-}
-}
-
-}
-.all-wall{
-  &:hover{
-    .download{
-    display: block;
+.desktop {
+    .download {
+        top: 0;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.55);
+        width: 100%;
+        display: none;
+        @include transition(all 0.3s ease-in-out);
+        a {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include transform(translate(-50%,-50%));
+            width: 100%;
+            text-align: center;
+        }
     }
 }
+.all-wall {
+    &:hover {
+        .download {
+            display: block;
+        }
+    }
+}
+.dark-black {
+    color: $dark-black;
+    &:focus{
+      outline:0;
+    }
+}
+.movie-award {
+    .panel {
+        background-color: transparent;
+        border: 0 solid transparent;
+        border-radius: 0;
+        -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0.05);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.05);
+        .panel-heading {
+            color: #333333;
+            background-color: transparent;
+            border-color: transparent;
+            padding: 8px 15px;
+                border-bottom: 3px solid #ddd;
+                &:focus{
+                  outline: 0;
+                }
+        }
+        .panel-body{
+          border-top: 0px solid #ddd !important;
+        }
+    }
+}
+.list-none{
+  list-style: none;
+}
+.awards-name{
+  ul{
+    li {
+      font-size: 16px;
+      line-height: 200%;
+
+  }
+  }
+}
+.line0{
+  line-height: 0;
+}
+.pl10{
+      padding-left: 10px;
 }
 @import "fancybox-override";

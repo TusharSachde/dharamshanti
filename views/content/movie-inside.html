@@ -238,14 +238,14 @@
                                 <div class="video-play-box dh-relative">
                                     <img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive">
                                     <div class="overlay dh-absulate">
-                                      <div class="pos-middle">
-                                          <span class="color-white font-hammersmith">{{item.name}}</span>
-                                      </div>
+                                        <div class="pos-middle">
+                                            <span class="color-white font-hammersmith">{{item.name}}</span>
+                                        </div>
 
-                                    <div class="bottom-right dh-absulate ply-post">
-                                        <a href=""><img src="img/play-small-btn.jpg" alt="Dharma Productions"></a>
+                                        <div class="bottom-right dh-absulate ply-post">
+                                            <a href=""><img src="img/play-small-btn.jpg" alt="Dharma Productions"></a>
+                                        </div>
                                     </div>
-                                      </div>
                                 </div>
                             </div>
 
@@ -259,240 +259,267 @@
                 </div>
                 <div class="wallpapper" ng-if="tab=='wallpapper'">
                     <div class="movie-inside-date bg-cast cast-credit">
-                    <div class="row">
-                        .
-                        <div class="btn-group custom-tabs" role="group" aria-label="...">
-                            <button type="button" class="btn {{classp}} font-hammersmith f18" ng-click="tabchanges('desktop',1)">Desktop</button>
-                            <button type="button" class="btn {{classv}} font-hammersmith f18" ng-click="tabchanges('mobile',2)">Mobile</button>
+                        <div class="row">
+                            .
+                            <div class="btn-group custom-tabs" role="group" aria-label="...">
+                                <button type="button" class="btn {{classp}} font-hammersmith f18" ng-click="tabchanges('desktop',1)">Desktop</button>
+                                <button type="button" class="btn {{classv}} font-hammersmith f18" ng-click="tabchanges('mobile',2)">Mobile</button>
 
-                        </div>
-                    </div>
-                    <div class="desktop mt15" ng-if="tabs=='desktop'">
-                        <div class="row">
-                            <div class="col-md-4 pad5" ng-repeat="item in desktop track by $index">
-                            <div class="all-wall">
-                              <div class="desktop dh-relative">
-                                  <img ng-src="{{item}}" alt="Dharma productions" class="img-responsive">
-                                  <div class="download dh-absulate">
-                                      <a href="{{item}}" download><img src="img/download.png" alt="Dharma productions"></a>
-                                  </div>
-                              </div>
-                            </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="desktop mt15" ng-if="tabs=='mobile'">
-                        <div class="row">
-                            <div class="col-md-3 pad5" ng-repeat="item in mobile track by $index">
-                          <div class="all-wall">
-                            <div class="desktop dh-relative">
-                                <img ng-src="{{item}}" alt="Dharma productions" class="img-responsive">
-                                <div class="download dh-absulate">
-                                    <a href="{{item}}" download><img src="img/download.png" alt="Dharma productions"></a>
+                        <div class="desktop mt15" ng-if="tabs=='desktop'">
+                            <div class="row">
+                                <div class="col-md-4 pad5" ng-repeat="item in desktop track by $index">
+                                    <div class="all-wall">
+                                        <div class="desktop dh-relative">
+                                            <img ng-src="{{item}}" alt="Dharma productions" class="img-responsive">
+                                            <div class="download dh-absulate">
+                                                <a href="{{item}}" download><img src="img/download.png" alt="Dharma productions"></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                          </div>
+                        </div>
+                        <div class="desktop mt15" ng-if="tabs=='mobile'">
+                            <div class="row">
+                                <div class="col-md-3 pad5" ng-repeat="item in mobile track by $index">
+                                    <div class="all-wall">
+                                        <div class="desktop dh-relative">
+                                            <img ng-src="{{item}}" alt="Dharma productions" class="img-responsive">
+                                            <div class="download dh-absulate">
+                                                <a href="{{item}}" download><img src="img/download.png" alt="Dharma productions"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-              </div>
                 <div class="awards" ng-if="tab=='awards'">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="movie-award">
-                                <uib-accordion close-others="true">
-                                    <uib-accordion-group is-open="accordian[0].isFirstOpen">
-                                        <uib-accordion-heading>
-                                            <!-- <h4>Zee Cine Awards</h4> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> -->
+                    <div class="movie-inside-date bg-cast cast-credit">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="movie-award">
+                                    <uib-accordion close-others="true">
+                                        <uib-accordion-group is-open="accordian[0].isFirstOpen">
+                                            <uib-accordion-heading>
+                                                <!-- <h4>Zee Cine Awards</h4> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> -->
+                                                <div class="row">
+                                                    <div class="col-md-7">
+                                                        <h3 class="dark-black text-up font-karla font-bold margin0">Zee Cine Awards</h3>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <h3 class="dark-black text-up font-karla font-bold margin0">2014</h3>
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <i class="pull-right fa" ng-class="{'fa fa-minus': accordian[0].isFirstOpen, 'fa fa-plus': !accordian[0].isFirstOpen}"></i>
+                                                    </div>
+                                                </div>
+                                            </uib-accordion-heading>
                                             <div class="row">
+                                                <div class="title-acc">
+                                                    <h1 class="font-karla color-primary pl10">Won</h1>
+                                                </div>
                                                 <div class="col-md-7">
-                                                    <h4>Zee Cine Awards</h4>
+                                                    <div class="awards-name">
+                                                        <ul class="padding0 list-none color-black">
+                                                            <li><span>Best Director</span></li>
+                                                            <li><span>Best Background Score</span></li>
+                                                            <li><span>Best Screenplay</span></li>
+                                                            <li><span>Best Choreography</span></li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <h4>2014</h4>
+                                                    <div class="awards-name">
+                                                        <ul class="padding0 list-none color-primary">
+                                                            <li><span>Ayan Mukherjee</span></li>
+                                                            <li><span>Pritam Chakraborty</span></li>
+                                                            <li><span>Ayan Mukherjee</span> </li>
+                                                            <li><span>Remo</span>
+                                                                <p class="color-black f12 line0">For the song "Badtameez Dil"</p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-1">
-                                                    <i class="pull-right fa" ng-class="{'fa fa-minus': accordian[0].isFirstOpen, 'fa fa-plus': !accordian[0].isFirstOpen}"></i>
+                                            </div>
+                                        </uib-accordion-group>
+                                        <uib-accordion-group is-open="accordian[1].isFirstOpen">
+                                            <uib-accordion-heading>
+                                                <!-- <h4>Zee Cine Awards</h4> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> -->
+                                                <div class="row">
+                                                    <div class="col-md-7">
+                                                        <h3 class="dark-black text-up font-karla font-bold margin0">Filmfare Awards</h3>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <h3 class="dark-black text-up font-karla font-bold margin0">2014</h3>
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <i class="pull-right fa" ng-class="{'fa fa-minus': accordian[1].isFirstOpen, 'fa fa-plus': !accordian[1].isFirstOpen}"></i>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </uib-accordion-heading>
-                                        <div class="row">
-                                            <div class="title-acc">
-                                                <h4>WON</h4>
-                                            </div>
-                                            <div class="col-md-7">
-                                                <ul>
-                                                    <li><span>Best Director</span></li>
-                                                    <li><span>Best Background Score</span></li>
-                                                    <li><span>Best Screenplay</span></li>
-                                                    <li><span>Best Choreography</span></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <ul>
-                                                    <li><span>Ayan Mukherjee</span></li>
-                                                    <li><span>Pritam Chakraborty</span></li>
-                                                    <li><span>Ayan Mukherjee</span> </li>
-                                                    <li><span>Remo</span>
-                                                        <br>For the song "Badtameez Dil" </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </uib-accordion-group>
-                                    <uib-accordion-group is-open="accordian[1].isFirstOpen">
-                                        <uib-accordion-heading>
-                                            <!-- <h4>Zee Cine Awards</h4> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> -->
+                                            </uib-accordion-heading>
                                             <div class="row">
+                                                <div class="title-acc">
+                                                    <h1 class="font-karla color-primary pl10">Won</h1>
+                                                </div>
                                                 <div class="col-md-7">
-                                                    <h4>Filmfare Awards</h4>
+                                                    <div class="awards-name">
+                                                        <ul class="padding0 list-none color-black">
+                                                            <li><span>Best Director</span></li>
+                                                            <li><span>Best Background Score</span></li>
+                                                            <li><span>Best Screenplay</span></li>
+                                                            <li><span>Best Choreography</span></li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <h4>2014</h4>
+                                                    <div class="awards-name">
+                                                        <ul class="padding0 list-none color-primary">
+                                                            <li><span>Ayan Mukherjee</span></li>
+                                                            <li><span>Pritam Chakraborty</span></li>
+                                                            <li><span>Ayan Mukherjee</span> </li>
+                                                            <li><span>Remo</span>
+                                                                <p class="color-black f12 line0">For the song "Badtameez Dil"</p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-1">
-                                                    <i class="pull-right fa" ng-class="{'fa fa-minus': accordian[1].isFirstOpen, 'fa fa-plus': !accordian[1].isFirstOpen}"></i>
+                                            </div>
+                                        </uib-accordion-group>
+                                        <uib-accordion-group is-open="accordian[2].isFirstOpen">
+                                            <uib-accordion-heading>
+                                                <!-- <h4>Zee Cine Awards</h4> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> -->
+                                                <div class="row">
+                                                    <div class="col-md-7">
+                                                        <h3 class="dark-black text-up font-karla font-bold margin0">Screen Weekly Awards</h3>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <h3 class="dark-black text-up font-karla font-bold margin0">2014</h3>
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <i class="pull-right fa" ng-class="{'fa fa-minus': accordian[2].isFirstOpen, 'fa fa-plus': !accordian[2].isFirstOpen}"></i>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </uib-accordion-heading>
-                                        <div class="row">
-                                            <div class="title-acc">
-                                                <h4>WON</h4>
-                                            </div>
-                                            <div class="col-md-7">
-                                                <ul>
-                                                    <li><span>Best Director</span></li>
-                                                    <li><span>Best Background Score</span></li>
-                                                    <li><span>Best Screenplay</span></li>
-                                                    <li><span>Best Choreography</span></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <ul>
-                                                    <li><span>Ayan Mukherjee</span></li>
-                                                    <li><span>Pritam Chakraborty</span></li>
-                                                    <li><span>Ayan Mukherjee</span> </li>
-                                                    <li><span>Remo</span>
-                                                        <br>For the song "Badtameez Dil" </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </uib-accordion-group>
-                                    <uib-accordion-group is-open="accordian[2].isFirstOpen">
-                                        <uib-accordion-heading>
-                                            <!-- <h4>Zee Cine Awards</h4> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> -->
+                                            </uib-accordion-heading>
                                             <div class="row">
+                                                <div class="title-acc">
+                                                    <h1 class="font-karla color-primary pl10">Won</h1>
+                                                </div>
                                                 <div class="col-md-7">
-                                                    <h4>Screen Weekly Awards</h4>
+                                                    <div class="awards-name">
+                                                        <ul class="padding0 list-none color-black">
+                                                            <li><span>Best Director</span></li>
+                                                            <li><span>Best Background Score</span></li>
+                                                            <li><span>Best Screenplay</span></li>
+                                                            <li><span>Best Choreography</span></li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <h4>2014</h4>
+                                                    <div class="awards-name">
+                                                        <ul class="padding0 list-none color-primary">
+                                                            <li><span>Ayan Mukherjee</span></li>
+                                                            <li><span>Pritam Chakraborty</span></li>
+                                                            <li><span>Ayan Mukherjee</span> </li>
+                                                            <li><span>Remo</span>
+                                                                <p class="color-black f12 line0">For the song "Badtameez Dil"</p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-1">
-                                                    <i class="pull-right fa" ng-class="{'fa fa-minus': accordian[2].isFirstOpen, 'fa fa-plus': !accordian[2].isFirstOpen}"></i>
+                                            </div>
+                                        </uib-accordion-group>
+                                        <uib-accordion-group is-open="accordian[3].isFirstOpen">
+                                            <uib-accordion-heading>
+                                                <!-- <h4>Zee Cine Awards</h4> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> -->
+                                                <div class="row">
+                                                    <div class="col-md-7">
+                                                        <h3 class="dark-black text-up font-karla font-bold margin0">Mirchi Music Awards, IN</h3>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <h3 class="dark-black text-up font-karla font-bold margin0">2014</h3>
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <i class="pull-right fa" ng-class="{'fa fa-minus': accordian[3].isFirstOpen, 'fa fa-plus': !accordian[3].isFirstOpen}"></i>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </uib-accordion-heading>
-                                        <div class="row">
-                                            <div class="title-acc">
-                                                <h4>WON</h4>
-                                            </div>
-                                            <div class="col-md-7">
-                                                <ul>
-                                                    <li><span>Best Director</span></li>
-                                                    <li><span>Best Background Score</span></li>
-                                                    <li><span>Best Screenplay</span></li>
-                                                    <li><span>Best Choreography</span></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <ul>
-                                                    <li><span>Ayan Mukherjee</span></li>
-                                                    <li><span>Pritam Chakraborty</span></li>
-                                                    <li><span>Ayan Mukherjee</span> </li>
-                                                    <li><span>Remo</span>
-                                                        <br>For the song "Badtameez Dil" </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </uib-accordion-group>
-                                    <uib-accordion-group is-open="accordian[3].isFirstOpen">
-                                        <uib-accordion-heading>
-                                            <!-- <h4>Zee Cine Awards</h4> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> -->
+                                            </uib-accordion-heading>
                                             <div class="row">
+                                                <div class="title-acc">
+                                                    <h1 class="font-karla color-primary pl10">Won</h1>
+                                                </div>
                                                 <div class="col-md-7">
-                                                    <h4>Mirchi Music Awards, IN</h4>
+                                                    <div class="awards-name">
+                                                        <ul class="padding0 list-none color-black">
+                                                            <li><span>Best Director</span></li>
+                                                            <li><span>Best Background Score</span></li>
+                                                            <li><span>Best Screenplay</span></li>
+                                                            <li><span>Best Choreography</span></li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <h4>2014</h4>
+                                                    <div class="awards-name">
+                                                        <ul class="padding0 list-none color-primary">
+                                                            <li><span>Ayan Mukherjee</span></li>
+                                                            <li><span>Pritam Chakraborty</span></li>
+                                                            <li><span>Ayan Mukherjee</span> </li>
+                                                            <li><span>Remo</span>
+                                                                <p class="color-black f12 line0">For the song "Badtameez Dil"</p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-1">
-                                                    <i class="pull-right fa" ng-class="{'fa fa-minus': accordian[3].isFirstOpen, 'fa fa-plus': !accordian[3].isFirstOpen}"></i>
-                                                </div>
                                             </div>
-                                        </uib-accordion-heading>
-                                        <div class="row">
-                                            <div class="title-acc">
-                                                <h4>WON</h4>
-                                            </div>
-                                            <div class="col-md-7">
-                                                <ul>
-                                                    <li><span>Best Director</span></li>
-                                                    <li><span>Best Background Score</span></li>
-                                                    <li><span>Best Screenplay</span></li>
-                                                    <li><span>Best Choreography</span></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <ul>
-                                                    <li><span>Ayan Mukherjee</span></li>
-                                                    <li><span>Pritam Chakraborty</span></li>
-                                                    <li><span>Ayan Mukherjee</span> </li>
-                                                    <li><span>Remo</span>
-                                                        <br>For the song "Badtameez Dil" </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </uib-accordion-group>
-                                    <uib-accordion-group is-open="accordian[4].isFirstOpen">
-                                        <uib-accordion-heading>
+                                        </uib-accordion-group>
+                                        <uib-accordion-group is-open="accordian[4].isFirstOpen">
+                                            <uib-accordion-heading>
 
+                                                <div class="row">
+                                                    <div class="col-md-7">
+                                                        <h3 class="dark-black text-up font-karla font-bold margin0">Global Indian Music Awards</h3>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <h3 class="dark-black text-up font-karla font-bold margin0">2014</h3>
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <i class="pull-right fa" ng-class="{'fa fa-minus': accordian[4].isFirstOpen, 'fa fa-plus': !accordian[4].isFirstOpen}"></i>
+                                                    </div>
+                                                </div>
+                                            </uib-accordion-heading>
                                             <div class="row">
+                                                <div class="title-acc">
+                                                    <h1 class="font-karla color-primary pl10">Won</h1>
+                                                </div>
                                                 <div class="col-md-7">
-                                                    <h4>Global Indian Music Awards</h4>
+                                                    <div class="awards-name">
+                                                        <ul class="padding0 list-none color-black">
+                                                            <li><span>Best Director</span></li>
+                                                            <li><span>Best Background Score</span></li>
+                                                            <li><span>Best Screenplay</span></li>
+                                                            <li><span>Best Choreography</span></li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <h4>2014</h4>
+                                                    <div class="awards-name">
+                                                        <ul class="padding0 list-none color-primary">
+                                                            <li><span>Ayan Mukherjee</span></li>
+                                                            <li><span>Pritam Chakraborty</span></li>
+                                                            <li><span>Ayan Mukherjee</span> </li>
+                                                            <li><span>Remo</span>
+                                                                <p class="color-black f12 line0">For the song "Badtameez Dil"</p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-1">
-                                                    <i class="pull-right fa" ng-class="{'fa fa-minus': accordian[4].isFirstOpen, 'fa fa-plus': !accordian[4].isFirstOpen}"></i>
-                                                </div>
                                             </div>
-                                        </uib-accordion-heading>
-                                        <div class="row">
-                                            <div class="title-acc">
-                                                <h4>WON</h4>
-                                            </div>
-                                            <div class="col-md-7">
-                                                <ul>
-                                                    <li><span>Best Director</span></li>
-                                                    <li><span>Best Background Score</span></li>
-                                                    <li><span>Best Screenplay</span></li>
-                                                    <li><span>Best Choreography</span></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <ul>
-                                                    <li><span>Ayan Mukherjee</span></li>
-                                                    <li><span>Pritam Chakraborty</span></li>
-                                                    <li><span>Ayan Mukherjee</span> </li>
-                                                    <li><span>Remo</span>
-                                                        <br>For the song "Badtameez Dil" </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </uib-accordion-group>
-                                </uib-accordion>
+                                        </uib-accordion-group>
+                                    </uib-accordion>
+                                </div>
                             </div>
                         </div>
                     </div>
