@@ -631,7 +631,8 @@ a {
     bottom: 0;
 }
 .movie-inside-date {
-    padding: 0 50px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 .all-tabs {
     background: url(../img/tab-bg.png)no-repeat;
@@ -668,7 +669,8 @@ a {
     background: url(../img/main2.png)no-repeat;
     background-size: contain;
     background-position: right bottom;
-    padding: 20px 0 30px;
+    padding-top: 20px;
+    padding-bottom: 30px;
 }
 .cast {
     h1 {
@@ -699,7 +701,8 @@ a {
     font-size: 18px;
 }
 .cast-credit {
-    padding: 20px 0 50px;
+  padding-top: 20px;
+  padding-bottom: 60px;
 }
 .mt60 {
     margin-top: 60px;
