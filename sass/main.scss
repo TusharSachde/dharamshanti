@@ -1067,5 +1067,28 @@ margin-right: 15px;
 }
   }
 }
+.info-icon{
+  margin-right: 5px;
+  img{
+        vertical-align: sub;
+  }
+}
+.padd-all-side {
+    padding: 50px 0px 30px 0px;
+}
+.map {
+    background-color: #f37021;
+    color: #fff;
+    padding: 20px 25px;
+    right: 83px;
+bottom: -15px;
+    p {
+   line-height: 100%;
+}
+span{
+  display: block;
+  margin-top: 25px;
+}
+}
 @import "fancybox-override";
 @import "main2";
