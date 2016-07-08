@@ -1,63 +1,71 @@
 <section>
-  <div class="dharma-tv-bg">
+  <div class="dharma-top-bg">
     <div class="container">
       <div class="row">
         <div class="text-center">
-          <div class="head-title">
-              <h1>DhARMA TV</h1>
+          <div class="head-title mt45">
+              <h1 class="color-white f120 text-up font-hammersmith">DhARMA TV</h1>
           </div>
-          <div class="search-movie ">
-              <input type="search" name="name" value="">
+          <div class="search-movie dh-relative">
+            <div class="search-img">
+              <img src="img/search.png" alt="Dharma Productions">
+            </div>
+              <input type="search" name="name" value="" class="search-in" placeholder="Search for your favourite movie">
           </div>
+        </div>
+      </div>
+    </div>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="tv-inside mt60">
+          <div class="title">
+              <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">BAAHUBALI</h1>
+          </div>
+        </div>
+        <div class="text-shadow">
+        <div class="row">
+          <div class="col-md-4 padding0" ng-repeat="item in allvideos track by $index">
+            <div class="tv-box">
+              <div class="img-inside-box">
+                <a href=""><img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive"></a>
+              </div>
+              <div class="video-names mt10">
+                <span class="color-white text-cap">{{item.name}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="border-left">
+          <h3 class="color-primary">OTHER MOVIES</h3>
+          <ul class="list-none color-white padding0">
+            <li><a href="">Kapoor & Sons</a></li>
+            <li><a href="">Brothers</a></li>
+            <li><a href="">Hasee Toh Phasee</a></li>
+            <li><a href="">Ungli</a></li>
+            <li><a href="">Humpty Sharma Ki Dulhania</a></li>
+            <li><a href="">Gori Tere Pyaar Mein!</a></li>
+            <li><a href="">Student of the Year</a></li>
+            <li><a href="">Agneepath</a></li>
+            <li><a href="">Gippi</a></li>
+            <li><a href="">Kal Ho Naa Ho</a></li>
+            <li><a href="">Kuch Kuch Hota Hai</a></li>
+            <li><a href="">Kabhi Alvida Naa Kehna</a></li>
+            <li><a href="">Kabhi Khushi Kabhie Gham</a></li>
+            <li><a href="">Duplicate</a></li>
+            <li><a href="">Dostana</a></li>
+
+          </ul>
+          <a href="" class="color-grey"><h4>See More</h4></a>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="tv-inside">
-          <div class="title">
-              <h1>BAAHUBALI</h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4" ng-repeat="item in allvideos track by $index">
-            <div class="tv-box">
-              <a href=""><img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive"></a>
-              <div class="movie-title">
-                <span>{{item.name}}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="border-left">
-          <h4>OTHER MOVIES</h4>
-          <ul>
-            <li>Kapoor & Sons</li>
-            <li>Brothers</li>
-            <li>Hasee Toh Phasee</li>
-            <li>Ungli</li>
-            <li>Humpty Sharma Ki Dulhania</li>
-            <li>Gori Tere Pyaar Mein!</li>
-            <li>Student of the Year</li>
-            <li>Agneepath</li>
-            <li>Gippi</li>
-            <li>Kal Ho Naa Ho</li>
-            <li>Kuch Kuch Hota Hai</li>
-            <li>Kabhi Alvida Naa Kehna</li>
-            <li>Kabhi Khushi Kabhie Gham</li>
-            <li>Duplicate</li>
-            <li>Dostana</li>
-
-          </ul>
-          <a href="">See More</a>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
 </section>
