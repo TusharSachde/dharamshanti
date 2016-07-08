@@ -1051,5 +1051,21 @@ vertical-align: -webkit-baseline-middle;
   outline: 0;
 
 }
+.fb-btn{
+  button{
+    background: #2f5f9e;
+border: 1px solid #2f5f9e;
+padding: 0px 16px;
+font-size: 13px;
+border-radius: 5px;
+i{
+  padding: 12px 15px 10px 0px;
+font-size: 20px;
+vertical-align: middle;
+border-right: 1px solid #1e395d;
+margin-right: 15px;
+}
+  }
+}
 @import "fancybox-override";
 @import "main2";
