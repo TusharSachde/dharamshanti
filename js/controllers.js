@@ -535,44 +535,46 @@ desc: "New Delhi: Films as varied as Raajneeti, Rockstar, Yeh Jawaani Hai Deewan
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.video = [{
-            img: "img/movie/m1.jpg",
-            name: "Ae Dil hai mushkil"
+            img: "img/movie/m6.jpg",
+            name: "Dhivara Full Video Song  Baahubali (Hindi) "
 
         }, {
-            img: "img/movie/m2.jpg",
-            name: "BAAR BAAR DEKHO"
+            img: "img/movie/m7.jpg",
+            name: "Making of Bahubali - Bull Fight Sequence"
 
         }, {
-            img: "img/movie/m3.jpg",
-            name: "BADRINATH KI DULHANIYA"
+            img: "img/movie/m8.jpg",
+            name: "Baahubali Trailer | Prabhas, Rana Daggubati, Anushka, Tama..."
 
         }, {
-            img: "img/movie/m4.jpg",
-            name: "RAM LAKHAN"
+            img: "img/movie/m9.jpg",
+            name: "Making Of Bahubali VFX Work On Bull Fight With Rana..."
 
         }, {
-            img: "img/movie/m5.jpg",
-            name: "ok jaanu"
+          img: "img/movie/m6.jpg",
+          name: "Dhivara Full Video Song  Baahubali (Hindi) "
 
         }, {
-            img: "img/movie/m1.jpg",
-            name: "Ae Dil hai mushkil"
+          img: "img/movie/m7.jpg",
+          name: "Making of Bahubali - Bull Fight Sequence"
 
         }, {
-            img: "img/movie/m2.jpg",
-            name: "BAAR BAAR DEKHO"
+          img: "img/movie/m8.jpg",
+          name: "Baahubali Trailer | Prabhas, Rana Daggubati, Anushka, Tama..."
 
         }, {
-            img: "img/movie/m3.jpg",
-            name: "BADRINATH KI DULHANIYA"
+          img: "img/movie/m9.jpg",
+          name: "Making Of Bahubali VFX Work On Bull Fight With Rana..."
+
 
         }, {
-            img: "img/movie/m4.jpg",
-            name: "RAM LAKHAN"
+          img: "img/movie/m6.jpg",
+          name: "Dhivara Full Video Song  Baahubali (Hindi) "
 
         }, {
-            img: "img/movie/m5.jpg",
-            name: "ok jaanu"
+          img: "img/movie/m8.jpg",
+          name: "Baahubali Trailer | Prabhas, Rana Daggubati, Anushka, Tama..."
+
 
         }]
 

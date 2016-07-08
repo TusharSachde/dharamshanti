@@ -1,20 +1,23 @@
 <section>
-  <div class="dharma-tv-bg">
+  <div class="dharma-top-bg">
     <div class="container">
       <div class="row">
         <div class="text-center">
-          <div class="head-title">
-              <h1>DhARMA TV</h1>
+          <div class="head-title mt45">
+              <h1 class="color-white f120 text-up font-hammersmith">DhARMA TV</h1>
           </div>
-          <div class="search-movie ">
-              <input type="search" name="name" value="">
+          <div class="search-movie dh-relative">
+            <div class="search-img">
+              <img src="img/search.png" alt="Dharma Productions">
+            </div>
+              <input type="search" name="name" value="" class="search-in" placeholder="Search for your favourite movie">
           </div>
         </div>
-        <div class="video-player">
-          <div class="video-play">
+        <div class="video-player mt15">
+          <div class="video-play dh-relative">
             <img src="img/video-play.jpg" alt="Dharma Productions" class="img-responsive"/>
-            <div class="play-btn text-center">
-              <img src="img/play-btn.jpg" alt="Dharma Productions">
+            <div class="play-btn text-center dh-absulate middle">
+              <a href=""><img src="img/play-btn.jpg" alt="Dharma Productions"></a>
             </div>
           </div>
         </div>
@@ -22,18 +25,18 @@
       <div class="row">
         <div class="col-md-12">
             <div class="upcoming-movie">
-                <div class="title">
-                    <h1>BAAHUBALI</h1>
+                <div class="title mt30">
+                    <h1 class="ml-7 color-primary font-hammersmith line45 f90">BAAHUBALI</h1>
                 </div>
-                <div class="upcoming-slider">
-                    <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="205" item-margin="25" animationloop="true" move="1">
+                <div class="upcoming-slider tv-all-slider text-shadow">
+                    <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="280" item-margin="0" animationloop="true" move="1">
                         <li>
                             <div class="video-box">
                                 <div class="video-slide-img">
                                     <a ui-sref="tv-inside"><img ng-src="{{item.img}}" alt="Dharma Productions"></a>
                                 </div>
-                                <div class="video-name">
-                                    <span>{{item.name}}</span>
+                                <div class="video-names mt10">
+                                    <span class="color-white text-cap">{{item.name}}</span>
                                 </div>
 
 
@@ -42,8 +45,8 @@
                     </flex-slider>
                 </div>
                 <div class="pull-right">
-                  <div class="btn-outline">
-                    <button type="button" name="button">view all</button>
+                  <div class="btn-outline mt25">
+                  <button type="button" name="button" class="btn-grey font-hammersmith btn-padding">VIEW ALL</button>
                   </div>
                 </div>
             </div>

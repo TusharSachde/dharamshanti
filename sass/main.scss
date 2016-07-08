@@ -285,9 +285,15 @@ a {
     }
 }
 .dharma-tv-bg {
-    background: url(../img/tv-bg.jpg)no-repeat;
+    background: url(../img/tv-bg.jpg)no-repeat center center;
     background-size: cover;
     padding: 100px 0;
+}
+.dharma-top-bg {
+    @extend .dharma-tv-bg;
+    background: url(../img/tv-bg.jpg)no-repeat fixed;
+    background-position: top center;
+    background-size: cover;
 }
 .f90 {
     font-size: 90px;
@@ -347,6 +353,9 @@ a {
     .flex-control-nav {
         display: none;
     }
+}
+.tv-all-slider{
+  @extend .slider-nav;
 }
 .btn-grey {
     @include button-variant($grey, transparent, $grey);
@@ -538,7 +547,7 @@ a {
                     width: 35px;
                     color: $black;
                     border-radius: 100%;
-                    padding:8px 8px;
+                    padding: 8px;
                 }
             }
         }
@@ -846,8 +855,8 @@ a {
 }
 .dark-black {
     color: $dark-black;
-    &:focus{
-      outline:0;
+    &:focus {
+        outline: 0;
     }
 }
 .movie-award {
@@ -862,32 +871,55 @@ a {
             background-color: transparent;
             border-color: transparent;
             padding: 8px 15px;
-                border-bottom: 3px solid #ddd;
-                &:focus{
-                  outline: 0;
-                }
+            border-bottom: 3px solid #ddd;
+            &:focus {
+                outline: 0;
+            }
         }
-        .panel-body{
-          border-top: 0px solid #ddd !important;
+        .panel-body {
+            border-top: 0 solid #ddd !important;
         }
     }
 }
-.list-none{
-  list-style: none;
+.list-none {
+    list-style: none;
 }
-.awards-name{
-  ul{
-    li {
-      font-size: 16px;
-      line-height: 200%;
-
-  }
-  }
+.awards-name {
+    ul {
+        li {
+            font-size: 16px;
+            line-height: 200%;
+        }
+    }
 }
-.line0{
-  line-height: 0;
+.line0 {
+    line-height: 0;
 }
-.pl10{
-      padding-left: 10px;
+.pl10 {
+    padding-left: 10px;
+}
+.search-in {
+    background: transparent;
+    border: 1px solid $brand-primary;
+    width: 100%;
+    height: 45px;
+    padding: 0 0 0 45px;
+    @include placeholder {
+        color: $white;
+    }
+}
+.search-img {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+}
+.f120{
+  font-size: 120px;
+}
+.video-names{
+  padding: 0px 10px;
+}
+.ml-7{
+  margin-left: -7px;
 }
 @import "fancybox-override";
