@@ -354,8 +354,8 @@ a {
         display: none;
     }
 }
-.tv-all-slider{
-  @extend .slider-nav;
+.tv-all-slider {
+    @extend .slider-nav;
 }
 .btn-grey {
     @include button-variant($grey, transparent, $grey);
@@ -364,6 +364,21 @@ a {
     &:hover {
         @include button-variant($black, $grey, $grey);
         border: 2px solid $grey;
+    }
+    &:focus {
+        outline: 0;
+    }
+    &:active {
+        outline: 0;
+    }
+}
+.btn-black {
+    @include button-variant($black, transparent, $black);
+    border: 2px solid $black;
+    @include transition(all 300ms ease);
+    &:hover {
+        @include button-variant($brand-primary, $black, $black);
+        border: 2px solid $black;
     }
     &:focus {
         outline: 0;
@@ -782,6 +797,19 @@ a {
 .masonry-brick {
     margin-bottom: 10px;
 }
+
+.custom-box{
+  .masonry-brick {
+      margin-bottom: 10px;
+      background-color: $black;
+  }
+}
+.padd10{
+  padding: 10px;
+  span, p{
+    color:#b3b3b3;
+  }
+}
 .overlay {
     height: 100%;
     width: 100%;
@@ -907,27 +935,33 @@ a {
     width: 100%;
     height: 45px;
     padding: 0 0 0 45px;
-      color: $white;
-      &:focus{
+    color: $white;
+    &:focus {
         outline: 0;
-      }
+    }
     @include placeholder {
         color: $white;
     }
+}
+.search-date {
+    @extend .search-in;
+    background: #da4f09;
+    border: 1px solid #da4f09;
+    width: 50%;
 }
 .search-img {
     position: absolute;
     top: 12px;
     left: 10px;
 }
-.f120{
-  font-size: 120px;
+.f120 {
+    font-size: 120px;
 }
-.video-names{
-  padding: 0px 10px;
+.video-names {
+    padding: 0 10px;
 }
-.ml-7{
-    margin: 0px 0px 0px -6px;
+.ml-7 {
+    margin: 0 0 0 -6px;
 }
 .img-inside-box {
     height: 146px;
@@ -935,33 +969,61 @@ a {
     overflow: hidden;
     text-align: center;
     margin: 0;
-img{
-  max-width: 100%;
-  max-height: 100%;
-}
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
 }
 .tv-box {
     margin-bottom: 50px;
 }
 .border-left {
     margin-top: 40px;
-    padding: 0px 0px 0px 30px;
+    padding: 0 0 0 30px;
     border-left: 1px solid;
-    ul{
-      li{
-           line-height: 200%;
-           font-family: 'Hammersmith One';
-           a{
-             color:$white;
+    ul {
+        li {
+            line-height: 200%;
+            font-family: 'Hammersmith One';
+            a {
+                color: $white;
                 @include transition(all 300ms ease);
-                &:hover{
-                  color:$brand-primary;
+                &:hover {
+                    color: $brand-primary;
                 }
-           }
-
-      }
+            }
+        }
     }
 }
-
+.bg-primary {
+    background-color: #ea611a;
+}
+.news-search {
+    padding-top: 150px;
+}
+.date-select {
+    select {
+        background-color: transparent;
+        color: #FFF;
+        border: none;
+        border-bottom: 1px solid;
+        cursor: pointer;
+        margin-right: 10px;
+        @include appearance(none);
+        background: url("../img/select-arrow.png") no-repeat;
+        background-position: 59px 18px;
+        padding: 7px 24px 0 6px;
+        &:focus {
+            border-bottom: 1px solid $white;
+        }
+        option{
+          background-color: #da4f09;
+color: #fff;
+        }
+    }
+}
+.ml15 {
+    margin-left: 15px;
+}
 @import "fancybox-override";
 @import "main2";
