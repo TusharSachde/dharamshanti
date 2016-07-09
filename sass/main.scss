@@ -625,7 +625,7 @@ a {
     bottom: -42px;
 }
 .mr2 {
-    margin-right: -2px;
+    margin-right: -4px;
 }
 .tab-active {
     padding: 70px 0 80px;
@@ -1109,7 +1109,7 @@ a {
             rect {
                 stroke-width: 5;
                 stroke-dasharray: 15, 310;
-                stroke-dashoffset: 125;
+                stroke-dashoffset: 55;
                 -webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
                 transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
             }
@@ -1144,6 +1144,27 @@ a {
         max-width: 160px;
         padding: 11px 20px 0;
     }
+}
+.btn-view-all{
+  @extend .btn-view-more;
+  .btn{
+    color:$grey;
+    display: inline-block;
+  }
+  .btn-1{
+    rect {
+        fill: none;
+        stroke: $grey;
+
+    }
+    &:hover{
+      rect {
+
+          stroke-dashoffset: 55;
+
+      }
+    }
+  }
 }
 .movie-tab {
     ul {
