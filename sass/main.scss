@@ -1098,5 +1098,82 @@ a {
     bottom: 40px;
     @include transition(all 300ms ease);
 }
+.btn-view-more {
+    .btn-1 {
+        background: transparent;
+        font-weight: 100;
+        &:hover {
+            background: rgba(225, 51, 45, 0);
+            font-weight: 900;
+            letter-spacing: 1px;
+            rect {
+                stroke-width: 5;
+                stroke-dasharray: 15, 310;
+                stroke-dashoffset: 125;
+                -webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+                transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+            }
+        }
+        svg {
+            height: 40px;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+        rect {
+            fill: none;
+            stroke: $brand-primary;
+            stroke-width: 2;
+            stroke-dasharray: 422, 0;
+            -webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+            transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+    }
+    .btn {
+        color: $brand-primary;
+        cursor: pointer;
+        display: block;
+        font-size: 16px;
+        font-weight: 400;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        vertical-align: middle;
+        width: 100%;
+        max-width: 160px;
+        padding: 11px 20px 0;
+    }
+}
+.movie-tab {
+    ul {
+        li {
+            background: $black;
+            color: $brand-primary;
+            padding: 13px 70px 9px;
+            cursor: pointer;
+            &:first-child {
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+            &:last-child {
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+            h1 {
+                background: -webkit-linear-gradient(#ff6001, #fab185);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        .active-tab {
+            h1 {
+                background: -webkit-linear-gradient(#ffffff, #949494);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+}
 @import "fancybox-override";
 @import "main2";
