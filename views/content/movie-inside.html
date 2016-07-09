@@ -27,6 +27,7 @@
                         <button type="button" class="btn {{classb}}" ng-click="tabchange('cast',2)"> CAST & CREDITS</button>
                         <button type="button" class="btn {{classc}}" ng-click="tabchange('news',3)"> News</button>
                         <button type="button" class="btn {{classd}}" ng-click="tabchange('gallery',4)">Gallery</button>
+                        <button type="button" class="btn {{classe}}" ng-click="tabchange('scen',5)">behind the scenes</button>
 
                         <button type="button" class="btn {{classf}}" ng-click="tabchange('video',6)"> VIDEOS </button>
                         <button type="button" class="btn {{classg}}" ng-click="tabchange('wallpapper',7)">WALLPAPERS </button>
@@ -225,6 +226,42 @@
                     </div>
                 </div>
                 <div class="gallery" ng-if="tab=='gallery'">
+                    <div class="movie-inside-date bg-cast cast-credit">
+                        <div class="row">
+                            <div class="col-md-11">
+                                <div class="all-movies masonry-width">
+                                    <div masonry preserve-order column-width="320">
+                                        <div class="masonry-brick" ng-repeat="item in gallery track by $index">
+                                            <div class="masonry-box">
+                                                <img ng-src="{{item}}" alt="Dharma Production">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="social-share pull-right">
+                                    <span class="font-karla font-bold color-light-grey f18">share</span>
+                                    <ul class="padding0">
+
+                                        <li>
+                                            <a href=""><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href=""><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href=""><i class="fa fa-google-plus"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery" ng-if="tab=='scene'">
                     <div class="movie-inside-date bg-cast cast-credit">
                         <div class="row">
                             <div class="col-md-11">
