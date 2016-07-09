@@ -532,6 +532,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Dharma Tv");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+
+    $scope.mySlides = [
+      'img/video-play.jpg',
+      'img/video-play.jpg'
+    ];
     $scope.video = [{
       img: "img/movie/m6.jpg",
       name: "Dhivara Full Video Song  Baahubali (Hindi) "

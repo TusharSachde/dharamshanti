@@ -1,152 +1,157 @@
 <section>
-  <div class="dharma-top-bg">
-    <div class="container">
-      <div class="row">
-        <div class="text-center">
-          <div class="head-title mt45">
-              <h1 class="color-white f120 text-up font-hammersmith">DhARMA TV</h1>
-          </div>
-          <div class="search-movie dh-relative">
-            <div class="search-img">
-              <img src="img/search.png" alt="Dharma Productions">
-            </div>
-              <input type="search" name="name" value="" class="search-in" placeholder="Search for your favourite movie">
-          </div>
-        </div>
-        <div class="video-player mt15">
-          <div class="video-play dh-relative">
-            <img src="img/video-play.jpg" alt="Dharma Productions" class="img-responsive"/>
-            <div class="play-btn text-center dh-absulate middle">
-              <a href=""><img src="img/play-btn.jpg" alt="Dharma Productions"></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-            <div class="upcoming-movie mt100">
-                <div class="title ">
-                    <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">BAAHUBALI</h1>
+    <div class="dharma-top-bg">
+        <div class="container">
+            <div class="row">
+                <div class="text-center">
+                    <div class="head-title mt45">
+                        <h1 class="color-white f120 text-up font-hammersmith">DhARMA TV</h1>
+                    </div>
+                    <div class="search-movie dh-relative">
+                        <div class="search-img">
+                            <img src="img/search.png" alt="Dharma Productions">
+                        </div>
+                        <input type="search" name="name" value="" class="search-in" placeholder="Search for your favourite movie">
+                    </div>
                 </div>
-                <div class="upcoming-slider tv-all-slider text-shadow">
-                    <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
+                <div class="video-player mt15 tv-all-slider">
+                    <flex-slider flex-slide="s in mySlides track by $index" prev-text="" next-text="">
                         <li>
-                            <div class="video-box">
-                                <div class="video-slide-img">
-                                    <a ui-sref="tv-inside"><img ng-src="{{item.img}}" alt="Dharma Productions"></a>
+                            <div class="video-play dh-relative">
+                                <img src="{{s}}" alt="Dharma Productions" class="img-responsive" />
+                                <div class="play-btn text-center dh-absulate middle">
+                                    <a href=""><img src="img/play-btn.jpg" alt="Dharma Productions"></a>
                                 </div>
-                                <div class="video-names mt10">
-                                    <span class="color-white text-cap">{{item.name}}</span>
-                                </div>
-
-
                             </div>
                         </li>
                     </flex-slider>
-                </div>
-                <div class="pull-right">
-                  <div class="btn-outline mt40">
-                  <button type="button" name="button" class="btn-grey font-hammersmith btn-padding" ui-sref="tv-inside">VIEW ALL</button>
-                  </div>
+
                 </div>
             </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-            <div class="upcoming-movie mt60">
-                <div class="title">
-                    <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">KAPOOR & SONS</h1>
-                </div>
-                <div class="upcoming-slider tv-all-slider text-shadow">
-                    <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
-                        <li>
-                            <div class="video-box">
-                                <div class="video-slide-img">
-                                    <img ng-src="{{item.img}}" alt="Dharma Productions">
-                                </div>
-                                <div class="video-names mt10">
-                                    <span class="color-white text-cap">{{item.name}}</span>
-                                </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="upcoming-movie mt100">
+                        <div class="title ">
+                            <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">BAAHUBALI</h1>
+                        </div>
+                        <div class="upcoming-slider tv-all-slider text-shadow">
+                            <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
+                                <li>
+                                    <div class="video-box">
+                                        <div class="video-slide-img">
+                                            <a ui-sref="tv-inside"><img ng-src="{{item.img}}" alt="Dharma Productions"></a>
+                                        </div>
+                                        <div class="video-names mt10">
+                                            <span class="color-white text-cap">{{item.name}}</span>
+                                        </div>
 
 
+                                    </div>
+                                </li>
+                            </flex-slider>
+                        </div>
+                        <div class="pull-right">
+                            <div class="btn-outline mt40">
+                                <button type="button" name="button" class="btn-grey font-hammersmith btn-padding" ui-sref="tv-inside">VIEW ALL</button>
                             </div>
-                        </li>
-                    </flex-slider>
-                </div>
-                <div class="pull-right">
-                  <div class="btn-outline mt40">
-                  <button type="button" name="button" class="btn-grey font-hammersmith btn-padding" ui-sref="tv-inside">VIEW ALL</button>
-                  </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-            <div class="upcoming-movie mt60">
-                <div class="title">
-                    <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">Brothers</h1>
-                </div>
-                <div class="upcoming-slider tv-all-slider text-shadow">
-                    <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
-                        <li>
-                            <div class="video-box">
-                                <div class="video-slide-img">
-                                    <img ng-src="{{item.img}}" alt="Dharma Productions">
-                                </div>
-                                <div class="video-names mt10">
-                                    <span class="color-white text-cap">{{item.name}}</span>
-                                </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="upcoming-movie mt60">
+                        <div class="title">
+                            <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">KAPOOR & SONS</h1>
+                        </div>
+                        <div class="upcoming-slider tv-all-slider text-shadow">
+                            <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
+                                <li>
+                                    <div class="video-box">
+                                        <div class="video-slide-img">
+                                            <img ng-src="{{item.img}}" alt="Dharma Productions">
+                                        </div>
+                                        <div class="video-names mt10">
+                                            <span class="color-white text-cap">{{item.name}}</span>
+                                        </div>
 
 
+                                    </div>
+                                </li>
+                            </flex-slider>
+                        </div>
+                        <div class="pull-right">
+                            <div class="btn-outline mt40">
+                                <button type="button" name="button" class="btn-grey font-hammersmith btn-padding" ui-sref="tv-inside">VIEW ALL</button>
                             </div>
-                        </li>
-                    </flex-slider>
-                </div>
-                <div class="pull-right">
-                  <div class="btn-outline mt40">
-                  <button type="button" name="button" class="btn-grey font-hammersmith btn-padding" ui-sref="tv-inside">VIEW ALL</button>
-                  </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-            <div class="upcoming-movie mt60">
-                <div class="title">
-                    <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">Hasee Toh Phasee</h1>
-                </div>
-                <div class="upcoming-slider tv-all-slider text-shadow">
-                    <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
-                        <li>
-                            <div class="video-box">
-                                <div class="video-slide-img">
-                                    <img ng-src="{{item.img}}" alt="Dharma Productions">
-                                </div>
-                                <div class="video-names mt10">
-                                    <span class="color-white text-cap">{{item.name}}</span>
-                                </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="upcoming-movie mt60">
+                        <div class="title">
+                            <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">Brothers</h1>
+                        </div>
+                        <div class="upcoming-slider tv-all-slider text-shadow">
+                            <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
+                                <li>
+                                    <div class="video-box">
+                                        <div class="video-slide-img">
+                                            <img ng-src="{{item.img}}" alt="Dharma Productions">
+                                        </div>
+                                        <div class="video-names mt10">
+                                            <span class="color-white text-cap">{{item.name}}</span>
+                                        </div>
 
 
+                                    </div>
+                                </li>
+                            </flex-slider>
+                        </div>
+                        <div class="pull-right">
+                            <div class="btn-outline mt40">
+                                <button type="button" name="button" class="btn-grey font-hammersmith btn-padding" ui-sref="tv-inside">VIEW ALL</button>
                             </div>
-                        </li>
-                    </flex-slider>
+                        </div>
+                    </div>
                 </div>
-                <div class="pull-right">
-                  <div class="btn-outline mt40">
-                  <button type="button" name="button" class="btn-grey font-hammersmith btn-padding" ui-sref="tv-inside">VIEW ALL</button>
-                  </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="upcoming-movie mt60">
+                        <div class="title">
+                            <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">Hasee Toh Phasee</h1>
+                        </div>
+                        <div class="upcoming-slider tv-all-slider text-shadow">
+                            <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
+                                <li>
+                                    <div class="video-box">
+                                        <div class="video-slide-img">
+                                            <img ng-src="{{item.img}}" alt="Dharma Productions">
+                                        </div>
+                                        <div class="video-names mt10">
+                                            <span class="color-white text-cap">{{item.name}}</span>
+                                        </div>
+
+
+                                    </div>
+                                </li>
+                            </flex-slider>
+                        </div>
+                        <div class="pull-right">
+                            <div class="btn-outline mt40">
+                                <button type="button" name="button" class="btn-grey font-hammersmith btn-padding" ui-sref="tv-inside">VIEW ALL</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="btn-outline mt40">
+                    <button type="button" name="button" class="btn-primary-outline font-hammersmith btn-enter text-up">view more</button>
                 </div>
             </div>
         </div>
-      </div>
-      <div class="text-center">
-        <div class="btn-outline mt40">
-          <button type="button" name="button" class="btn-primary-outline font-hammersmith btn-enter text-up">view more</button>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
