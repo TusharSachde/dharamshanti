@@ -639,9 +639,11 @@ a {
     background-size: 100% 100%;
 }
 .movie-inside-bg {
-    background: url("../img/movie-banner-bg.jpg");
-    padding: 0 60px;
+    background: url("../img/big-banner.jpg")no-repeat top center fixed;
+    padding: 575px 60px 0px 60px;
+  background-size: cover;
 }
+
 .width100 {
     width: 100%;
 }
@@ -791,7 +793,7 @@ a {
 }
 .masonry-width {
     .masonry-box {
-        width: 310px;
+        width: 290px;
     }
 }
 .masonry-brick {
@@ -1092,18 +1094,11 @@ span{
 }
 .know{
   text-align: right;
-  &:hover{
-    .add-show{
-      opacity: 1;
-      @include transition(all 300ms ease);
-    }
-  }
 }
 .add-show{
   @extend .map;
     right: 0px;
     bottom: 40px;
-    opacity: 0;
     @include transition(all 300ms ease);
 }
 @import "fancybox-override";
