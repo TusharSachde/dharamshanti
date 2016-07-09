@@ -1090,5 +1090,21 @@ span{
   margin-top: 25px;
 }
 }
+.know{
+  text-align: right;
+  &:hover{
+    .add-show{
+      opacity: 1;
+      @include transition(all 300ms ease);
+    }
+  }
+}
+.add-show{
+  @extend .map;
+    right: 0px;
+    bottom: 40px;
+    opacity: 0;
+    @include transition(all 300ms ease);
+}
 @import "fancybox-override";
 @import "main2";
