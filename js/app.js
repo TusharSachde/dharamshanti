@@ -29,22 +29,22 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     controller: 'AwardsCtrl'
   })
     .state('dharma-tv', {
-    url: "/",
+    url: "/dharma-tv",
     templateUrl: "views/template.html",
     controller: 'DharmaTvCtrl'
   })
     .state('tv-inside', {
-    url: "/",
+    url: "/tv-inside",
     templateUrl: "views/template.html",
     controller: 'TvInsideCtrl'
   })
     .state('dharma-world', {
-    url: "/",
+    url: "/dharma-world",
     templateUrl: "views/template.html",
     controller: 'DharmaWorldCtrl'
   })
     .state('news-events', {
-    url: "/",
+    url: "/news-events",
     templateUrl: "views/template.html",
     controller: 'NewsEventsCtrl'
   })
@@ -54,17 +54,17 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     controller: 'DharmaJourneyCtrl'
   })
     .state('contact-us', {
-    url: "/",
+    url: "/contact-us",
     templateUrl: "views/template.html",
     controller: 'ContactUsCtrl'
   })
     .state('movie-inside', {
-    url: "/",
+    url: "/movie-inside",
     templateUrl: "views/template.html",
     controller: 'MovieInsideCtrl'
   })
     .state('overview', {
-    url: "/",
+    url: "/overview",
     templateUrl: "views/template.html",
     controller: 'OverviewCtrl'
   });
