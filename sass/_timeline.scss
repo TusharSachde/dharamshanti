@@ -1,7 +1,7 @@
 
 $main-text: #7f8c97; // main text
 $link: #acb7c0; // anchor tags
-$background: #e9f0f5; // body background color
+$background: #fff; // body background color
 
 $color-1: #303e49; // blue dark
 $color-2: #c03b44; // red
@@ -55,7 +55,7 @@ Modules - reusable parts of our design
 -------------------------------- */
 
 .cd-container { /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
-	width: 90%;
+	width: 80%;
 	max-width: $L; // breakpoints inside partials > _layout.scss
 	margin: 0 auto;
 
@@ -76,7 +76,7 @@ Main components
 	position: relative;
 	padding: 2em 0;
 	margin: {
-		top: 2em;
+		top: 0em;
 		bottom: 2em;
 	}
 
@@ -93,7 +93,7 @@ Main components
 
 	@include MQ(L) {
 		margin: {
-			top: 3em;
+			top: 0em;
 			bottom: 3em;
 		}
 
@@ -106,7 +106,6 @@ Main components
 
 .cd-timeline-block {
 	position: relative;
-	margin: 2em 0;
 	@include clearfix;
 
 	&:first-child {
@@ -118,7 +117,6 @@ Main components
 	}
 
 	@include MQ(L) {
-		margin: 4em 0;
 
 		&:first-child {
 			margin-top: 0;
@@ -132,17 +130,18 @@ Main components
 
 .cd-timeline-img {
 	position: absolute;
-	top: 0;
+	top: 50%;
 	left: 0;
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
-	box-shadow: 0 0 0 4px $color-3, inset 0 2px 0 rgba(#000, .08), 0 3px 0 4px rgba(#000, .05) ;
+	border:1px solid #f67321;
+      transform: translateY(-50%) !important;
 
 	img {
 		display: block;
-		width: 24px;
-		height: 24px;
+		width: 10px;
+		height: 10px;
 		position: relative;
 		left: 50%;
 		top: 50%;
@@ -151,22 +150,22 @@ Main components
 	}
 
 	&.cd-picture {
-		background: $color-4;
+		background: $background;
 	}
 
 	&.cd-movie {
-		background: $color-2;
+		background:$background;
 	}
 
 	&.cd-location {
-		background: $color-5;
+		background: $background;
 	}
 
 	@include MQ(L) {
-		width: 60px;
-		height: 60px;
+		width: 10px;
+		height: 10px;
 		left: 50%;
-		margin-left: -30px;
+		margin-left: -5px;
 
 		/* Force Hardware Acceleration in WebKit */
 		-webkit-transform: translateZ(0);
@@ -201,30 +200,22 @@ Main components
 
 .cd-timeline-content {
 	position: relative;
-	margin-left: 60px;
+	margin-left: 120px;
 	background: $color-3;
 	@include border-radius;
-	padding: 1em;
-	box-shadow: 0 3px 0 darken($background, 5%);
 	@include clearfix;
 
-	h2 {
-		color: $color-1;
-	}
-
-	p, .cd-read-more, .cd-date {
-		@include font-size(13px);
-	}
-
-	.cd-read-more, .cd-date {
-		display: inline-block;
-	}
-
 	p {
-		margin: 1em 0;
-		line-height: 1.6;
+    font-size: 18px;
+    font-weight: 700;
 	}
+span{
+  font-size: 18px;
+color: #848484;
+margin-top: 25px;
+display: block;
 
+}
 	.cd-read-more {
 		float: right;
 		padding: .8em 1em;
@@ -254,49 +245,25 @@ Main components
 		border-right: 7px solid $color-3;
 	}
 
-	@include MQ(M) {
-		h2 {
-			@include font-size(20px);
-		}
-
-		p {
-			@include font-size(16px);
-		}
-
-		.cd-read-more, .cd-date {
-			@include font-size(14px);
-		}
-	}
 
 	@include MQ(L) {
-		margin-left: 0;
-		padding: 1.6em;
-		width: 45%;
+		padding: 0em;
+		width: 35%;
 
 		&::before {
-			top: 24px;
+			top: 50%;
 			left: 100%;
 			border-color: transparent;
 			border-left-color: $color-3;
+          transform: translateY(-50%)
 		}
 
-		.cd-read-more {
-			float: left;
-		}
-
-		.cd-date {
-			position: absolute;
-			width: 100%;
-			left: 122%;
-			top: 6px;
-			@include font-size(16px);
-		}
 
 		.cd-timeline-block:nth-child(even) & {
 			float: right;
-
+margin-right: 120px;
 			&::before {
-				top: 24px;
+				top: 50%;
 				left: auto;
 				right: 100%;
 				border-color: transparent;
@@ -362,4 +329,22 @@ Main components
 	100% {
 		@include transform(translateX(0));
 	}
+}
+.img-timline-box{
+  img{
+    border-top-left-radius: 0.25em;
+border-bottom-left-radius: 0.25em;
+  }
+}
+.img-timline-box2{
+  img{
+    border-top-right-radius: 0.25em;
+border-bottom-right-radius: 0.25em;
+  }
+}
+.contents {
+    padding: 15px 10px 0px 0px;
+}
+.contents2 {
+  padding: 14px 7px 10px 18px;
 }
