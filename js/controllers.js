@@ -1,4 +1,4 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'wu.masonry','ksSwiper'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'wu.masonry', 'ksSwiper'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   //Used to name the .html file
@@ -189,32 +189,32 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }]
 
   })
-  .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService,$uibModal) {
+  .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService, $uibModal) {
     $scope.template = TemplateService.changecontent("movie-inside");
     $scope.menutitle = NavigationService.makeactive("Movie Inside");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.animationsEnabled = true;
 
-$scope.open = function (size) {
+    $scope.open = function(size) {
 
-  var modalInstance = $uibModal.open({
-    animation: $scope.animationsEnabled,
-    templateUrl: 'views/modal/modal.html',
-    controller: 'MovieInsideCtrl',
-    size: size,
-    resolve: {
-      items: function () {
-        return $scope.items;
-      }
-    }
-  });
+      var modalInstance = $uibModal.open({
+        animation: $scope.animationsEnabled,
+        templateUrl: 'views/modal/modal.html',
+        controller: 'MovieInsideCtrl',
+        size: size,
+        resolve: {
+          items: function() {
+            return $scope.items;
+          }
+        }
+      });
 
-};
+    };
 
-$scope.toggleAnimation = function () {
-  $scope.animationsEnabled = !$scope.animationsEnabled;
-};
+    $scope.toggleAnimation = function() {
+      $scope.animationsEnabled = !$scope.animationsEnabled;
+    };
 
 
     $scope.accordian = [];
@@ -628,43 +628,43 @@ $scope.toggleAnimation = function () {
       cast: "Alia Bhatt, Varun Dhawan"
     }]
     $scope.video = [{
-      img: "img/movie/m1.jpg",
+      img: "img/movie/m11.jpg",
       name: "Ae Dil hai mushkil"
 
     }, {
-      img: "img/movie/m2.jpg",
+      img: "img/movie/m11.jpg",
       name: "BAAR BAAR DEKHO"
 
     }, {
-      img: "img/movie/m3.jpg",
+      img: "img/movie/m11.jpg",
       name: "BADRINATH KI DULHANIYA"
 
     }, {
-      img: "img/movie/m4.jpg",
+      img: "img/movie/m11.jpg",
       name: "RAM LAKHAN"
 
     }, {
-      img: "img/movie/m5.jpg",
+      img: "img/movie/m11.jpg",
       name: "ok jaanu"
 
     }, {
-      img: "img/movie/m1.jpg",
+      img: "img/movie/m11.jpg",
       name: "Ae Dil hai mushkil"
 
     }, {
-      img: "img/movie/m2.jpg",
+      img: "img/movie/m11.jpg",
       name: "BAAR BAAR DEKHO"
 
     }, {
-      img: "img/movie/m3.jpg",
+      img: "img/movie/m11.jpg",
       name: "BADRINATH KI DULHANIYA"
 
     }, {
-      img: "img/movie/m4.jpg",
+      img: "img/movie/m11.jpg",
       name: "RAM LAKHAN"
 
     }, {
-      img: "img/movie/m5.jpg",
+      img: "img/movie/m11.jpg",
       name: "ok jaanu"
 
     }]
