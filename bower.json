@@ -32,7 +32,8 @@
     "fancyBox": "fancybox#^2.1.5",
     "angulartics-google-analytics": "^0.1.4",
     "angular-masonry": "^0.16.0",
-    "angular-swiper": "^0.4.0"
+    "angular-swiper": "^0.4.0",
+    "angular-backtop": "*"
   },
   "devDependencies": {
     "angular-translate": "^2.11.0"
