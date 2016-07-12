@@ -16,6 +16,7 @@ $white: #ffffff !default;
 $black: #171717 !default;
 $grey: #6f6f6e !default;
 $dark-black: #383838 !default;
+$dark-primary: #da4f09 !default;
 $font-family-sans-serif: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif: "Hammersmith One", Georgia, "Times New Roman", Times, serif !default;
 $border-radius-base: 0 !default;
@@ -41,6 +42,11 @@ img.doneLoading {
 nav li:hover .dropdown-menu {
     display: block;
 }
+.btn {
+    &:active {
+        box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.125);
+    }
+
 .btn,
 a {
     cursor: pointer;
@@ -451,11 +457,16 @@ a {
     button {
         border: none;
         font-size: 30px;
+        background: transparent;
+       margin-left: 10px;
         &:hover {
             border: none;
             color: $brand-primary;
             background: transparent;
         }
+        &:focus {
+         outline: 0;
+     }
     }
 }
 .bg-sun {
@@ -947,8 +958,8 @@ a {
 }
 .search-date {
     @extend .search-in;
-    background: #da4f09;
-    border: 1px solid #da4f09;
+    background: $dark-primary;
+    border: 1px solid $dark-primary;
     width: 50%;
 }
 .search-img {
@@ -1019,7 +1030,7 @@ a {
             border-bottom: 1px solid $white;
         }
         option {
-            background-color: #da4f09;
+            background-color: $dark-primary;
             color: #fff;
         }
     }
