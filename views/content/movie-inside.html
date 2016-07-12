@@ -1,4 +1,3 @@
-
 <section class="movie-inside-bg">
     <div class="container-fluid">
 
@@ -52,7 +51,7 @@
                                 </div>
                             </div>
                             <div class="col-md-offset-1 col-md-2">
-                              <!-- <div class="social-share pull-right">
+                                <!-- <div class="social-share pull-right">
                                   <span class="font-karla font-bold color-light-grey f18">share</span>
                                   <ul class="padding0">
 
@@ -247,7 +246,7 @@
                                     <div masonry preserve-order column-width="320">
                                         <div class="masonry-brick" ng-repeat="item in gallery track by $index">
                                             <div class="masonry-box">
-                                                <img ng-src="{{item}}" alt="Dharma Production">
+                                              <a href="">  <img ng-src="{{item}}" alt="Dharma Production" ></a>
 
                                             </div>
                                         </div>
@@ -273,6 +272,13 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+
+                                </div>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="gallery" ng-if="tab=='scene'">
@@ -315,25 +321,25 @@
                 <div class="video" ng-if="tab=='video'">
                     <div class="movie-inside-date bg-cast cast-credit">
                         <div class="row">
-                          <div class="col-md-11">
-                            <div class="row">
-                              <div class="col-md-4 pad5" ng-repeat="item in allvideos track by $index">
-                                  <div class="video-play-box dh-relative">
-                                      <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/xnJ4RTodr3g?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"><img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive width100">
-                                          <a>
-                                              <div class="overlay dh-absulate">
-                                                  <div class="pos-middle">
-                                                      <span class="color-white font-hammersmith">{{item.name}}</span>
-                                                  </div>
+                            <div class="col-md-11">
+                                <div class="row">
+                                    <div class="col-md-4 pad5" ng-repeat="item in allvideos track by $index">
+                                        <div class="video-play-box dh-relative">
+                                          <img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive width100">
+                                            
+                                                    <div class="overlay dh-absulate">
+                                                        <div class="pos-middle">
+                                                            <span class="color-white font-hammersmith">{{item.name}}</span>
+                                                        </div>
 
-                                                  <div class="bottom-right dh-absulate ply-post">
-                                                      <a href=""><img src="img/play-small-btn.jpg" alt="Dharma Productions"></a>
-                                                  </div>
-                                              </div>
-                                  </div>
-                              </div>
+                                                        <div class="bottom-right dh-absulate ply-post">
+                                                            <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/xnJ4RTodr3g?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"><img src="img/play-small-btn.jpg" alt="Dharma Productions"></a>
+                                                        </div>
+                                                    </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
 
                             <div class="col-md-1">
                                 <div class="social-share pull-right">
@@ -372,72 +378,72 @@
                         </div>
                         <div class="desktop mt15" ng-if="tabs=='desktop'">
                             <div class="row">
-                      <div class="col-md-11">
-                        <div class="row">
-                          <div class="col-md-4 pad5" ng-repeat="item in desktop track by $index">
-                              <div class="all-wall">
-                                  <div class="desktop dh-relative">
-                                      <img ng-src="{{item}}" alt="Dharma productions" class="img-responsive width100">
-                                      <div class="download dh-absulate">
-                                          <a href="{{item}}" download><img src="img/download.png" alt="Dharma productions"></a>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-1">
-                        <div class="social-share pull-right">
-                            <span class="font-karla font-bold color-light-grey f18">share</span>
-                            <ul class="padding0">
+                                <div class="col-md-11">
+                                    <div class="row">
+                                        <div class="col-md-4 pad5" ng-repeat="item in desktop track by $index">
+                                            <div class="all-wall">
+                                                <div class="desktop dh-relative">
+                                                    <img ng-src="{{item}}" alt="Dharma productions" class="img-responsive width100">
+                                                    <div class="download dh-absulate">
+                                                        <a href="{{item}}" download><img src="img/download.png" alt="Dharma productions"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="social-share pull-right">
+                                        <span class="font-karla font-bold color-light-grey f18">share</span>
+                                        <ul class="padding0">
 
-                                <li>
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href=""><i class="fa fa-google-plus"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                      </div>
-                            </div>
-                        </div>
-                        <div class="desktop mt15" ng-if="tabs=='mobile'">
-                            <div class="row">
-                    <div class="col-md-11">
-                      <div class="row">
-                        <div class="col-md-3 pad5" ng-repeat="item in mobile track by $index">
-                            <div class="all-wall">
-                                <div class="desktop dh-relative">
-                                    <img ng-src="{{item}}" alt="Dharma productions" class="img-responsive width100">
-                                    <div class="download dh-absulate">
-                                        <a href="{{item}}" download><img src="img/download.png" alt="Dharma productions"></a>
+                                            <li>
+                                                <a href=""><i class="fa fa-facebook"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href=""><i class="fa fa-twitter"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href=""><i class="fa fa-google-plus"></i></a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="col-md-1">
-                      <div class="social-share pull-right">
-                          <span class="font-karla font-bold color-light-grey f18">share</span>
-                          <ul class="padding0">
+                        <div class="desktop mt15" ng-if="tabs=='mobile'">
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <div class="row">
+                                        <div class="col-md-3 pad5" ng-repeat="item in mobile track by $index">
+                                            <div class="all-wall">
+                                                <div class="desktop dh-relative">
+                                                    <img ng-src="{{item}}" alt="Dharma productions" class="img-responsive width100">
+                                                    <div class="download dh-absulate">
+                                                        <a href="{{item}}" download><img src="img/download.png" alt="Dharma productions"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="social-share pull-right">
+                                        <span class="font-karla font-bold color-light-grey f18">share</span>
+                                        <ul class="padding0">
 
-                              <li>
-                                  <a href=""><i class="fa fa-facebook"></i></a>
-                              </li>
-                              <li>
-                                  <a href=""><i class="fa fa-twitter"></i></a>
-                              </li>
-                              <li>
-                                  <a href=""><i class="fa fa-google-plus"></i></a>
-                              </li>
-                          </ul>
-                      </div>
-                    </div>
+                                            <li>
+                                                <a href=""><i class="fa fa-facebook"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href=""><i class="fa fa-twitter"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href=""><i class="fa fa-google-plus"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -667,21 +673,21 @@
                                 </div>
                             </div>
                             <div class="col-md-1">
-                              <div class="social-share pull-right">
-                                  <span class="font-karla font-bold color-light-grey f18">share</span>
-                                  <ul class="padding0">
+                                <div class="social-share pull-right">
+                                    <span class="font-karla font-bold color-light-grey f18">share</span>
+                                    <ul class="padding0">
 
-                                      <li>
-                                          <a href=""><i class="fa fa-facebook"></i></a>
-                                      </li>
-                                      <li>
-                                          <a href=""><i class="fa fa-twitter"></i></a>
-                                      </li>
-                                      <li>
-                                          <a href=""><i class="fa fa-google-plus"></i></a>
-                                      </li>
-                                  </ul>
-                              </div>
+                                        <li>
+                                            <a href=""><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href=""><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href=""><i class="fa fa-google-plus"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>

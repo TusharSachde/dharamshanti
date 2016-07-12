@@ -1,4 +1,4 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'wu.masonry'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'wu.masonry','ksSwiper'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   //Used to name the .html file
@@ -189,11 +189,33 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }]
 
   })
-  .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService) {
+  .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService,$uibModal) {
     $scope.template = TemplateService.changecontent("movie-inside");
     $scope.menutitle = NavigationService.makeactive("Movie Inside");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.animationsEnabled = true;
+
+$scope.open = function (size) {
+
+  var modalInstance = $uibModal.open({
+    animation: $scope.animationsEnabled,
+    templateUrl: 'views/modal/modal.html',
+    controller: 'MovieInsideCtrl',
+    size: size,
+    resolve: {
+      items: function () {
+        return $scope.items;
+      }
+    }
+  });
+
+};
+
+$scope.toggleAnimation = function () {
+  $scope.animationsEnabled = !$scope.animationsEnabled;
+};
+
 
     $scope.accordian = [];
     $scope.accordian.push({
@@ -361,7 +383,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       "img/gallery/g15.jpg",
       "img/gallery/g16.jpg",
       "img/gallery/g17.jpg",
-      "img/gallery/g18.jpg"
+      "img/gallery/g10.jpg"
     ]
     $scope.desktop = [
       "img/wallpapper/d1.jpg",
