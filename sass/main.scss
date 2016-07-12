@@ -16,7 +16,6 @@ $white: #ffffff !default;
 $black: #171717 !default;
 $grey: #6f6f6e !default;
 $dark-black: #383838 !default;
-$dark-primary: #da4f09 !default;
 $font-family-sans-serif: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif: "Hammersmith One", Georgia, "Times New Roman", Times, serif !default;
 $border-radius-base: 0 !default;
@@ -150,11 +149,6 @@ a {
 }
 .margin-auto {
     margin: 0 auto;
-}
-.btn {
-    &:active {
-        box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.125);
-    }
 }
 .home {
     .navbar-default {
@@ -457,15 +451,10 @@ a {
     button {
         border: none;
         font-size: 30px;
-        background: transparent;
-        margin-left: 10px;
         &:hover {
             border: none;
             color: $brand-primary;
             background: transparent;
-        }
-        &:focus {
-            outline: 0;
         }
     }
 }
@@ -652,7 +641,7 @@ a {
 }
 .movie-inside-bg {
     background: url("../img/main4.jpg")no-repeat top center fixed;
-    padding: 620px 60px 0;
+    padding:620px 60px 0;
     background-size: cover;
 }
 .width100 {
@@ -958,8 +947,8 @@ a {
 }
 .search-date {
     @extend .search-in;
-    background: $dark-primary;
-    border: 1px solid $dark-primary;
+    background: #da4f09;
+    border: 1px solid #da4f09;
     width: 50%;
 }
 .search-img {
@@ -1030,7 +1019,7 @@ a {
             border-bottom: 1px solid $white;
         }
         option {
-            background-color: $dark-primary;
+            background-color: #da4f09;
             color: #fff;
         }
     }
@@ -1088,7 +1077,7 @@ a {
     padding: 50px 0 30px;
 }
 .map {
-    background-color: $brand-primary;
+    background-color: #f37021;
     color: #fff;
     padding: 20px 25px;
     right: 83px;
@@ -1122,7 +1111,8 @@ a {
                 stroke-width: 5;
                 stroke-dasharray: 15, 310;
                 stroke-dashoffset: 55;
-                @include transition(all 1.35s cubic-bezier(0.19, 1, 0.22, 1));
+                -webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+                transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
             }
         }
         svg {
@@ -1137,7 +1127,8 @@ a {
             stroke: $brand-primary;
             stroke-width: 2;
             stroke-dasharray: 422, 0;
-            @include transition(all 1.35s cubic-bezier(0.19, 1, 0.22, 1));
+            -webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+            transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
         }
     }
     .btn {
@@ -1193,10 +1184,11 @@ a {
         display: inline-block;
     }
     .btn-1 {
-        rect {
-            fill: none;
-            stroke: $black;
-        }
+      rect {
+          fill: none;
+          stroke:$black;
+      }
+
     }
 }
 .movie-tab {
@@ -1215,7 +1207,7 @@ a {
                 border-bottom-right-radius: 10px;
             }
             h1 {
-                @include background(linear-gradient($brand-primary, #fab185));
+                background: -webkit-linear-gradient(#ff6001, #fab185);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
@@ -1250,7 +1242,7 @@ a {
     margin-top: -65px;
 }
 .dot {
-    color: $brand-primary;
+    color: #f67321;
     font-size: 50px;
     border-radius: 100%;
     border: 4px solid white;
@@ -1302,15 +1294,15 @@ a {
     overflow: hidden !important;
 }
 .fancybox-nav {
-    top: initial !important;
-    bottom: -60px;
-    transform: inherit !important;
-    height: 60px !important;
+      top: initial !important;
+  bottom: -60px;
+  transform: inherit !important;
+  height: 60px !important;
     span {
         visibility: visible;
         height: 76px;
         bottom: -11px;
-        top: initial;
+  top: initial;
     }
 }
 .fancybox-prev span {
@@ -1329,7 +1321,24 @@ a {
     background: transparent;
 }
 #fancybox-loading {
-    background-position: 0 -217px;
+  background-position: 0 -217px;
+
+}
+#backtop {
+  opacity: 0;
+  transition: all .3s ease-out;
+  position: fixed;
+  button {
+    outline: none;
+    border: 0;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.show {
+  opacity: 1 !important;
 }
 @import "fancybox-override";
 @import "main2";
