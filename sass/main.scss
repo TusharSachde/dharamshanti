@@ -121,7 +121,7 @@ a {
     }
 }
 .display-inline {
-    display: inline-block;
+    display: inline-block !important;
 }
 .masonry-box {
     width: 300px;
@@ -640,7 +640,7 @@ a {
     background-size: 100% 100%;
 }
 .movie-inside-bg {
-    background: url("../img/main3.jpg")top center;
+    background: url("../img/main4.jpg")no-repeat top center fixed;
     padding:620px 60px 0;
     background-size: cover;
 }
@@ -793,7 +793,7 @@ a {
 }
 .masonry-width {
     .masonry-box {
-        width: 290px;
+        width: 280px;
     }
 }
 .masonry-brick {
@@ -1175,6 +1175,20 @@ a {
         &:hover {
             background: transparent;
         }
+    }
+}
+.btn-view-news {
+    @extend .btn-view-more;
+    .btn {
+        color: $black;
+        display: inline-block;
+    }
+    .btn-1 {
+      rect {
+          fill: none;
+          stroke:$black;
+      }
+
     }
 }
 .movie-tab {
