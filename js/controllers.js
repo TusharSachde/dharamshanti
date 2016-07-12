@@ -375,15 +375,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       nick: "AVI"
     }]
     $scope.gallery = [
-      "img/gallery/g10.jpg",
-      "img/gallery/g11.jpg",
-      "img/gallery/g12.jpg",
-      "img/gallery/g13.jpg",
-      "img/gallery/g14.jpg",
-      "img/gallery/g15.jpg",
-      "img/gallery/g16.jpg",
-      "img/gallery/g17.jpg",
-      "img/gallery/g10.jpg"
+      "img/gallery/g18.jpg",
+      "img/gallery/g19.jpg",
+      "img/gallery/g20.jpg",
+      "img/gallery/g21.jpg",
+      "img/gallery/g22.jpg",
+      "img/gallery/g23.jpg",
+      "img/gallery/g24.jpg",
+      "img/gallery/g25.jpg",
+      "img/gallery/g20.jpg"
     ]
     $scope.desktop = [
       "img/wallpapper/d1.jpg",
