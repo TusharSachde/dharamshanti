@@ -41,6 +41,7 @@ img.loading {
     margin-top: 30px;
 }
 
+
 }
 .common-class{
   .flex-control-nav{
@@ -1367,7 +1368,7 @@ a {
   opacity: 0;
   transition: all .3s ease-out;
   position: fixed;
-  button {
+  button {               
     outline: none;
     border: 0;
     &:hover {
@@ -1391,6 +1392,9 @@ a {
 }
 .mb0{
   margin-bottom: 0px;
+}
+.float-right{
+  float: right;
 }
 @import "fancybox-override";
 @import "main2";
