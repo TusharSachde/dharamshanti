@@ -99,7 +99,15 @@
                                         </div>
                                     </div>
                                     <div class="text-center mt60">
-                                        <button type="button" name="button" class="btn-primary-outline font-hammersmith btn-enter">VIEW ALL</button>
+                                      <div class="btn-view-more ">
+                                          <a href="" class="btn-1 font-hammersmith btn color-primary display-inline">
+                                              <svg>
+                                                  <rect x="0" y="0" fill="none" width="100%" height="100%" />
+                                              </svg>
+                                              VIEW ALL
+                                          </a>
+                                          <!-- <button type="button" name="button" class="btn-primary-outline font-hammersmith btn-enter"></button> -->
+                                      </div>
                                     </div>
                                 </div>
 
@@ -130,11 +138,11 @@
                                             <h1 class="font-hammersmith color-black margin0">CREW</h1>
                                         </div>
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-10">
                                         <div class="row">
                                             <div class="col-md-5">
                                                 <div class="all-cast">
-                                                    <ul>
+                                                    <ul class="padding0">
                                                         <li>Story, Screenplay & Direction</li>
                                                         <li>Produced By</li>
                                                         <li>Co-Producer</li>
@@ -153,7 +161,7 @@
                                             </div>
                                             <div class="col-md-5">
                                                 <div class="all-cast">
-                                                    <ul>
+                                                    <ul class="padding0">
                                                         <li>... Ayan Mukerji</li>
                                                         <li>... Hiroo Yash Johar & Karan Johar</li>
                                                         <li>... Apoorva Mehta</li>
@@ -172,23 +180,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-2">
-                                        <div class="social-share pull-right">
-                                            <span class="font-karla font-bold color-light-grey f18">share</span>
-                                            <ul class="padding0">
 
-                                                <li>
-                                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href=""><i class="fa fa-google-plus"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -200,7 +192,7 @@
                         <div class="row">
                             <div class="col-md-11">
                                 <div class="all-movies">
-                                    <div masonry column-width="300" preserve-order>
+                                    <div masonry preserve-order>
                                         <div class="masonry-brick" ng-repeat="item in news track by $index">
                                             <div class="masonry-box padd20">
                                                 <img ng-src="{{item.img}}" alt="Dharma Production">
