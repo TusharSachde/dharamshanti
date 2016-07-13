@@ -1,72 +1,41 @@
-<section class="dharma-top-pad">
-  <div class="container">
-    <div class="row">
-      <div class="text-center">
-        <div class="head-title">
-          <h1 class="color-primary f120 text-up font-hammersmith">Movies</h1>
-        </div>
-        <div class="search-movie dh-relative">
-          <div class="search-img">
-            <img src="img/search-grey.png" alt="Dharma Productions" class="doneLoading">
+<div class="dharma-movies-bg">
+  <section class="dharma-top-pad">
+    <div class="container">
+      <div class="row">
+        <div class="text-center dharma-top-pad">
+          <div class="head-title">
+            <h1 class="color-primary f120 text-up font-hammersmith">Movies</h1>
           </div>
-          <input type="search" name="name" value="" class="search-in colorchange" placeholder="Search for your favourite movie">
+          <div class="search-movie dh-relative">
+            <div class="search-img">
+              <img src="img/search-grey.png" alt="Dharma Productions" class="doneLoading">
+            </div>
+            <input type="search" name="name" value="" class="search-in colorchange" placeholder="Search for your favourite movie">
+          </div>
         </div>
-      </div>
 
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="upcoming-movie mt30">
-          <div class="title">
-            <h1 class="margin0 color-primary font-hammersmith line45 f55">UPCOMING RELEASES</h1>
-          </div>
-          <div class="upcoming-slider">
-            <flex-slider flex-slide="item in upcomingrelease track by $index" animation="slide" animationloop="true" move="1">
-              <li>
-                <div class="video-box">
-                  <div class="video-slide-img">
-                    <a ui-sref="movie-inside"> <img ng-src="{{item.img}}" alt="Dharma Productions"></a>
-                  </div>
-                  <div class="video-name">
-                    <span>Release Date: {{item.date}}</span>
-                    <span> Director: {{item.director}}</span>
-                    <span>Main Cast: {{item.cast}}</span>
-                  </div>
-                </div>
-              </li>
-            </flex-slider>
-          </div>
-        </div>
       </div>
     </div>
-  </div>
-</section>
-<section>
-  <div class="orange-bg">
+  </section>
+  <section class="dharma-top-pad">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="upcoming-movie">
+          <div class="upcoming-movie mt30">
             <div class="title">
-              <h1>RECENT RELEASES</h1>
+              <h1 class="margin0 color-primary font-hammersmith line45 f55">UPCOMING RELEASES</h1>
             </div>
             <div class="upcoming-slider">
-              <flex-slider flex-slide="videobreak in video track by $index" animation="slide" animationloop="true" move="1">
+              <flex-slider flex-slide="item in upcomingrelease track by $index" animation="slide" animationloop="true" move="1">
                 <li>
-                  <div class="row" ng-repeat="videobreaks in videobreak">
-                    <div class="col-xs-6" ng-repeat="item in videobreaks">
-                      <div class="video-box">
-                        <div class="video-slide-img">
-                          <img ng-src="{{item.img}}" alt="Dharma Productions">
-                        </div>
-                        <div class="video-name">
-                          <span>{{item.name}}</span>
-                        </div>
-                      </div>
+                  <div class="video-box">
+                    <div class="video-slide-img">
+                      <a ui-sref="movie-inside"> <img ng-src="{{item.img}}" alt="Dharma Productions"></a>
+                    </div>
+                    <div class="video-name">
+                      <span>Release Date: {{item.date}}</span>
+                      <span> Director: {{item.director}}</span>
+                      <span>Main Cast: {{item.cast}}</span>
                     </div>
                   </div>
                 </li>
@@ -76,39 +45,72 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-<section>
-  <div class="orange-bg">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="upcoming-movie">
-            <div class="title">
-              <h1>PAST RELEASES</h1>
+  </section>
+  <section>
+    <div class="orange-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="upcoming-movie">
+              <div class="title">
+                <h1>RECENT RELEASES</h1>
+              </div>
+              <div class="upcoming-slider">
+                <flex-slider flex-slide="videobreak in video track by $index" animation="slide" animationloop="true" move="1">
+                  <li>
+                    <div class="row" ng-repeat="videobreaks in videobreak">
+                      <div class="col-xs-6" ng-repeat="item in videobreaks">
+                        <div class="video-box">
+                          <div class="video-slide-img">
+                            <img ng-src="{{item.img}}" alt="Dharma Productions">
+                          </div>
+                          <div class="video-name">
+                            <span>{{item.name}}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </flex-slider>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row-flex" ng-repeat="videos in allvideos">
-        <div class="col-flex" ng-repeat="item in videos track by $index">
-          <div class="video-box">
-            <div class="video-slide-img">
-              <img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive">
-            </div>
-            <div class="video-name">
-              <span>{{item.name}}</span>
-            </div>
-
-
-          </div>
-        </div>
-      </div>
-      <div class="text-center">
-        <div class="btn-outline">
-          <button type="button" name="button">view all</button>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  <section>
+    <div class="orange-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="upcoming-movie">
+              <div class="title">
+                <h1>PAST RELEASES</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row-flex" ng-repeat="videos in allvideos">
+          <div class="col-flex" ng-repeat="item in videos track by $index">
+            <div class="video-box">
+              <div class="video-slide-img">
+                <img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive">
+              </div>
+              <div class="video-name">
+                <span>{{item.name}}</span>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="btn-outline">
+            <button type="button" name="button">view all</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
