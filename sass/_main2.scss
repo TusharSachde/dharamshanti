@@ -1,5 +1,5 @@
 .dharma-top-pad {
-  padding-top: 70px;
+  padding-top: 50px;
 }
 .search-in.colorchange {
   color: #838383;
@@ -11,8 +11,20 @@
   font-size: 55px;
 }
 .dharma-movies-bg {
-  background: url(../img/movie-bg.jpg)no-repeat;
+  background: url(../img/movie-up.jpg)no-repeat;
   background-size: cover;
+      padding: 200px 0px 100px 0px;
+      background-position: top center;
+}
+.dharma-movies-bg2 {
+  background: url(../img/movie-middle.jpg)no-repeat;
+  background-size: cover;
+      padding: 100px 0px 50px 0px;
+}
+.dharma-movies-bg3 {
+  background: url(../img/movie-bottom.jpg)no-repeat;
+  background-size: cover;
+      padding: 50px 0px 50px 0px;
 }
 .common-class {
   .only-boxshadow {
