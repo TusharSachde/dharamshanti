@@ -13,7 +13,6 @@
             <input type="search" name="name" value="" class="search-in colorchange" placeholder="Search for your favourite movie">
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -21,14 +20,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="upcoming-movie mt30">
+          <div class="upcoming-movie mt30 common-class">
             <div class="title">
-              <h1 class="margin0 color-primary font-hammersmith line45 f55">UPCOMING RELEASES</h1>
+              <h1 class="margin0 color-primary font-hammersmith line30 f55">UPCOMING RELEASES</h1>
             </div>
             <div class="upcoming-slider">
               <flex-slider flex-slide="item in upcomingrelease track by $index" animation="slide" animationloop="true" move="1">
                 <li>
-                  <div class="video-box">
+                  <div class="video-box img-pads">
                     <div class="video-slide-img">
                       <a ui-sref="movie-inside"> <img ng-src="{{item.img}}" alt="Dharma Productions"></a>
                     </div>
@@ -47,24 +46,24 @@
     </div>
   </section>
   <section>
-    <div class="orange-bg">
+    <div class="orange-bg dharma-top-pad">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="upcoming-movie">
+            <div class="recent-movie">
               <div class="title">
-                <h1>RECENT RELEASES</h1>
+                <h1 class="margin0 color-primary font-hammersmith line30 f55">RECENT RELEASES</h1>
               </div>
-              <div class="upcoming-slider">
+              <div class="upcoming-slider slider-right">
                 <flex-slider flex-slide="videobreak in video track by $index" animation="slide" animationloop="true" move="1">
                   <li>
                     <div class="row" ng-repeat="videobreaks in videobreak">
                       <div class="col-xs-6" ng-repeat="item in videobreaks">
-                        <div class="video-box">
-                          <div class="video-slide-img">
+                        <div class="video-box mb20 common-class">
+                          <div class="video-slide-img img-pads">
                             <img ng-src="{{item.img}}" alt="Dharma Productions">
                           </div>
-                          <div class="video-name">
+                          <div class="video-name font-karla">
                             <span>{{item.name}}</span>
                           </div>
                         </div>
