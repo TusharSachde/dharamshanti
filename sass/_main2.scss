@@ -18,15 +18,26 @@
   .only-boxshadow {
     margin: 5px;
   }
-  .flex-control-nav.flex-control-paging {
-    display: none;
-  }
 }
 .mb20 {
   margin-bottom: 20px;
 }
-.upcoming-slider.slider-right .flexslider{
-  padding: 0;
+.upcoming-slider.slider-right .flexslider {
+  padding-bottom: 20px;
+  .flex-direction-nav a.flex-prev:before {
+    background: url("../img/left-orange.png") no-repeat center;
+  }
+  .flex-direction-nav a.flex-next:before {
+    background: url("../img/right-orange.png") no-repeat center;
+  }
+}
+.tv-all-slider .flexslider {
+  .flex-direction-nav a.flex-prev:before {
+    background: url("../img/left-orange.png") no-repeat center;
+  }
+  .flex-direction-nav a.flex-next:before {
+    background: url("../img/right-orange.png") no-repeat center;
+  }
 }
 .line30 {
   line-height: 30%;
@@ -35,5 +46,8 @@
   .video-name {
     font-size: 18px;
     margin-left: 5px;
+  }
+  .flex-control-nav.flex-control-paging {
+    display: none;
   }
 }
