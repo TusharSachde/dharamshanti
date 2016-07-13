@@ -196,6 +196,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     $scope.animationsEnabled = true;
 
+    $(window).scroll(function() {
+        if ($(this).scrollTop()>500) {
+            $('.back-to-top ').fadeIn();
+        } else {
+            $('.back-to-top ').fadeOut();
+        }
+    });
+
     $scope.open = function(size) {
 
       var modalInstance = $uibModal.open({
