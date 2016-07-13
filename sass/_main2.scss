@@ -11,6 +11,29 @@
   font-size: 55px;
 }
 .dharma-movies-bg {
-    background: url(../img/movie-bg.jpg)no-repeat;
-    background-size: cover;
+  background: url(../img/movie-bg.jpg)no-repeat;
+  background-size: cover;
+}
+.common-class {
+  .only-boxshadow {
+    margin: 5px;
+  }
+  .flex-control-nav.flex-control-paging {
+    display: none;
+  }
+}
+.mb20 {
+  margin-bottom: 20px;
+}
+.upcoming-slider.slider-right .flexslider{
+  padding: 0;
+}
+.line30 {
+  line-height: 30%;
+}
+.recent-movie {
+  .video-name {
+    font-size: 18px;
+    margin-left: 5px;
+  }
 }

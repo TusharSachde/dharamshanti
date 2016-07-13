@@ -659,14 +659,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       img: "img/movie/m11.jpg",
       name: "BADRINATH KI DULHANIYA"
 
-    }, {
-      img: "img/movie/m11.jpg",
-      name: "RAM LAKHAN"
-
-    }, {
-      img: "img/movie/m11.jpg",
-      name: "ok jaanu"
-
     }]
     $scope.video = _.chunk($scope.video, 4);
     for (var i = 0; i < $scope.video.length; i++) {
