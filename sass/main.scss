@@ -452,10 +452,14 @@ a {
     button {
         border: none;
         font-size: 30px;
+          background: transparent;
         &:hover {
             border: none;
             color: $brand-primary;
             background: transparent;
+        }
+        &:focus{
+          outline: 0;
         }
     }
 }
@@ -1348,3 +1352,4 @@ a {
 @import "fancybox-override";
 @import "main2";
 @import "timeline";
+@import "mobile";
