@@ -625,12 +625,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.upcomingrelease = [{
-      img: "img/movie-banner-dam.jpg",
+      img: "img/movie-banner-dam.png",
       date: "10 March 2017",
       director: "Shashank Khaitan",
       cast: "Alia Bhatt, Varun Dhawan"
     }, {
-      img: "img/movie-banner-dam.jpg",
+      img: "img/movie-banner-dam.png",
       date: "10 March 2017",
       director: "Shashank Khaitan",
       cast: "Alia Bhatt, Varun Dhawan"
