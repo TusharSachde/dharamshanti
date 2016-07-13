@@ -125,7 +125,7 @@ a {
     display: inline-block !important;
 }
 .masonry-box {
-    width: 300px;
+    width: 280px;
     img {
         width: 100%;
     }
@@ -1341,6 +1341,9 @@ a {
 
 .show {
   opacity: 1 !important;
+}
+.all-movies.masonry-width {
+    margin-left: 50px;
 }
 @import "fancybox-override";
 @import "main2";
