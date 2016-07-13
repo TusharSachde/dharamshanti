@@ -452,10 +452,14 @@ a {
     button {
         border: none;
         font-size: 30px;
+          background: transparent;
         &:hover {
             border: none;
             color: $brand-primary;
             background: transparent;
+        }
+        &:focus{
+          outline: 0;
         }
     }
 }
@@ -1345,6 +1349,14 @@ a {
 .all-movies.masonry-width {
     margin-left: 50px;
 }
+.back-to-top {
+    position: fixed;
+    bottom: 120px;
+    right: 15px;
+    cursor: pointer;
+    display: none;
+}
 @import "fancybox-override";
 @import "main2";
 @import "timeline";
+@import "mobile";
