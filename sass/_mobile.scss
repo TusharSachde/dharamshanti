@@ -422,6 +422,7 @@
     width: 250px;
     margin: 0 auto;
   }
+
   .masonry-width .masonry-box {
       width: 240px;
   }
@@ -450,7 +451,8 @@
 }
   .movie-inside-bg {
     padding: 170px 0px 0;
-    background-position-y: 40px;
+    // background-position-y: 40px;
+      background-size: 100% 100%;
 }
     .common-class .flex-control-nav {
         display: none !important;
