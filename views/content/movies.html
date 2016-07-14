@@ -6,7 +6,7 @@
                     <div class="head-title">
                         <h1 class="color-primary f120 text-up font-hammersmith">Movies</h1>
                     </div>
-                    <div class="search-movie dh-relative text-shadow">
+                    <div class="search-movie dh-relative text-shadow search-movie-mar">
                         <div class="search-img">
                             <img src="img/search-grey.png" alt="Dharma Productions" class="doneLoading">
                         </div>
@@ -24,7 +24,7 @@
                         <div class="title">
                             <h1 class="ml15 mb0 color-primary font-hammersmith line30 f55">UPCOMING RELEASES</h1>
                         </div>
-                        <div class="upcoming-slider">
+                        <div class="upcoming-slider mob-arrow">
                             <flex-slider flex-slide="item in upcomingrelease track by $index" animation="slide" animationloop="true" move="1">
                                 <li>
                                     <div class="video-box">
@@ -55,7 +55,7 @@
                             <flex-slider flex-slide="videobreak in video track by $index" animation="slide" animationloop="true" move="1">
                                 <li>
                                     <div class="row" ng-repeat="videobreaks in videobreak">
-                                        <div class="col-xs-6" ng-repeat="item in videobreaks">
+                                        <div class="col-md-6 col-sm-6 col-xs-12" ng-repeat="item in videobreaks">
                                             <div class="video-box mb20 common-class">
                                                 <div class="video-slide-img img-pads">
                                                     <img ng-src="{{item.img}}" alt="Dharma Productions">
@@ -87,6 +87,7 @@
                     </div>
                 </div>
             </div>
+            <div class="mobile-row">
             <div class="row-flex" ng-repeat="videos in allvideos">
                 <div class="col-flex" ng-repeat="item in videos track by $index">
                     <div class="video-box mb20">
@@ -98,6 +99,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
             <div class="text-center">
                 <!-- <div class="btn-outline">

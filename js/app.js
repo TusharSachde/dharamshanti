@@ -68,7 +68,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'OverviewCtrl'
         });
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise("/home");
     $locationProvider.html5Mode(isproduction);
 });
 
