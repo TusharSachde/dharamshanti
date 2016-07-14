@@ -1,4 +1,14 @@
 @media (max-width:1200px) {
+    .movie-inside-bg {
+        padding: 360px 25px 0;
+    }
+    .all-tabs .btn-group button {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+    .all-tabs {
+        margin: 25px 35px 0 -10px;
+    }
     .custom-menu li a {
         padding: 0 10px !important;
         font-size: 13px;
@@ -56,6 +66,73 @@
     }
 }
 @media (max-width: $screen-sm-max) {
+    .f12 {
+        font-size: 10px;
+    }
+    .awards-name ul li {
+        font-size: 14px;
+    }
+    .title-acc {
+        h1 {
+            font-size: 24px;
+        }
+    }
+    .panel-title {
+        h3 {
+            font-size: 14px;
+        }
+    }
+    .pos-middle {
+        span {
+            font-size: 13px;
+        }
+    }
+    .ply-post {
+        right: -4px;
+        bottom: -4px;
+        img {
+            transform: scale(0.8);
+        }
+    }
+    .all-movies.masonry-width {
+        margin-left: 0;
+    }
+    .masonry-width .masonry-box {
+        width: 220px;
+    }
+    .masonry-box {
+        width: 220px;
+    }
+    .cast h1 {
+        font-size: 30px;
+    }
+    .all-cast ul li {
+        font-size: 14px;
+    }
+    .movie-col {
+        margin-bottom: 25px;
+    }
+    .bg-synopsis {
+        background: none;
+    }
+    .movie-inner-bg {
+        margin-top: -1px;
+    }
+    .all-tabs .btn-group button {
+        font-size: 12px;
+        padding: 0 8px;
+    }
+    .movie-inside-bg {
+        padding: 360px 25px 0;
+        background-size: 100% auto;
+    }
+    .all-tabs {
+        padding: 10px 0 24px;
+        margin: 25px 35px 0 -8px;
+    }
+    .all-tabs .btn-group button:first-child {
+        padding-left: 30px;
+    }
     .dharma-movies-bg {
         background-size: 100% 100%;
         padding: 120px 0 100px;
@@ -137,19 +214,43 @@
     }
 }
 @media (max-width: $screen-xs-max) {
-  .dharma-movies-bg2 {
-    background-size: 100% 100%;
-    padding: 40px 0px 50px 0px;
+  .cast-mob{
+    text-align: center;
+padding-bottom: 15px;
+  }
+  .all-tabs .btn-group button:first-child {
+    .all-tabs .btn-group button {
+    font-size: 11px;
+    padding: 0 6px;
 }
-  .dharma-movies-bg {
-    padding: 120px 0px 30px 0px;
+    padding-left: 5px;
 }
-  .f120 {
-    font-size: 80px;
+  .all-tabs {
+    padding: 10px 0 24px;
+    margin: 25px 0px 0 -5px;
 }
-.f55 {
-    font-size: 30px;
+  .movie-inside-bg {
+    padding: 210px 10px 0;
+    background-size: cover;
 }
+  .m-title{
+    h1{
+          font-size: 24px;
+    }
+  }
+    .dharma-movies-bg2 {
+        background-size: 100% 100%;
+        padding: 40px 0 50px;
+    }
+    .dharma-movies-bg {
+        padding: 120px 0 30px;
+    }
+    .f120 {
+        font-size: 80px;
+    }
+    .f55 {
+        font-size: 30px;
+    }
     body {
         padding-top: 30px;
     }
@@ -261,41 +362,40 @@
     }
 }
 @media (max-width:480px) {
-  .common-class .flex-control-nav {
-    display: none !important;
-
-}
-  .dharma-movies-bg3 {
-    padding: 1px 0px 50px 0px;
-    background-size: 100% 100%;
-}
-  .mob-arrow{
-    .flex-direction-nav a{
-      transform: scale(0.7);
+    .common-class .flex-control-nav {
+        display: none !important;
     }
-  }
-  .slider-right .flex-direction-nav a {
-    zoom: 0.7;
-}
-  .recent-movie .video-name {
-    font-size: 14px;
-    min-height: 20px;
-}
-  .f55 {
-    font-size: 25px;
-}
-  .dharma-top-pad {
-    padding-top: 40px;
-}
-  .search-movie-mar{
-    margin: 0px 10px;
-  }
-  .f120 {
-    font-size: 60px;
-}
-  .dharma-movies-bg {
-    padding: 80px 0px 0px 0px;
-}
+    .dharma-movies-bg3 {
+        padding: 1px 0 50px;
+        background-size: 100% 100%;
+    }
+    .mob-arrow {
+        .flex-direction-nav a {
+            transform: scale(0.7);
+        }
+    }
+    .slider-right .flex-direction-nav a {
+        zoom: 0.7;
+    }
+    .recent-movie .video-name {
+        font-size: 14px;
+        min-height: 20px;
+    }
+    .f55 {
+        font-size: 25px;
+    }
+    .dharma-top-pad {
+        padding-top: 40px;
+    }
+    .search-movie-mar {
+        margin: 0 10px;
+    }
+    .f120 {
+        font-size: 60px;
+    }
+    .dharma-movies-bg {
+        padding: 80px 0 0;
+    }
     .play-btn {
         img {
             transform: scale(0.6);

@@ -679,7 +679,7 @@ a {
     background-size: 100% 100%;
 }
 .movie-inside-bg {
-    background: url("../img/main4.jpg")no-repeat top center fixed;
+    background: url("../img/main3.jpg")no-repeat top center fixed;
     padding:620px 60px 0;
     background-size: cover;
 }
@@ -988,7 +988,7 @@ a {
     @extend .search-in;
     background: $dark-primary;
     border: 1px solid $dark-primary;
-    width: 50%;
+      width: 70%;
 }
 .search-img {
     position: absolute;
@@ -1307,7 +1307,7 @@ a {
 }
 .swiper-slide {
     text-align: center;
-    font-size: 18px;  
+    font-size: 18px;
     background: #fff;
     width: 60%;
     /* Center slide text vertically */
