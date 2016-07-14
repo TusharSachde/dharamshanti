@@ -418,6 +418,16 @@
 }
 }
 @media (max-width:480px) {
+  .mob-width{
+    width: 250px;
+    margin: 0 auto;
+  }
+  .masonry-width .masonry-box {
+      width: 240px;
+  }
+  .masonry-box {
+  width: 240px;
+}
   .awards-name ul li {
     font-size: 12px;
 }
