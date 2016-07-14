@@ -124,7 +124,7 @@
     }
     .movie-inside-bg {
         padding: 360px 25px 0;
-        background-size: 100% auto;
+      background-size: cover;
     }
     .all-tabs {
         padding: 10px 0 24px;
@@ -212,32 +212,82 @@
     .bg-sun {
         padding: 215px 0 60px 108px;
     }
+    .movie-inside-date {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.cast-credit {
+    padding-top: 10px;
+    padding-bottom: 60px;
+}
 }
 @media (max-width: $screen-xs-max) {
-  .cast-mob{
-    text-align: center;
-padding-bottom: 15px;
-  }
-  .all-tabs .btn-group button:first-child {
-    .all-tabs .btn-group button {
-    font-size: 11px;
-    padding: 0 6px;
+  .line0 {
+    line-height: 100%;
 }
-    padding-left: 5px;
+  .awards-name ul li {
+    padding: 0px 0px;
+    min-height: 35px;
+    line-height: 100%;
 }
-  .all-tabs {
-    padding: 10px 0 24px;
-    margin: 25px 0px 0 -5px;
+  .social-share.float-right {
+    float: none;
 }
-  .movie-inside-bg {
-    padding: 210px 10px 0;
-    background-size: cover;
+  .cast-credit {
+    padding-top: 10px;
+    padding-bottom: 60px;
 }
-  .m-title{
-    h1{
-          font-size: 24px;
+  .movie-inside-date {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+    .social-share {
+        padding: 15px 3px;
+        .f18 {
+            font-size: 14px;
+        }
+        ul {
+            li {
+                a {
+                    i {
+                        font-size: 16px;
+                        height: 30px;
+                        width: 30px;
+                        padding: 8px 5px;
+                    }
+                }
+            }
+        }
     }
-  }
+    .all-cast ul li {
+        font-size: 14px;
+        line-height: 100%;
+        min-height: 45px;
+    }
+    .cast-mob {
+        text-align: center;
+        padding-bottom: 15px;
+    }
+    .all-tabs .btn-group button:first-child {
+        .all-tabs .btn-group button {
+            font-size: 11px;
+            padding: 0 6px;
+        }
+        padding-left: 5px;
+    }
+    .all-tabs {
+        padding: 10px 0 24px;
+        margin: 25px 0 0 -5px;
+    }
+    .movie-inside-bg {
+        padding: 210px 10px 0;
+        background-size: cover;
+    }
+    .m-title {
+        h1 {
+            font-size: 24px;
+        }
+    }
     .dharma-movies-bg2 {
         background-size: 100% 100%;
         padding: 40px 0 50px;
@@ -360,8 +410,38 @@ padding-bottom: 15px;
             font-size: 12px;
         }
     }
+    .masonry-box {
+    width: 190px;
+}
+.masonry-width .masonry-box {
+    width: 190px;
+}
 }
 @media (max-width:480px) {
+  .awards-name ul li {
+    font-size: 12px;
+}
+  .panel-title h3 {
+    font-size: 12px;
+}
+  .all-cast ul li {
+    font-size: 12px;
+    min-height: 40px;
+}
+  .cast h1 {
+    font-size: 20px;
+}
+  .movie-inside-curve {
+    height: 10px;
+
+}
+  .m-title h1 {
+    font-size: 20px;
+}
+  .movie-inside-bg {
+    padding: 170px 0px 0;
+    background-position-y: 40px;
+}
     .common-class .flex-control-nav {
         display: none !important;
     }

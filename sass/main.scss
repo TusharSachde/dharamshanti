@@ -33,36 +33,32 @@ img.loading {
     width: 32px !important;
     height: auto !important;
 }
-.slider-right{
-  img.loading {
-    position: absolute;
-  }
-  .flex-direction-nav {
-    margin-top: 30px;
+.slider-right {
+    img.loading {
+        position: absolute;
+    }
+    .flex-direction-nav {
+        margin-top: 30px;
+    }
 }
-
-
-}
-.common-class{
-  .flex-control-nav{
-    display: block !important;
+.common-class {
+    .flex-control-nav {
+        display: block !important;
         bottom: 0;
-  }
-  .flex-control-paging li a.flex-active {
-    background: rgb(243, 112, 33);
-    cursor: default;
-}
-.flex-control-paging li a {
-    width: 11px;
-    height: 11px;
-    background: rgba(243, 112, 33, 0.64);
-
-    -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.3);
-    -o-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.3);
-    box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.3);
-
-}
+    }
+    .flex-control-paging li a.flex-active {
+        background: rgb(243, 112, 33);
+        cursor: default;
+    }
+    .flex-control-paging li a {
+        width: 11px;
+        height: 11px;
+        background: rgba(243, 112, 33, 0.64);
+        -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.3);
+        -o-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.3);
+    }
 }
 img {
     opacity: 0;
@@ -83,7 +79,11 @@ a {
     }
     &:focus {
         text-decoration: none;
-        outline: 0;
+        outline: 0;   
+    }
+    &:active{
+      box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.125);
+      -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.125);
     }
 }
 /* mixing*/
@@ -258,7 +258,7 @@ a {
                     height: 25px;
                     width: 25px;
                     text-align: center;
-  line-height: 25px;
+                    line-height: 25px;
                 }
             }
         }
@@ -485,14 +485,14 @@ a {
     button {
         border: none;
         font-size: 30px;
-          background: transparent;
+        background: transparent;
         &:hover {
             border: none;
             color: $brand-primary;
             background: transparent;
         }
-        &:focus{
-          outline: 0;
+        &:focus {
+            outline: 0;
         }
     }
 }
@@ -602,7 +602,7 @@ a {
                     color: $black;
                     border-radius: 100%;
                     text-align: center;
-  line-height: 35px;
+                    line-height: 35px;
                 }
             }
         }
@@ -618,7 +618,7 @@ a {
     background: #fff;
     padding: 10px;
     margin: 5px;
-        box-shadow: 2px 4px 10px 2px #dcdcdc;
+    box-shadow: 2px 4px 10px 2px #dcdcdc;
 }
 .movie-names {
     h4 {
@@ -680,7 +680,7 @@ a {
 }
 .movie-inside-bg {
     background: url("../img/main3.jpg")no-repeat top center fixed;
-    padding:620px 60px 0;
+    padding: 620px 60px 0;
     background-size: cover;
 }
 .width100 {
@@ -836,7 +836,7 @@ a {
     }
 }
 .masonry-brick {
-    margin:5px;
+    margin: 5px;
 }
 .custom-box {
     .masonry-brick {
@@ -988,7 +988,7 @@ a {
     @extend .search-in;
     background: $dark-primary;
     border: 1px solid $dark-primary;
-      width: 70%;
+    width: 70%;
 }
 .search-img {
     position: absolute;
@@ -1165,7 +1165,6 @@ a {
             stroke: $brand-primary;
             stroke-width: 2;
             stroke-dasharray: 422, 0;
-
             @include transition(all 1.35s cubic-bezier(0.19, 1, 0.22, 1));
         }
     }
@@ -1222,11 +1221,10 @@ a {
         display: inline-block;
     }
     .btn-1 {
-      rect {
-          fill: none;
-          stroke:$black;
-      }
-
+        rect {
+            fill: none;
+            stroke: $black;
+        }
     }
 }
 .movie-tab {
@@ -1245,7 +1243,6 @@ a {
                 border-bottom-right-radius: 10px;
             }
             h1 {
-
                 @include background(linear-gradient($brand-primary, #fab185));
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
@@ -1253,8 +1250,7 @@ a {
         }
         .active-tab {
             h1 {
-
-                  @include background(linear-gradient($white, #949494));
+                @include background(linear-gradient($white, #949494));
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
@@ -1334,15 +1330,15 @@ a {
     overflow: hidden !important;
 }
 .fancybox-nav {
-      top: initial !important;
-  bottom: -60px;
-  transform: inherit !important;
-  height: 60px !important;
+    top: initial !important;
+    bottom: -60px;
+    transform: inherit !important;
+    height: 60px !important;
     span {
         visibility: visible;
         height: 76px;
         bottom: -11px;
-  top: initial;
+        top: initial;
     }
 }
 .fancybox-prev span {
@@ -1361,24 +1357,22 @@ a {
     background: transparent;
 }
 #fancybox-loading {
-  background-position: 0 -217px;
-
+    background-position: 0 -217px;
 }
 #backtop {
-  opacity: 0;
-  transition: all .3s ease-out;
-  position: fixed;
-  button {
-    outline: none;
-    border: 0;
-    &:hover {
-      cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    position: fixed;
+    button {
+        outline: none;
+        border: 0;
+        &:hover {
+            cursor: pointer;
+        }
     }
-  }
 }
-
 .show {
-  opacity: 1 !important;
+    opacity: 1 !important;
 }
 .all-movies.masonry-width {
     margin-left: 50px;
@@ -1389,12 +1383,13 @@ a {
     right: 15px;
     cursor: pointer;
     display: none;
+    z-index: 99;
 }
-.mb0{
-  margin-bottom: 0px;
+.mb0 {
+    margin-bottom: 0;
 }
-.float-right{
-  float: right;
+.float-right {
+    float: right;
 }
 @import "fancybox-override";
 @import "main2";
