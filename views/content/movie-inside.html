@@ -192,7 +192,7 @@
                         <div class="row">
                             <div class="col-md-11 col-sm-10 col-xs-12">
                                 <div class="all-movies">
-                                    <div masonry preserve-order class="mob-width">
+                                    <div masonry preserve-order  masonry-options="{ fitWidth: 'true'}" class="margin-auto">
                                         <div class="masonry-brick" ng-repeat="item in news track by $index">
                                             <div class="masonry-box padd20">
                                                 <img ng-src="{{item.img}}" alt="Dharma Production">
@@ -236,7 +236,7 @@
                         <div class="row">
                             <div class="col-md-11 col-sm-11 col-xs-12">
                                 <div class="all-movies masonry-width">
-                                    <div masonry preserve-order class="mob-width" >
+                                    <div masonry preserve-order masonry-options="{ fitWidth: 'true'}" class="margin-auto">
                                         <div class="masonry-brick" ng-repeat="item in gallery track by $index">
                                             <div class="masonry-box">
                                               <a href="{{item}}" fancybox-box rel="gallery1">  <img ng-src="{{item}}" alt="Dharma Production" ></a>
@@ -279,7 +279,7 @@
                         <div class="row">
                             <div class="col-md-11 col-sm-11 col-xs-12">
                                 <div class="all-movies masonry-width">
-                                    <div masonry preserve-order class="mob-width">
+                                    <div masonry preserve-order masonry-options="{ fitWidth: 'true'}" class="margin-auto">
                                         <div class="masonry-brick" ng-repeat="item in gallery track by $index">
                                             <div class="masonry-box">
                                               <a href="{{item}}" fancybox-box rel="gallery1">   <img ng-src="{{item}}" alt="Dharma Production"></a>
