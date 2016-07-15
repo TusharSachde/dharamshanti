@@ -34,23 +34,29 @@
 .mb20 {
   margin-bottom: 20px;
 }
-.upcoming-slider.slider-right .flexslider {
-  padding-bottom: 20px;
-  .flex-direction-nav a.flex-prev:before {
-    background: url("../img/left-orange.png") no-repeat center;
-  }
-  .flex-direction-nav a.flex-next:before {
-    background: url("../img/right-orange.png") no-repeat center;
+// .common-class.slider-right .flexslider {
+//   padding-bottom: 20px;
+//   .flex-direction-nav a.flex-prev:before {
+//     background: url("../img/left-orange.png") no-repeat center;
+//   }
+//   .flex-direction-nav a.flex-next:before {
+//     background: url("../img/right-orange.png") no-repeat center;
+//   }
+// }
+.common-class{
+  .flexslider {
+    .flex-direction-nav a.flex-prev:before {
+      background: url("../img/left-orange.png") no-repeat center;
+    }
+    .flex-direction-nav a.flex-next:before {
+      background: url("../img/right-orange.png") no-repeat center;
+    }
   }
 }
-.tv-all-slider .flexslider {
-  .flex-direction-nav a.flex-prev:before {
-    background: url("../img/left-orange.png") no-repeat center;
-  }
-  .flex-direction-nav a.flex-next:before {
-    background: url("../img/right-orange.png") no-repeat center;
-  }
+.slider-right{
+@extend .common-class;
 }
+
 .line30 {
   line-height: 30%;
 }

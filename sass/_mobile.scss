@@ -66,6 +66,18 @@
     }
 }
 @media (max-width: $screen-sm-max) {
+  .mob-font-10{
+    font-size: 12px;
+  }
+    .mob-mt-15 {
+        margin-top: 25px !important;
+    }
+    .mob-width-auto {
+        width: auto !important;
+    }
+    .f90 {
+        font-size: 60px;
+    }
     .f12 {
         font-size: 10px;
     }
@@ -124,7 +136,7 @@
     }
     .movie-inside-bg {
         padding: 360px 25px 0;
-      background-size: cover;
+        background-size: cover;
     }
     .all-tabs {
         padding: 10px 0 24px;
@@ -213,34 +225,54 @@
         padding: 215px 0 60px 108px;
     }
     .movie-inside-date {
-    padding-left: 30px;
-    padding-right: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .cast-credit {
+        padding-top: 10px;
+        padding-bottom: 60px;
+    }
+    .img-inside-box {
+    height: auto;
 }
-.cast-credit {
-    padding-top: 10px;
-    padding-bottom: 60px;
+.m-font12{
+      font-size: 12px;
 }
 }
 @media (max-width: $screen-xs-max) {
-  .line0 {
-    line-height: 100%;
+  .search-movie-mar {
+      margin: 0 10px;
+  }
+  .border-left ul li {
+    font-size: 13px;
 }
-  .awards-name ul li {
-    padding: 0px 0px;
-    min-height: 35px;
-    line-height: 100%;
+  .border-left{
+    h3{
+      font-size: 16px;
+    }
+  }
+  .ml-7 {
+    margin: 0 0 0 0px;
 }
-  .social-share.float-right {
-    float: none;
-}
-  .cast-credit {
-    padding-top: 10px;
-    padding-bottom: 60px;
-}
-  .movie-inside-date {
-    padding-left: 20px;
-    padding-right: 20px;
-}
+    .line0 {
+        line-height: 100%;
+    }
+    .awards-name ul li {
+        padding: 0;
+        min-height: 35px;
+        line-height: 100%;
+    }
+    .social-share.float-right {
+        float: none;
+    }
+    .cast-credit {
+        padding-top: 10px;
+        padding-bottom: 60px;
+    }
+    .movie-inside-date {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
     .social-share {
         padding: 15px 3px;
         .f18 {
@@ -311,7 +343,7 @@
         margin-bottom: 10px;
     }
     .f90 {
-        font-size: 60px;
+        font-size: 45px;
     }
     .mobile-center {
         float: none;
@@ -411,49 +443,70 @@
         }
     }
     .masonry-box {
-    width: 190px;
-}
-.masonry-width .masonry-box {
-    width: 190px;
+        width: 190px;
+    }
+    .masonry-width .masonry-box {
+        width: 190px;
+    }
+    .img-inside-box {
+    height: auto;
 }
 }
 @media (max-width:480px) {
-  .mob-width{
-    width: 250px;
-    margin: 0 auto;
-  }
+  .border-left {
 
-  .masonry-width .masonry-box {
-      width: 240px;
+    padding: 0 0 0 15px;
+ul{
+  li{
+    font-size: 11px;
+    line-height: 100%;
+    padding: 7px 0px;
   }
-  .masonry-box {
-  width: 240px;
 }
-  .awards-name ul li {
-    font-size: 12px;
 }
-  .panel-title h3 {
-    font-size: 12px;
+  .mobile-text-center{
+    text-align: center;
+  }
+  .tv-all-slider .flex-direction-nav .flex-next {
+    right: 0px !important;
 }
-  .all-cast ul li {
-    font-size: 12px;
-    min-height: 40px;
+  .tv-all-slider .flex-direction-nav .flex-prev {
+    left: 0px !important;
 }
-  .cast h1 {
-    font-size: 20px;
-}
-  .movie-inside-curve {
-    height: 10px;
-
-}
-  .m-title h1 {
-    font-size: 20px;
-}
-  .movie-inside-bg {
-    padding: 170px 0px 0;
-    // background-position-y: 40px;
-      background-size: 100% 100%;
-}
+    .mob-width {
+        width: 250px;
+        margin: 0 auto;
+    }
+    .masonry-width .masonry-box {
+        width: 240px;
+    }
+    .masonry-box {
+        width: 240px;
+    }
+    .awards-name ul li {
+        font-size: 12px;
+    }
+    .panel-title h3 {
+        font-size: 12px;
+    }
+    .all-cast ul li {
+        font-size: 12px;
+        min-height: 40px;
+    }
+    .cast h1 {
+        font-size: 20px;
+    }
+    .movie-inside-curve {
+        height: 10px;
+    }
+    .m-title h1 {
+        font-size: 20px;
+    }
+    .movie-inside-bg {
+        padding: 170px 0 0;
+        background-size: 100%;
+        background-repeat: repeat-y;
+    }
     .common-class .flex-control-nav {
         display: none !important;
     }
@@ -555,8 +608,11 @@
         padding: 50px 0 100px;
     }
     .f90 {
-        font-size: 40px;
+        font-size: 30px;
     }
+    .ml-7 {
+    margin: 0 0 0 0px;
+}
     .movie-names h4 {
         font-size: 14px;
     }
@@ -565,5 +621,10 @@
     }
     .movie-tab ul li h1 {
         font-size: 16px;
+    }
+    .marg-arrow {
+        .flex-direction-nav a {
+            margin: -30px 0 0;
+        }
     }
 }
