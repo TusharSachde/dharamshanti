@@ -25,6 +25,18 @@
                             <h1 class="ml15 mb0 color-primary font-hammersmith line30 f55">UPCOMING RELEASES</h1>
                         </div>
                         <div class="upcoming-slider mob-arrow">
+                            <flex-slider flex-slide="item in MovieDetails.upcoming track by $index" animation="slide" animationloop="true" move="1">
+                                <li>
+                                    <div class="video-box">
+                                        <div class="video-slide-img">
+                                            <a ui-sref="movie-inside"> <img ng-src="{{item.image}}" alt="Dharma Productions"></a>
+                                        </div>
+
+                                    </div>
+                                </li>
+                            </flex-slider>
+                        </div>
+                        <!-- <div class="upcoming-slider mob-arrow">
                             <flex-slider flex-slide="item in upcomingrelease track by $index" animation="slide" animationloop="true" move="1">
                                 <li>
                                     <div class="video-box">
@@ -35,7 +47,7 @@
                                     </div>
                                 </li>
                             </flex-slider>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

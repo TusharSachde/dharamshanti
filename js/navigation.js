@@ -1,15 +1,15 @@
-var adminURL = "";
-if(isproduction)
-{
-  adminURL =  "http://www.wohlig.co.in/demo/index.php";
-}
-else {
-  adminURL = "http://localhost/demo/index.php";
-}
+var adminurl = "http://192.168.1.113:1337/movie/";
+// if(isproduction)
+// {
+//   adminURL =  "http://www.wohlig.co.in/demo/index.php";
+// }
+// else {
+//   adminURL = "http://localhost/demo/index.php";
+// }
 
 var navigationservice = angular.module('navigationservice', [])
 
-.factory('NavigationService', function() {
+.factory('NavigationService', function($http) {
   var navigation = [{
     name: "Overview",
     classis: "active",
@@ -60,6 +60,17 @@ var navigationservice = angular.module('navigationservice', [])
       }
       return menuname;
     },
+
+    getMovieDetails: function(callback) {
+        // console.log('form data: ', formData);
+        $http({
+            url: adminurl + 'getMovieDetails',
+            method: 'POST',
+            withCredentials: true
+        }).success(callback);
+    },
+
+
 
   };
 });
