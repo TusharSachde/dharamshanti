@@ -66,6 +66,24 @@
                             <h1 class="ml15 mb0  color-primary font-hammersmith line30 f55">RECENT RELEASES</h1>
                         </div>
                         <div class="upcoming-slider slider-right">
+                            <flex-slider flex-slide="item in MovieDetails.recent track by $index" animation="slide" animationloop="true" move="1">
+                                <li>
+                                    <div class="row" ng-repeat="data in item">
+                                        <div class="col-md-6 col-sm-6 col-xs-12" >
+                                            <div class="video-box mb20 common-class">
+                                                <div class="video-slide-img img-pads">
+                                                    <img ng-src="{{data.image|uploadpath}}" alt="Dharma Productions">
+                                                </div>
+                                                <div class="video-name font-karla text-up">
+                                                    <span>{{images.name}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </flex-slider>
+                        </div>
+                        <!-- <div class="upcoming-slider slider-right">
                             <flex-slider flex-slide="videobreak in video track by $index" animation="slide" animationloop="true" move="1">
                                 <li>
                                     <div class="row" ng-repeat="videobreaks in videobreak">
@@ -82,7 +100,7 @@
                                     </div>
                                 </li>
                             </flex-slider>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

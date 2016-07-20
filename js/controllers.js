@@ -570,7 +570,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                         name: 'Ranbir Kapoor',
                         code: 'RK'
                     }
-                ];  
+                ];
         $scope.news = [{
             img: "img/dharma-world/d5.jpg",
             name: "Deepika scares me as an actor: Ranbir Kapoor",
@@ -744,6 +744,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.video[i] = _.chunk($scope.video[i], 4);
         }
         console.log($scope.video);
+        NavigationService.getMovieDetails(function(data) {
+          $scope.MovieDetails = data.data;
+          console.log('MovieDetails', $scope.MovieDetails);
+          _.each(  $scope.MovieDetails.recent,function(n){
+
+              n.MovieDetails.recent=_.chunk($scope.MovieDetails.recent.images, 4);
+          });
+
+          console.log('$scope.MovieDetails.recent',$scope.MovieDetails.recent.images);
+          });
+          
+
+
+
+
+
+
         $scope.allvideos = [{
             img: "img/movie/m1.jpg",
             name: "Ae Dil hai mushkil"
