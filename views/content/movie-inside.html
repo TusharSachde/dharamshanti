@@ -1,9 +1,9 @@
-<section class="movie-inside-bg" >
+<section class="movie-inside-bg">
 
-    <div class="container-fluid" >
+    <div class="container-fluid">
 
         <div class="movie-inside-curve" id="top-scroll"></div>
-        <div class="movie-inner-bg" >
+        <div class="movie-inner-bg">
             <div class="row">
 
                 <div class="movie-inside-date">
@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="movie-tabs">
-                <div class="all-tabs">
+                <div class="all-tabs hidden-xs">
                     <div class="btn-group" role="group" aria-label="...">
                         <button type="button" class="btn {{classa}}" ng-click="tabchange('synopsis',1)">Synopsis </button>
                         <button type="button" class="btn {{classb}}" ng-click="tabchange('cast',2)"> CAST & CREDITS</button>
@@ -33,6 +33,21 @@
                         <button type="button" class="btn {{classg}}" ng-click="tabchange('wallpapper',7)">WALLPAPERS </button>
                         <button type="button" class="btn {{classh}}" ng-click="tabchange('awards',8)"> AWARDS </button>
                     </div>
+                </div>
+                <div class="mob-slider hidden-md hidden-sm hidden-lg visible-xs">
+                    <div class="all-tabs">
+
+                        <div class="btn-group" role="group" aria-label="...">
+                            <flex-slider flex-slide="item in tabing track by $index" animation="slide" item-width="120" item-margin="10" animationloop="true" move="2">
+
+                                <li class="text-center">
+                                    <button type="button" class="btn {{item.class}}" ng-click="tabchange(item.tab,item.id)">{{item.name}} </button>
+                                </li>
+
+                            </flex-slider>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="synopsis" ng-if="tab=='synopsis'">
                     <div class="movie-inside-date bg-synopsis">
@@ -99,15 +114,15 @@
                                         </div>
                                     </div>
                                     <div class="text-center mt60">
-                                      <div class="btn-view-more ">
-                                          <a href="" class="btn-1 font-hammersmith btn color-primary display-inline">
-                                              <svg>
-                                                  <rect x="0" y="0" fill="none" width="100%" height="100%" />
-                                              </svg>
-                                              VIEW ALL
-                                          </a>
-                                          <!-- <button type="button" name="button" class="btn-primary-outline font-hammersmith btn-enter"></button> -->
-                                      </div>
+                                        <div class="btn-view-more ">
+                                            <a href="" class="btn-1 font-hammersmith btn color-primary display-inline">
+                                                <svg>
+                                                    <rect x="0" y="0" fill="none" width="100%" height="100%" />
+                                                </svg>
+                                                VIEW ALL
+                                            </a>
+                                            <!-- <button type="button" name="button" class="btn-primary-outline font-hammersmith btn-enter"></button> -->
+                                        </div>
                                     </div>
                                 </div>
 
@@ -192,7 +207,7 @@
                         <div class="row">
                             <div class="col-md-11 col-sm-10 col-xs-12">
                                 <div class="all-movies">
-                                    <div masonry preserve-order  masonry-options="{ fitWidth: 'true'}" class="margin-auto">
+                                    <div masonry preserve-order masonry-options="{ fitWidth: 'true'}" class="margin-auto">
                                         <div class="masonry-brick" ng-repeat="item in news track by $index">
                                             <div class="masonry-box padd20">
                                                 <img ng-src="{{item.img}}" alt="Dharma Production">
@@ -239,7 +254,7 @@
                                     <div masonry preserve-order masonry-options="{ fitWidth: 'true'}" class="margin-auto">
                                         <div class="masonry-brick" ng-repeat="item in gallery track by $index">
                                             <div class="masonry-box">
-                                              <a href="{{item}}" fancybox-box rel="gallery1">  <img ng-src="{{item}}" alt="Dharma Production" ></a>
+                                                <a href="{{item}}" fancybox-box rel="gallery1"> <img ng-src="{{item}}" alt="Dharma Production"></a>
 
                                             </div>
                                         </div>
@@ -282,7 +297,7 @@
                                     <div masonry preserve-order masonry-options="{ fitWidth: 'true'}" class="margin-auto">
                                         <div class="masonry-brick" ng-repeat="item in gallery track by $index">
                                             <div class="masonry-box">
-                                              <a href="{{item}}" fancybox-box rel="gallery1">   <img ng-src="{{item}}" alt="Dharma Production"></a>
+                                                <a href="{{item}}" fancybox-box rel="gallery1"> <img ng-src="{{item}}" alt="Dharma Production"></a>
 
                                             </div>
                                         </div>
@@ -318,17 +333,17 @@
                                 <div class="row">
                                     <div class="col-md-4 pad5 col-sm-4 col-xs-12" ng-repeat="item in allvideos track by $index">
                                         <div class="video-play-box dh-relative">
-                                          <img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive width100">
+                                            <img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive width100">
 
-                                                    <div class="overlay dh-absulate">
-                                                        <div class="pos-middle">
-                                                            <span class="color-white font-hammersmith">{{item.name}}</span>
-                                                        </div>
+                                            <div class="overlay dh-absulate">
+                                                <div class="pos-middle">
+                                                    <span class="color-white font-hammersmith">{{item.name}}</span>
+                                                </div>
 
-                                                        <div class="bottom-right dh-absulate ply-post">
-                                                            <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/xnJ4RTodr3g?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"><img src="img/play-small-btn.jpg" alt="Dharma Productions"></a>
-                                                        </div>
-                                                    </div>
+                                                <div class="bottom-right dh-absulate ply-post">
+                                                    <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/xnJ4RTodr3g?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"><img src="img/play-small-btn.jpg" alt="Dharma Productions"></a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -690,7 +705,7 @@
             </div>
 
 
-    </div>
-    <div class="back-to-top pull-right" scroll-to-item scroll-to="#top-scroll"> <img src="img/top-scroll.png" alt="Dharma Productions">
-            </div>
+        </div>
+        <div class="back-to-top pull-right" scroll-to-item scroll-to="#top-scroll"> <img src="img/top-scroll.png" alt="Dharma Productions">
+        </div>
 </section>

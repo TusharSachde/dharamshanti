@@ -1,4 +1,7 @@
 @media (max-width:1200px) {
+  .fancybox-close {
+    right: 0px;
+}
     .f120 {
         font-size: 100px;
     }
@@ -74,10 +77,27 @@
         padding: 135px 0 60px 108px;
     }
     .dharma-journey-bg {
-      padding-bottom: 25px;
-  }
+        padding-bottom: 25px;
+    }
 }
 @media (max-width: $screen-sm-max) {
+  .fancybox-close {
+    width: 40px;
+    height: 40px;
+        background-position: 2px 5px;
+}
+  .fancybox-prev span {
+    background-position: -7px -28px;
+}
+.fancybox-nav span {
+    visibility: visible;
+    height: 40px;
+    bottom: 0px;
+    top: initial;
+}
+.fancybox-next span {
+    background-position: -10px -64px;
+}
     #cd-timeline {
         margin-bottom: 0;
     }
@@ -95,7 +115,7 @@
     .dot {
         height: 20px;
         width: 20px;
-        margin:inherit;
+        margin: inherit;
         position: absolute;
         left: 11%;
         top: -17px;
@@ -103,7 +123,7 @@
     .dot2 {
         height: 20px;
         width: 20px;
-        margin:inherit;
+        margin: inherit;
         position: absolute;
         left: 11%;
         top: -7px;
@@ -303,6 +323,14 @@
     .m-font12 {
         font-size: 12px;
     }
+    .data-content{
+      p{
+        font-size: 18px;
+      }
+      h4{
+        font-size: 24px;
+      }
+    }
 }
 @media (max-width: $screen-xs-max) {
     .search-movie-mar {
@@ -367,7 +395,7 @@
     }
     .all-tabs .btn-group button:first-child {
         .all-tabs .btn-group button {
-            font-size: 11px;
+            font-size: 14px;
             padding: 0 6px;
         }
         padding-left: 5px;
@@ -517,45 +545,73 @@
         height: auto;
     }
     .img-timline-box img {
-      border-top-left-radius: 0.25em;
-      border-top-right-radius: 0.25em;
-  }
-  .img-timline-box2 img {
-      border-bottom-left-radius: 0.25em;
-      border-bottom-right-radius: 0.25em;
-  }
-  .dharma-journey-bg {
-    padding-bottom: 25px;
-}
+        border-top-left-radius: 0.25em;
+        border-top-right-radius: 0.25em;
+    }
+    .img-timline-box2 img {
+        border-bottom-left-radius: 0.25em;
+        border-bottom-right-radius: 0.25em;
+    }
+    .dharma-journey-bg {
+        padding-bottom: 25px;
+    }
+    .bg-sun {
+        padding: 215px 0 60px 30px;
+    }
 }
 @media (max-width:480px) {
-  .dharma-journey-bg {
-    padding-bottom: 25px;
+  .all-tabs .btn-group button {
+    font-size: 14px;
 }
-  .img-timline-box img {
-    border-top-left-radius: 0.25em;
-    border-top-right-radius: 0.25em;
+  .movie-tab {
+    bottom:-20px;
+
 }
-.img-timline-box2 img {
-    border-bottom-left-radius: 0.25em;
-    border-bottom-right-radius: 0.25em;
-}
-  .side-wall{
-    display: none;
+  .margin-top-minus{
+    margin-top: -40px;
   }
+  .dharma-tv-bg, .dharma-top-bg {
+    background: url(../img/tv-bg.jpg)no-repeat top center #000;
+    background-size: contain;
+}
+    .mob-hide {
+        .flex-direction-nav {
+            display: none;
+        }
+        .flexslider {
+    padding-bottom: 30px !important;
+}
+    }
+    .bg-sun {
+        padding: 215px 0 0 30px;
+    }
+    .dharma-journey-bg {
+        padding-bottom: 25px;
+    }
+    .img-timline-box img {
+        border-top-left-radius: 0.25em;
+        border-top-right-radius: 0.25em;
+    }
+    .img-timline-box2 img {
+        border-bottom-left-radius: 0.25em;
+        border-bottom-right-radius: 0.25em;
+    }
+    .side-wall {
+        display: none;
+    }
     .top-circle {
         text-align: left;
         margin: inherit;
         position: relative;
     }
     .dot {
-      position: absolute;
+        position: absolute;
         left: 13%;
         top: -16px;
         margin: inherit;
     }
-    .dot2{
-      position: absolute;
+    .dot2 {
+        position: absolute;
         left: 13%;
         top: -5px;
         margin: inherit;
@@ -721,8 +777,8 @@
         width: 100px;
     }
     .head-curve {
-        margin: 0;
-        background-position-y: -15px;
+        margin: -1px 0px 0px 0px;
+        background-position-y: -13px;
     }
     .pos-bottom {
         bottom: -64px;

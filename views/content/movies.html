@@ -88,7 +88,7 @@
                 </div>
             </div>
             <div class="mobile-row">
-            <div class="row-flex" ng-repeat="videos in allvideos">
+            <!-- <div class="row-flex mobile-row" ng-repeat="videos in allvideos">
                 <div class="col-flex" ng-repeat="item in videos track by $index">
                     <div class="video-box mb20">
                         <div class="video-slide-img img-pads">
@@ -99,6 +99,16 @@
                         </div>
                     </div>
                 </div>
+            </div> -->
+            <div class="row-flex text-center" ng-repeat="videos in allvideos">
+              <div class="col-flex" ng-repeat="item in videos track by $index">
+                <div class="img-pads">
+                  <img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive">
+                </div>
+                <div class="movie-names">
+                  <h4 class="text-up color-grey">{{item.name}}</h4>
+                </div>
+              </div>
             </div>
             </div>
             <div class="text-center">

@@ -15,7 +15,7 @@ $brand-info: #000072 !default;
 $white: #ffffff !default;
 $black: #171717 !default;
 $grey: #6f6f6e !default;
-$dark-black: #383838 !default;     
+$dark-black: #383838 !default;
 $dark-primary: #da4f09 !default;
 $font-family-sans-serif: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif: "Hammersmith One", Georgia, "Times New Roman", Times, serif !default;
@@ -657,7 +657,9 @@ a {
         }
     }
     .active-tab {
-        background: $brand-primary !important;
+        // background: $brand-primary !important;
+        background: url(../img/bg-grediant.jpg)no-repeat;
+        background-size: 100% 100%;
         color: $white !important;
     }
 }
@@ -1391,6 +1393,14 @@ a {
 }
 .float-right {
     float: right;
+}
+.mob-slider{
+  .flex-control-nav {
+  display: none;
+  }
+  .flex-direction-nav {
+      display: none;
+  }
 }
 @import "fancybox-override";
 @import "main2";
