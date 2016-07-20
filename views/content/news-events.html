@@ -1,83 +1,107 @@
 <section class="bg-primary">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-sm-4 col-xs-12">
-        <div class="dharma-sun">
-        <img src="img/sun.png" alt="Dharma World" class="img-responsive">
-        </div>
-      </div>
-      <div class="col-md-8 col-sm-8 col-xs-12">
-        <div class="news-search">
-          <div class="search-movie dh-relative">
-            <div class="search-img">
-              <img src="img/search.png" alt="Dharma Productions">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="dharma-sun">
+                    <img src="img/sun.png" alt="Dharma World" class="img-responsive">
+                </div>
             </div>
-              <input type="search" name="name" value="" class="search-date" placeholder="Search">
-          </div>
-<div class="mt15 mobile-text-center">
-  <div class="display-inline date-select">
-    <select class="form-control">
-      <option  value="Month">Month</option>
-      <option  value="Jan">Jan</option>
-      <option  value="Feb">Feb</option>
-      <option  value="March">March</option>
+            <div class="col-md-8 col-sm-8 col-xs-12">
+                <div class="news-search">
+                    <div class="search-movie dh-relative">
+                        <div class="search-img">
+                            <img src="img/search.png" alt="Dharma Productions">
+                        </div>
+                        <input type="search" name="name" value="" class="search-date" placeholder="Search">
+                    </div>
+                    <div class="mt15 mobile-text-center">
+                        <div class="display-inline date-select">
+                            <!-- <select class="form-control">
+      <option  value="Month"><a href="">Month</a></option>
+      <option  value="Jan"><a href="">Jan</a></option>
+      <option  value="Feb"><a href="">Feb</a></option>
+      <option  value="March"><a href="">March</a></option>
 
-    </select>
-  </div>
-  <div class="display-inline date-select ml15">
-    <select class="form-control">
-      <option  value="Year">Year</option>
-      <option  value="2016">2016</option>
-      <option  value="2015">2015</option>
-      <option  value="2014">2014</option>
+    </select> -->
+                            <div class="dropdown custom-dropdown">
+                                <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Month
+                                    <img src="img/select-arrow.png" alt="">
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="">Jan</a></li>
+                                    <li><a href="">Feb</a></li>
+                                    <li><a href="">March</a></li>
 
-    </select>
-  </div>
-  <div class="btn-go display-inline ml15">
-    <button class="btn" type="submit">Go</button>
-  </div>
-</div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="display-inline date-select ml15">
+                            <!-- <select class="form-control">
+                                <option value="Year">Year</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+
+                            </select> -->
+                            <div class="dropdown custom-dropdown">
+                                <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Year
+                                    <img src="img/select-arrow.png" alt="">
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="">2016</a></li>
+                                    <li><a href="">2015</a></li>
+                                    <li><a href="">2014</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btn-go display-inline ml15">
+                            <button class="btn" type="submit">Go</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 
-<section>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-    <div class="all-movies custom-box mob-mt-top">
-      <div masonry preserve-order masonry-options="{ fitWidth: 'true'}" class="margin-auto">
-          <div class="masonry-brick" ng-repeat="item in news track by $index">
-            <div class="masonry-box">
-                <img ng-src="{{item.img}}" alt="Dharma Production">
-          <div class="padd10">
-            <div class="news-title mt10">
-              <h4 class="margin0">{{item.name}}</h4>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="all-movies custom-box mob-mt-top">
+                        <div masonry preserve-order masonry-options="{ fitWidth: 'true'}" class="margin-auto">
+                            <div class="masonry-brick" ng-repeat="item in news track by $index">
+                                <div class="masonry-box">
+                                    <img ng-src="{{item.img}}" alt="Dharma Production">
+                                    <div class="padd10">
+                                        <div class="news-title mt10">
+                                            <h4 class="margin0">{{item.name}}</h4>
+                                        </div>
+                                        <div class="news-date">
+                                            <span class="f12">{{item.date}}</span>
+                                        </div>
+                                        <div class="news-descp mt10">
+                                            <p>{{item.desc}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center cast-credit">
+                            <div class="text-center btn-view-news mt40">
+                                <a href="" class="btn-1 font-hammersmith btn color-primary">
+                                    <svg>
+                                        <rect x="0" y="0" fill="none" width="100%" height="100%" />
+                                    </svg>
+                                    VIEW ALL
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="news-date">
-              <span class="f12">{{item.date}}</span>
-            </div>
-            <div class="news-descp mt10">
-              <p>{{item.desc}}</p>
-            </div>
-          </div>
-            </div>
-          </div>
-      </div>
-      <div class="text-center cast-credit">
-        <div class="text-center btn-view-news mt40">
-            <a href="" class="btn-1 font-hammersmith btn color-primary">
-                <svg>
-                    <rect x="0" y="0" fill="none" width="100%" height="100%" />
-                </svg>
-                VIEW ALL
-            </a>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</section>
+    </section>
 </section>
