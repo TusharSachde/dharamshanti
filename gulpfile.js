@@ -26,6 +26,7 @@ var jsArray = [
     './bower_components/imagesloaded/imagesloaded.js',
     './bower_components/angular-masonry/angular-masonry.js',
     './bower_components/angular-swiper/dist/angular-swiper.js',
+    './bower_components/angular-ui-select/dist/select.js',
     './js/app.js',
     './js/language.js',
     './js/controllers.js',
