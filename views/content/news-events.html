@@ -12,7 +12,13 @@
                         <div class="search-img">
                             <img src="img/search.png" alt="Dharma Productions">
                         </div>
-                        <input type="search" name="name" value="" class="search-date" placeholder="Search">
+                        <!-- <input type="search" name="name" value="" class="search-date" placeholder="Search"> -->
+                        <ui-select ng-model="country.selected" style="width: 100%;" title="Choose a country" class="search-drop">
+                            <ui-select-match placeholder="Search">{{$select.selected.name}}</ui-select-match>
+                            <ui-select-choices repeat="country in countries | filter: $select.search">
+                                <span ng-bind-html="country.name | highlight: $select.search"></span>
+                            </ui-select-choices>
+                        </ui-select>
                     </div>
                     <div class="mt15 mobile-text-center">
                         <div class="display-inline date-select">

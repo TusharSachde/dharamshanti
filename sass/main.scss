@@ -996,6 +996,66 @@ a {
     position: absolute;
     top: 12px;
     left: 10px;
+        z-index: 99;
+}
+.news-search{
+  .ui-select-match {
+    background: transparent;
+    position: relative;
+    &:focus{
+      outline: 0;
+    }
+
+}
+.btn-default-focus{
+    box-shadow: none;
+      outline: 0;
+  &:focus{
+    outline: 0;
+    box-shadow: none;
+  }
+}
+.ui-select-bootstrap .ui-select-choices-row>a {
+    display: block;
+    padding: 10px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: $black;
+    white-space: nowrap;
+    &:hover{
+      text-decoration: none;
+    color: #ffffff;
+    background-color: #ea611a;
+    }
+}
+.ui-select-bootstrap .ui-select-toggle > .caret {
+    display: none;
+}
+.ui-select-bootstrap .ui-select-choices-row.active>a {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+    background-color: #ea611a;
+    padding: 10px 20px;
+}
+.ui-select-bootstrap > .ui-select-match > .btn {
+    text-align: left !important;
+    background: #da4f0a;
+    color: #fff;
+    border: none;
+    height: 45px;
+    padding: 13px 0px 0px 40px;
+    &:focus{
+      outline: 0;
+    }
+}
+.text-muted {
+    color: #ffffff;
+}
+input.form-control.ui-select-search{
+  padding: 9px 0px 0px 40px;
+}
 }
 .f120 {
     font-size: 120px;
