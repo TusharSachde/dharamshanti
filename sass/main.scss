@@ -277,6 +277,15 @@ a {
     background: rgba(255, 255, 255, 0);
 }
 .home-slider {
+  .flexslider {
+
+    overflow: hidden;
+    .slides{
+      img{
+        width: auto;
+      }
+    }
+}
     .flexslider:hover .flex-direction-nav .flex-prev:hover {
         opacity: 1;
     }
