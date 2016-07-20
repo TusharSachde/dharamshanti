@@ -1,4 +1,4 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'wu.masonry', 'ksSwiper','ui.select'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'wu.masonry', 'ksSwiper','imageupload'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -66,7 +66,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         img: "img/video/v4.jpg",
         name: "Kapoor & Sons | Rahul Meets Tia | Dialogue Promo | Fawad Khan..."
 
-    }]
+    }];
     $scope.news = [{
         img: "img/news/n1.jpg",
         name: "Varun Dhawan shares picture of Dharma Productions new office",
@@ -115,7 +115,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         date: "21 Mar 2016",
         desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
 
-    }]
+    }];
 
     $scope.tabs = 'upcoming';
     $scope.classp = 'active-tab';
@@ -552,17 +552,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("News Events");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.people = [
-  { name: 'Adam',      email: 'adam@email.com',      age: 10 },
-  { name: 'Amalie',    email: 'amalie@email.com',    age: 12 },
-  { name: 'Wladimir',  email: 'wladimir@email.com',  age: 30 },
-  { name: 'Samantha',  email: 'samantha@email.com',  age: 31 },
-  { name: 'Estefanía', email: 'estefanía@email.com', age: 16 },
-  { name: 'Natasha',   email: 'natasha@email.com',   age: 54 },
-  { name: 'Nicole',    email: 'nicole@email.com',    age: 43 },
-  { name: 'Adrian',    email: 'adrian@email.com',    age: 21 }
-];
 
+             $scope.countries = [ // Taken from https://gist.github.com/unceus/6501985
+                    {
+                        name: 'Kabhi Khushi Kabhi Gum',
+                        code: 'kkk'
+                    }, {
+                        name: 'Bahubali',
+                        code: 'BH'
+                    }, {
+                        name: 'Varun Dhawan',
+                        code: 'AA'
+                    }, {
+                        name: 'Deepika',
+                        code: 'D'
+                    }, {
+                        name: 'Ranbir Kapoor',
+                        code: 'RK'
+                    }
+                ];  
         $scope.news = [{
             img: "img/dharma-world/d5.jpg",
             name: "Deepika scares me as an actor: Ranbir Kapoor",
@@ -679,17 +687,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Movies");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.upcomingrelease = [{
-            img: "img/movie-banner-dam.png",
-            date: "10 March 2017",
-            director: "Shashank Khaitan",
-            cast: "Alia Bhatt, Varun Dhawan"
-        }, {
-            img: "img/movie-banner-dam.png",
-            date: "10 March 2017",
-            director: "Shashank Khaitan",
-            cast: "Alia Bhatt, Varun Dhawan"
-        }]
+        // $scope.upcomingrelease = [{
+        //     img: "img/movie-banner-dam.png",
+        //     date: "10 March 2017",
+        //     director: "Shashank Khaitan",
+        //     cast: "Alia Bhatt, Varun Dhawan"
+        // }, {
+        //     img: "img/movie-banner-dam.png",
+        //     date: "10 March 2017",
+        //     director: "Shashank Khaitan",
+        //     cast: "Alia Bhatt, Varun Dhawan"
+        // }]
+        NavigationService.getMovieDetails(function(data) {
+          $scope.MovieDetails = data.data;
+          console.log('MovieDetails', $scope.MovieDetails);
+          console.log('$scope.MovieDetails',$scope.MovieDetails.upcoming);
+          });
+
+
+
         $scope.video = [{
             img: "img/movie/m11.jpg",
             name: "Ae Dil hai mushkil"

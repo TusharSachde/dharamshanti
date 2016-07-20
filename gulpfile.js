@@ -13,6 +13,7 @@ var jsArray = [
     './bower_components/angular-flexslider/angular-flexslider.js',
     './bower_components/angular-translate/angular-translate.js',
     './bower_components/lodash/lodash.js',
+    './bower_components/angularjs-imageupload-directive/public/javascripts/imageupload.js',
     './bower_components/angulartics/dist/angulartics.min.js',
     './bower_components/angulartics-google-analytics/dist/angulartics-google-analytics.min.js',
     './bower_components/jquery-bridget/jquery-bridget.js',

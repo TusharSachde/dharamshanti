@@ -1,4 +1,8 @@
-var adminurl = "http://192.168.1.113:1337/movie/";
+var adminurl = "http://192.168.1.113:1337/";
+var imgurl = adminurl + "upload/";
+var imgpath = imgurl + "readFile";
+var uploadurl = imgurl;
+
 // if(isproduction)
 // {
 //   adminURL =  "http://www.wohlig.co.in/demo/index.php";
@@ -64,7 +68,7 @@ var navigationservice = angular.module('navigationservice', [])
     getMovieDetails: function(callback) {
         // console.log('form data: ', formData);
         $http({
-            url: adminurl + 'getMovieDetails',
+            url: adminurl + 'movie/getMovieDetails',
             method: 'POST',
             withCredentials: true
         }).success(callback);
