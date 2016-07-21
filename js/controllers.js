@@ -1,4 +1,4 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'wu.masonry', 'ksSwiper','imageupload'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'wu.masonry', 'ksSwiper','imageupload','ui.select'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -754,7 +754,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
           console.log('$scope.MovieDetails.recent',$scope.MovieDetails.recent.images);
           });
-          
+
 
 
 
