@@ -30,12 +30,12 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'AwardsCtrl'
         })
         .state('dharma-tv', {
-            url: "/dharma-tv",
+            url: "/dharma-tv/",
             templateUrl: "views/template.html",
             controller: 'DharmaTvCtrl'
         })
         .state('tv-inside', {
-            url: "/tv-inside",
+            url: "/tv-inside/:id",
             templateUrl: "views/template.html",
             controller: 'TvInsideCtrl'
         })

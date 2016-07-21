@@ -10,6 +10,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
+
+
+
     $scope.mySlides = [
         'img/banners/slide1.jpg',
         'img/banners/slide1.jpg'
@@ -18,6 +21,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         'img/banners/mob-slider.jpg',
         'img/banners/mob-slider.jpg'
     ];
+    NavigationService.getAllUpcomingMovies(function(data) {
+        $scope.AllUpcomingMovies = data.data;
+        console.log('AllUpcomingMovies', $scope.AllUpcomingMovies);
+    });
+    NavigationService.getAllRecentMovies(function(data) {
+        $scope.AllRecentMovies = data.data;
+        console.log('AllRecentMovies', $scope.AllRecentMovies);
+    });
+
+
+
     $scope.movie = [{
         img: "img/movie/m1.jpg",
         name: "Ae Dil hai mushkil"
@@ -116,6 +130,39 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
 
     }];
+    NavigationService.getNews(function(data) {
+        $scope.News = data.data;
+        console.log('News', $scope.News);
+    });
+
+    $scope.subscribe = {};
+    $scope.subscribe.email = "";
+    $scope.checkEmail = false;
+  $scope.subscribeEmail = false;
+    $scope.subscribe = function(email,form) {
+      if(email && email!='' && form.$valid){
+        console.log('erdtfgh',email.length);
+        NavigationService.subScribe(email, function(data) {
+            if (!data.value) {
+                if ($scope.subscribe.email) {
+                    $scope.checkEmail = true;
+                    $scope.subscribeEmail = false;
+                }
+            } else {
+                $scope.subscribeEmail = true;
+                $scope.checkEmail = false;
+            }
+            console.log(email);
+            $scope.subscribe.email = "";
+        });
+      }
+
+    };
+
+
+
+
+
 
     $scope.tabs = 'upcoming';
     $scope.classp = 'active-tab';
@@ -166,11 +213,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
 
     })
-    .controller('TvInsideCtrl', function($scope, TemplateService, NavigationService) {
+    .controller('TvInsideCtrl', function($scope, TemplateService, NavigationService,$stateParams) {
         $scope.template = TemplateService.changecontent("tv-inside");
         $scope.menutitle = NavigationService.makeactive("TV Inside");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+
+        NavigationService.getDharmatvOne($stateParams.id, function(data) {
+            console.log('getDharmatvOne',data);
+              $scope.allvideos = data.data;
+        })
+
+
 
         $scope.allvideos = [{
             img: "img/tv/t1.jpg",
@@ -637,6 +691,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             'img/video-play.jpg',
             'img/video-play.jpg'
         ];
+
+        NavigationService.getAllDharmatv(function(data) {
+            $scope.AllDharmatv = data.data;
+            console.log('AllDharmatv', $scope.AllDharmatv);
+        });
+
         $scope.video = [{
             img: "img/movie/m6.jpg",
             name: "Dhivara Full Video Song  Baahubali (Hindi) "
@@ -743,26 +803,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         for (var i = 0; i < $scope.video.length; i++) {
             $scope.video[i] = _.chunk($scope.video[i], 4);
         }
-        console.log($scope.video);
+        var array = [];
         NavigationService.getMovieDetails(function(data) {
-            console.log(data); 
-            $scope.MovieDetails = data.data.data;
-            console.log($scope.MovieDetails);
+            $scope.MovieDetails = data.data;
             $scope.movieList = _.groupBy($scope.MovieDetails, "releaseType");
-            console.log($scope.movieList);
+            array = _.cloneDeep($scope.movieList.past);
             $scope.movieList.recent = _.chunk($scope.movieList.recent, 4);
             for (var i = 0; i < $scope.movieList.recent.length; i++) {
                 $scope.movieList.recent[i] = _.chunk($scope.movieList.recent[i], 4);
             }
-            console.log($scope.movieList.recent);
+            $scope.movieList.past = $scope.movieList.past.splice(0, 10);
+            $scope.movieList.past = _.chunk($scope.movieList.past, 5);
         });
-
-
-
-
-
-
-
+        $scope.viewAll = function() {
+            $scope.movieList.past = _.chunk(array, 5);
+        }
         $scope.allvideos = [{
             img: "img/movie/m1.jpg",
             name: "Ae Dil hai mushkil"

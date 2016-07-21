@@ -29,19 +29,19 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="upcoming-movie mt100">
+                    <div class="upcoming-movie mt100" ng-repeat ="data in AllDharmatv">
                         <div class="title ">
-                            <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">BAAHUBALI</h1>
+                            <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">{{data.title}}</h1>
                         </div>
                         <div class="upcoming-slider tv-all-slider text-shadow">
-                            <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
+                            <flex-slider flex-slide="item in data.videos track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
                                 <li>
                                     <div class="video-box">
                                         <div class="video-slide-img">
-                                            <a ui-sref="tv-inside"><img ng-src="{{item.img}}" alt="Dharma Productions"></a>
+                                            <a ui-sref="tv-inside"><img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions"></a>
                                         </div>
                                         <div class="video-names mt10">
-                                            <span class="color-white text-cap">{{item.name}}</span>
+                                            <span class="color-white text-cap">{{item.description}}</span>
                                         </div>
 
 
@@ -49,20 +49,28 @@
                                 </li>
                             </flex-slider>
                         </div>
+                        <div class="btn-view-all mt40 mobile-text-center">
+                            <a ui-sref="tv-inside({id:data._id})" class="btn-1 font-hammersmith btn color-primary float-right mobile-center ">
+                                <svg>
+                                    <rect x="0" y="0" fill="none" width="100%" height="100%" />
+                                </svg>
+                                VIEW ALL
+                            </a>
+                        </div>
 
-                          <div class="btn-view-all mt40 mobile-text-center">
+                          <!-- <div class="btn-view-all mt40 mobile-text-center">
                               <a href="" class="btn-1 font-hammersmith btn color-primary float-right mobile-center ">
                                   <svg>
                                       <rect x="0" y="0" fill="none" width="100%" height="100%" />
                                   </svg>
                                   VIEW ALL
                               </a>
-                          </div>
+                          </div> -->
 
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-md-12">
                     <div class="upcoming-movie mt60">
                         <div class="title">
@@ -160,7 +168,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="text-center">
               <div class="btn-view-more mt40 text-center">
                   <a href="" class="btn-1 font-hammersmith btn color-primary display-inline" >

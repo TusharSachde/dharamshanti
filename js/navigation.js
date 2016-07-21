@@ -66,13 +66,66 @@ var navigationservice = angular.module('navigationservice', [])
     },
 
     getMovieDetails: function(callback) {
-        // console.log('form data: ', formData);
-        $http({
+            $http({
             url: adminurl + 'movie/getMovieDetails',
             method: 'POST',
             withCredentials: true
         }).success(callback);
     },
+    getNews: function(callback) {
+
+        $http({
+            url: adminurl + 'News/getAll',
+            method: 'POST',
+            withCredentials: true
+        }).success(callback);
+    },
+    subScribe: function(email ,callback) {
+console.log(email);
+        $http({
+            url: adminurl + 'subscribe/saveData',
+            method: 'POST',
+            withCredentials: true,
+            data:{"email":email}
+        }).success(callback);
+    },
+    getAllDharmatv: function(callback) {
+
+        $http({
+            url: adminurl + 'Dharmatv/getAllDharmatv',
+            method: 'POST',
+            withCredentials: true
+        }).success(callback);
+    },
+    getDharmatvOne: function(id, callback) {
+           $http({
+            url: adminurl + 'Dharmatv/getOne',
+            method: 'POST',
+            withCredentials: true,
+            data: {
+                _id: id
+            }
+
+        }).success(callback);
+    },
+    getAllUpcomingMovies: function(callback) {
+
+        $http({
+            url: adminurl + 'Movie/getAllUpcomingMovies',
+            method: 'POST',
+            withCredentials: true
+        }).success(callback);
+    },
+    getAllRecentMovies: function(callback) {
+
+        $http({
+            url: adminurl + 'Movie/getAllRecentMovies',
+            method: 'POST',
+            withCredentials: true
+        }).success(callback);
+    },
+
+
 
 
 

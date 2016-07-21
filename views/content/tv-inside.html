@@ -22,18 +22,18 @@
       <div class="col-md-8 col-sm-8 col-xs-7">
         <div class="tv-inside mt60">
           <div class="title">
-              <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">BAAHUBALI</h1>
+              <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">{{allvideos.title}}</h1>
           </div>
         </div>
         <div class="text-shadow">
         <div class="row">
-          <div class="col-md-4 padding0 col-sm-4 col-sx-12" ng-repeat="item in allvideos track by $index">
+          <div class="col-md-4 padding0 col-sm-4 col-sx-12" ng-repeat="item in allvideos.videos track by $index">
             <div class="tv-box">
               <div class="img-inside-box">
-                  <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/xnJ4RTodr3g?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"><img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive"></a>
+                  <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/xnJ4RTodr3g?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"><img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" class="img-responsive"></a>
               </div>
               <div class="video-names mt10">
-                <span class="color-white text-cap m-font12">{{item.name}}</span>
+                <span class="color-white text-cap m-font12">{{item.description}}</span>
               </div>
             </div>
           </div>
