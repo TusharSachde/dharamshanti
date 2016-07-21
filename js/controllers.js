@@ -755,11 +755,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.movieList.recent[i] = _.chunk($scope.movieList.recent[i], 4);
             }
             console.log($scope.movieList.recent);
-            // _.each(  $scope.MovieDetails.recent,function(n){
-            //     n.MovieDetails.recent=_.chunk($scope.MovieDetails.recent.images, 4);
-            // });
-            //
-            // console.log('$scope.MovieDetails.recent',$scope.MovieDetails.recent.images);
         });
 
 
