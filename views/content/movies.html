@@ -25,7 +25,7 @@
                             <h1 class="ml15 mb0 color-primary font-hammersmith line30 f55">UPCOMING RELEASES</h1>
                         </div>
                         <div class="upcoming-slider mob-arrow">
-                            <flex-slider flex-slide="item in MovieDetails.upcoming track by $index" animation="slide" animationloop="true" move="1">
+                            <flex-slider flex-slide="item in movieList.upcoming track by $index" animation="slide" animationloop="true" move="1">
                                 <li>
                                     <div class="video-box">
                                         <div class="video-slide-img">
@@ -63,13 +63,15 @@
                 <div class="col-md-12">
                     <div class="recent-movie">
                         <div class="title">
-                            <h1 class="ml15 mb0  color-primary font-hammersmith line30 f55">RECENT RELEASES</h1>
+                            <h1 class="ml15 mb0  color-primary font-hammersmith line30 f55">
+                              RECENT RELEASES
+                            </h1>
                         </div>
                         <div class="upcoming-slider slider-right">
-                            <flex-slider flex-slide="item in MovieDetails.recent track by $index" animation="slide" animationloop="true" move="1">
+                            <flex-slider flex-slide="item in movieList.recent track by $index" animation="slide" animationloop="true" move="1">
                                 <li>
-                                    <div class="row" ng-repeat="data in item">
-                                        <div class="col-md-6 col-sm-6 col-xs-12" >
+                                    <div class="row" ng-repeat="datas in item">
+                                        <div class="col-md-6 col-sm-6 col-xs-12" ng-repeat="data in datas">
                                             <div class="video-box mb20 common-class">
                                                 <div class="video-slide-img img-pads">
                                                     <img ng-src="{{data.image|uploadpath}}" alt="Dharma Productions">
@@ -132,10 +134,20 @@
                     </div>
                 </div>
             </div> -->
-                <div class="row-flex text-center" ng-repeat="videos in allvideos">
+            <!-- <div class="row-flex text-center" ng-repeat="videos in allvideos">
+                <div class="col-flex" ng-repeat="item in videos track by $index">
+                    <div class="img-pads">
+                        <img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive">
+                    </div>
+                    <div class="movie-names">
+                        <h4 class="text-up color-grey">{{item.name}}</h4>
+                    </div>
+                </div>
+            </div> -->
+                <div class="row-flex text-center" ng-repeat="videos in MovieDetails.past">
                     <div class="col-flex" ng-repeat="item in videos track by $index">
                         <div class="img-pads">
-                            <img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive">
+                            <img ng-src="{{item.image|uploadpath}}" alt="Dharma Productions" class="img-responsive">
                         </div>
                         <div class="movie-names">
                             <h4 class="text-up color-grey">{{item.name}}</h4>

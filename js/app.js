@@ -86,8 +86,6 @@ firstapp.filter('uploadpath', function() {
         }
         if (input) {
             if (input.indexOf('https://') == -1) {
-              console.log(input);
-                      console.log(imgpath);
                 return imgpath + "?file=" + input + other;
 
             } else {

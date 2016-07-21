@@ -1,4 +1,4 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'wu.masonry', 'ksSwiper','imageupload','ui.select'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'wu.masonry', 'ksSwiper', 'imageupload', 'ui.select'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -553,24 +553,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-             $scope.countries = [ // Taken from https://gist.github.com/unceus/6501985
-                    {
-                        name: 'Kabhi Khushi Kabhi Gum',
-                        code: 'kkk'
-                    }, {
-                        name: 'Bahubali',
-                        code: 'BH'
-                    }, {
-                        name: 'Varun Dhawan',
-                        code: 'AA'
-                    }, {
-                        name: 'Deepika',
-                        code: 'D'
-                    }, {
-                        name: 'Ranbir Kapoor',
-                        code: 'RK'
-                    }
-                ];
+        $scope.countries = [ // Taken from https://gist.github.com/unceus/6501985
+            {
+                name: 'Kabhi Khushi Kabhi Gum',
+                code: 'kkk'
+            }, {
+                name: 'Bahubali',
+                code: 'BH'
+            }, {
+                name: 'Varun Dhawan',
+                code: 'AA'
+            }, {
+                name: 'Deepika',
+                code: 'D'
+            }, {
+                name: 'Ranbir Kapoor',
+                code: 'RK'
+            }
+        ];
         $scope.news = [{
             img: "img/dharma-world/d5.jpg",
             name: "Deepika scares me as an actor: Ranbir Kapoor",
@@ -698,11 +698,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //     director: "Shashank Khaitan",
         //     cast: "Alia Bhatt, Varun Dhawan"
         // }]
-        NavigationService.getMovieDetails(function(data) {
-          $scope.MovieDetails = data.data;
-          console.log('MovieDetails', $scope.MovieDetails);
-          console.log('$scope.MovieDetails',$scope.MovieDetails.upcoming);
-          });
+        // NavigationService.getMovieDetails(function(data) {
+        //   $scope.MovieDetails = data.data;
+        //   console.log('MovieDetails', $scope.MovieDetails);
+        //   console.log('$scope.MovieDetails',$scope.MovieDetails.upcoming);
+        //   });
 
 
 
@@ -745,15 +745,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
         console.log($scope.video);
         NavigationService.getMovieDetails(function(data) {
-          $scope.MovieDetails = data.data;
-          console.log('MovieDetails', $scope.MovieDetails);
-          _.each(  $scope.MovieDetails.recent,function(n){
-
-              n.MovieDetails.recent=_.chunk($scope.MovieDetails.recent.images, 4);
-          });
-
-          console.log('$scope.MovieDetails.recent',$scope.MovieDetails.recent.images);
-          });
+            console.log(data);
+            $scope.MovieDetails = data.data.data;
+            console.log($scope.MovieDetails);
+            $scope.movieList = _.groupBy($scope.MovieDetails, "releaseType");
+            console.log($scope.movieList);
+            $scope.movieList.recent = _.chunk($scope.movieList.recent, 4);
+            for (var i = 0; i < $scope.movieList.recent.length; i++) {
+                $scope.movieList.recent[i] = _.chunk($scope.movieList.recent[i], 4);
+            }
+            console.log($scope.movieList.recent);
+            // _.each(  $scope.MovieDetails.recent,function(n){
+            //     n.MovieDetails.recent=_.chunk($scope.MovieDetails.recent.images, 4);
+            // });
+            //
+            // console.log('$scope.MovieDetails.recent',$scope.MovieDetails.recent.images);
+        });
 
 
 
