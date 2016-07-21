@@ -745,7 +745,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
         console.log($scope.video);
         NavigationService.getMovieDetails(function(data) {
-            console.log(data);
+            console.log(data); 
             $scope.MovieDetails = data.data.data;
             console.log($scope.MovieDetails);
             $scope.movieList = _.groupBy($scope.MovieDetails, "releaseType");
