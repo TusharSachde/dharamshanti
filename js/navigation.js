@@ -1,4 +1,4 @@
-var adminurl = "http://192.168.1.113:1337/";
+var adminurl = "http://192.168.0.108:82/";
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
 var uploadurl = imgurl;
@@ -127,6 +127,51 @@ console.log(email);
     getMovieNews: function(id, callback) {
            $http({
             url: adminurl + 'Movie/getMovieNews',
+            method: 'POST',
+            withCredentials: true,
+            data: {
+                _id: id
+            }
+
+        }).success(callback);
+    },
+    getMovieGal: function(id, callback) {
+           $http({
+            url: adminurl + 'Movie/getMovieGal',
+            method: 'POST',
+            withCredentials: true,
+            data: {
+                _id: id
+            }
+
+        }).success(callback);
+    },
+    getMovieBehindTheScenes: function(id, callback) {
+           $http({
+            url: adminurl + 'Movie/getMovieBehindTheScenes',
+            method: 'POST',
+            withCredentials: true,
+            data: {
+                _id: id
+            }
+
+        }).success(callback);
+    },
+    getMovieVideo: function(id, callback) {
+           $http({
+            url: adminurl + 'Movie/getMovieVideo',
+            method: 'POST',
+            withCredentials: true,
+            data: {
+                _id: id
+            }
+
+        }).success(callback);
+    },
+
+    findOne: function(id, callback) {
+           $http({
+            url: adminurl + 'Movie/findOne',
             method: 'POST',
             withCredentials: true,
             data: {
