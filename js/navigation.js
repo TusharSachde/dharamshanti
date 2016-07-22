@@ -202,6 +202,28 @@ console.log(email);
 
         }).success(callback);
     },
+    getMovieCast: function(id, callback) {
+           $http({
+            url: adminurl + 'Movie/getMovieCast',
+            method: 'POST',
+            withCredentials: true,
+            data: {
+                _id: id
+            }
+
+        }).success(callback);
+    },
+    getMovieCrew: function(id, callback) {
+           $http({
+            url: adminurl + 'Movie/getMovieCrew',
+            method: 'POST',
+            withCredentials: true,
+            data: {
+                _id: id
+            }
+
+        }).success(callback);
+    },
 
 
 

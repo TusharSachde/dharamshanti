@@ -138,24 +138,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.subscribe = {};
     $scope.subscribe.email = "";
     $scope.checkEmail = false;
-  $scope.subscribeEmail = false;
-    $scope.subscribe = function(email,form) {
-      if(email && email!='' && form.$valid){
-        console.log('erdtfgh',email.length);
-        NavigationService.subScribe(email, function(data) {
-            if (!data.value) {
-                if ($scope.subscribe.email) {
-                    $scope.checkEmail = true;
-                    $scope.subscribeEmail = false;
+    $scope.subscribeEmail = false;
+    $scope.subscribe = function(email, form) {
+        if (email && email != '' && form.$valid) {
+            console.log('erdtfgh', email.length);
+            NavigationService.subScribe(email, function(data) {
+                if (!data.value) {
+                    if ($scope.subscribe.email) {
+                        $scope.checkEmail = true;
+                        $scope.subscribeEmail = false;
+                    }
+                } else {
+                    $scope.subscribeEmail = true;
+                    $scope.checkEmail = false;
                 }
-            } else {
-                $scope.subscribeEmail = true;
-                $scope.checkEmail = false;
-            }
-            console.log(email);
-            $scope.subscribe.email = "";
-        });
-      }
+                console.log(email);
+                $scope.subscribe.email = "";
+            });
+        }
 
     };
 
@@ -213,15 +213,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
 
     })
-    .controller('TvInsideCtrl', function($scope, TemplateService, NavigationService,$stateParams) {
+    .controller('TvInsideCtrl', function($scope, TemplateService, NavigationService, $stateParams) {
         $scope.template = TemplateService.changecontent("tv-inside");
         $scope.menutitle = NavigationService.makeactive("TV Inside");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
         NavigationService.getDharmatvOne($stateParams.id, function(data) {
-            console.log('getDharmatvOne',data);
-              $scope.allvideos = data.data;
+            console.log('getDharmatvOne', data);
+            $scope.allvideos = data.data;
         })
 
 
@@ -247,7 +247,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }]
 
     })
-    .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService, $uibModal,$stateParams,$filter  ) {
+    .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService, $uibModal, $stateParams, $filter) {
         $scope.template = TemplateService.changecontent("movie-inside");
         $scope.menutitle = NavigationService.makeactive("Movie Inside");
         TemplateService.title = $scope.menutitle;
@@ -255,38 +255,50 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.animationsEnabled = true;
 
         NavigationService.getMovieNews($stateParams.id, function(data) {
-            console.log('getMovieNews',data);
-              $scope.movieNews = data.data;
+            console.log('getMovieNews', data);
+            $scope.movieNews = data.data;
         });
         NavigationService.getMovieGal($stateParams.id, function(data) {
-            console.log('MovieGal1',data);
-              $scope.MovieGal = data.data.gallery;
-              console.log($scope.MovieGal);
-              // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
-              // console.log('chunk',$scope.MovieGal10);
+            console.log('MovieGal1', data);
+            $scope.MovieGal = data.data.gallery;
+            console.log($scope.MovieGal);
+            // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
+            // console.log('chunk',$scope.MovieGal10);
         });
         NavigationService.getMovieBehindTheScenes($stateParams.id, function(data) {
-          $scope.movieBehindTheScenes = data.data.behindTheScenes;
-              console.log('getMovieBehindTheScenes',$scope.movieBehindTheScenes);
+            $scope.movieBehindTheScenes = data.data.behindTheScenes;
+            console.log('getMovieBehindTheScenes', $scope.movieBehindTheScenes);
         });
         NavigationService.getMovieVideo($stateParams.id, function(data) {
-          $scope.movieVideo = data.data.videos;
-          console.log('getMovieVideo',  $scope.movieVideo );
+            $scope.movieVideo = data.data.videos;
+            console.log('getMovieVideo', $scope.movieVideo);
         });
         NavigationService.findOne($stateParams.id, function(data) {
-          $scope.moviefindOne = data.data;
-          $scope.moviefindOne.backgroundImage = $filter('uploadpath')($scope.moviefindOne.backgroundImage);
+            $scope.moviefindOne = data.data;
+            $scope.moviefindOne.backgroundImage = $filter('uploadpath')($scope.moviefindOne.backgroundImage);
 
-          console.log('moviefindOne',    $scope.moviefindOne );
+            console.log('moviefindOne', $scope.moviefindOne);
         });
         NavigationService.getMovieSynopsisAndNote($stateParams.id, function(data) {
-          $scope.movieSynopsisAndNote = data.data;
-          console.log('movieSynopsisAndNote',  $scope.movieSynopsisAndNote );
+            $scope.movieSynopsisAndNote = data.data;
+            console.log('movieSynopsisAndNote', $scope.movieSynopsisAndNote);
         });
 
         NavigationService.getMovieAwards($stateParams.id, function(data) {
-          $scope.MovieAwards = data.data.awards;
-          console.log('MovieAwards',  $scope.MovieAwards );
+            $scope.MovieAwards = data.data.awards;
+            $scope.MovieAwards10 = _.groupBy($scope.MovieAwards, "title", "year");
+            console.log('MovieAwards', $scope.MovieAwards10);
+
+        });
+
+        NavigationService.getMovieCast($stateParams.id, function(data) {
+            $scope.movieCast = data.data.cast;
+            console.log('movieCast', $scope.movieCast);
+        });
+
+        NavigationService.getMovieCrew($stateParams.id, function(data) {
+            $scope.movieCrew = data.data.crew;
+            console.log('movieCrew', $scope.movieCrew);
         });
 
 

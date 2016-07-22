@@ -105,16 +105,16 @@
                         </div>
                         <div class="col-md-8 col-sm-8 col-xs-10">
                            <div class="row">
-                              <div class="col-md-3 col-sm-6 movie-col col-xs-12" ng-repeat="item in cast track by $index">
+                              <div class="col-md-3 col-sm-6 movie-col col-xs-12" ng-repeat="item in movieCast track by $index">
                                  <div class="all-cast text-center">
                                     <div class="cast-box">
-                                       <img ng-src="{{item.img}}" alt="Dharma Productions" class="img-responsive">
+                                       <img ng-src="{{item.image|uploadpath}}" alt="Dharma Productions" class="img-responsive">
                                     </div>
                                     <div class="cast-name mt18">
-                                       <span class="color-dark f18">{{item.name}}</span>
+                                       <span class="color-dark f18">{{item.actor}}</span>
                                     </div>
                                     <div class="role-name">
-                                       <span class="color-primary text-up font-bold f18">{{item.nick}}</span>
+                                       <span class="color-primary text-up font-bold f18">{{item.name}}</span>
                                     </div>
                                  </div>
                               </div>
@@ -160,12 +160,12 @@
                               </div>
                            </div>
                            <div class="col-md-10 col-sm-10 col-xs-12">
-                              <div class="row">
-                                 <div class="col-md-5 col-sm-6 col-xs-6">
+                              <div class="row"  ng-repeat="data in movieCrew">
+                                 <div class="col-md-5 col-sm-6 col-xs-6" >
                                     <div class="all-cast">
                                        <ul class="padding0">
-                                          <li>Story, Screenplay & Direction</li>
-                                          <li>Produced By</li>
+                                          <li>{{data.title}}</li>
+                                          <!-- <li>Produced By</li>
                                           <li>Co-Producer</li>
                                           <li>Director Of Photography</li>
                                           <li>Music</li>
@@ -176,15 +176,15 @@
                                           <li>Sound Design</li>
                                           <li>Dialogues</li>
                                           <li>Costume Design</li>
-                                          <li>Casting Director</li>
+                                          <li>Casting Director</li> -->
                                        </ul>
                                     </div>
                                  </div>
                                  <div class="col-md-5 col-sm-6 col-xs-6">
                                     <div class="all-cast">
                                        <ul class="padding0">
-                                          <li>... Ayan Mukerji</li>
-                                          <li>... Hiroo Yash Johar & Karan Johar</li>
+                                          <li>{{data.name}}</li>
+                                          <!-- <li>... Hiroo Yash Johar & Karan Johar</li>
                                           <li>... Apoorva Mehta</li>
                                           <li>... V. Manikandan</li>
                                           <li>... Pritam</li>
@@ -195,7 +195,7 @@
                                           <li>... Nakul Kamte</li>
                                           <li>... Hussain Dalal</li>
                                           <li>... Manish Malhotra, Samidha Wangnoo</li>
-                                          <li>... Nandini Shrikent</li>
+                                          <li>... Nandini Shrikent</li> -->
                                        </ul>
                                     </div>
                                  </div>
@@ -472,18 +472,18 @@
                      <div class="col-md-11 col-sm-10 col-xs-12">
                         <div class="movie-award">
                            <uib-accordion close-others="true">
-                              <uib-accordion-group is-open="accordian[0].isFirstOpen">
+                              <uib-accordion-group is-open="accordian[$index].isFirstOpen"  ng-repeat="(key,data) in MovieAwards10 ">
                                  <uib-accordion-heading class="mob-font">
                                     <!-- <h4>Zee Cine Awards</h4> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> -->
-                                    <div class="row" >
+                                    <div class="row">
                                        <div class="col-md-7 col-sm-6 col-xs-7">
-                                          <h3 class="dark-black text-up font-karla font-bold margin0">Zee Cine Awards</h3>
+                                          <h3 class="dark-black text-up font-karla font-bold margin0">{{key}}</h3>
                                        </div>
                                        <div class="col-md-4 col-sm-5 col-xs-3">
-                                          <h3 class="dark-black text-up font-karla font-bold margin0">2014</h3>
+                                          <h3 class="dark-black text-up font-karla font-bold margin0">{{data.year}}</h3>
                                        </div>
                                        <div class="col-md-1 col-sm-1 col-xs-2">
-                                          <i class="pull-right fa" ng-class="{'fa fa-minus': accordian[0].isFirstOpen, 'fa fa-plus': !accordian[0].isFirstOpen}"></i>
+                                          <i class="pull-right fa" ng-class="{'fa fa-minus': accordian[$index].isFirstOpen, 'fa fa-plus': !accordian[$index].isFirstOpen}"></i>
                                        </div>
                                     </div>
                                  </uib-accordion-heading>
@@ -494,30 +494,30 @@
                                     <div class="col-md-7 col-sm-7 col-xs-6">
                                        <div class="awards-name">
                                           <ul class="padding0 list-none color-black">
-                                             <li><span>Best Director</span></li>
-                                             <li><span>Best Background Score</span></li>
+                                             <li><span>{{data.awardname}}</span></li>
+                                             <!-- <li><span>Best Background Score</span></li>
                                              <li><span>Best Screenplay</span></li>
-                                             <li><span>Best Choreography</span></li>
+                                             <li><span>Best Choreography</span></li> -->
                                           </ul>
                                        </div>
                                     </div>
                                     <div class="col-md-4 col-sm-4 col-xs-6">
                                        <div class="awards-name">
                                           <ul class="padding0 list-none color-primary">
-                                             <li><span>Ayan Mukherjee</span></li>
-                                             <li><span>Pritam Chakraborty</span></li>
+                                             <li><span>{{data.winner}}</span></li>
+                                             <!-- <li><span>Pritam Chakraborty</span></li>
                                              <li><span>Ayan Mukherjee</span> </li>
-                                             <li><span>Remo</span>
-                                                <p class="color-black f12 line0">For the song "Badtameez Dil"</p>
+                                             <li><span>Remo</span> -->
+                                                <p class="color-black f12 line0">{{data.note}}</p>
                                              </li>
                                           </ul>
                                        </div>
                                     </div>
                                  </div>
                               </uib-accordion-group>
-                              <uib-accordion-group is-open="accordian[1].isFirstOpen">
+                              <!-- <uib-accordion-group is-open="accordian[1].isFirstOpen">
                                  <uib-accordion-heading>
-                                    <!-- <h4>Zee Cine Awards</h4> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> -->
+                                    <h4>Zee Cine Awards</h4> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
                                     <div class="row">
                                        <div class="col-md-7 col-sm-6 col-xs-7">
                                           <h3 class="dark-black text-up font-karla font-bold margin0">Filmfare Awards</h3>
@@ -557,10 +557,10 @@
                                        </div>
                                     </div>
                                  </div>
-                              </uib-accordion-group>
-                              <uib-accordion-group is-open="accordian[2].isFirstOpen">
+                              </uib-accordion-group> -->
+                              <!-- <uib-accordion-group is-open="accordian[2].isFirstOpen">
                                  <uib-accordion-heading>
-                                    <!-- <h4>Zee Cine Awards</h4> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> -->
+                                    <h4>Zee Cine Awards</h4> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
                                     <div class="row">
                                        <div class="col-md-7 col-sm-6 col-xs-7">
                                           <h3 class="dark-black text-up font-karla font-bold margin0">Screen Weekly Awards</h3>
@@ -600,10 +600,10 @@
                                        </div>
                                     </div>
                                  </div>
-                              </uib-accordion-group>
-                              <uib-accordion-group is-open="accordian[3].isFirstOpen">
+                              </uib-accordion-group> -->
+                              <!-- <uib-accordion-group is-open="accordian[3].isFirstOpen">
                                  <uib-accordion-heading>
-                                    <!-- <h4>Zee Cine Awards</h4> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> -->
+                                    <h4>Zee Cine Awards</h4> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
                                     <div class="row">
                                        <div class="col-md-7 col-sm-6 col-xs-7">
                                           <h3 class="dark-black text-up font-karla font-bold margin0">Mirchi Music Awards, IN</h3>
@@ -643,8 +643,8 @@
                                        </div>
                                     </div>
                                  </div>
-                              </uib-accordion-group>
-                              <uib-accordion-group is-open="accordian[4].isFirstOpen">
+                              </uib-accordion-group> -->
+                              <!-- <uib-accordion-group is-open="accordian[4].isFirstOpen">
                                  <uib-accordion-heading>
 
                                     <div class="row">
@@ -686,7 +686,7 @@
                                        </div>
                                     </div>
                                  </div>
-                              </uib-accordion-group>
+                              </uib-accordion-group> -->
                            </uib-accordion>
                         </div>
                      </div>
