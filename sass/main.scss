@@ -1520,6 +1520,18 @@ input.form-control.ui-select-search{
         display: none;
     }
 }
+.search-rslt{
+  margin-bottom: 22px;
+}
+.search-img2 {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    img{
+       width: 25px;
+    }
+}
+
 @import "fancybox-override";
 @import "main2";
 @import "timeline";
