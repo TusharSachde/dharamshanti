@@ -6,7 +6,7 @@
                     <div class="head-title mt45">
                         <h1 class="color-white f120 text-up font-hammersmith">DhARMA TV</h1>
                     </div>
-                    <div class="search-rslt mt15" ng-if="showDisplay==true">{{showDisplay}}
+                    <div class="search-rslt mt15" ng-if="showDisplay==true">
                       <h4 class="color-primary">Displaying Result For '{{search}}'</h4>
                     </div>
                     <div class="search-movie dh-relative search-movie-mar">
@@ -186,6 +186,20 @@
                   <!-- <button type="button" name="button" class="btn-primary-outline font-hammersmith btn-enter"></button> -->
               </div>
             </div>
+
+            <!-- search-result -->
+            <!-- <div class="row">
+              <div class="col-md-4 padding0 col-sm-4 col-sx-12" ng-repeat="item in allvideos.videos track by $index">
+                <div class="tv-box">
+                  <div class="img-inside-box">
+                      <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/xnJ4RTodr3g?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"><img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" class="img-responsive"></a>
+                  </div>
+                  <div class="video-names mt10">
+                    <span class="color-white text-cap m-font12">{{item.description}}</span>
+                  </div>
+                </div>
+              </div>
+            </div> -->
         </div>
     </div>
 </section>
