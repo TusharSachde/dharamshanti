@@ -257,7 +257,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getMovieNews($stateParams.id, function(data) {
             console.log('getMovieNews',data);
               $scope.movieNews = data.data;
-        })
+        });
+        NavigationService.getMovieGal($stateParams.id, function(data) {
+            console.log('MovieGal1',data);
+              $scope.MovieGal = data.data.gallery;
+              console.log($scope.MovieGal);
+              // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
+              // console.log('chunk',$scope.MovieGal10);
+        });
+        NavigationService.getMovieBehindTheScenes($stateParams.id, function(data) {
+          $scope.movieBehindTheScenes = data.data.behindTheScenes;
+              console.log('getMovieBehindTheScenes',$scope.movieBehindTheScenes);
+        });
+        NavigationService.getMovieVideo($stateParams.id, function(data) {
+          $scope.movieVideo = data.data.videos;
+          console.log('getMovieVideo',  $scope.movieVideo );
+        });
+        NavigationService.findOne($stateParams.id, function(data) {
+          $scope.moviefindOne = data.data;
+          console.log('moviefindOne',    $scope.moviefindOne );
+        });
+
 
 
 

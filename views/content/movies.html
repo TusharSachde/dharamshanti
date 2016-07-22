@@ -29,8 +29,8 @@
                         <li>
                            <div class="video-box">
                               <div class="video-slide-img">
-                                 <a ui-sref="movie-inside">
-                                    <img ng-src="{{item.image|uploadpath}}" alt="Dharma Productions">
+                                 <a ui-sref="movie-inside({id:item._id})">
+                                    <img ng-src="{{item.bigImage|uploadpath}}" alt="Dharma Productions">
                                  </a>
                               </div>
 
@@ -74,7 +74,7 @@
                               <div class="col-md-6 col-sm-6 col-xs-12" ng-repeat="data in datas">
                                  <div class="video-box mb20 common-class">
                                     <div class="video-slide-img img-pads">
-                                       <img ng-src="{{data.image|uploadpath}}" alt="Dharma Productions">
+                                       <img ng-src="{{data.mediumImage|uploadpath}}" alt="Dharma Productions">
                                     </div>
                                     <div class="video-name font-karla text-up">
                                        <span>{{images.name}}(2015)</span>
@@ -126,7 +126,7 @@
             <div class="row-flex text-center" ng-repeat="videos in movieList.past">
                <div class="col-flex" ng-repeat="item in videos track by $index">
                   <div class="img-pads">
-                     <img ng-src="{{item.image|uploadpath}}" alt="Dharma Productions" class="img-responsive">
+                     <img ng-src="{{item.smallImage|uploadpath}}" alt="Dharma Productions" class="img-responsive">
                   </div>
                   <div class="movie-names">
                      <h4 class="text-up color-grey">{{item.name}}</h4>
