@@ -7,13 +7,13 @@
               <h1 class="color-white f120 text-up font-hammersmith">DhARMA TV</h1>
           </div>
           <div class="search-rslt mt15">
-            <span class="color-primary">Displaying Result For 'KG3'</span>
+            <span class="color-primary">Displaying Result For '{{search}}'</span>
           </div>
           <div class="search-movie dh-relative search-movie-mar">
             <div class="search-img">
               <img src="img/search.png" alt="Dharma Productions">
             </div>
-              <input type="search" name="name" value="" class="search-in" placeholder="Search for your favourite movie">
+              <input type="search" name="name" value="" class="search-in" placeholder="Search for your favourite movie" ng-model="search" ng-change="goToSearch(search);">
               <div class="search-img2">
                   <img src="img/error.png" alt="Dharma Productions">
               </div>
