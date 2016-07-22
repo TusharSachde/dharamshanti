@@ -689,8 +689,9 @@
         font-size: 20px;
     }
     .movie-inside-bg {
+          background: url("../img/main3.jpg") no-repeat top center;
         padding: 170px 0 0;
-        background-size: 100%;
+        background-size: contain;
         background-repeat: repeat-y;
     }
     .common-class .flex-control-nav {
