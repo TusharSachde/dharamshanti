@@ -180,6 +180,29 @@ console.log(email);
 
         }).success(callback);
     },
+    getMovieSynopsisAndNote: function(id, callback) {
+           $http({
+            url: adminurl + 'Movie/getMovieSynopsisAndNote',
+            method: 'POST',
+            withCredentials: true,
+            data: {
+                _id: id
+            }
+
+        }).success(callback);
+    },
+    getMovieAwards: function(id, callback) {
+           $http({
+            url: adminurl + 'Movie/getMovieAwards',
+            method: 'POST',
+            withCredentials: true,
+            data: {
+                _id: id
+            }
+
+        }).success(callback);
+    },
+
 
 
 

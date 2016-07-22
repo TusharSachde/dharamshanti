@@ -276,8 +276,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.findOne($stateParams.id, function(data) {
           $scope.moviefindOne = data.data;
           $scope.moviefindOne.backgroundImage = $filter('uploadpath')($scope.moviefindOne.backgroundImage);
-        
+
           console.log('moviefindOne',    $scope.moviefindOne );
+        });
+        NavigationService.getMovieSynopsisAndNote($stateParams.id, function(data) {
+          $scope.movieSynopsisAndNote = data.data;
+          console.log('movieSynopsisAndNote',  $scope.movieSynopsisAndNote );
+        });
+
+        NavigationService.getMovieAwards($stateParams.id, function(data) {
+          $scope.MovieAwards = data.data.awards;
+          console.log('MovieAwards',  $scope.MovieAwards );
         });
 
 
