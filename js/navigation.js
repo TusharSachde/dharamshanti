@@ -124,6 +124,17 @@ console.log(email);
             withCredentials: true
         }).success(callback);
     },
+    getMovieNews: function(id, callback) {
+           $http({
+            url: adminurl + 'Movie/getMovieNews',
+            method: 'POST',
+            withCredentials: true,
+            data: {
+                _id: id
+            }
+
+        }).success(callback);
+    },
 
 
 

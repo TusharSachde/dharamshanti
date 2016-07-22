@@ -247,12 +247,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }]
 
     })
-    .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService, $uibModal) {
+    .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService, $uibModal,$stateParams) {
         $scope.template = TemplateService.changecontent("movie-inside");
         $scope.menutitle = NavigationService.makeactive("Movie Inside");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.animationsEnabled = true;
+
+        NavigationService.getMovieNews($stateParams.id, function(data) {
+            console.log('getMovieNews',data);
+              $scope.movieNews = data.data;
+        })
+
+
 
         $scope.tabing = [{
             name: "Synopsis",
