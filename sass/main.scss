@@ -1532,6 +1532,12 @@ input.form-control.ui-select-search{
        width: 25px;
     }
 }
+.bg-inner{
+  background: url(../img/inner-bg.jpg)no-repeat center;
+  background-size: cover;
+  position: relative;
+      padding: 80px 0px;
+}
 
 @import "fancybox-override";
 @import "main2";
