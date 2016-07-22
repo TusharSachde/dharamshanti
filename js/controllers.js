@@ -247,7 +247,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }]
 
     })
-    .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService, $uibModal,$stateParams) {
+    .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService, $uibModal,$stateParams,$filter  ) {
         $scope.template = TemplateService.changecontent("movie-inside");
         $scope.menutitle = NavigationService.makeactive("Movie Inside");
         TemplateService.title = $scope.menutitle;
@@ -275,6 +275,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
         NavigationService.findOne($stateParams.id, function(data) {
           $scope.moviefindOne = data.data;
+          $scope.moviefindOne.backgroundImage = $filter('uploadpath')($scope.moviefindOne.backgroundImage);
+        
           console.log('moviefindOne',    $scope.moviefindOne );
         });
 

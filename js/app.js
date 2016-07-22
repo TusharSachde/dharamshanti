@@ -94,6 +94,17 @@ firstapp.filter('uploadpath', function() {
         }
     };
 });
+firstapp.filter('shorten',function () {
+ return function (value,limit) {
+   if(value.length < limit){
+     return value;
+   }else{
+     return value.slice(0,limit - 2)+ "..";
+
+   }
+
+ }
+})
 firstapp.directive('uploadImage', function($http, $filter) {
     return {
         templateUrl: 'views/directive/uploadFile.html',
@@ -262,6 +273,24 @@ firstapp.directive('fancyboxBox', function($document) {
                     media: {}
                 }
             });
+        }
+    };
+});
+firstapp.filter('youtubethumb', function() {
+    return function(input, onlyid) {
+        if (input) {
+            var videoid = input.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+            if (videoid != null) {
+                if (onlyid == false) {
+                    return "http://img.youtube.com/vi/" + videoid[1] + "/hqdefault.jpg";
+                } else if (onlyid == true) {
+                    return videoid[1];
+                }
+            } else {
+                return input;
+            }
+        } else {
+            return input;
         }
     };
 });
