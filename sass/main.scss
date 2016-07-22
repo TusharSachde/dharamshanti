@@ -768,7 +768,7 @@ a {
     }
 }
 .cast-box {
-    height: 140px;
+        height: 120px;
     width: auto;
     border-radius: 100%;
     overflow: hidden;
@@ -778,6 +778,7 @@ a {
         max-height: 100%;
         margin: 0 auto;
         text-align: center;
+          border-radius: 100%;
     }
 }
 .color-dark {
