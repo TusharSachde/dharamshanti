@@ -1,4 +1,4 @@
-var adminurl = "http://192.168.0.108:82/";
+var adminurl = "http://192.168.1.104:82/";
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
 var uploadurl = imgurl;
@@ -223,6 +223,27 @@ console.log(email);
             }
 
         }).success(callback);
+    },
+    getMovieWallpaper: function(id, callback) {
+           $http({
+            url: adminurl + 'Movie/getMovieWallpaper',
+            method: 'POST',
+            withCredentials: true,
+            data: {
+                _id: id
+            }
+
+        }).success(callback);
+    },
+    getNewsHome: function(request, callback) {
+      console.log("myrequest",request);
+           $http({
+            url: adminurl + 'news/findlimited',
+            method: 'POST',
+            withCredentials: true,
+            data:request
+            }).success(callback);
+
     },
 
 

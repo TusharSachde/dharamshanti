@@ -132,6 +132,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }];
     NavigationService.getNews(function(data) {
         $scope.News = data.data;
+        _.each($scope.News, function(value) {
+            value.date = new Date(value.date);
+        })
         console.log('News', $scope.News);
     });
 
@@ -257,7 +260,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getMovieNews($stateParams.id, function(data) {
             console.log('getMovieNews', data);
             $scope.movieNews = data.data;
+            _.each($scope.movieNews, function(n) {
+                n.date = new Date(n.date);
+            });
         });
+
+
+
         NavigationService.getMovieGal($stateParams.id, function(data) {
             console.log('MovieGal1', data);
             $scope.MovieGal = data.data.gallery;
@@ -299,6 +308,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getMovieCrew($stateParams.id, function(data) {
             $scope.movieCrew = data.data.crew;
             console.log('movieCrew', $scope.movieCrew);
+        });
+        NavigationService.getMovieWallpaper($stateParams.id, function(data) {
+            $scope.movieWallpaper = data.data.wallpaper;
+            console.log('movieWallpaper', $scope.movieWallpaper);
         });
 
 
@@ -656,7 +669,29 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("News Events");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.news = [];
+        $scope.filter = {};
+        $scope.filter.pagenumber = 0;
+        $scope.filter.pagesize = 9;
+        $scope.noviewmore = true;
 
+        $scope.getNews = function(input) {
+            $scope.filter.pagenumber++;
+            NavigationService.getNewsHome(input, function(data) {
+                if (data.value) {
+                    _.each(data.data.data, function(n) {
+                        n.date = new Date(n.date);
+                        $scope.news.push(n);
+                    });
+
+                    $scope.lastpage = data.data.totalpages;
+                    if ($scope.lastpage <= $scope.filter.pagenumber) {
+                        $scope.noviewmore = false;
+                    }
+                }
+            });
+        };
+        $scope.getNews($scope.filter);
         $scope.countries = [ // Taken from https://gist.github.com/unceus/6501985
             {
                 name: 'Kabhi Khushi Kabhi Gum',
@@ -675,61 +710,64 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 code: 'RK'
             }
         ];
-        $scope.news = [{
-            img: "img/dharma-world/d5.jpg",
-            name: "Deepika scares me as an actor: Ranbir Kapoor",
-            date: "21 Mar 2016",
-            desc: "New Delhi: Films as varied as Raajneeti, Rockstar, Yeh Jawaani Hai Deewani and Barfi! have been a window to his versatility. But Ranbir Kapoor says his Tamasha ..."
 
-        }, {
-            img: "img/dharma-world/d6.jpg",
-            name: "Varun Dhawan shares picture of Dharma Productions new office",
-            date: "21 Mar 2016",
-            desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there. "
 
-        }, {
-            img: "img/dharma-world/d7.jpg",
-            name: "Bahubali bags The Best Film Of 2015 National Award",
-            date: "21 Mar 2016",
-            desc: "SS Rajamouli's Bahubali: The Beginning (also spelt as Baahubali), starring Prabhas and Rana Daggubati, has won the Best Feature Film at the 63rd National Film Award (NFA). "
 
-        }, {
-            img: "img/dharma-world/d8.jpg",
-            name: "Dharma production hints at first ever love franchise",
-            date: "21 Mar 2016",
-            desc: "Best known for producing films that grab the beauty of exotic locales across the globe and intricately weaving romance, Dharma Productions has hinted at a sequel to Bollywood’s first ever love franchise."
-
-        }, {
-            img: "img/dharma-world/d9.jpg",
-            name: "Ranbir Kapoor to promote ‘Yeh Jawaani Hai Deewani’ in Russia",
-            date: "21 Mar 2016",
-            desc: "Mumbai: His grandfather, late cinema legend Raj Kapoor, continues to be a rage in Russia and now actor Ranbir Kapoor is set to promote his latest release ‘Yeh Jawaani Hai..."
-
-        }, {
-            img: "img/dharma-world/d10.jpg",
-            name: "Arjun and SIddharth’s Dharma Office Darshan",
-            date: "21 Mar 2016",
-            desc: "Bollywood heartthrobs Arjun Kapoor and Sidharth Malhotra are spilling fun all over the new office of Karan Johar's Dharma Productions. "
-
-        }, {
-            img: "img/dharma-world/d5.jpg",
-            name: "Deepika scares me as an actor: Ranbir Kapoor",
-            date: "21 Mar 2016",
-            desc: "New Delhi: Films as varied as Raajneeti, Rockstar, Yeh Jawaani Hai Deewani and Barfi! have been a window to his versatility. But Ranbir Kapoor says his Tamasha ..."
-
-        }, {
-            img: "img/dharma-world/d6.jpg",
-            name: "Varun Dhawan shares picture of Dharma Productions new office",
-            date: "21 Mar 2016",
-            desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there. "
-
-        }, {
-            img: "img/dharma-world/d7.jpg",
-            name: "Bahubali bags The Best Film Of 2015 National Award",
-            date: "21 Mar 2016",
-            desc: "SS Rajamouli's Bahubali: The Beginning (also spelt as Baahubali), starring Prabhas and Rana Daggubati, has won the Best Feature Film at the 63rd National Film Award (NFA). "
-
-        }]
+        // $scope.news = [{
+        //     img: "img/dharma-world/d5.jpg",
+        //     name: "Deepika scares me as an actor: Ranbir Kapoor",
+        //     date: "21 Mar 2016",
+        //     desc: "New Delhi: Films as varied as Raajneeti, Rockstar, Yeh Jawaani Hai Deewani and Barfi! have been a window to his versatility. But Ranbir Kapoor says his Tamasha ..."
+        //
+        // }, {
+        //     img: "img/dharma-world/d6.jpg",
+        //     name: "Varun Dhawan shares picture of Dharma Productions new office",
+        //     date: "21 Mar 2016",
+        //     desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there. "
+        //
+        // }, {
+        //     img: "img/dharma-world/d7.jpg",
+        //     name: "Bahubali bags The Best Film Of 2015 National Award",
+        //     date: "21 Mar 2016",
+        //     desc: "SS Rajamouli's Bahubali: The Beginning (also spelt as Baahubali), starring Prabhas and Rana Daggubati, has won the Best Feature Film at the 63rd National Film Award (NFA). "
+        //
+        // }, {
+        //     img: "img/dharma-world/d8.jpg",
+        //     name: "Dharma production hints at first ever love franchise",
+        //     date: "21 Mar 2016",
+        //     desc: "Best known for producing films that grab the beauty of exotic locales across the globe and intricately weaving romance, Dharma Productions has hinted at a sequel to Bollywood’s first ever love franchise."
+        //
+        // }, {
+        //     img: "img/dharma-world/d9.jpg",
+        //     name: "Ranbir Kapoor to promote ‘Yeh Jawaani Hai Deewani’ in Russia",
+        //     date: "21 Mar 2016",
+        //     desc: "Mumbai: His grandfather, late cinema legend Raj Kapoor, continues to be a rage in Russia and now actor Ranbir Kapoor is set to promote his latest release ‘Yeh Jawaani Hai..."
+        //
+        // }, {
+        //     img: "img/dharma-world/d10.jpg",
+        //     name: "Arjun and SIddharth’s Dharma Office Darshan",
+        //     date: "21 Mar 2016",
+        //     desc: "Bollywood heartthrobs Arjun Kapoor and Sidharth Malhotra are spilling fun all over the new office of Karan Johar's Dharma Productions. "
+        //
+        // }, {
+        //     img: "img/dharma-world/d5.jpg",
+        //     name: "Deepika scares me as an actor: Ranbir Kapoor",
+        //     date: "21 Mar 2016",
+        //     desc: "New Delhi: Films as varied as Raajneeti, Rockstar, Yeh Jawaani Hai Deewani and Barfi! have been a window to his versatility. But Ranbir Kapoor says his Tamasha ..."
+        //
+        // }, {
+        //     img: "img/dharma-world/d6.jpg",
+        //     name: "Varun Dhawan shares picture of Dharma Productions new office",
+        //     date: "21 Mar 2016",
+        //     desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there. "
+        //
+        // }, {
+        //     img: "img/dharma-world/d7.jpg",
+        //     name: "Bahubali bags The Best Film Of 2015 National Award",
+        //     date: "21 Mar 2016",
+        //     desc: "SS Rajamouli's Bahubali: The Beginning (also spelt as Baahubali), starring Prabhas and Rana Daggubati, has won the Best Feature Film at the 63rd National Film Award (NFA). "
+        //
+        // }]
     })
     .controller('DharmaTvCtrl', function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("dharma-tv");

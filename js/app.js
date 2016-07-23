@@ -96,6 +96,7 @@ firstapp.filter('uploadpath', function() {
 });
 firstapp.filter('shorten',function () {
  return function (value,limit) {
+   if(value)
    if(value.length < limit){
      return value;
    }else{
