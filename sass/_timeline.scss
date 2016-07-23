@@ -206,7 +206,7 @@ Main components
 	@include clearfix;
 
 	p {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
 	}
 span{
@@ -249,7 +249,8 @@ display: block;
 	@include MQ(L) {
 		padding: 0em;
 		width: 35%;
-
+    height: 180px;
+    overflow: hidden;
 		&::before {
 			top: 50%;
 			left: 100%;
@@ -289,6 +290,29 @@ margin-right: 120px;
 			visibility: visible;
 			@include animation(cd-bounce-2 .6s);
 		}
+    .img-timline-box {
+      height: 180px;
+      overflow: hidden;
+      width: auto;
+      display: block;
+      img{
+        min-height: 180px;
+        width: auto;
+      }
+  }
+    .img-timline-box2 {
+      height: 180px;
+      overflow: hidden;
+      width: auto;
+      display: block;
+      img{
+        min-height: 180px;
+        width: auto;
+      }
+  }
+  .cd-timeline-content p {
+    font-size: 16px;
+}
 	}
 }
 
@@ -352,7 +376,7 @@ border-bottom-right-radius: 0.25em;
 .side-wall{
   &:before{
     content: '';
-position: absolute;
+position: fixed;
 
 right:35px;
 height: 35%;
@@ -361,12 +385,13 @@ width: 4px;
   }
 }
 .date-list {
-    position: absolute;
+    position: fixed;
     right: 27px;
     h4 {
     color: #fff;
     margin: 0;
     display: inline-block;
+        padding-right: 5px;
 }
 }
 .dot-big {
@@ -382,39 +407,40 @@ width: 4px;
     height: 13px;
     width: 13px;
     border-radius: 100%;
-    position: absolute;
+    position: fixed;;
     right: 30px;
-    top: 23%;
+      margin-top: 50px;
     border: 2px solid #f56d1f;
+    cursor: pointer;
 }
 .dot-small2{
   @extend .dot-small;
-  top:27%;
+margin-top: 90px;
 }
 .dot-small3{
   @extend .dot-small;
-  top:31%;
+    margin-top: 130px;
 }
 .dot-small4{
   @extend .dot-small;
-  top:35%;
+    margin-top: 170px;
 }
 .dot-small5{
   @extend .dot-small;
-  top:39%;
+    margin-top: 210px;
 }
 .dot-small6{
   @extend .dot-small;
-  top:43%;
+    margin-top: 250px;
 }
 .dot-small7{
   @extend .dot-small;
-  top:47%;
+      margin-top: 290px;
 }
 .border-btm {
     border-bottom: 2px solid rgba(255, 255, 255, 0.74);
-    position: absolute;
+    position: fixed;
     right: 29px;
     width: 15px;
-    top: 52.5%;
+      margin-top: 330px;
 }

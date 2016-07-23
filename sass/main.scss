@@ -1538,7 +1538,10 @@ input.form-control.ui-select-search{
   position: relative;
       padding: 80px 0px;
 }
-
+.main-section{
+  padding-bottom: 30px;
+      position: relative;
+}
 @import "fancybox-override";
 @import "main2";
 @import "timeline";
