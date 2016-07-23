@@ -28,6 +28,7 @@ var jsArray = [
     './bower_components/angular-masonry/angular-masonry.js',
     './bower_components/angular-swiper/dist/angular-swiper.js',
     './bower_components/angular-ui-select/dist/select.js',
+    './bower_components/moment/moment.js',
     './js/app.js',
     './js/language.js',
     './js/controllers.js',
@@ -39,9 +40,7 @@ var jsArray = [
 ];
 var replacehostFrom = "http://localhost/demo/";
 var replacehostTo = "http://wohlig.co.in/demo2/";
-
-var ftpString = "U2FsdGVkX1+jcFED/CJbcYNiOJ42eBsjlxqmrcKWSIPH9Sao/4535zPQX5Fa7VYGAHSfkKCXbDpiUfJhkRRijaerS1lJ/k+dSfqsfl45ICkzMTJ7fBNVDj/242ur9ZG4HZDhSe1O/J4vEUboWDRBhg==";
-
+var ftpString = "U2FsdGVkX19KJ4w0W1pxaUyRsJcjQO5RL98s2rfWnmpoGlaoPfxb8Ibdl0yu5NoHaLfSDmk2WnqRVpQfIAB8wv/Srsy/Y9OUyx5gs3ZutJ2MdGMlS8IaMJmfLSp77xVx1yuRD4aFlRuo0yQ/Ldy2pA==";
 var uploadingFolder = "tingdumb/dharma-production";
 var password = "";
 
