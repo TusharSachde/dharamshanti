@@ -218,7 +218,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getJourney(function(data) {
             var a = _.orderBy(data.data, ["date"], ["desc"]);
             _.each(a, function(n) {
-              a.dateShow = moment(a.date).format("D MMM YYYY");
+              n.dateShow = moment(a.date).format("D MMM YYYY");
             });
             $scope.journeys = _.reverse(_.toArray(_.groupBy(a, "year")));
             console.log($scope.journeys);
