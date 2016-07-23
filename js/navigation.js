@@ -1,4 +1,4 @@
-var adminurl = "http://192.168.1.104:82/";
+var adminurl = "http://104.199.151.75:82/";
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
 var uploadurl = imgurl;
@@ -68,6 +68,13 @@ var navigationservice = angular.module('navigationservice', [])
     getMovieDetails: function(callback) {
             $http({
             url: adminurl + 'movie/getMovieDetails',
+            method: 'POST',
+            withCredentials: true
+        }).success(callback);
+    },
+    getJourney: function(callback) {
+            $http({
+            url: adminurl + 'journey/getall',
             method: 'POST',
             withCredentials: true
         }).success(callback);
