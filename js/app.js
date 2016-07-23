@@ -94,17 +94,17 @@ firstapp.filter('uploadpath', function() {
         }
     };
 });
-firstapp.filter('shorten',function () {
- return function (value,limit) {
-   if(value)
-   if(value.length < limit){
-     return value;
-   }else{
-     return value.slice(0,limit - 2)+ "..";
+firstapp.filter('shorten', function() {
+    return function(value, limit) {
+        if (value)
+            if (value.length < limit) {
+                return value;
+            } else {
+                return value.slice(0, limit - 2) + "..";
 
-   }
+            }
 
- }
+    }
 })
 firstapp.directive('uploadImage', function($http, $filter) {
     return {
@@ -245,7 +245,7 @@ firstapp.directive('autoHeightfixed', function($compile, $parse) {
         replace: false,
         link: function($scope, element, attrs) {
             var $element = $(element);
-            var windowHeight = $(window).height()-20;
+            var windowHeight = $(window).height() - 20;
             var addHeight = function() {
                 $element.css("height", windowHeight);
             };
