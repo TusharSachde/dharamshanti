@@ -215,6 +215,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
+        NavigationService.getJourney(function(data) {
+            var a = _.orderBy(data.data, ["date"], ["desc"]);
+
+            $scope.journeys = _.reverse(_.toArray(_.groupBy(a, "year")));
+            console.log($scope.journeys);
+        });
+
     })
     .controller('TvInsideCtrl', function($scope, TemplateService, NavigationService, $stateParams) {
         $scope.template = TemplateService.changecontent("tv-inside");
@@ -225,7 +232,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getDharmatvOne($stateParams.id, function(data) {
             console.log('getDharmatvOne', data);
             $scope.allvideos = data.data;
-        })
+        });
 
 
 
@@ -691,7 +698,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
             });
         };
-        
+
         $scope.getNews($scope.filter);
         $scope.countries = [ // Taken from https://gist.github.com/unceus/6501985
             {
