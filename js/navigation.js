@@ -77,7 +77,14 @@ var navigationservice = angular.module('navigationservice', [])
             url: adminurl + 'journey/getall',
             method: 'POST',
             withCredentials: true
-        }).success(callback);
+        }).success(function(data) {
+          var a = _.orderBy(data.data, ["date"], ["desc"]);
+          _.each(a, function(n) {
+            n.dateShow = moment(a.date).format("D MMM YYYY");
+          });
+          a=_.reverse(_.toArray(_.groupBy(a, "year")));
+          callback(a);
+        });
     },
     getNews: function(callback) {
 
