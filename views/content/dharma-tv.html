@@ -1,185 +1,97 @@
 <section>
-    <div class="dharma-top-bg">
-        <div class="container">
-            <div class="row">
-                <div class="text-center">
-                    <div class="head-title mt45">
-                        <h1 class="color-white f120 text-up font-hammersmith">DhARMA TV</h1>
-                    </div>
-                    <div class="search-movie dh-relative search-movie-mar">
-                        <div class="search-img">
-                            <img src="img/search.png" alt="Dharma Productions">
-                        </div>
-                        <input type="search" name="name" value="" class="search-in" placeholder="Search for your favourite movie">
-                    </div>
-                </div>
-                <div class="video-player mt15 tv-all-slider marg-arrow mob-mt-15">
-                    <flex-slider flex-slide="s in mySlides track by $index" prev-text="" next-text="">
-                        <li>
-                            <div class="video-play dh-relative">
-                                <img src="{{s}}" alt="Dharma Productions" class="img-responsive" />
-                                <div class="play-btn text-center dh-absulate middle mob-width-auto">
-                                    <a href=""><img src="img/play-btn.jpg" alt="Dharma Productions"></a>
-                                </div>
-                            </div>
-                        </li>
-                    </flex-slider>
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="upcoming-movie mt100" ng-repeat ="data in AllDharmatv">
-                        <div class="title ">
-                            <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">{{data.title}}</h1>
-                        </div>
-                        <div class="upcoming-slider tv-all-slider text-shadow">
-                            <flex-slider flex-slide="item in data.videos track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
-                                <li>
-                                    <div class="video-box">
-                                        <div class="video-slide-img">
-                                            <a ui-sref="tv-inside"><img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions"></a>
-                                        </div>
-                                        <div class="video-names mt10">
-                                            <span class="color-white text-cap">{{item.description}}</span>
-                                        </div>
-
-
-                                    </div>
-                                </li>
-                            </flex-slider>
-                        </div>
-                        <div class="btn-view-all mt40 mobile-text-center">
-                            <a ui-sref="tv-inside({id:data._id})" class="btn-1 font-hammersmith btn color-primary float-right mobile-center ">
-                                <svg>
-                                    <rect x="0" y="0" fill="none" width="100%" height="100%" />
-                                </svg>
-                                VIEW ALL
-                            </a>
-                        </div>
-
-                          <!-- <div class="btn-view-all mt40 mobile-text-center">
-                              <a href="" class="btn-1 font-hammersmith btn color-primary float-right mobile-center ">
-                                  <svg>
-                                      <rect x="0" y="0" fill="none" width="100%" height="100%" />
-                                  </svg>
-                                  VIEW ALL
-                              </a>
-                          </div> -->
-
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="row">
-                <div class="col-md-12">
-                    <div class="upcoming-movie mt60">
-                        <div class="title">
-                            <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">KAPOOR & SONS</h1>
-                        </div>
-                        <div class="upcoming-slider tv-all-slider text-shadow">
-                            <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
-                                <li>
-                                    <div class="video-box">
-                                        <div class="video-slide-img">
-                                            <img ng-src="{{item.img}}" alt="Dharma Productions">
-                                        </div>
-                                        <div class="video-names mt10">
-                                            <span class="color-white text-cap">{{item.name}}</span>
-                                        </div>
-
-
-                                    </div>
-                                </li>
-                            </flex-slider>
-                        </div>
-                        <div class="btn-view-all mt40 mobile-text-center">
-                            <a href="" class="btn-1 font-hammersmith btn color-primary float-right mobile-center ">
-                                <svg>
-                                    <rect x="0" y="0" fill="none" width="100%" height="100%" />
-                                </svg>
-                                VIEW ALL
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="upcoming-movie mt60">
-                        <div class="title">
-                            <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">Brothers</h1>
-                        </div>
-                        <div class="upcoming-slider tv-all-slider text-shadow">
-                            <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
-                                <li>
-                                    <div class="video-box">
-                                        <div class="video-slide-img">
-                                            <img ng-src="{{item.img}}" alt="Dharma Productions">
-                                        </div>
-                                        <div class="video-names mt10">
-                                            <span class="color-white text-cap">{{item.name}}</span>
-                                        </div>
-
-
-                                    </div>
-                                </li>
-                            </flex-slider>
-                        </div>
-                        <div class="btn-view-all mt40 mobile-text-center">
-                            <a href="" class="btn-1 font-hammersmith btn color-primary float-right mobile-center ">
-                                <svg>
-                                    <rect x="0" y="0" fill="none" width="100%" height="100%" />
-                                </svg>
-                                VIEW ALL
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="upcoming-movie mt60">
-                        <div class="title">
-                            <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">Hasee Toh Phasee</h1>
-                        </div>
-                        <div class="upcoming-slider tv-all-slider text-shadow">
-                            <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
-                                <li>
-                                    <div class="video-box">
-                                        <div class="video-slide-img">
-                                            <img ng-src="{{item.img}}" alt="Dharma Productions">
-                                        </div>
-                                        <div class="video-names mt10">
-                                            <span class="color-white text-cap">{{item.name}}</span>
-                                        </div>
-
-
-                                    </div>
-                                </li>
-                            </flex-slider>
-                        </div>
-                        <div class="btn-view-all mt40 mobile-text-center">
-                            <a href="" class="btn-1 font-hammersmith btn color-primary float-right mobile-center ">
-                                <svg>
-                                    <rect x="0" y="0" fill="none" width="100%" height="100%" />
-                                </svg>
-                                VIEW ALL
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+   <div class="dharma-top-bg">
+      <div class="container">
+         <!-- <div class="row"> -->
             <div class="text-center">
-              <div class="btn-view-more mt40 text-center">
-                  <a href="" class="btn-1 font-hammersmith btn color-primary display-inline" >
-                      <svg>
-                          <rect x="0" y="0" fill="none" width="100%" height="100%" />
-                      </svg>
-                      VIEW MORE
-                  </a>
-                  <!-- <button type="button" name="button" class="btn-primary-outline font-hammersmith btn-enter"></button> -->
-              </div>
+               <div class="head-title mt45">
+                  <h1 class="color-white f120 text-up font-hammersmith">DhARMA TV</h1>
+               </div>
+               <div class="search-movie dh-relative search-movie-mar">
+                  <div class="search-img">
+                     <img src="img/search.png" alt="Dharma Productions">
+                  </div>
+                  <input type="search" name="name" ng-enter="DoSearch()" ng-model="searchdata.search" value="" class="search-in" placeholder="Search for your favourite movie">
+               </div>
             </div>
-        </div>
-    </div>
+            <section ng-if="nodata"> <div>
+               <h1><center>No Movie Found</center></h1>
+             </div></section>
+             <div ng-if="!getsearch">
+            <div class="video-player mt15 tv-all-slider marg-arrow mob-mt-15">
+               <flex-slider flex-slide="s in mySlides track by $index" prev-text="" next-text="">
+                  <li>
+                     <div class="video-play dh-relative">
+                        <img src="{{s}}" alt="Dharma Productions" class="img-responsive" />
+                        <div class="play-btn text-center dh-absulate middle mob-width-auto">
+                           <a href=""><img src="img/play-btn.jpg" alt="Dharma Productions"></a>
+                        </div>
+                     </div>
+                  </li>
+               </flex-slider>
+
+            </div>
+         <!-- </div> -->
+         <div class="row">
+            <div class="col-md-12">
+               <div class="upcoming-movie mt100" ng-repeat="data in AllDharmatv">
+                  <div class="title ">
+                     <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">{{data.title|shorten:20}}</h1>
+                  </div>
+                  <div class="upcoming-slider tv-all-slider text-shadow">
+                     <flex-slider flex-slide="item in data.videos track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
+                        <li>
+                           <div class="video-box">
+                              <div class="video-slide-img">
+                                 <a ui-sref="tv-inside"><img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions"></a>
+                              </div>
+                              <div class="video-names mt10">
+                                 <span class="color-white text-cap">{{item.description}}</span>
+                              </div>
+
+
+                           </div>
+                        </li>
+                     </flex-slider>
+                  </div>
+                  <div class="btn-view-all mt40 mobile-text-center">
+                     <a ui-sref="tv-inside({id:data._id})" class="btn-1 font-hammersmith btn color-primary float-right mobile-center ">
+                        <svg>
+                           <rect x="0" y="0" fill="none" width="100%" height="100%" />
+                        </svg>
+                        VIEW ALL
+                     </a>
+                  </div>
+                </div>
+               </div>
+            </div>
+
+         <div class="text-center">
+            <div class="btn-view-more mt40 text-center">
+               <a href="" class="btn-1 font-hammersmith btn color-primary display-inline">
+                  <svg>
+                     <rect x="0" y="0" fill="none" width="100%" height="100%" />
+                  </svg>
+                  VIEW MORE
+               </a>
+               <!-- <button type="button" name="button" class="btn-primary-outline font-hammersmith btn-enter"></button> -->
+            </div>
+         </div>
+         </div>
+      </div>
+   </div>
+</section>
+<section ng-if="getsearch">
+   <div class="container" >
+      <div class="row">
+         <div class="col-md-3 padding0 col-sm-4 col-sx-12 " ng-repeat="item in mysearch track by $index ">
+            <div class="tv-box">
+
+
+               <img ng-src="{{item.videos[0].thumbnail|uploadpath}} " alt="Dharma Productions " class="img-responsive width100 ">
+
+
+            </div>
+         </div>
+      </div>
+   </div>
 </section>

@@ -1,4 +1,5 @@
-var adminurl = "http://104.199.151.75:82/";
+// var adminurl = "http://104.199.151.75:82/";
+var adminurl = "http://192.168.1.111:82/";
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
 var uploadurl = imgurl;
@@ -72,6 +73,14 @@ var navigationservice = angular.module('navigationservice', [])
             withCredentials: true
         }).success(callback);
     },
+    getMovieDetailsSearch: function(search,callback) {
+            $http({
+            url: adminurl + 'movie/getMovieDetails',
+            method: 'POST',
+            withCredentials: true,
+            data:search
+        }).success(callback);
+    },
     getJourney: function(callback) {
             $http({
             url: adminurl + 'journey/getall',
@@ -109,6 +118,15 @@ console.log(email);
             url: adminurl + 'Dharmatv/getAllDharmatv',
             method: 'POST',
             withCredentials: true
+        }).success(callback);
+    },
+    getAllDharmatvSearch: function(search,callback) {
+
+        $http({
+            url: adminurl + 'Dharmatv/getAllDharmatv',
+            method: 'POST',
+            withCredentials: true,
+            data:search
         }).success(callback);
     },
     getDharmatvOne: function(id, callback) {

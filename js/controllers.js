@@ -229,6 +229,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getDharmatvOne($stateParams.id, function(data) {
             console.log('getDharmatvOne', data);
             $scope.allvideos = data.data;
+            console.log("$scope.allvideos", $scope.allvideos.videos);
         });
 
 
@@ -774,7 +775,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //
         // }]
     })
-    .controller('DharmaTvCtrl', function($scope, TemplateService, NavigationService) {
+    .controller('DharmaTvCtrl', function($scope, TemplateService, NavigationService,$stateParams) {
         $scope.template = TemplateService.changecontent("dharma-tv");
         $scope.menutitle = NavigationService.makeactive("Dharma Tv");
         TemplateService.title = $scope.menutitle;
@@ -789,8 +790,28 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.AllDharmatv = data.data;
             console.log('AllDharmatv', $scope.AllDharmatv);
         });
+        $scope.searchdata = {};
+        $scope.searchdata.search = $stateParams.search;
+        $scope.nodata = false;
+        $scope.getsearch = false;
+        // $scope.searchdata.search = [];
 
-        $scope.video = [{
+        $scope.DoSearch = function() {
+            NavigationService.getAllDharmatvSearch($scope.searchdata, function(data) {
+              console.log("mydata",data);
+                console.log('statepar', $scope.searchdata.search);
+                $scope.getsearch = true;
+                console.log($scope.searchdata);
+                $scope.mysearch = data.data;
+                console.log('mysearch', $scope.mysearch);
+                if ($scope.mysearch == '') {
+                    console.log('here');
+                    $scope.nodata = true;
+                }
+            });
+        };
+
+           $scope.video = [{
             img: "img/movie/m6.jpg",
             name: "Dhivara Full Video Song  Baahubali (Hindi) "
 
@@ -835,7 +856,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }]
 
     })
-    .controller('MoviesCtrl', function($scope, TemplateService, NavigationService) {
+    .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $stateParams) {
         $scope.template = TemplateService.changecontent("movies");
         $scope.menutitle = NavigationService.makeactive("Movies");
         TemplateService.title = $scope.menutitle;
@@ -908,6 +929,31 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.movieList.past = $scope.movieList.past.splice(0, 10);
             $scope.movieList.past = _.chunk($scope.movieList.past, 5);
         });
+
+        $scope.searchdata = {};
+        $scope.searchdata.search = $stateParams.search;
+
+        // var searchdatasend={
+        //   search:$scope.searchdata.search
+        // }
+        $scope.nodata = false;
+        $scope.getsearch = false;
+        $scope.searchdata.search = [];
+        $scope.DoSearch = function() {
+            NavigationService.getMovieDetailsSearch($scope.searchdata, function(data) {
+                console.log('statepar', $scope.searchdata.search);
+                $scope.getsearch = true;
+                console.log($scope.searchdata);
+                $scope.mysearch = data.data;
+                console.log('mysearch', $scope.mysearch);
+                if ($scope.mysearch == '') {
+                    console.log('here');
+                    $scope.nodata = true;
+                }
+            });
+        }
+
+
         $scope.viewAll = function() {
             $scope.movieList.past = _.chunk(array, 5);
         }
