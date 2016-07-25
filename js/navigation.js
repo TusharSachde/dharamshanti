@@ -277,6 +277,14 @@ console.log(email);
             }).success(callback);
 
     },
+    getAllMovieName: function(callback) {
+
+        $http({
+            url: adminurl + 'Movie/getAllMovieName',
+            method: 'POST',
+            withCredentials: true
+        }).success(callback);
+    },
 
 
 

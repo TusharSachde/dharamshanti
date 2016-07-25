@@ -232,6 +232,36 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log("$scope.allvideos", $scope.allvideos.videos);
         });
 
+        NavigationService.getAllMovieName(function(data) {
+            $scope.allMovieName = data.data;
+            console.log($scope.allMovieName);
+            // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
+            // console.log('chunk',$scope.MovieGal10);
+        });
+
+        $scope.searchdata = {};
+        $scope.searchdata.search = $stateParams.search;
+        $scope.nodata = false;
+        $scope.getsearch = false;
+        // $scope.searchdata.search = [];
+        $scope.viewSearch = function() {
+          $scope.getsearch = false;
+        }
+
+        $scope.DoSearch = function() {
+            NavigationService.getAllDharmatvSearch($scope.searchdata, function(data) {
+              console.log("mydata",data);
+                console.log('statepar', $scope.searchdata.search);
+                $scope.getsearch = true;
+                console.log($scope.searchdata);
+                $scope.mysearch = data.data;
+                console.log('mysearch', $scope.mysearch);
+                if ($scope.mysearch == '') {
+                    console.log('here');
+                    $scope.nodata = true;
+                }
+            });
+        };
 
 
         $scope.allvideos = [{
@@ -279,6 +309,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
             // console.log('chunk',$scope.MovieGal10);
         });
+
         NavigationService.getMovieBehindTheScenes($stateParams.id, function(data) {
             $scope.movieBehindTheScenes = data.data.behindTheScenes;
             console.log('getMovieBehindTheScenes', $scope.movieBehindTheScenes);

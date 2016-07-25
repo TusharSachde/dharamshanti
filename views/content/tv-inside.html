@@ -6,15 +6,15 @@
           <div class="head-title mt45">
               <h1 class="color-white f120 text-up font-hammersmith">DhARMA TV</h1>
           </div>
-          <div class="search-rslt mt15">
-            <span class="color-primary">Displaying Result For '{{search}}'</span>
+          <div class="search-rslt mt15" ng-if="getsearch">
+            <span class="color-primary">Displaying Result For '{{searchdata.search}}'</span>
           </div>
           <div class="search-movie dh-relative search-movie-mar">
             <div class="search-img">
               <img src="img/search.png" alt="Dharma Productions">
             </div>
-              <input type="search" name="name" value="" class="search-in" placeholder="Search for your favourite movie" ng-model="search" ng-change="goToSearch(search);">
-              <div class="search-img2">
+              <input type="search" name="name" value="" class="search-in" placeholder="Search for your favourite movie"  ng-enter="DoSearch()" ng-model="searchdata.search">
+              <div class="search-img2" ng-if="getsearch" ng-click="viewSearch();">
                   <img src="img/error.png" alt="Dharma Productions">
               </div>
           </div>
@@ -22,10 +22,10 @@
       </div>
     </div>
 
-<section>
+<section >
   <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-sm-8 col-xs-7">
+    <div class="row" >
+      <div class="col-md-8 col-sm-8 col-xs-7" ng-if="!getsearch">
         <div class="tv-inside mt60">
           <div class="title">
               <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">{{allvideos.title | shorten : 10}}</h1>
@@ -51,12 +51,27 @@
         </div>
         </div>
       </div>
+      <div class="col-md-8 mt40" ng-if="getsearch" >
+
+            <div class="row">
+               <div class="col-md-4 padding0 col-sm-4 col-sx-12 " ng-repeat="item in mysearch track by $index ">
+                  <div class="tv-box">
+
+
+                     <img ng-src="{{item.videos[0].thumbnail|uploadpath}} " alt="Dharma Productions " class="img-responsive width100 ">
+
+
+                  </div>
+               </div>
+            </div>
+
+      </div>
       <div class="col-md-4 col-sm-4 col-xs-5">
         <div class="border-left">
           <h3 class="color-primary">OTHER MOVIES</h3>
           <ul class="list-none color-white padding0">
-            <li><a href="">Kapoor & Sons</a></li>
-            <li><a href="">Brothers</a></li>
+            <li ng-repeat="name in allMovieName"><a href="">{{name.name}}</a></li>
+            <!-- <li><a href="">Brothers</a></li>
             <li><a href="">Hasee Toh Phasee</a></li>
             <li><a href="">Ungli</a></li>
             <li><a href="">Humpty Sharma Ki Dulhania</a></li>
@@ -69,7 +84,7 @@
             <li><a href="">Kabhi Alvida Naa Kehna</a></li>
             <li><a href="">Kabhi Khushi Kabhie Gham</a></li>
             <li><a href="">Duplicate</a></li>
-            <li><a href="">Dostana</a></li>
+            <li><a href="">Dostana</a></li> -->
 
           </ul>
           <a href="" class="color-grey"><h4>See More</h4></a>
@@ -97,5 +112,7 @@
     </div>
   </div>
 </section>
+
+
 </div>
 </section>
