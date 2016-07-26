@@ -1,3 +1,5 @@
+var initMap = {};
+var calculateAndDisplayRoute = {};
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'wu.masonry', 'ksSwiper', 'imageupload', 'ui.select'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -9,6 +11,43 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+
+
+    var directionsService = {};
+    var directionsDisplay = {};
+
+    $scope.$on('$viewContentLoaded', function(event) {
+        $timeout(function() {
+
+            initMap = function() {
+
+                directionsService = new google.maps.DirectionsService;
+                directionsDisplay = new google.maps.DirectionsRenderer;
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 20,
+                    center: {
+                        lat: 19.0854772,
+                        lng: 72.8365032
+                    },
+                    scrollwheel: false,
+                });
+                directionsDisplay.setMap(map);
+
+                var onChangeHandler = function() {
+                    calculateAndDisplayRoute();
+                };
+            };
+
+            /// MAX til here
+            $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCn9ypqFNxdXt9Zu2YqLcdD1Xdt2wNul9s&callback=initMap", function(data, textStatus, jqxhr) {
+                console.log("Load was performed.");
+            });
+
+
+        }, 0);
+
+
+    });
 
 
 
@@ -253,12 +292,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.getsearch = false;
         // $scope.searchdata.search = [];
         $scope.viewSearch = function() {
-          $scope.getsearch = false;
+            $scope.getsearch = false;
         }
 
         $scope.DoSearch = function() {
             NavigationService.getAllDharmatvSearch($scope.searchdata, function(data) {
-              console.log("mydata",data);
+                console.log("mydata", data);
                 console.log('statepar', $scope.searchdata.search);
                 $scope.getsearch = true;
                 console.log($scope.searchdata);
@@ -324,17 +363,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
         NavigationService.getMovieVideo($stateParams.id, function(data) {
             $scope.movieVideo = data.data.videos;
-              console.log('getMovieVideo', $scope.movieVideo);
+            console.log('getMovieVideo', $scope.movieVideo);
             $scope.movieVideo10 = _.chunk($scope.movieVideo, 3);
             console.log('getMovieVideo10', $scope.movieVideo10);
         });
-$scope.getAllvideo=false;
-        $scope.moreVideo=function(){
-          $scope.getAllvideo=true;
-          NavigationService.getMovieVideo($stateParams.id, function(data) {
-              $scope.movieVideo = data.data.videos;
+        $scope.getAllvideo = false;
+        $scope.moreVideo = function() {
+            $scope.getAllvideo = true;
+            NavigationService.getMovieVideo($stateParams.id, function(data) {
+                $scope.movieVideo = data.data.videos;
                 console.log('getMovieVideo', $scope.movieVideo);
-          });
+            });
         }
         NavigationService.findOne($stateParams.id, function(data) {
             $scope.moviefindOne = data.data;
@@ -361,13 +400,13 @@ $scope.getAllvideo=false;
             $scope.movieCast = data.data.cast;
             console.log('movieCast', $scope.movieCast);
         });
-  $scope.subCast=false;
-        $scope.viewAllCast=function(){
-          $scope.subCast=true;
-          NavigationService.getMovieCast($stateParams.id, function(data) {
-              $scope.movieCast = data.data.cast;
-              console.log('movieCast', $scope.movieCast);
-          });
+        $scope.subCast = false;
+        $scope.viewAllCast = function() {
+            $scope.subCast = true;
+            NavigationService.getMovieCast($stateParams.id, function(data) {
+                $scope.movieCast = data.data.cast;
+                console.log('movieCast', $scope.movieCast);
+            });
         }
 
         NavigationService.getMovieCrew($stateParams.id, function(data) {
@@ -838,7 +877,7 @@ $scope.getAllvideo=false;
         //
         // }]
     })
-    .controller('DharmaTvCtrl', function($scope, TemplateService, NavigationService,$stateParams) {
+    .controller('DharmaTvCtrl', function($scope, TemplateService, NavigationService, $stateParams) {
         $scope.template = TemplateService.changecontent("dharma-tv");
         $scope.menutitle = NavigationService.makeactive("Dharma Tv");
         TemplateService.title = $scope.menutitle;
@@ -865,7 +904,7 @@ $scope.getAllvideo=false;
 
         $scope.DoSearch = function() {
             NavigationService.getAllDharmatvSearch($scope.searchdata, function(data) {
-              console.log("mydata",data);
+                console.log("mydata", data);
                 console.log('statepar', $scope.searchdata.search);
                 $scope.getsearch = true;
                 console.log($scope.searchdata);
@@ -878,7 +917,7 @@ $scope.getAllvideo=false;
             });
         };
 
-           $scope.video = [{
+        $scope.video = [{
             img: "img/movie/m6.jpg",
             name: "Dhivara Full Video Song  Baahubali (Hindi) "
 
@@ -1021,13 +1060,13 @@ $scope.getAllvideo=false;
         }
 
         $scope.viewSearch = function() {
-          $scope.getsearch = false;
+            $scope.getsearch = false;
         }
 
 
         $scope.viewAll = function() {
             $scope.movieList.past = _.chunk(array, 5);
-            console.log('view all',$scope.movieList.past);
+            console.log('view all', $scope.movieList.past);
         }
         $scope.allvideos = [{
             img: "img/movie/m1.jpg",

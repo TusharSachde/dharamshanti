@@ -1241,9 +1241,6 @@ input.form-control.ui-select-search{
 .map {
     background-color: $brand-primary;
     color: #fff;
-    padding: 20px 25px;
-    right: 83px;
-    bottom: -15px;
     p {
         line-height: 100%;
     }
@@ -1547,6 +1544,10 @@ input.form-control.ui-select-search{
 .other-cast ul li {
     padding: 6px 0px;
 }
+.map img {
+    opacity: 1 !important;
+}
+
 @import "fancybox-override";
 @import "main2";
 @import "timeline";
