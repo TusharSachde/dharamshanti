@@ -1256,6 +1256,7 @@ input.form-control.ui-select-search{
     @extend .map;
     right: 0;
     bottom: 40px;
+    padding:30px;
     @include transition(all 300ms ease);
 }
 .btn-view-more {

@@ -21,6 +21,122 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             initMap = function() {
 
+                var mapTheme = [{
+                    "featureType": "administrative.locality",
+                    "elementType": "all",
+                    "stylers": [{
+                        "hue": "#f37021"
+                    }, {
+                        "saturation": 7
+                    }, {
+                        "lightness": 19
+                    }, {
+                        "visibility": "on"
+                    }]
+                }, {
+                    "featureType": "landscape",
+                    "elementType": "all",
+                    "stylers": [{
+                        "hue": "#ffffff"
+                    }, {
+                        "saturation": -100
+                    }, {
+                        "lightness": 100
+                    }, {
+                        "visibility": "simplified"
+                    }]
+                }, {
+                    "featureType": "poi",
+                    "elementType": "all",
+                    "stylers": [{
+                        "hue": "#ffffff"
+                    }, {
+                        "saturation": -100
+                    }, {
+                        "lightness": 100
+                    }, {
+                        "visibility": "off"
+                    }]
+                }, {
+                    "featureType": "road",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "hue": "#bbc0c4"
+                    }, {
+                        "saturation": -93
+                    }, {
+                        "lightness": 31
+                    }, {
+                        "visibility": "simplified"
+                    }]
+                }, {
+                    "featureType": "road",
+                    "elementType": "labels",
+                    "stylers": [{
+                        "hue": "#bbc0c4"
+                    }, {
+                        "saturation": -93
+                    }, {
+                        "lightness": 31
+                    }, {
+                        "visibility": "on"
+                    }]
+                }, {
+                    "featureType": "road.arterial",
+                    "elementType": "labels",
+                    "stylers": [{
+                        "hue": "#bbc0c4"
+                    }, {
+                        "saturation": -93
+                    }, {
+                        "lightness": -2
+                    }, {
+                        "visibility": "simplified"
+                    }]
+                }, {
+                    "featureType": "road.local",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "hue": "#e9ebed"
+                    }, {
+                        "saturation": -90
+                    }, {
+                        "lightness": -8
+                    }, {
+                        "visibility": "simplified"
+                    }]
+                }, {
+                    "featureType": "transit",
+                    "elementType": "all",
+                    "stylers": [{
+                        "hue": "#e9ebed"
+                    }, {
+                        "saturation": 10
+                    }, {
+                        "lightness": 69
+                    }, {
+                        "visibility": "on"
+                    }]
+                }, {
+                    "featureType": "water",
+                    "elementType": "all",
+                    "stylers": [{
+                        "hue": "#e9ebed"
+                    }, {
+                        "saturation": -78
+                    }, {
+                        "lightness": 67
+                    }, {
+                        "visibility": "simplified"
+                    }]
+                }];
+
+
+                var customMapType = new google.maps.StyledMapType(mapTheme, {
+                    name: 'Custom Style'
+                });
+                var customMapTypeId = 'custom_style';
+
                 var location = {
                     lat: 19.133687,
                     lng: 72.836493
@@ -32,16 +148,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     zoom: 17,
                     center: location,
                     scrollwheel: false,
+                    mapTypeControlOptions: {
+                        mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
+                    }
                 });
+                map.mapTypes.set(customMapTypeId, customMapType);
+                map.setMapTypeId(customMapTypeId);
+
                 directionsDisplay.setMap(map);
 
                 addMarker(location, map);
             };
 
             var icon = {
-                url:"img/favicon.ico",
+                url: "img/dharmamapmarker.png",
                 fillOpacity: 1,
-                scale: 0.5,
+                scaledSize: {
+                    width: 75,
+                    height: 60
+                },
             };
 
             function addMarker(location, map) {
