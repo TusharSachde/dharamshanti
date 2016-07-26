@@ -21,22 +21,38 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             initMap = function() {
 
+                var location = {
+                    lat: 19.133687,
+                    lng: 72.836493
+                };
+
                 directionsService = new google.maps.DirectionsService;
                 directionsDisplay = new google.maps.DirectionsRenderer;
                 var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 20,
-                    center: {
-                        lat: 19.0854772,
-                        lng: 72.8365032
-                    },
+                    zoom: 17,
+                    center: location,
                     scrollwheel: false,
                 });
                 directionsDisplay.setMap(map);
 
-                var onChangeHandler = function() {
-                    calculateAndDisplayRoute();
-                };
+                addMarker(location, map);
             };
+
+            var icon = {
+                url:"img/favicon.ico",
+                fillOpacity: 1,
+                scale: 0.5,
+            };
+
+            function addMarker(location, map) {
+                // Add the marker at the clicked location, and add the next-available label
+                // from the array of alphabetical characters.
+                var marker = new google.maps.Marker({
+                    position: location,
+                    icon: icon,
+                    map: map
+                });
+            }
 
             /// MAX til here
             $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCn9ypqFNxdXt9Zu2YqLcdD1Xdt2wNul9s&callback=initMap", function(data, textStatus, jqxhr) {
