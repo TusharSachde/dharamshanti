@@ -245,7 +245,7 @@
                 <span class="color-black f12">{{item.date |date:'d MMM y'}}</span>
             </div>
             <div class="video-desc mt15 ">
-                <p class="color-black">{{item.text}}</p>
+                <p class="color-black" ng-bind-html="item.text"></p>
             </div>
         </div>
     </a>
