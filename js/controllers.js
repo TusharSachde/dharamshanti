@@ -29,6 +29,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.AllRecentMovies = data.data;
         console.log('AllRecentMovies', $scope.AllRecentMovies);
     });
+    NavigationService.getAllSlides(function(data) {
+        $scope.getAllSlides = data.data;
+        console.log('getAllSlides', $scope.getAllSlides);
+    });
+    NavigationService.getDharmaTvSlides(function(data) {
+        $scope.getDharmaTvSlides = data.data;
+        console.log('getDharmaTvSlides', $scope.getDharmaTvSlides);
+    });
 
 
 
@@ -316,11 +324,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
         NavigationService.getMovieVideo($stateParams.id, function(data) {
             $scope.movieVideo = data.data.videos;
-            console.log('getMovieVideo', $scope.movieVideo);
+              console.log('getMovieVideo', $scope.movieVideo);
+            $scope.movieVideo10 = _.chunk($scope.movieVideo, 3);
+            console.log('getMovieVideo10', $scope.movieVideo10);
         });
+$scope.getAllvideo=false;
+        $scope.moreVideo=function(){
+          $scope.getAllvideo=true;
+          NavigationService.getMovieVideo($stateParams.id, function(data) {
+              $scope.movieVideo = data.data.videos;
+                console.log('getMovieVideo', $scope.movieVideo);
+          });
+        }
         NavigationService.findOne($stateParams.id, function(data) {
             $scope.moviefindOne = data.data;
             $scope.moviefindOne.backgroundImage = $filter('uploadpath')($scope.moviefindOne.backgroundImage);
+            $scope.moviefindOne.cutImage2 = $filter('uploadpath')($scope.moviefindOne.cutImage2);
+            console.log($scope.moviefindOne.cutImage2);
 
             console.log('moviefindOne', $scope.moviefindOne);
         });
@@ -330,9 +350,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
         NavigationService.getMovieAwards($stateParams.id, function(data) {
-            $scope.MovieAwards = data.data.awards;
-            $scope.MovieAwards10 = _.groupBy($scope.MovieAwards, "title", "year");
-            console.log('MovieAwards', $scope.MovieAwards10);
+            $scope.MovieAwards = data.data;
+            console.log('MovieAwards', $scope.MovieAwards);
+            // $scope.MovieAwards10 = _.groupBy($scope.MovieAwards, "title", "year");
+            // console.log('MovieAwards', $scope.MovieAwards10);
 
         });
 
@@ -340,6 +361,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.movieCast = data.data.cast;
             console.log('movieCast', $scope.movieCast);
         });
+  $scope.subCast=false;
+        $scope.viewAllCast=function(){
+          $scope.subCast=true;
+          NavigationService.getMovieCast($stateParams.id, function(data) {
+              $scope.movieCast = data.data.cast;
+              console.log('movieCast', $scope.movieCast);
+          });
+        }
 
         NavigationService.getMovieCrew($stateParams.id, function(data) {
             $scope.movieCrew = data.data.crew;
@@ -709,6 +738,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.filter = {};
         $scope.filter.pagenumber = 0;
         $scope.filter.pagesize = 9;
+        $scope.filter.search = '';
         $scope.noviewmore = true;
 
         $scope.getNews = function(input) {
@@ -727,6 +757,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
             });
         };
+
+
 
         $scope.getNews($scope.filter);
         $scope.countries = [ // Taken from https://gist.github.com/unceus/6501985
@@ -820,6 +852,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getAllDharmatv(function(data) {
             $scope.AllDharmatv = data.data;
             console.log('AllDharmatv', $scope.AllDharmatv);
+        });
+        NavigationService.getAllDharmaTvSlider(function(data) {
+            $scope.getAllDharmaTvSlider = data.data;
+            console.log('getAllDharmaTvSlider', $scope.getAllDharmaTvSlider);
         });
         $scope.searchdata = {};
         $scope.searchdata.search = $stateParams.search;
@@ -984,9 +1020,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         }
 
+        $scope.viewSearch = function() {
+          $scope.getsearch = false;
+        }
+
 
         $scope.viewAll = function() {
             $scope.movieList.past = _.chunk(array, 5);
+            console.log('view all',$scope.movieList.past);
         }
         $scope.allvideos = [{
             img: "img/movie/m1.jpg",

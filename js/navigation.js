@@ -1,5 +1,6 @@
 // var adminurl = "http://104.199.151.75:82/";
-var adminurl = "http://192.168.1.111:82/";
+var adminurl = "http://localhost:82/";
+// var adminurl = "http://192.168.1.103:82/";
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
 var uploadurl = imgurl;
@@ -225,7 +226,7 @@ console.log(email);
     },
     getMovieAwards: function(id, callback) {
            $http({
-            url: adminurl + 'Movie/getMovieAwards',
+            url: adminurl + 'NewAward/getMovieAward',
             method: 'POST',
             withCredentials: true,
             data: {
@@ -281,6 +282,30 @@ console.log(email);
 
         $http({
             url: adminurl + 'Movie/getAllMovieName',
+            method: 'POST',
+            withCredentials: true
+        }).success(callback);
+    },
+    getAllSlides: function(callback) {
+
+        $http({
+            url: adminurl + 'homeslider/getAllHomeSlider',
+            method: 'POST',
+            withCredentials: true
+        }).success(callback);
+    },
+    getDharmaTvSlides: function(callback) {
+
+        $http({
+            url: adminurl + 'dharmahome/getDharmaTvHome',
+            method: 'POST',
+            withCredentials: true
+        }).success(callback);
+    },
+    getAllDharmaTvSlider: function(callback) {
+
+        $http({
+            url: adminurl + 'dharmaslider/getAllDharmaTvSlider',
             method: 'POST',
             withCredentials: true
         }).success(callback);

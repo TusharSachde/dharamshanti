@@ -18,12 +18,21 @@
              </div></section>
              <div ng-if="!getsearch">
             <div class="video-player mt15 tv-all-slider marg-arrow mob-mt-15">
-               <flex-slider flex-slide="s in mySlides track by $index" prev-text="" next-text="">
+               <flex-slider flex-slide="s in getAllDharmaTvSlider track by $index" prev-text="" next-text="">
                   <li>
                      <div class="video-play dh-relative">
-                        <img src="{{s}}" alt="Dharma Productions" class="img-responsive" />
+                        <img src="{{s.image|uploadpath}}" alt="Dharma Productions" class="img-responsive" />
                         <div class="play-btn text-center dh-absulate middle mob-width-auto">
-                           <a href=""><img src="img/play-btn.jpg" alt="Dharma Productions"></a>
+
+
+                          <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{s.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+                              <!-- <img ng-src="{{getDharmaTvSlides[0].image|uploadpath}}" alt="Dharma Productions" class="img-responsive margin-auto width100"> -->
+                                  <img src="img/play-btn.jpg" alt="Dharma Productions">
+
+                          </a>
+
+
+                           <!-- <a href=""><img src="img/play-btn.jpg" alt="Dharma Productions"></a> -->
                         </div>
                      </div>
                   </li>
@@ -42,7 +51,7 @@
                         <li>
                            <div class="video-box">
                               <div class="video-slide-img">
-                                 <a ui-sref="tv-inside"><img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions"></a>
+                                 <a ui-sref="tv-inside({id:data._id})"><img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions"></a>
                               </div>
                               <div class="video-names mt10">
                                  <span class="color-white text-cap">{{item.description}}</span>

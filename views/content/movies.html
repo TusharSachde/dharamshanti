@@ -14,7 +14,7 @@
                      <img src="img/search-grey.png" alt="Dharma Productions" class="doneLoading">
                   </div>
                   <input type="search" ng-enter="DoSearch()" ng-model="searchdata.search" name="name" value="" class="search-in colorchange" placeholder="Search for your favourite movie">
-                  <div class="search-img2" ng-if="showDisplay=true">
+                  <div class="search-img2" ng-if="getsearch" ng-click="viewSearch();">
                      <img src="img/error2.png" alt="Dharma Productions">
                   </div>
                </div>
@@ -148,7 +148,7 @@
          <div class="text-center ">
             <div class="dh-relative ">
                <div class="btn-view-more mt15 mb20 text-center ">
-                  <a href=" " class="btn-1 font-hammersmith btn color-primary display-inline " ng-click="viewAll(); ">
+                  <a class="btn-1 font-hammersmith btn color-primary display-inline " ng-click="viewAll(); ">
                      <svg>
                         <rect x="0 " y="0 " fill="none " width="100% " height="100% " />
                      </svg>
