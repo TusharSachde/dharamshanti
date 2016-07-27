@@ -15,8 +15,8 @@
                   <!-- <input type="search" name="name" value="" class="search-date" placeholder="Search"> -->
                   <ui-select ng-model="filter.search" ng-enter="getNews(filter.search)" style="width: 100%;" title="Choose a country" class="search-drop">
                      <ui-select-match placeholder="Search">{{$select.selected.name}}</ui-select-match>
-                     <ui-select-choices repeat="country in countries | filter: $select.search">
-                        <span ng-bind-html="country.name | highlight: $select.search"></span>
+                     <ui-select-choices repeat="country in findAllSearchParam | filter: $select.search">
+                        <span ng-bind-html="country | highlight: $select.search"></span>
                      </ui-select-choices>
                   </ui-select>
                </div>
@@ -88,8 +88,8 @@
                               <div class="news-date">
                                  <span class="f12">{{item.date| date:'d MMM y' }}</span>
                               </div>
-                              <div class="news-descp mt10">
-                                 <p>{{item.text |shorten:150}}</p>
+                              <div class="news-descp mt10" ng-bind-html="item.text |shorten:150">
+                                 <!-- <p>{{item.text |shorten:150}}</p> -->
                               </div>
                            </div>
                         </div>

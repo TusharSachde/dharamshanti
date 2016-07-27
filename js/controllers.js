@@ -885,6 +885,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
 
 
+        NavigationService.findAllSearchParam(function(data) {
+            $scope.findAllSearchParam = data.data;
+            console.log('findAllSearchParam', $scope.findAllSearchParam);
+        });
+
 
         $scope.getNews($scope.filter);
         $scope.countries = [ // Taken from https://gist.github.com/unceus/6501985
@@ -974,35 +979,65 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             'img/video-play.jpg',
             'img/video-play.jpg'
         ];
+        $scope.mysearch = {};
+        $scope.viewAll = function() {
+            $scope.AllDharmatv = array;
+            console.log('view all', $scope.AllDharmatv);
+        }
 
-        NavigationService.getAllDharmatv(function(data) {
-            $scope.AllDharmatv = data.data;
-            console.log('AllDharmatv', $scope.AllDharmatv);
-        });
         NavigationService.getAllDharmaTvSlider(function(data) {
             $scope.getAllDharmaTvSlider = data.data;
-            console.log('getAllDharmaTvSlider', $scope.getAllDharmaTvSlider);
+            // console.log('getAllDharmaTvSlider', $scope.getAllDharmaTvSlider);
         });
         $scope.searchdata = {};
-        $scope.searchdata.search = $stateParams.search;
         $scope.nodata = false;
         $scope.getsearch = false;
-        // $scope.searchdata.search = [];
+        var array = [];
 
-        $scope.DoSearch = function() {
-            NavigationService.getAllDharmatvSearch($scope.searchdata, function(data) {
-                console.log("mydata", data);
-                console.log('statepar', $scope.searchdata.search);
-                $scope.getsearch = true;
-                console.log($scope.searchdata);
-                $scope.mysearch = data.data;
-                console.log('mysearch', $scope.mysearch);
-                if ($scope.mysearch == '') {
-                    console.log('here');
-                    $scope.nodata = true;
-                }
+        $scope.callAll = function() {
+            NavigationService.getAllDharmatv10(function(data) {
+                $scope.nodata = false;
+                console.log(data.data);
+                $scope.AllDharmatv = [];
+                array = _.cloneDeep(data.data);
+                $scope.AllDharmatv = _.slice(array, 0, 4);
+                console.log('AllDharmatv', $scope.AllDharmatv);
             });
-        };
+        }
+        $scope.callAll();
+        $scope.doSearch = function() {
+                console.log($scope.searchdata.search);
+                if (!$scope.searchdata.search || ($scope.searchdata.search && $scope.searchdata.search === "")) {
+                    $scope.callAll();
+                } else {
+                    NavigationService.getAllDharmatvSearch({
+                        search: $scope.searchdata.search
+                    }, function(data) {
+                        if (data.value != false) {
+                            $scope.nodata = false;
+                            $scope.AllDharmatv = [];
+                            array = _.cloneDeep(data.data);
+                            $scope.AllDharmatv = _.slice(array, 0, 4);
+                            console.log('AllDharmatv', $scope.AllDharmatv);
+                        } else {
+                            $scope.AllDharmatv = [];
+                            $scope.nodata = true;
+                        }
+                    });
+                }
+            }
+            // NavigationService.getAllDharmatvSearch({search:$stateParams.search}, function(data) {
+            //     console.log("mydata", data);
+            //     console.log('statepar', $scope.searchdata.search);
+            //     $scope.getsearch = true;
+            //     console.log($scope.searchdata);
+            //     $scope.mysearch = data.data;
+            //     console.log('mysearch', $scope.mysearch);
+            //     if ($scope.mysearch == '') {
+            //         console.log('here');
+            //         $scope.nodata = true;
+            //     }
+            // });
 
         $scope.video = [{
             img: "img/movie/m6.jpg",
@@ -1044,8 +1079,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, {
             img: "img/movie/m8.jpg",
             name: "Baahubali Trailer | Prabhas, Rana Daggubati, Anushka, Tama..."
-
-
         }]
 
     })
