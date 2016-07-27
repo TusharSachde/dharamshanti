@@ -576,8 +576,16 @@
     .bg-sun {
         padding: 215px 0 60px 30px;
     }
+    .pb-short {
+      padding-top: 50px;
+      padding-bottom: 50px;
+  }
 }
 @media (max-width:480px) {
+  .pb-short {
+    padding-top: 25px;
+    padding-bottom: 50px;
+}
   .all-tabs .btn-group button {
     font-size: 14px;
 }

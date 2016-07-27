@@ -6,11 +6,17 @@
                <div class="head-title mt45">
                   <h1 class="color-white f120 text-up font-hammersmith">DhARMA TV</h1>
                </div>
+               <div class="search-rslt mt15" ng-if="getsearch">
+                 <span class="color-primary">Displaying Result For '{{searchdata.search}}'</span>
+               </div>
                <div class="search-movie dh-relative search-movie-mar">
                   <div class="search-img">
                      <img src="img/search.png" alt="Dharma Productions">
                   </div>
                   <input type="search" name="name" ng-enter="DoSearch()" ng-model="searchdata.search" value="" class="search-in" placeholder="Search for your favourite movie">
+                  <div class="search-img2" ng-if="getsearch" ng-click="viewSearch();">
+                      <img src="img/error.png" alt="Dharma Productions">
+                  </div>
                </div>
             </div>
             <section ng-if="nodata"> <div>
@@ -42,7 +48,7 @@
          <!-- </div> -->
          <div class="row">
             <div class="col-md-12">
-               <div class="upcoming-movie mt100" ng-repeat="data in AllDharmatv">
+               <div class="upcoming-movie pb-short" ng-repeat="data in AllDharmatv">
                   <div class="title ">
                      <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">{{data.title|shorten:20}}</h1>
                   </div>
@@ -50,7 +56,7 @@
                      <flex-slider flex-slide="item in data.videos track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
                         <li>
                            <div class="video-box">
-                              <div class="video-slide-img">
+                              <div class="video-slide-img em-box">
                                  <a ui-sref="tv-inside({id:data._id})"><img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions"></a>
                               </div>
                               <div class="video-names mt10">
@@ -87,20 +93,21 @@
          </div>
          </div>
       </div>
-   </div>
-</section>
-<section ng-if="getsearch">
-   <div class="container" >
-      <div class="row">
-         <div class="col-md-3 padding0 col-sm-4 col-sx-12 " ng-repeat="item in mysearch track by $index ">
-            <div class="tv-box">
+      <section ng-if="getsearch"  style="min-height:667px;" class="mt40">
+         <div class="container" >
+            <div class="row">
+               <div class="col-md-3 padding0 col-sm-4 col-sx-12 " ng-repeat="item in mysearch track by $index ">
+                  <div class="tv-box">
 
 
-               <img ng-src="{{item.videos[0].thumbnail|uploadpath}} " alt="Dharma Productions " class="img-responsive width100 ">
+                     <img ng-src="{{item.videos[0].thumbnail|uploadpath}} " alt="Dharma Productions " class="img-responsive width100 ">
 
 
+                  </div>
+               </div>
             </div>
          </div>
-      </div>
+      </section>
    </div>
+
 </section>

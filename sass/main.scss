@@ -1095,10 +1095,6 @@ input.form-control.ui-select-search{
     overflow: hidden;
     text-align: center;
     margin: 0;
-    img {
-        max-width: 100%;
-        max-height: 100%;
-    }
 }
 .tv-box {
     margin-bottom: 50px;
@@ -1548,7 +1544,21 @@ input.form-control.ui-select-search{
 .map img {
     opacity: 1 !important;
 }
-
+.em-box{
+  height: 148px;
+width: auto;
+overflow: hidden;
+margin: 0 auto;
+position: relative;
+img{
+  height: auto;
+width: 100%;
+}
+}
+.pb-short{
+  padding-top: 100px;
+padding-bottom: 50px;
+}
 @import "fancybox-override";
 @import "main2";
 @import "timeline";

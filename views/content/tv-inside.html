@@ -36,7 +36,7 @@
           <div class="col-md-4 padding0 col-sm-4 col-sx-12" ng-repeat="item in allvideos.videos track by $index">
             <div class="tv-box">
 
-              <div class="img-inside-box">
+              <div class="img-inside-box em-box">
                   <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{item.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">  <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" class="img-responsive width100"></a>
 
                   <!-- <img ng-src="{{item.url | youtubethumb:false}}" alt="Dharma Productions" class="img-responsive"> -->
