@@ -359,64 +359,43 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("TV Inside");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        //
+        // NavigationService.getDharmatvOne($stateParams.id, function(data) {
+        //     console.log('getDharmatvOne', data);
+        //     $scope.allvideos = data.data;
+        //     console.log("$scope.allvideos", $scope.allvideos.videos);
+        // });
 
-        NavigationService.getDharmatvOne($stateParams.id, function(data) {
-            console.log('getDharmatvOne', data);
-            $scope.allvideos = data.data;
-            console.log("$scope.allvideos", $scope.allvideos.videos);
+
+        NavigationService.getAllDharmatv10(function(data) {
+            var data2 = _.filter(data.data, function(video) {
+                if (video.movie && video.movie._id) {
+                    return video.movie._id == $stateParams.id;
+                }
+            });
+            console.log(data2);
+            $scope.allvideos = data2;
         });
+
 
         NavigationService.getAllMovieName(function(data) {
             $scope.allMovieName = data.data;
-            console.log($scope.allMovieName);
+
             // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
             // console.log('chunk',$scope.MovieGal10);
         });
 
         $scope.searchdata = {};
-        $scope.searchdata.search = $stateParams.search;
+        $scope.searchdata.search = "579214debafdead501660e1d";
         $scope.nodata = false;
         $scope.getsearch = false;
         // $scope.searchdata.search = [];
         $scope.viewSearch = function() {
             $scope.getsearch = false;
-        }
-
-        $scope.DoSearch = function() {
-            NavigationService.getAllDharmatvSearch($scope.searchdata, function(data) {
-                console.log("mydata", data);
-                console.log('statepar', $scope.searchdata.search);
-                $scope.getsearch = true;
-                console.log($scope.searchdata);
-                $scope.mysearch = data.data;
-                console.log('mysearch', $scope.mysearch);
-                if ($scope.mysearch == '') {
-                    console.log('here');
-                    $scope.nodata = true;
-                }
-            });
         };
 
 
-        $scope.allvideos = [{
-            img: "img/tv/t1.jpg",
-            name: "Dhivara Full Video Song Baahubali (Hindi) "
-        }, {
-            img: "img/tv/t2.jpg",
-            name: "Making of Bahubali - Bull Fight Sequence"
-        }, {
-            img: "img/tv/t3.jpg",
-            name: "Baahubali Trailer | Prabhas,Rana Daggubati, Anushka, Tama..."
-        }, {
-            img: "img/tv/t4.jpg",
-            name: "bahubali song Kaun Hain Voh Singers: Kailash Kher..."
-        }, {
-            img: "img/tv/t5.jpg",
-            name: "Pacha Bottasi Full Video Song || Baahubali (Telugu) || Prabhas..."
-        }, {
-            img: "img/tv/t6.jpg",
-            name: "Manohari song from Bahubali"
-        }]
+        $scope.allvideos = [];
 
     })
     .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService, $uibModal, $stateParams, $filter) {
@@ -885,10 +864,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
 
 
-        NavigationService.findAllSearchParam(function(data) {
-            $scope.findAllSearchParam = data.data;
-            console.log('findAllSearchParam', $scope.findAllSearchParam);
-        });
+        // NavigationService.findAllSearchParam(function(data) {
+        //     $scope.findAllSearchParam = _.uniq(data.data);
+        //
+        //     console.log('findAllSearchParam', $scope.findAllSearchParam);
+        // });
 
 
         $scope.getNews($scope.filter);
@@ -969,7 +949,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //
         // }]
     })
-    .controller('DharmaTvCtrl', function($scope, TemplateService, NavigationService, $stateParams) {
+    .controller('DharmaTvCtrl', function($scope, TemplateService, NavigationService, $stateParams,$filter) {
         $scope.template = TemplateService.changecontent("dharma-tv");
         $scope.menutitle = NavigationService.makeactive("Dharma Tv");
         TemplateService.title = $scope.menutitle;
@@ -983,61 +963,50 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.viewAll = function() {
             $scope.AllDharmatv = array;
             console.log('view all', $scope.AllDharmatv);
-        }
+        };
 
         NavigationService.getAllDharmaTvSlider(function(data) {
             $scope.getAllDharmaTvSlider = data.data;
-            // console.log('getAllDharmaTvSlider', $scope.getAllDharmaTvSlider);
         });
         $scope.searchdata = {};
         $scope.nodata = false;
         $scope.getsearch = false;
         var array = [];
-
+        var Allvideos = [];
         $scope.callAll = function() {
             NavigationService.getAllDharmatv10(function(data) {
-                $scope.nodata = false;
-                console.log(data.data);
-                $scope.AllDharmatv = [];
-                array = _.cloneDeep(data.data);
-                $scope.AllDharmatv = _.slice(array, 0, 4);
-                console.log('AllDharmatv', $scope.AllDharmatv);
+              Allvideos = data.data;
+              groupIt(Allvideos);
             });
-        }
+        };
         $scope.callAll();
         $scope.doSearch = function() {
-                console.log($scope.searchdata.search);
-                if (!$scope.searchdata.search || ($scope.searchdata.search && $scope.searchdata.search === "")) {
-                    $scope.callAll();
-                } else {
-                    NavigationService.getAllDharmatvSearch({
-                        search: $scope.searchdata.search
-                    }, function(data) {
-                        if (data.value != false) {
-                            $scope.nodata = false;
-                            $scope.AllDharmatv = [];
-                            array = _.cloneDeep(data.data);
-                            $scope.AllDharmatv = _.slice(array, 0, 4);
-                            console.log('AllDharmatv', $scope.AllDharmatv);
-                        } else {
-                            $scope.AllDharmatv = [];
-                            $scope.nodata = true;
-                        }
-                    });
-                }
-            }
-            // NavigationService.getAllDharmatvSearch({search:$stateParams.search}, function(data) {
-            //     console.log("mydata", data);
-            //     console.log('statepar', $scope.searchdata.search);
-            //     $scope.getsearch = true;
-            //     console.log($scope.searchdata);
-            //     $scope.mysearch = data.data;
-            //     console.log('mysearch', $scope.mysearch);
-            //     if ($scope.mysearch == '') {
-            //         console.log('here');
-            //         $scope.nodata = true;
-            //     }
-            // });
+            console.log($scope.searchdata.search);
+            console.log(Allvideos);
+            var data = $filter('filter')(Allvideos,$scope.searchdata.search);
+            console.log(data);
+            groupIt(data);
+
+        };
+
+        function groupIt (alldata) {
+          var videos = _.groupBy(alldata, "movie.name");
+          delete videos.undefined;
+
+          $scope.AllDharmatv = videos;
+        }
+        // NavigationService.getAllDharmatvSearch({search:$stateParams.search}, function(data) {
+        //     console.log("mydata", data);
+        //     console.log('statepar', $scope.searchdata.search);
+        //     $scope.getsearch = true;
+        //     console.log($scope.searchdata);
+        //     $scope.mysearch = data.data;
+        //     console.log('mysearch', $scope.mysearch);
+        //     if ($scope.mysearch == '') {
+        //         console.log('here');
+        //         $scope.nodata = true;
+        //     }
+        // });
 
         $scope.video = [{
             img: "img/movie/m6.jpg",
@@ -1079,7 +1048,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, {
             img: "img/movie/m8.jpg",
             name: "Baahubali Trailer | Prabhas, Rana Daggubati, Anushka, Tama..."
-        }]
+        }];
 
     })
     .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $stateParams) {

@@ -6,14 +6,14 @@
                     <div class="head-title mt45">
                         <h1 class="color-white f120 text-up font-hammersmith">DhARMA TV</h1>
                     </div>
-                    <div class="search-rslt mt15" ng-if="getsearch">
+                    <div class="search-rslt mt15" ng-if="searchdata.search!=''">
                         <span class="color-primary">Displaying Result For '{{searchdata.search}}'</span>
                     </div>
                     <div class="search-movie dh-relative search-movie-mar">
                         <div class="search-img">
                             <img src="img/search.png" alt="Dharma Productions">
                         </div>
-                        <input type="search" name="name" value="" class="search-in" placeholder="Search for your favourite movie" ng-enter="DoSearch()" ng-model="searchdata.search">
+                        <input type="search" name="name" value="" class="search-in" placeholder="Search for your favourite movie" ng-model="searchdata.search">
                         <div class="search-img2" ng-if="getsearch" ng-click="viewSearch();">
                             <img src="img/error.png" alt="Dharma Productions">
                         </div>
@@ -23,19 +23,19 @@
         </div>
 
         <section>
-            <div class="container">
+            <div class="container" ng-if="allvideos.length > 0">
                 <div class="row">
-                    <div class="col-md-8 col-sm-8 col-xs-7" ng-if="!getsearch">
+                    <div class="col-md-8 col-sm-8 col-xs-7">
                         <div class="tv-inside mt60">
                             <div class="title">
                                 <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">{{allvideos.title | shorten : 10}}</h1>
                             </div>
                         </div>
-                        <div class="text-shadow">
+                        <div class="text-shadow" >
                             <div class="row">
-                                <div class="col-md-4 padding0 col-sm-4 col-sx-12" ng-repeat="item in allvideos.videos track by $index">
+                                <div class="col-md-4 padding0 col-sm-4 col-sx-12" ng-repeat="item in allvideos | filter:searchdata.search">
                                     <div class="tv-box">
-<a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{item.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+<a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{item.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
                                         <div class="img-inside-box em-box">
 
                                                <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" class="img-responsive width100" ng-if="item.thumbnail || item.thumbnail != ''">
@@ -57,21 +57,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8 mt40" ng-if="getsearch">
 
-                        <div class="row">
-                            <div class="col-md-4 padding0 col-sm-4 col-sx-12 " ng-repeat="item in mysearch track by $index ">
-                                <div class="tv-box">
-                                    <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{item.videos[0].url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe"> <img ng-src="{{item.videos[0].thumbnail|uploadpath}} " alt="Dharma Productions " class="img-responsive width100 "></a>
-
-                                    <!-- <img ng-src="{{item.videos[0].thumbnail|uploadpath}} " alt="Dharma Productions " class="img-responsive width100 "> -->
-
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
                     <div class="col-md-4 col-sm-4 col-xs-5">
                         <div class="border-left">
                             <h3 class="color-primary">OTHER MOVIES</h3>

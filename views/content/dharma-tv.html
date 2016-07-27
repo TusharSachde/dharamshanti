@@ -49,14 +49,14 @@
                 <!-- ------------------------------------without search----------------------------------- -->
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="upcoming-movie pb-short" ng-repeat="data in AllDharmatv" ng-if="AllDharmatv.length > 0">
-                            <div class="title" ng-if="data.videos && data.videos.length > 0">
-                                <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">{{data.movie|shorten:20}}</h1>
+                        <div class="upcoming-movie pb-short" ng-repeat="(movie,videos) in AllDharmatv">
+                            <div class="title" >
+                                <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">{{movie|shorten:20}}</h1>
                             </div>
-                            <div class="upcoming-slider tv-all-slider text-shadow" ng-if="data.videos && data.videos.length > 0">
-                                <flex-slider flex-slide="item in data.videos track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
+                            <div class="upcoming-slider tv-all-slider text-shadow">
+                                <flex-slider flex-slide="item in videos track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
                                     <li class="makePointer">
-                                        <div class="video-box" ui-sref="tv-inside({id:data._id})" >
+                                        <div class="video-box" ui-sref="tv-inside({id:item.movie._id})" >
                                             <div class="video-slide-img em-box">
                                                 <a >
                                                   <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" ng-if="(item.thumbnail || item.thumbnail != '')">
@@ -70,7 +70,7 @@
                                     </li>
                                 </flex-slider>
                             </div>
-                            <div class="btn-view-all mt40 mobile-text-center" ng-if="data.videos && data.videos.length > 0">
+                            <div class="btn-view-all mt40 mobile-text-center" >
                                 <a ui-sref="tv-inside({id:data._id})" class="btn-1 font-hammersmith btn color-primary float-right mobile-center ">
                                     <svg>
                                         <rect x="0" y="0" fill="none" width="100%" height="100%" />
@@ -99,7 +99,7 @@
                 <div class="row">
                     <div class="col-md-3 padding0 col-sm-4 col-sx-12 " ng-repeat="item in AllDharmatv track by $index ">
                         <div class="tv-box" ng-if="item.videos.length > 0">
-                            <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{item.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe"> <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" class="img-responsive width100"></a>
+                            <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{item.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe"> <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" class="img-responsive width100"></a>
                         </div>
                     </div>
                 </div>
