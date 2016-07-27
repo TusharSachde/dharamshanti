@@ -35,13 +35,10 @@
                             <div class="row">
                                 <div class="col-md-4 padding0 col-sm-4 col-sx-12" ng-repeat="item in allvideos | filter:searchdata.search">
                                     <div class="tv-box">
-<<<<<<< HEAD
+
 <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{item.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
                                         <div class="img-inside-box em-box">
-=======
-                                        <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{item.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
-                                            <div class="img-inside-box em-box">
->>>>>>> origin/master
+
 
                                                 <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" class="img-responsive width100" ng-if="item.thumbnail || item.thumbnail != ''">
 
@@ -63,25 +60,7 @@
                         </div>
                     </div>
 
-<<<<<<< HEAD
-=======
-                        <div class="row">
-                            <div class="col-md-4 padding0 col-sm-4 col-sx-12 " ng-repeat="item in mysearch track by $index ">
-                                <div class="tv-box">
-                                    <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{item.videos[0].url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe"> <img ng-src="{{item.videos[0].thumbnail|uploadpath}} " alt="Dharma Productions " class="img-responsive width100 " ng-if="(item.videos[0].thumbnail || item.videos[0].thumbnail != '')">
-                                      <img ng-src="{{item.videos[0].url|youtubethumb}}" alt="Dharma Productions" class="img-responsive width100" ng-if="!(item.videos[0].thumbnail || item.videos[0].thumbnail != '')">
 
-                                    </a>
-
-                                    <!-- <img ng-src="{{item.videos[0].thumbnail|uploadpath}} " alt="Dharma Productions " class="img-responsive width100 "> -->
-
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
->>>>>>> origin/master
                     <div class="col-md-4 col-sm-4 col-xs-5">
                         <div class="border-left">
                             <h3 class="color-primary">OTHER MOVIES</h3>

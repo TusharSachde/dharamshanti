@@ -386,7 +386,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
         $scope.searchdata = {};
-        $scope.searchdata.search = "579214debafdead501660e1d";
+        $scope.searchdata.search = "";
         $scope.nodata = false;
         $scope.getsearch = false;
         // $scope.searchdata.search = [];
