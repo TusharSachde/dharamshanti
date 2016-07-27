@@ -55,10 +55,13 @@
                             </div>
                             <div class="upcoming-slider tv-all-slider text-shadow" ng-if="data.videos && data.videos.length > 0">
                                 <flex-slider flex-slide="item in data.videos track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
-                                    <li>
-                                        <div class="video-box">
+                                    <li class="makePointer">
+                                        <div class="video-box" ui-sref="tv-inside({id:data._id})" >
                                             <div class="video-slide-img em-box">
-                                                <a ui-sref="tv-inside({id:data._id})"><img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions"></a>
+                                                <a >
+                                                  <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" ng-if="(item.thumbnail || item.thumbnail != '')">
+                                                  <img ng-src="{{item.url|youtubethumb}}" alt="Dharma Productions" class="img-responsive width100" ng-if="!(item.thumbnail || item.thumbnail != '')">
+                                                </a>
                                             </div>
                                             <div class="video-names mt10">
                                                 <span class="color-white text-cap">{{item.description}}</span>
