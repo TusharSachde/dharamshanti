@@ -53,10 +53,10 @@
 
     <div class="upcoming mobile-row" ng-if="tabs=='upcoming'">
         <!-- desktop  -->
-        <div class="row-flex text-center hidden-xs">
+        <div class="row-flex text-center hidden-xs" >
             <div class="col-flex" ng-repeat="item in AllUpcomingMovies track by $index">
-                <div class="img-pads">
-                    <img ng-src="{{item.upcomingSmall|uploadpath}}" alt="Dharma Productions" class="img-responsive">
+                <div class="img-pads"><a ui-sref="movies">
+                    <img ng-src="{{item.upcomingSmall|uploadpath}}" alt="Dharma Productions" class="img-responsive" ></a>
                 </div>
                 <div class="movie-names">
                     <h4 class="text-up color-grey">{{item.name}}</h4>
