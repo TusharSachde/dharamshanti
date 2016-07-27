@@ -99,7 +99,10 @@
                 <div class="row">
                     <div class="col-md-3 padding0 col-sm-4 col-sx-12 " ng-repeat="item in AllDharmatv track by $index ">
                         <div class="tv-box" ng-if="item.videos.length > 0">
-                            <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{item.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe"> <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" class="img-responsive width100"></a>
+                            <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{item.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe"> <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" class="img-responsive width100" ng-if="(item.thumbnail || item.thumbnail != '')">
+                              <img ng-src="{{item.url|youtubethumb}}" alt="Dharma Productions" class="img-responsive width100" ng-if="!(item.thumbnail || item.thumbnail != '')">
+
+                            </a>
                         </div>
                     </div>
                 </div>
