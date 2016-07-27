@@ -1,5 +1,5 @@
-var adminurl = "http://104.199.151.75:82/";
-// var adminurl = "http://localhost:82/";
+// var adminurl = "http://104.199.151.75:82/";
+var adminurl = "http://localhost:82/";
 // var adminurl = "http://192.168.1.103:82/";
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
@@ -306,6 +306,14 @@ console.log(email);
 
         $http({
             url: adminurl + 'dharmaslider/getAllDharmaTvSlider',
+            method: 'POST',
+            withCredentials: true
+        }).success(callback);
+    },
+    getAllUpcomingMovies: function(callback) {
+
+        $http({
+            url: adminurl + 'Movie/getAllUpcomingMovies',
             method: 'POST',
             withCredentials: true
         }).success(callback);

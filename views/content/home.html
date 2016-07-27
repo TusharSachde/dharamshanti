@@ -157,12 +157,12 @@
 <div class="row">
     <div class="col-md-12">
         <div class="video-slider slider-nav mt30">
-            <flex-slider flex-slide="item in video track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
+            <flex-slider flex-slide="item in getAllUpcomingMovies track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
                 <li>
-                    <a href="">
+                    <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{item.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
                         <div class="video-box">
                             <div class="video-slide-img">
-                                <img ng-src="{{item.img}}" alt="Dharma Productions">
+                                <img ng-src="{{item.upcomingSmall|uploadpath}}" alt="Dharma Productions">
                             </div>
                             <div class="video-names mt10">
                                 <span class="color-white">{{item.name}}</span>
