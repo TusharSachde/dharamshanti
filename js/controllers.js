@@ -461,10 +461,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // console.log('MovieAwards', $scope.MovieAwards10);
 
         });
-
+$scope.isSubCast=false;
         NavigationService.getMovieCast($stateParams.id, function(data) {
             $scope.movieCast = data.data.cast;
-            console.log('movieCast', $scope.movieCast);
+            _.each($scope.movieCast,function(n){
+              if(n.type=='Sub-cast'){
+                $scope.isSubCast=true;
+              }
+            })
         });
         $scope.subCast = false;
         $scope.viewAllCast = function() {
