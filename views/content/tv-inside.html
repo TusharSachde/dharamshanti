@@ -82,7 +82,10 @@
             <li><a href="">Dostana</a></li> -->
 
                             </ul>
-                            <a href="" class="color-grey"><h4 ng-click="seeMoreMovieName();">See More</h4></a>
+                            <a class="color-grey">
+                              <h4 ng-click="seeMoreMovieName();" ng-if="seeMore && !seeLess">See More</h4>
+                              <h4 ng-click="seeLessMovieName();" ng-if="seeLess && !seeMore">See Less</h4>
+                            </a>
                             <h3 class="color-primary mt30">POPULAR TAGS</h3>
                             <ul class="list-none color-white padding0">
                                 <li ng-repeat="name in getAllTags"><a href="">{{name.name}}</a></li>

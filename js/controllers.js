@@ -377,22 +377,31 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.allvideos = data2;
         });
 // $scope.allMovieName=[];
+  $scope.seeMore=false;
+  $scope.seeLess=false;
         var movieNameArray = [];
+$scope.seeLessMovieName=function(){
         NavigationService.getAllMovieName(function(data) {
             $scope.allMovieName = data.data;
             movieNameArray = _.cloneDeep($scope.allMovieName);
             // $scope.allMovieName = _.chunk($scope.allMovieName,10);
             $scope.allMovieName = _.slice($scope.allMovieName, [0], [10]);
+              $scope.seeMore=true;
             console.log($scope.allMovieName);
 
-$scope.seeMoreMovieName=function(){
-  // $scope.allMovieName = {}
-  $scope.allMovieName = movieNameArray;
-  console.log('dfgyhujkdrftgh',$scope.allMovieName);
-}
+
             // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
             // console.log('chunk',$scope.MovieGal10);
         });
+      }
+      $scope.seeLessMovieName();
+        $scope.seeMoreMovieName=function(){
+          $scope.seeMore=false;
+            $scope.seeLess=true;
+          // $scope.allMovieName = {}
+          $scope.allMovieName = movieNameArray;
+          console.log('dfgyhujkdrftgh',$scope.allMovieName);
+        }
         NavigationService.getAllTags(function(data) {
             $scope.getAllTags = data.data;
         });
