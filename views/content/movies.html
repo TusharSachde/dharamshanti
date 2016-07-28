@@ -27,7 +27,8 @@
     </div></section>
 
    <section ng-if="getsearch==false">
-      <section class=" dharma-top-pad tv-all-slider slider-nav ">
+      <section class=" dharma-top-pad tv-all-slider slider-nav" ng-if="movieList.Upcoming && movieList.Upcoming!='' &&  movieList.Upcoming.length>0"
+>
          <div class="container ">
             <div class="row ">
                <div class="col-md-12 ">
@@ -67,7 +68,7 @@
          </div>
       </section>
 <!-- </div> -->
-<section class="dharma-movies-bg2 ">
+<section class="dharma-movies-bg2 " ng-if="movieList.Recent && movieList.Recent!='' &&  movieList.Recent.length>0">
    <div class="orange-bg ">
       <div class="container ">
          <div class="row ">
@@ -120,7 +121,7 @@
       </div>
    </div>
 </section>
-<section class="dharma-movies-bg3 ">
+<section class="dharma-movies-bg3 " ng-if="movieList.Past && movieList.Past!='' &&  movieList.Past.length>0">
    <div class="orange-bg recent-movie mt30 ">
       <div class="container ">
          <div class="row ">
@@ -163,7 +164,7 @@
 
 </section>
 </section>
-<section ng-if="getsearch">
+<section ng-if="getsearch || mysearch.length>0">
 <div class="container">
   <div class="row ">
     <!-- drtfghujedrfghj{{mysearch[0]}} -->
