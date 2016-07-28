@@ -701,9 +701,12 @@ a {
     background-size: 100% 100%;
 }
 .movie-inside-bg {
-    background: url("../img/main3.jpg")no-repeat top center fixed;
+    background: url("../img/main3.jpg");
     padding: 620px 60px 0;
-    background-size: cover;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: top center !important;
+    background-attachment: fixed;
 }
 .width100 {
     width: 100%;

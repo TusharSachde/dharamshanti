@@ -786,8 +786,8 @@
     .movie-inside-bg {
           background: url("../img/main3.jpg") no-repeat top center;
         padding: 170px 0 0;
-        background-size: contain;
-        background-repeat: repeat-y;
+        background-size: contain !important;
+        background-repeat: repeat-y !important;
     }
     .common-class .flex-control-nav {
         display: none !important;
