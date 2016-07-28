@@ -99,6 +99,28 @@ firstapp.filter('uploadpath', function() {
         }
     };
 });
+firstapp.filter('wallpaperpath', function() {
+    return function(input, width, height, style) {
+        var other = "";
+        if (width && width != "") {
+            other += "&width=" + width;
+        }
+        if (height && height != "") {
+            other += "&height=" + height;
+        }
+        if (style && style != "") {
+            other += "&style=" + style;
+        }
+        if (input) {
+            if (input.indexOf('https://') == -1) {
+                return imgurl + "wallpaper" + "?file=" + input + other;
+
+            } else {
+                return input;
+            }
+        }
+    };
+});
 firstapp.filter('shorten', function() {
     return function(value, limit) {
         if (value)

@@ -99,8 +99,8 @@
 
                 </div>
                 <div class="" ng-if="tab=='cast'">
-                    <div class="movie-inside-date bg-cast cast-credit" ng-style="{'background':'url('+moviefindOne.cutImage+') no-repeat ','background-position':'right bottom'}">
-                    <div class="movie-inside-date bg-cast cast-credit">
+                    <div class="movie-inside-date bg-cast cast-credit" ng-style="{'background':'url('+moviefindOne.cutImage+') no-repeat ','background-size':'contain','background-position':'right bottom','padding-top':'20px','padding-bottom':'30px'}">
+                    <!-- <div class="movie-inside-date bg-cast cast-credit"> -->
                         <div class="box-pad">
                             <div class="row">
                                 <div class="col-md-2 col-sm-2 col-xs-2">
@@ -126,17 +126,7 @@
 
                                     </div>
 
-                                    <div class="text-center mt60" ng-if="!subCast && isSubCast">
-                                        <div class="btn-view-more ">
-                                            <a class="btn-1 font-hammersmith btn color-primary display-inline" ng-click="viewAllCast();">
-                                                <svg>
-                                                    <rect x="0" y="0" fill="none" width="100%" height="100%" />
-                                                </svg>
-                                                VIEW ALL
-                                            </a>
-                                            <!-- <button type="button" name="button" class="btn-primary-outline font-hammersmith btn-enter"></button> -->
-                                        </div>
-                                    </div>
+
                                     <!-- //viewmore -->
                                     <div class="row mt30" ng-if="subCast">
                                       <div class="other-cast">
@@ -152,7 +142,17 @@
                                       </div>
                                     </div>
                                     <!-- //viewmore -->
-
+                                    <div class="text-center mt60" >
+                                        <div class="btn-view-more ">
+                                            <a class="btn-1 font-hammersmith btn color-primary display-inline" ng-click="viewAllCast();">
+                                                <svg>
+                                                    <rect x="0" y="0" fill="none" width="100%" height="100%" />
+                                                </svg>
+                                                {{viewCastText}} ALL
+                                            </a>
+                                            <!-- <button type="button" name="button" class="btn-primary-outline font-hammersmith btn-enter"></button> -->
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="col-md-2 col-sm-2 col-xs-2 hidden-xs">
@@ -232,7 +232,7 @@
 
                 </div>
                 <div class="news" ng-if="tab=='news'">
-                    <div class="movie-inside-date bg-cast cast-credit">
+                    <div class="movie-inside-date bg-cast cast-credit" ng-style="{'background':'url('+moviefindOne.cutImage+') no-repeat ','background-size':'contain','background-position':'right bottom','padding-top':'20px','padding-bottom':'30px'}">
                         <div class="row">
                             <div class="col-md-11 col-sm-10 col-xs-12">
                                 <div class="all-movies">
@@ -276,14 +276,14 @@
                     </div>
                 </div>
                 <div class="gallery" ng-if="tab=='gallery'">
-                    <div class="movie-inside-date bg-cast cast-credit">
+                    <div class="movie-inside-date bg-cast cast-credit" ng-style="{'background':'url('+moviefindOne.cutImage+') no-repeat ','background-size':'contain','background-position':'right bottom','padding-top':'20px','padding-bottom':'30px'}">
                         <div class="row">
                             <div class="col-md-11 col-sm-11 col-xs-12">
                                 <div class="all-movies masonry-width">
                                     <div masonry preserve-order masonry-options="{ fitWidth: 'true'}" class="margin-auto">
                                         <div class="masonry-brick" ng-repeat="item in MovieGal track by $index">
                                             <div class="masonry-box">
-                                                <a href="{{item.image|uploadpath}}" fancybox-box rel="gallery1"> <img ng-src="{{item.image|uploadpath}}" alt="Dharma Production"></a>
+                                                <a href="{{item.image|uploadpath}}" fancybox-box rel="gallery1"> <img ng-src="{{item.image|uploadpath:400}}" alt="Dharma Production"></a>
 
                                             </div>
                                         </div>
@@ -319,14 +319,14 @@
                     </div>
                 </div>
                 <div class="gallery" ng-if="tab=='scene'">
-                    <div class="movie-inside-date bg-cast cast-credit">
+                    <div class="movie-inside-date bg-cast cast-credit" ng-style="{'background':'url('+moviefindOne.cutImage+') no-repeat ','background-size':'contain','background-position':'right bottom','padding-top':'20px','padding-bottom':'30px'}">
                         <div class="row">
                             <div class="col-md-11 col-sm-11 col-xs-12">
                                 <div class="all-movies masonry-width">
                                     <div masonry preserve-order masonry-options="{ fitWidth: 'true'}" class="margin-auto">
                                         <div class="masonry-brick" ng-repeat="item in movieBehindTheScenes track by $index">
                                             <div class="masonry-box">
-                                                <a href="{{item.image|uploadpath}}" fancybox-box rel="gallery1"> <img ng-src="{{item.image|uploadpath}}" alt="Dharma Production"></a>
+                                                <a href="{{item.image|uploadpath}}" fancybox-box rel="gallery1"> <img ng-src="{{item.image|uploadpath:400}}" alt="Dharma Production"></a>
 
                                             </div>
                                         </div>
@@ -356,7 +356,7 @@
                 </div>
 
                 <div class="video" ng-if="tab=='video' && !getAllvideo">
-                    <div class="movie-inside-date bg-cast cast-credit">
+                    <div class="movie-inside-date bg-cast cast-credit" ng-style="{'background':'url('+moviefindOne.cutImage+') no-repeat ','background-size':'contain','background-position':'right bottom','padding-top':'20px','padding-bottom':'30px'}">
                         <div class="row">
                             <div class="col-md-11 col-sm-10 col-xs-12">
                                 <div class="row">
@@ -462,7 +462,7 @@
 
 
                 <div class="wallpapper" ng-if="tab=='wallpapper'">
-                    <div class="movie-inside-date bg-cast cast-credit">
+                    <div class="movie-inside-date bg-cast cast-credit" ng-style="{'background':'url('+moviefindOne.cutImage+') no-repeat ','background-size':'contain','background-position':'right bottom','padding-top':'20px','padding-bottom':'30px'}">
                         <div class="row">
                             .
                             <div class="btn-group custom-tabs" role="group" aria-label="...">
@@ -478,9 +478,9 @@
                                         <div class="col-md-4 pad5 col-sm-6 col-xs-12" ng-repeat="item in movieWallpaper track by $index"  ng-if="item.type=='Desktop'">
                                             <div class="all-wall">
                                                 <div class="desktop dh-relative">
-                                                    <img ng-src="{{item.image|uploadpath}}" alt="Dharma productions" class="img-responsive width100">
+                                                    <img ng-src="{{item.image|uploadpath:400}}" alt="Dharma productions" class="img-responsive width100">
                                                     <div class="download dh-absulate">
-                                                        <a href="{{item.image|uploadpath}}" download="wallpapper"><img src="img/download.png" alt="Dharma productions"></a>
+                                                        <a href="{{item.image|uploadpath}}" download><img src="img/download.png" alt="Dharma productions"></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -513,9 +513,9 @@
                                         <div class="col-md-3 pad5 col-sm-3 col-xs-12" ng-repeat="item in movieWallpaper track by $index" ng-if="item.type=='Mobile'">
                                             <div class="all-wall">
                                                 <div class="desktop dh-relative mob-height">
-                                                    <img ng-src="{{item.image|uploadpath}}" alt="Dharma productions" class="img-responsive width100">
+                                                    <img ng-src="{{item.image|uploadpath:400}}" alt="Dharma productions" class="img-responsive width100">
                                                     <div class="download dh-absulate">
-                                                        <a href="{{item.image|uploadpath}}"  download="wallpapper"><img ng-src="img/download.png" alt="Dharma productions"></a>
+                                                        <a href="{{item.image|wallpaperpath}}" download><img ng-src="img/download.png" alt="Dharma productions"></a>
                                                         <!-- <a href="{{item.image|uploadpath}}" download><img ng-src="{{item.image|uploadpath}}" alt="Dharma productions"></a>{{item.image|uploadpath}}abcd -->
                                                     </div>
                                                 </div>

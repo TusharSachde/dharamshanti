@@ -418,6 +418,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.animationsEnabled = true;
+        $scope.viewCastText = "VIEW";
 
         NavigationService.getMovieNews($stateParams.id, function(data) {
             console.log('getMovieNews', data);
@@ -443,11 +444,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
         NavigationService.getMovieVideo($stateParams.id, function(data) {
             $scope.getMovieId = $stateParams.id;
-            console.log('464$stateParams.id', $scope.getMovieId);
             $scope.movieVideo = data.data.videos;
             console.log('getMovieVideo', $scope.movieVideo);
             $scope.movieVideo10 = _.chunk($scope.movieVideo, 6);
-            console.log('getMovieVideo10', $scope.movieVideo10);
         });
 
         console.log('rresdfghjdfghn', $scope.currenturl);
@@ -463,6 +462,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.moviefindOne = data.data;
             $scope.moviefindOne.backgroundImage = $filter('uploadpath')($scope.moviefindOne.backgroundImage);
             $scope.moviefindOne.cutImage2 = $filter('uploadpath')($scope.moviefindOne.cutImage2);
+            $scope.moviefindOne.cutImage = $filter('uploadpath')($scope.moviefindOne.cutImage);
             console.log($scope.moviefindOne.cutImage2);
 
             console.log('moviefindOne', $scope.moviefindOne);
@@ -490,11 +490,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
         $scope.subCast = false;
         $scope.viewAllCast = function() {
-            $scope.subCast = true;
-            NavigationService.getMovieCast($stateParams.id, function(data) {
-                $scope.movieCast = data.data.cast;
-                console.log('movieCast', $scope.movieCast);
-            });
+            $scope.subCast = !$scope.subCast;
+            if($scope.subCast) {
+              $scope.viewCastText = "HIDE";
+            }
+            else {
+              $scope.viewCastText = "VIEW";
+            }
+            // NavigationService.getMovieCast($stateParams.id, function(data) {
+            //     $scope.movieCast = data.data.cast;
+            //     console.log('movieCast', $scope.movieCast);
+            // });
         }
 
         NavigationService.getMovieCrew($stateParams.id, function(data) {
@@ -1184,7 +1190,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
 
 
-        
+
         $scope.allvideos = [{
             img: "img/movie/m1.jpg",
             name: "Ae Dil hai mushkil"
