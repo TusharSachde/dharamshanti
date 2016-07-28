@@ -335,6 +335,13 @@ console.log(email);
             withCredentials: true
         }).success(callback);
     },
+    getAllTags: function(callback) {
+        $http({
+            url: adminurl + 'tag/getAll',
+            method: 'POST',
+            withCredentials: true
+        }).success(callback);
+    },
 
 
 

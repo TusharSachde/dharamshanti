@@ -384,6 +384,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
             // console.log('chunk',$scope.MovieGal10);
         });
+        NavigationService.getAllTags(function(data) {
+            $scope.getAllTags = data.data;
+            console.log('wsedrfghj',$scope.getAllTags);
+        });
 
         $scope.searchdata = {};
         $scope.searchdata.search = "";
