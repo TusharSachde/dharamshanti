@@ -13,7 +13,7 @@
                         <div class="search-img">
                             <img src="img/search-grey.png" alt="Dharma Productions" class="doneLoading">
                         </div>
-                        <input type="search" ng-enter="DoSearch()" ng-model="searchdata.search" name="name" value="" class="search-in colorchange" placeholder="Search for your favourite movie">
+                        <input type="search" ng-change="DoSearch(searchdata.search)" ng-model="searchdata.search" name="name" value="" class="search-in colorchange" placeholder="Search for your favourite movie">
                         <div class="search-img2" ng-if="getsearch" ng-click="viewSearch();">
                             <img src="img/error2.png" alt="Dharma Productions">
                         </div>

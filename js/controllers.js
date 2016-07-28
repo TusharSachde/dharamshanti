@@ -12,11 +12,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
-
-
-
-
-
     $scope.mySlides = [
         'img/banners/slide1.jpg',
         'img/banners/slide1.jpg'
@@ -150,7 +145,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.News = data.data;
         _.each($scope.News, function(value) {
             value.date = new Date(value.date);
-        })
+        });
         console.log('News', $scope.News);
     });
 
@@ -159,7 +154,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.checkEmail = false;
     $scope.subscribeEmail = false;
     $scope.subscribe = function(email, form) {
-        if (email && email != '' && form.$valid) {
+        if (email && email !== '' && form.$valid) {
             console.log('erdtfgh', email.length);
             NavigationService.subScribe(email, function(data) {
                 if (!data.value) {
@@ -175,7 +170,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.subscribe.email = "";
             });
         }
-
     };
 
 
@@ -206,39 +200,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 })
 
 .controller('headerctrl', function($scope, TemplateService) {
-        $scope.template = TemplateService;
-        $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-            $(window).scrollTop(0);
-        });
-    })
-    .controller('OverviewCtrl', function($scope, TemplateService, NavigationService) {
-        $scope.template = TemplateService.changecontent("overview");
-        $scope.menutitle = NavigationService.makeactive("Overview");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+    $scope.template = TemplateService;
+    $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+        $(window).scrollTop(0);
+    });
+})
 
-    })
-    .controller('AwardsCtrl', function($scope, TemplateService, NavigationService) {
-        $scope.template = TemplateService.changecontent("awards");
-        $scope.menutitle = NavigationService.makeactive("Awards");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+.controller('OverviewCtrl', function($scope, TemplateService, NavigationService) {
+    $scope.template = TemplateService.changecontent("overview");
+    $scope.menutitle = NavigationService.makeactive("Overview");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
 
-    })
-    .controller('DharmaJourneyCtrl', function($scope, TemplateService, NavigationService) {
-        $scope.template = TemplateService.changecontent("dharma-journey");
-        $scope.menutitle = NavigationService.makeactive("Dharma Journey");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+})
 
-        NavigationService.getJourney(function(data) {
-            $scope.journeys = data;
-        });
+.controller('AwardsCtrl', function($scope, TemplateService, NavigationService) {
+    $scope.template = TemplateService.changecontent("awards");
+    $scope.menutitle = NavigationService.makeactive("Awards");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
 
-    })
-    .controller('MapCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+})
 
+.controller('DharmaJourneyCtrl', function($scope, TemplateService, NavigationService) {
+    $scope.template = TemplateService.changecontent("dharma-journey");
+    $scope.menutitle = NavigationService.makeactive("Dharma Journey");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
 
+    NavigationService.getJourney(function(data) {
+        $scope.journeys = data;
+    });
+
+})
+
+.controller('MapCtrl', function($scope, TemplateService, NavigationService, $timeout) {
 
         var directionsService = {};
         var directionsDisplay = {};
@@ -377,6 +373,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.allvideos = data2;
         });
         // $scope.allMovieName=[];
+<<<<<<< Updated upstream
         $scope.seeMore = false;
         $scope.seeLess = false;
         var movieNameArray = [];
@@ -402,6 +399,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.allMovieName = movieNameArray;
             console.log('dfgyhujkdrftgh', $scope.allMovieName);
         }
+=======
+        var movieNameArray = [];
+        NavigationService.getAllMovieName(function(data) {
+            $scope.allMovieName = data.data;
+            movieNameArray = _.cloneDeep($scope.allMovieName);
+            // $scope.allMovieName = _.chunk($scope.allMovieName,10);
+            $scope.allMovieName = _.slice($scope.allMovieName, [0], [10]);
+            console.log($scope.allMovieName);
+
+            $scope.seeMoreMovieName = function() {
+                    // $scope.allMovieName = {}
+                    $scope.allMovieName = movieNameArray;
+                    console.log('dfgyhujkdrftgh', $scope.allMovieName);
+                }
+                // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
+                // console.log('chunk',$scope.MovieGal10);
+        });
+>>>>>>> Stashed changes
         NavigationService.getAllTags(function(data) {
             $scope.getAllTags = data.data;
         });
@@ -1081,7 +1096,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }];
 
     })
-    .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $stateParams) {
+    .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $stateParams,$filter) {
         $scope.template = TemplateService.changecontent("movies");
         $scope.menutitle = NavigationService.makeactive("Movies");
         TemplateService.title = $scope.menutitle;
@@ -1143,9 +1158,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.video[i] = _.chunk($scope.video[i], 4);
         }
         var array = [];
+        var allMovies = [];
         NavigationService.getMovieDetails(function(data) {
-            $scope.MovieDetails = data.data;
-            console.log(data.data);
+            populateData(data.data);
+            allMovies = data.data;
+
+        });
+
+        function populateData(data) {
+            $scope.MovieDetails = data;
             $scope.movieList = _.groupBy($scope.MovieDetails, "releaseType");
             console.log($scope.movieList);
             array = _.cloneDeep($scope.movieList.Past);
@@ -1155,8 +1176,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
             $scope.movieList.Past = $scope.movieList.Past.splice(0, 10);
             $scope.movieList.Past = _.chunk($scope.movieList.Past, 5);
-        });
-
+        }
         $scope.searchdata = {};
         $scope.searchdata.search = $stateParams.search;
 
@@ -1166,18 +1186,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.nodata = false;
         $scope.getsearch = false;
         $scope.searchdata.search = [];
-        $scope.DoSearch = function() {
-            NavigationService.getMovieDetailsSearch($scope.searchdata, function(data) {
-                console.log('statepar', $scope.searchdata.search);
-                $scope.getsearch = true;
-                console.log($scope.searchdata);
-                $scope.mysearch = data.data;
-                console.log('mysearch', $scope.mysearch);
-                if ($scope.mysearch === '') {
-                    console.log('here');
-                    $scope.nodata = true;
-                }
-            });
+        $scope.DoSearch = function(search) {
+          console.log(search);
+          console.log(allMovies);
+            var data = $filter('filter')(allMovies,search);
+            populateData(data);
         };
 
         $scope.viewSearch = function() {
