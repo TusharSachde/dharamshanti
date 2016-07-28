@@ -1119,9 +1119,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.movieList = _.groupBy($scope.MovieDetails, "releaseType");
             console.log($scope.movieList);
             array = _.cloneDeep($scope.movieList.Past);
-            $scope.movieList.recent = _.chunk($scope.movieList.recent, 4);
-            for (var i = 0; i < $scope.movieList.recent.length; i++) {
-                $scope.movieList.recent[i] = _.chunk($scope.movieList.recent[i], 4);
+            $scope.movieList.Recent = _.chunk($scope.movieList.Recent, 4);
+            for (var i = 0; i < $scope.movieList.Recent.length; i++) {
+                $scope.movieList.Recent[i] = _.chunk($scope.movieList.Recent[i], 4);
             }
             $scope.movieList.Past = $scope.movieList.Past.splice(0, 10);
             $scope.movieList.Past = _.chunk($scope.movieList.Past, 5);

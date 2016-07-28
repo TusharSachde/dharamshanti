@@ -41,7 +41,7 @@
                            <li>
                               <div class="video-box ">
                                  <div class="video-slide-img ">
-                                    <a ui-sref="movie-inside({id:item._id}) ">
+                                    <a ui-sref="movie-inside({id:item._id})">
                                        <img ng-src="{{item.bigImage|uploadpath}} " alt="Dharma Productions ">
                                     </a>
                                  </div>
@@ -80,21 +80,25 @@
                             </h1>
                   </div>
                   <div class="upcoming-slider slider-right ">
-                     <flex-slider flex-slide="item in movieList.Recent track by $index " animation="slide " animationloop="true " move="1 ">
+                     <flex-slider flex-slide="item in movieList.Recent track by $index " animation="slide " animationloop="true " move="1 " >
+                       <a ui-sref="movie-inside({id:item._id})">
                         <li>
                            <div class="row " ng-repeat="datas in item track by $index">
-                              <div class="col-md-6 col-sm-6 col-xs-12 " ng-repeat="data in datas track by $index ">
+                              <div class="col-md-6 col-sm-6 col-xs-12 " ng-repeat="data in datas track by $index " >
+                                <a ui-sref="movie-inside({id:data._id})">
                                  <div class="video-box mb20 common-class ">
                                     <div class="video-slide-img img-pads ">
                                        <img ng-src="{{data.mediumImage|uploadpath}} " alt="Dharma Productions ">
                                     </div>
                                     <div class="video-name font-karla text-up ">
-                                       <span>{{images.name}}(2015)</span>
+                                       <span>{{data.name | shorten : 60}} ({{data.year}})</span>
                                     </div>
                                  </div>
+                                 </a>
                               </div>
                            </div>
                         </li>
+
                      </flex-slider>
                   </div>
                   <!-- <div class="upcoming-slider slider-right ">
@@ -137,12 +141,14 @@
          <div class="mobile-row ">
             <div class="row-flex text-center " ng-repeat="videos in movieList.Past track by $index">
                <div class="col-flex " ng-repeat="item in videos track by $index ">
+                 <a ui-sref="movie-inside({id:item._id})">
                   <div class="img-pads ">
                      <img ng-src="{{item.smallImage|uploadpath}} " alt="Dharma Productions " class="img-responsive ">
                   </div>
                   <div class="movie-names ">
-                     <h4 class="text-up color-grey ">{{item.name}}</h4>
+                     <h4 class="text-up color-grey ">{{item.name |shorten : 20}} <br>({{item.year}}) </h4>
                   </div>
+                </a>
                </div>
             </div>
          </div>
