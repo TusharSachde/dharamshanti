@@ -1107,7 +1107,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             img: "img/movie/m11.jpg",
             name: "BADRINATH KI DULHANIYA"
 
-        }]
+        }];
         $scope.video = _.chunk($scope.video, 4);
         for (var i = 0; i < $scope.video.length; i++) {
             $scope.video[i] = _.chunk($scope.video[i], 4);
@@ -1115,14 +1115,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         var array = [];
         NavigationService.getMovieDetails(function(data) {
             $scope.MovieDetails = data.data;
+            console.log(data.data);
             $scope.movieList = _.groupBy($scope.MovieDetails, "releaseType");
-            array = _.cloneDeep($scope.movieList.past);
+            console.log($scope.movieList);
+            array = _.cloneDeep($scope.movieList.Past);
             $scope.movieList.recent = _.chunk($scope.movieList.recent, 4);
             for (var i = 0; i < $scope.movieList.recent.length; i++) {
                 $scope.movieList.recent[i] = _.chunk($scope.movieList.recent[i], 4);
             }
-            $scope.movieList.past = $scope.movieList.past.splice(0, 10);
-            $scope.movieList.past = _.chunk($scope.movieList.past, 5);
+            $scope.movieList.Past = $scope.movieList.Past.splice(0, 10);
+            $scope.movieList.Past = _.chunk($scope.movieList.Past, 5);
         });
 
         $scope.searchdata = {};
@@ -1141,22 +1143,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 console.log($scope.searchdata);
                 $scope.mysearch = data.data;
                 console.log('mysearch', $scope.mysearch);
-                if ($scope.mysearch == '') {
+                if ($scope.mysearch === '') {
                     console.log('here');
                     $scope.nodata = true;
                 }
             });
-        }
+        };
 
         $scope.viewSearch = function() {
             $scope.getsearch = false;
-        }
+        };
 
 
         $scope.viewAll = function() {
             $scope.movieList.past = _.chunk(array, 5);
             console.log('view all', $scope.movieList.past);
-        }
+        };
         $scope.allvideos = [{
             img: "img/movie/m1.jpg",
             name: "Ae Dil hai mushkil"
@@ -1197,7 +1199,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             img: "img/movie/m5.jpg",
             name: "ok jaanu"
 
-        }]
+        }];
         $scope.allvideos = _.chunk($scope.allvideos, 5);
     })
 

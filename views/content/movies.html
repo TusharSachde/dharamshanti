@@ -36,7 +36,7 @@
                         <h1 class="ml15 mb0 color-primary font-hammersmith line30 f55 ">UPCOMING RELEASES</h1>
                      </div>
                      <div class="upcoming-slider mob-arrow ">
-                        <flex-slider flex-slide="item in movieList.upcoming track by $index " animation="slide " animationloop="true " move="1 ">
+                        <flex-slider flex-slide="item in movieList.Upcoming track by $index " animation="slide " animationloop="true " move="1 ">
                            <li>
                               <div class="video-box ">
                                  <div class="video-slide-img ">
@@ -79,10 +79,10 @@
                             </h1>
                   </div>
                   <div class="upcoming-slider slider-right ">
-                     <flex-slider flex-slide="item in movieList.recent track by $index " animation="slide " animationloop="true " move="1 ">
+                     <flex-slider flex-slide="item in movieList.Recent track by $index " animation="slide " animationloop="true " move="1 ">
                         <li>
-                           <div class="row " ng-repeat="datas in item ">
-                              <div class="col-md-6 col-sm-6 col-xs-12 " ng-repeat="data in datas ">
+                           <div class="row " ng-repeat="datas in item track by $index">
+                              <div class="col-md-6 col-sm-6 col-xs-12 " ng-repeat="data in datas track by $index ">
                                  <div class="video-box mb20 common-class ">
                                     <div class="video-slide-img img-pads ">
                                        <img ng-src="{{data.mediumImage|uploadpath}} " alt="Dharma Productions ">
@@ -134,7 +134,7 @@
             </div>
          </div>
          <div class="mobile-row ">
-            <div class="row-flex text-center " ng-repeat="videos in movieList.past ">
+            <div class="row-flex text-center " ng-repeat="videos in movieList.Past track by $index">
                <div class="col-flex " ng-repeat="item in videos track by $index ">
                   <div class="img-pads ">
                      <img ng-src="{{item.smallImage|uploadpath}} " alt="Dharma Productions " class="img-responsive ">
