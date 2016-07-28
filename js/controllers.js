@@ -376,31 +376,31 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(data2);
             $scope.allvideos = data2;
         });
-// $scope.allMovieName=[];
-  $scope.seeMore=false;
-  $scope.seeLess=false;
+        // $scope.allMovieName=[];
+        $scope.seeMore = false;
+        $scope.seeLess = false;
         var movieNameArray = [];
-$scope.seeLessMovieName=function(){
-        NavigationService.getAllMovieName(function(data) {
-            $scope.allMovieName = data.data;
-            movieNameArray = _.cloneDeep($scope.allMovieName);
-            // $scope.allMovieName = _.chunk($scope.allMovieName,10);
-            $scope.allMovieName = _.slice($scope.allMovieName, [0], [10]);
-              $scope.seeMore=true;
-            console.log($scope.allMovieName);
+        $scope.seeLessMovieName = function() {
+            NavigationService.getAllMovieName(function(data) {
+                $scope.allMovieName = data.data;
+                movieNameArray = _.cloneDeep($scope.allMovieName);
+                // $scope.allMovieName = _.chunk($scope.allMovieName,10);
+                $scope.allMovieName = _.slice($scope.allMovieName, [0], [10]);
+                $scope.seeMore = true;
+                console.log($scope.allMovieName);
 
 
-            // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
-            // console.log('chunk',$scope.MovieGal10);
-        });
-      }
-      $scope.seeLessMovieName();
-        $scope.seeMoreMovieName=function(){
-          $scope.seeMore=false;
-            $scope.seeLess=true;
-          // $scope.allMovieName = {}
-          $scope.allMovieName = movieNameArray;
-          console.log('dfgyhujkdrftgh',$scope.allMovieName);
+                // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
+                // console.log('chunk',$scope.MovieGal10);
+            });
+        }
+        $scope.seeLessMovieName();
+        $scope.seeMoreMovieName = function() {
+            $scope.seeMore = false;
+            $scope.seeLess = true;
+            // $scope.allMovieName = {}
+            $scope.allMovieName = movieNameArray;
+            console.log('dfgyhujkdrftgh', $scope.allMovieName);
         }
         NavigationService.getAllTags(function(data) {
             $scope.getAllTags = data.data;
@@ -482,13 +482,13 @@ $scope.seeLessMovieName=function(){
             // console.log('MovieAwards', $scope.MovieAwards10);
 
         });
-$scope.isSubCast=false;
+        $scope.isSubCast = false;
         NavigationService.getMovieCast($stateParams.id, function(data) {
             $scope.movieCast = data.data.cast;
-            _.each($scope.movieCast,function(n){
-              if(n.type=='Sub-cast'){
-                $scope.isSubCast=true;
-              }
+            _.each($scope.movieCast, function(n) {
+                if (n.type == 'Sub-cast') {
+                    $scope.isSubCast = true;
+                }
             })
         });
         $scope.subCast = false;
@@ -975,7 +975,7 @@ $scope.isSubCast=false;
         ];
 
     })
-    .controller('DharmaTvCtrl', function($scope, TemplateService, NavigationService, $stateParams,$filter) {
+    .controller('DharmaTvCtrl', function($scope, TemplateService, NavigationService, $stateParams, $filter) {
         $scope.template = TemplateService.changecontent("dharma-tv");
         $scope.menutitle = NavigationService.makeactive("Dharma Tv");
         TemplateService.title = $scope.menutitle;
@@ -1001,25 +1001,25 @@ $scope.isSubCast=false;
         var Allvideos = [];
         $scope.callAll = function() {
             NavigationService.getAllDharmatv10(function(data) {
-              Allvideos = data.data;
-              groupIt(Allvideos);
+                Allvideos = data.data;
+                groupIt(Allvideos);
             });
         };
         $scope.callAll();
         $scope.doSearch = function() {
             console.log($scope.searchdata.search);
             console.log(Allvideos);
-            var data = $filter('filter')(Allvideos,$scope.searchdata.search);
+            var data = $filter('filter')(Allvideos, $scope.searchdata.search);
             console.log(data);
             groupIt(data);
 
         };
 
-        function groupIt (alldata) {
-          var videos = _.groupBy(alldata, "movie.name");
-          delete videos.undefined;
+        function groupIt(alldata) {
+            var videos = _.groupBy(alldata, "movie.name");
+            delete videos.undefined;
 
-          $scope.AllDharmatv = videos;
+            $scope.AllDharmatv = videos;
         }
         // NavigationService.getAllDharmatvSearch({search:$stateParams.search}, function(data) {
         //     console.log("mydata", data);
