@@ -14,8 +14,9 @@
                         </div>
                         <div class="movie-trailor dh-relative">
                             <!-- <img src="img/movie-trailor.jpg" alt="Dharma Productions" class="img-responsive margin-auto width100"> -->
-                            <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{moviefindOne.theatricalTrailerUrl | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
-                                <img ng-src="{{moviefindOne.theatricalTrailerImage|uploadpath}}" alt="Dharma Productions" class="img-responsive margin-auto width100">
+                            <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{moviefindOne.theatricalTrailerUrl}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+                                <img ng-src="{{moviefindOne.theatricalTrailerImage|uploadpath}}" alt="Dharma Productions" class="img-responsive margin-auto width100" ng-if="(moviefindOne.theatricalTrailerImage || moviefindOne.theatricalTrailerImage != '')">
+                                  <img ng-src="{{moviefindOne.theatricalTrailerUrl|youtubethumb}}" alt="Dharma Productions" class="img-responsive width100" ng-if="!(moviefindOne.theatricalTrailerImage || moviefindOne.theatricalTrailerImage != '')">
                                 <div class="dh-absulate ply-post">
                                     <img src="img/play-small-btn.jpg" alt="Dharma Productions">
                                 </div>
@@ -60,14 +61,14 @@
                             <div class="col-md-8">
                                 <div class="data-content">
                                     <p>
-                                        {{movieSynopsisAndNote.synopsis}}.
+                                        {{movieSynopsisAndNote.synopsis}}
                                     </p>
                                     <!-- <p>
                               Yeh Jawaani Hai Deewani is the story of the relationship between two characters, Bunny (Ranbir Kapoor) & Naina (Deepika Padukone), at two separate but defining times in their lives... first, when they are just out of college and standing on the crossroads
                               of multiple decisions that will shape who and what they become... and then later on, in their late-twenties when they meet again, holding on to certain fulfilled and certain unfulfilled dreams, at a crossroads of another
                               nature this time... how these two characters affect, change, befriend and eventually fall in love with each other is the journey the film aspires to take us on...
                            </p> -->
-                                    <h4 class="mt30">DIRECTOR'S NOTE:</h4>
+                                    <h4 class="mt30" ng-if="movieSynopsisAndNote.note && movieSynopsisAndNote.note.length>0">DIRECTOR'S NOTE:</h4>
                                     <p>{{movieSynopsisAndNote.note}}</p>
                                     <!-- <p>The journey from a 21-year old to a 30-year old has had shades of all kinds. As the rest of life will too, undoubtedly. But there is something about one's first tryst with adulthood which is particularly powerful… a kind of
                               rawness, a lack of lived experience, no way of truly knowing what lies at the end of the road one is walking on, a constant seeking in the dark for the moments where life is full of light.</p>
