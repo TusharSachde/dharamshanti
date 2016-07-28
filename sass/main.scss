@@ -128,7 +128,9 @@ a {
     @include display(flex);
 }
 .col-flex {
-    @include flex(1);
+    @include flex(0 0 20%);
+    // flex: 0 0 20%;
+    max-width: 20%;
 }
 //bootstrap forms
 /* Start writing sass here */
@@ -1617,6 +1619,10 @@ display: block;
 }
 .line50{
   line-height: 54%;
+}
+.colFlex20 {
+  flex: 0 0 20%;
+  max-width: 20%;
 }
 @import "fancybox-override";
 @import "main2";
