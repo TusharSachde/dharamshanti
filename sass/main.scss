@@ -1564,6 +1564,36 @@ padding-bottom: 50px;
 .makePointer {
   cursor:pointer;
 }
+.black-bg {
+    background-color: #000;
+}
+.pb40{
+  padding-bottom: 40px;
+}
+.share-section{
+  button{
+    background: #fff;
+    color: #383838;
+    border: none;
+    padding: 4px 18px;
+    border-radius: 2px;
+    font-size: 18px;
+        margin: 0px 4px;
+        font-weight: 700;
+        i{
+          vertical-align: middle;
+border-right: 1px solid;
+padding: 0px 8px 0px 1px;
+margin: 0px 8px 0px 0px;
+        }
+        &:focus{
+          outline: 0;
+        }
+        &:active{
+          outline: 0;
+        }
+  }
+}
 @import "fancybox-override";
 @import "main2";
 @import "timeline";
