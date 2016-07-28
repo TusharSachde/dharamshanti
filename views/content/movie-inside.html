@@ -245,8 +245,8 @@
                                                 <div class="news-date">
                                                     <span class="color-black f12 font-karla">{{item.date|date:'d MMM y'}}</span>
                                                 </div>
-                                                <div class="news-descp mt15">
-                                                    <p class="color-black font-karla">{{item.text}}</p>
+                                                <div class="news-descp mt15" ng-bind-html="item.text">
+                                                    <!-- <p class="color-black font-karla">{{item.text}}</p> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -474,7 +474,7 @@
                             <div class="row">
                                 <div class="col-md-11 col-sm-10 col-xs-12">
                                     <div class="row">
-                                        <div class="col-md-4 pad5 col-sm-6 col-xs-12" ng-repeat="item in movieWallpaper track by $index"  ng-if="item.type=='desktop'">
+                                        <div class="col-md-4 pad5 col-sm-6 col-xs-12" ng-repeat="item in movieWallpaper track by $index"  ng-if="item.type=='Desktop'">
                                             <div class="all-wall">
                                                 <div class="desktop dh-relative">
                                                     <img ng-src="{{item.image|uploadpath}}" alt="Dharma productions" class="img-responsive width100">
@@ -509,7 +509,7 @@
                             <div class="row">
                                 <div class="col-md-11 col-sm-10 col-xs-12">
                                     <div class="row">
-                                        <div class="col-md-3 pad5 col-sm-3 col-xs-12" ng-repeat="item in movieWallpaper track by $index" ng-if="item.type=='mobile'">
+                                        <div class="col-md-3 pad5 col-sm-3 col-xs-12" ng-repeat="item in movieWallpaper track by $index" ng-if="item.type=='Mobile'">
                                             <div class="all-wall">
                                                 <div class="desktop dh-relative mob-height">
                                                     <img ng-src="{{item.image|uploadpath}}" alt="Dharma productions" class="img-responsive width100">
