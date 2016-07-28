@@ -79,7 +79,7 @@
                <div class="all-movies custom-box mob-mt-top">
                   <div masonry preserve-order masonry-options="{ fitWidth: 'true'}" class="margin-auto">
                      <div class="masonry-brick" ng-repeat="item in news track by $index">
-                        <div class="masonry-box">
+                        <!-- <div class="masonry-box">
                            <img ng-src="{{item.image| uploadpath}}" alt="Dharma Production">
                            <div class="padd10">
                               <div class="news-title mt10">
@@ -89,10 +89,24 @@
                                  <span class="f12">{{item.date| date:'d MMM y' }}</span>
                               </div>
                               <div class="news-descp mt10" ng-bind-html="item.text |shorten:150">
-                                 <!-- <p>{{item.text |shorten:150}}</p> -->
+
                               </div>
                            </div>
+                        </div> -->
+                        <div class="masonry-box">
+                    <img ng-src="{{item.img}}" alt="Dharma Production">
+                    <div class="padd10">
+                        <div class="news-title mt10">
+                            <h4 class="margin0">{{item.name}}</h4>
                         </div>
+                        <div class="news-date">
+                            <span class="f12">{{item.date}}</span>
+                        </div>
+                        <div class="news-descp mt10">
+                            <p>{{item.desc}}</p>
+                        </div>
+                    </div>
+                </div>
                      </div>
                   </div>
                   <div class="text-center cast-credit">

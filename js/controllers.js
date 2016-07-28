@@ -919,6 +919,56 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         ];
 
+        $scope.news = [{
+    img: "img/news/n1.jpg",
+    name: "Varun Dhawan shares picture of Dharma Productions new office",
+    date: "21 Mar 2016",
+    desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+
+}, {
+    img: "img/news/n2.jpg",
+    name: "Bahubali bags The Best Film Of 2015 National Award",
+    date: "21 Mar 2016",
+    desc: "SS Rajamouli's Bahubali: The Beginning (also spelt as Baahubali), starring Prabhas and Rana Daggubati, has won the Best Feature Film at the 63rd National Film Award (NFA). "
+
+}, {
+    img: "img/news/n3.jpg",
+    name: "Varun Dhawan shares picture of Dharma Productions new office",
+    date: "21 Mar 2016",
+    desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+
+}, {
+    img: "img/news/n1.jpg",
+    name: "Varun Dhawan shares picture of Dharma Productions new office",
+    date: "21 Mar 2016",
+    desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+
+}, {
+    img: "img/news/n2.jpg",
+    name: "Varun Dhawan shares picture of Dharma Productions new office",
+    date: "21 Mar 2016",
+    desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+
+}, {
+    img: "img/news/n3.jpg",
+    name: "Varun Dhawan shares picture of Dharma Productions new office",
+    date: "21 Mar 2016",
+    desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+
+}, {
+    img: "img/news/n1.jpg",
+    name: "Varun Dhawan shares picture of Dharma Productions new office",
+    date: "21 Mar 2016",
+    desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+
+}, {
+    img: "img/news/n2.jpg",
+    name: "Varun Dhawan shares picture of Dharma Productions new office",
+    date: "21 Mar 2016",
+    desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+
+}];
+
     })
     .controller('NewsDetailCtrl', function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("news-detail");

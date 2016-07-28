@@ -243,7 +243,7 @@
 <h1 class="f90 font-hammersmith color-white margin0 line45">NEWS</h1>
 </div>
 <div class="news-slider slider-right mob-hide">
-<flex-slider flex-slide="item in News track by $index" animation="slide" item-width="300" item-margin="60" animationloop="true" move="1">
+<!-- <flex-slider flex-slide="item in News track by $index" animation="slide" item-width="300" item-margin="60" animationloop="true" move="1">
 <li>
     <a href="">
         <div class="video-box ">
@@ -262,6 +262,26 @@
         </div>
     </a>
 </li>
+</flex-slider> -->
+<flex-slider flex-slide="item in news track by $index" animation="slide" item-width="300" item-margin="60" animationloop="true" move="1">
+    <li>
+        <a href="">
+            <div class="video-box ">
+                <div class="video-slide-img">
+                    <img ng-src="{{item.img}}" alt="Dharma Productions">
+                </div>
+                <div class="video-name mt20">
+                    <h4 class="color-white margin0">{{item.name}}</h4>
+                </div>
+                <div class="video-date">
+                    <span class="color-black f12">{{item.date}}</span>
+                </div>
+                <div class="video-desc mt15 ">
+                    <p class="color-black">{{item.desc}}</p>
+                </div>
+            </div>
+        </a>
+    </li>
 </flex-slider>
 </div>
 </div>
