@@ -36,7 +36,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.getDharmaTvSlides = data.data;
         console.log('getDharmaTvSlides', $scope.getDharmaTvSlides);
     });
-    NavigationService.getAllUpcomingMovies(function(data) {
+    NavigationService.getAllUpcomingMoviesHome(function(data) {
         $scope.getAllUpcomingMovies = data.data;
         console.log('getAllUpcomingMovies', $scope.getAllUpcomingMovies);
     });

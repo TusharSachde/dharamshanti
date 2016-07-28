@@ -150,6 +150,14 @@ console.log(email);
             withCredentials: true
         }).success(callback);
     },
+    getAllUpcomingMoviesHome: function(callback) {
+
+        $http({
+            url: adminurl + 'dharmatv/getDharmaTvHomeSlider',
+            method: 'POST',
+            withCredentials: true
+        }).success(callback);
+    },
     getAllRecentMovies: function(callback) {
 
         $http({
