@@ -141,7 +141,7 @@
 </div>
 <div class="row">
     <div class="video-play text-shadow">
-          <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{getDharmaTvSlides[0].url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+          <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{getDharmaTvSlides[0].url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
         <img ng-src="{{getDharmaTvSlides[0].image|uploadpath}}" alt="Dharma Productions" class="img-responsive"/>
         <div class="play-btn text-center dh-absulate middle">
 
@@ -160,7 +160,7 @@
         <div class="video-slider slider-nav mt30">
             <flex-slider flex-slide="item in getAllUpcomingMovies track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
                 <li>
-                    <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{item.url | youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+                    <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{item.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
                         <div class="video-box">
                             <div class="video-slide-img">
                                 <img ng-src="{{item.upcomingSmall|uploadpath}}" alt="Dharma Productions">
