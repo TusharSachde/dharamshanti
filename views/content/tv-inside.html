@@ -65,7 +65,7 @@
                         <div class="border-left">
                             <h3 class="color-primary">OTHER MOVIES</h3>
                             <ul class="list-none color-white padding0">
-                                <li ng-repeat="name in allMovieName"><a href="">{{name.name}}</a></li>
+                                <li ng-repeat="name in allMovieName"><a>{{name.name}}</a></li>
                                 <!-- <li><a href="">Brothers</a></li>
             <li><a href="">Hasee Toh Phasee</a></li>
             <li><a href="">Ungli</a></li>
@@ -82,7 +82,7 @@
             <li><a href="">Dostana</a></li> -->
 
                             </ul>
-                            <a href="" class="color-grey"><h4>See More</h4></a>
+                            <a href="" class="color-grey"><h4 ng-click="seeMoreMovieName();">See More</h4></a>
                             <h3 class="color-primary mt30">POPULAR TAGS</h3>
                             <ul class="list-none color-white padding0">
                                 <li ng-repeat="name in getAllTags"><a href="">{{name.name}}</a></li>
