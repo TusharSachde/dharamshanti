@@ -419,7 +419,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.allvideos = [];
 
     })
-    .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService, $uibModal, $stateParams, $filter) {
+    .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService, $uibModal, $stateParams, $filter,$window ) {
         $scope.template = TemplateService.changecontent("movie-inside");
         $scope.menutitle = NavigationService.makeactive("Movie Inside");
         TemplateService.title = $scope.menutitle;
@@ -449,11 +449,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log('getMovieBehindTheScenes', $scope.movieBehindTheScenes);
         });
         NavigationService.getMovieVideo($stateParams.id, function(data) {
+          $scope.getMovieId=$stateParams.id;
+        console.log('464$stateParams.id',$scope.getMovieId);
             $scope.movieVideo = data.data.videos;
             console.log('getMovieVideo', $scope.movieVideo);
-            $scope.movieVideo10 = _.chunk($scope.movieVideo, 3);
+            $scope.movieVideo10 = _.chunk($scope.movieVideo, 6);
             console.log('getMovieVideo10', $scope.movieVideo10);
         });
+
+        console.log('rresdfghjdfghn',$scope.currenturl);
         $scope.getAllvideo = false;
         $scope.moreVideo = function() {
             $scope.getAllvideo = true;

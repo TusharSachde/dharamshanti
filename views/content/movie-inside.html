@@ -1,4 +1,4 @@
-<section class="movie-inside-bg" ng-style="{'background':'url('+moviefindOne.backgroundImage+') no-repeat top center fixed','background-size':'cover'}">
+<section class="movie-inside-bg" ng-style="{'background':'url('+moviefindOne.backgroundImage+')'}">
     <!-- <section ng-style="{'background-image':'url({{myBackgroundUrl}})';}"> -->
 
     <div class="container-fluid">
@@ -399,7 +399,8 @@
                         </div>
                         <div class="text-center mt30">
                             <div class="btn-outline">
-                                <button type="button" name="button" class="btn-primary-outline font-hammersmith btn-enter" ng-click="moreVideo();">VIEW MORE</button>
+                                <button type="button" name="button" class="btn-primary-outline font-hammersmith btn-enter" ui-sref="tv-inside({id:getMovieId})">VIEW MORE</button>
+                                <!-- <button type="button" name="button" class="btn-primary-outline font-hammersmith btn-enter" ng-click="moreVideo();">VIEW MORE</button> -->
                             </div>
                         </div>
                     </div>
@@ -410,7 +411,7 @@
 
 
 
-                <div class="video" ng-if="tab=='video' && getAllvideo">
+                <!-- <div class="video" ng-if="tab=='video' && getAllvideo">
                     <div class="movie-inside-date bg-cast cast-credit mt15">
                         <div class="row">
                             <div class="col-md-11 col-sm-10 col-xs-12">
@@ -453,7 +454,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
 
 
