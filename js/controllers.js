@@ -312,12 +312,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 zoom: 17,
                 center: location,
                 scrollwheel: false,
-                mapTypeControlOptions: {
-                    mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
-                }
             });
-            map.mapTypes.set(customMapTypeId, customMapType);
-            map.setMapTypeId(customMapTypeId);
 
             directionsDisplay.setMap(map);
 
@@ -417,7 +412,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.allvideos = [];
 
     })
-    .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService, $uibModal, $stateParams, $filter,$window ) {
+    .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService, $uibModal, $stateParams, $filter, $window) {
         $scope.template = TemplateService.changecontent("movie-inside");
         $scope.menutitle = NavigationService.makeactive("Movie Inside");
         TemplateService.title = $scope.menutitle;
@@ -447,15 +442,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log('getMovieBehindTheScenes', $scope.movieBehindTheScenes);
         });
         NavigationService.getMovieVideo($stateParams.id, function(data) {
-          $scope.getMovieId=$stateParams.id;
-        console.log('464$stateParams.id',$scope.getMovieId);
+            $scope.getMovieId = $stateParams.id;
+            console.log('464$stateParams.id', $scope.getMovieId);
             $scope.movieVideo = data.data.videos;
             console.log('getMovieVideo', $scope.movieVideo);
             $scope.movieVideo10 = _.chunk($scope.movieVideo, 6);
             console.log('getMovieVideo10', $scope.movieVideo10);
         });
 
-        console.log('rresdfghjdfghn',$scope.currenturl);
+        console.log('rresdfghjdfghn', $scope.currenturl);
         $scope.getAllvideo = false;
         $scope.moreVideo = function() {
             $scope.getAllvideo = true;
@@ -1079,7 +1074,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }];
 
     })
-    .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $stateParams,$filter) {
+    .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $stateParams, $filter) {
         $scope.template = TemplateService.changecontent("movies");
         $scope.menutitle = NavigationService.makeactive("Movies");
         TemplateService.title = $scope.menutitle;
@@ -1157,7 +1152,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             for (var i = 0; i < $scope.movieList.Recent.length; i++) {
                 $scope.movieList.Recent[i] = _.chunk($scope.movieList.Recent[i], 4);
             }
+
+            $scope.movieList.PastMore = _.takeRight($scope.movieList.Past, $scope.movieList.Past.length - 10);
+            $scope.movieList.PastMore = _.chunk($scope.movieList.PastMore, 5);
             $scope.movieList.Past = $scope.movieList.Past.splice(0, 10);
+
             $scope.movieList.Past = _.chunk($scope.movieList.Past, 5);
         }
         $scope.searchdata = {};
@@ -1166,13 +1165,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // var searchdatasend={
         //   search:$scope.searchdata.search
         // }
+        $scope.viewAll = false;
+
+        $scope.showViewAll = function() {
+            $scope.viewAll = true;
+        };
         $scope.nodata = false;
         $scope.getsearch = false;
         $scope.searchdata.search = [];
         $scope.DoSearch = function(search) {
-          console.log(search);
-          console.log(allMovies);
-            var data = $filter('filter')(allMovies,search);
+
+            var data = $filter('filter')(allMovies, search);
             populateData(data);
         };
 
@@ -1181,10 +1184,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
 
 
-        $scope.viewAll = function() {
-            $scope.movieList.past = _.chunk(array, 5);
-            console.log('view all', $scope.movieList.past);
-        };
+        
         $scope.allvideos = [{
             img: "img/movie/m1.jpg",
             name: "Ae Dil hai mushkil"
