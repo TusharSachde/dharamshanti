@@ -281,7 +281,7 @@
                             <div class="col-md-11 col-sm-11 col-xs-12">
                                 <div class="all-movies masonry-width">
                                     <div masonry preserve-order masonry-options="{ fitWidth: 'true'}" class="margin-auto">
-                                        <div class="masonry-brick" ng-repeat="item in MovieGal track by $index">
+                                        <div class="masonry-brick" ng-repeat="item in MovieGal track by $index"  ng-show="item.image!='' || item.image">
                                             <div class="masonry-box">
                                                 <a href="{{item.image|uploadpath}}" fancybox-box rel="gallery1"> <img ng-src="{{item.image|uploadpath:400}}" alt="Dharma Production"></a>
 
@@ -475,9 +475,9 @@
                             <div class="row">
                                 <div class="col-md-11 col-sm-10 col-xs-12">
                                     <div class="row">
-                                        <div class="col-md-4 pad5 col-sm-6 col-xs-12" ng-repeat="item in movieWallpaper track by $index"  ng-if="item.type=='Desktop'">
+                                        <div class="col-md-4 pad5 col-sm-6 col-xs-12" ng-repeat="item in movieWallpaper track by $index"  ng-if="item.type=='Desktop'" ng-show="item.image || item.image!= ''">
                                             <div class="all-wall">
-                                                <div class="desktop dh-relative">
+                                                <div class="desktop dh-relative" >
                                                     <img ng-src="{{item.image|uploadpath:400}}" alt="Dharma productions" class="img-responsive width100">
                                                     <div class="download dh-absulate">
                                                         <a href="{{item.image|uploadpath}}" download><img src="img/download.png" alt="Dharma productions"></a>
