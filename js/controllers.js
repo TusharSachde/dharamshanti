@@ -1165,6 +1165,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // var searchdatasend={
         //   search:$scope.searchdata.search
         // }
+        $scope.viewAll = false;
+
+        $scope.showViewAll = function() {
+            $scope.viewAll = true;
+        };
         $scope.nodata = false;
         $scope.getsearch = false;
         $scope.searchdata.search = [];
@@ -1179,10 +1184,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
 
 
-        $scope.viewAll = function() {
-            $scope.movieList.past = _.chunk(array, 5);
-            console.log('view all', $scope.movieList.past);
-        };
+        
         $scope.allvideos = [{
             img: "img/movie/m1.jpg",
             name: "Ae Dil hai mushkil"
