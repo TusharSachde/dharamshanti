@@ -12,7 +12,7 @@
 }
 .dharma-movies-bg {
   background: url(../img/movie-up.jpg)no-repeat;
-  background-size: cover;
+  background-size: contain;
       padding: 200px 0px 100px 0px;
       background-position: top center;
 }
@@ -58,7 +58,7 @@
 }
 
 .line30 {
-  line-height: 30%;
+  line-height: 45%;
 }
 .recent-movie {
   .video-name {
