@@ -1,0 +1,84 @@
+<section class="bg-primary">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="dharma-sun">
+               <img src="img/sun.png" alt="Dharma World" class="img-responsive">
+            </div>
+         </div>
+         <div class="col-md-8 col-sm-8 col-xs-12">
+            <div class="news-search">
+               <div class="search-movie dh-relative">
+                  <div class="search-img">
+                     <img src="img/search.png" alt="Dharma Productions">
+                  </div>
+                  <!-- <input type="search" name="name" value="" class="search-date" placeholder="Search"> -->
+                  <ui-select ng-model="filter.search" ng-enter="getNews(filter.search)" style="width: 100%;" title="Choose a country" class="search-drop">
+                     <ui-select-match placeholder="Search">{{$select.selected.name}}</ui-select-match>
+                     <ui-select-choices repeat="country in findAllSearchParam | filter: $select.search">
+                        <span ng-bind-html="country | highlight: $select.search"></span>
+                     </ui-select-choices>
+                  </ui-select>
+               </div>
+               <div class="mt15 mobile-text-center">
+                  <div class="display-inline date-select">
+                     <!-- <select class="form-control">
+      <option  value="Month"><a href="">Month</a></option>
+      <option  value="Jan"><a href="">Jan</a></option>
+      <option  value="Feb"><a href="">Feb</a></option>
+      <option  value="March"><a href="">March</a></option>
+
+    </select> -->
+                     <div class="dropdown custom-dropdown">
+                        <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                           Month
+                           <img src="img/select-arrow.png" alt="">
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                           <li><a href="">Jan</a></li>
+                           <li><a href="">Feb</a></li>
+                           <li><a href="">March</a></li>
+
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="display-inline date-select ml15">
+                     <!-- <select class="form-control">
+                                <option value="Year">Year</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+
+                            </select> -->
+                     <div class="dropdown custom-dropdown">
+                        <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                           Year
+                           <img src="img/select-arrow.png" alt="">
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                           <li><a href="">2016</a></li>
+                           <li><a href="">2015</a></li>
+                           <li><a href="">2014</a></li>
+
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="btn-go display-inline ml15">
+                     <button class="btn" type="submit">Go</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <section>
+      <div class="container">
+         <div class="row">
+            <div class="col-xs-12">
+
+            </div>
+         </div>
+      </div>
+   </section>
+</section>
