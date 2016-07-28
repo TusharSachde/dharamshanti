@@ -373,7 +373,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.allvideos = data2;
         });
         // $scope.allMovieName=[];
-<<<<<<< Updated upstream
+
         $scope.seeMore = false;
         $scope.seeLess = false;
         var movieNameArray = [];
@@ -399,24 +399,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.allMovieName = movieNameArray;
             console.log('dfgyhujkdrftgh', $scope.allMovieName);
         }
-=======
-        var movieNameArray = [];
-        NavigationService.getAllMovieName(function(data) {
-            $scope.allMovieName = data.data;
-            movieNameArray = _.cloneDeep($scope.allMovieName);
-            // $scope.allMovieName = _.chunk($scope.allMovieName,10);
-            $scope.allMovieName = _.slice($scope.allMovieName, [0], [10]);
-            console.log($scope.allMovieName);
 
-            $scope.seeMoreMovieName = function() {
-                    // $scope.allMovieName = {}
-                    $scope.allMovieName = movieNameArray;
-                    console.log('dfgyhujkdrftgh', $scope.allMovieName);
-                }
-                // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
-                // console.log('chunk',$scope.MovieGal10);
-        });
->>>>>>> Stashed changes
         NavigationService.getAllTags(function(data) {
             $scope.getAllTags = data.data;
         });
