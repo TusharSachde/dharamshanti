@@ -312,12 +312,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 zoom: 17,
                 center: location,
                 scrollwheel: false,
-                mapTypeControlOptions: {
-                    mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
-                }
             });
-            map.mapTypes.set(customMapTypeId, customMapType);
-            map.setMapTypeId(customMapTypeId);
 
             directionsDisplay.setMap(map);
 
