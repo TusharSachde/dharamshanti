@@ -153,7 +153,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="text-center ">
+
+                    <div class="mobile-row ">
+                        <div class="row-flex text-center " ng-repeat="videos in movieList.PastMore track by $index">
+                            <div class="col-flex " ng-repeat="item in videos track by $index ">
+                                <a ui-sref="movie-inside({id:item._id})">
+                                    <div class="img-pads ">
+                                        <img ng-src="{{item.smallImage|uploadpath}} " alt="Dharma Productions " class="img-responsive ">
+                                    </div>
+                                    <div class="movie-names ">
+                                        <h4 class="text-up color-grey ">{{item.name |shorten : 20}} <br>({{item.year}}) </h4>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center " ng-show="searchdata.search == ''">
                         <div class="dh-relative ">
                             <div class="btn-view-more mt15 mb20 text-center ">
                                 <a class="btn-1 font-hammersmith btn color-primary display-inline " ng-click="viewAll();">
