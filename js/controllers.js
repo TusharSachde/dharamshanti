@@ -94,51 +94,39 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }];
     $scope.news = [{
         img: "img/news/n1.jpg",
-        name: "Varun Dhawan shares picture of Dharma Productions new office",
-        date: "21 Mar 2016",
-        desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+        name: "Kapoor & Sons out now!",
+        date: "28 Mar 2016",
+        desc: "The story that will tug at your heartstrings, tickle your funny bone and leave you wanting to love your family evermore."
 
     }, {
         img: "img/news/n2.jpg",
         name: "Bahubali bags The Best Film Of 2015 National Award",
-        date: "21 Mar 2016",
-        desc: "SS Rajamouli's Bahubali: The Beginning (also spelt as Baahubali), starring Prabhas and Rana Daggubati, has won the Best Feature Film at the 63rd National Film Award (NFA). "
+        date: "28 Mar 2016",
+        desc: "Baahubali wins National Award for the best film in 2015! Congratulations to the team. We are proud partners! "
 
     }, {
         img: "img/news/n3.jpg",
-        name: "Varun Dhawan shares picture of Dharma Productions new office",
-        date: "21 Mar 2016",
-        desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+        name: "Baahubali added to the Top 10 World TV premiere list!",
+        date: "16 Nov 2015",
+        desc: "Baahubali storms television ratings as TAM reports add it to the Top 10 World TV premiere list! Huge congratulations to the team."
 
     }, {
-        img: "img/news/n1.jpg",
-        name: "Varun Dhawan shares picture of Dharma Productions new office",
-        date: "21 Mar 2016",
-        desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+        img: "img/news/n4.jpg",
+        name: "Shaandaar Out In Cinemas",
+        date: "21 Oct 2015",
+        desc: "Shaandaar starring Shahid Kapoor and Alia Bhatt hits the screens today. The movie is directed by Vikas Bahl and co produced by Fox Star Studios and Phantom films. "
 
     }, {
-        img: "img/news/n2.jpg",
-        name: "Varun Dhawan shares picture of Dharma Productions new office",
-        date: "21 Mar 2016",
-        desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+        img: "img/news/n5.jpg",
+        name: "Shaandaar's title track out now!",
+        date: "16 Sep 2015",
+        desc: "Shaandaar's title track 'Shaam Shaandaar' sung by Amit Trivedi was released today. The song is a grand celebration featuring Shahid Kapoor and Alia Bhatt."
 
     }, {
-        img: "img/news/n3.jpg",
-        name: "Varun Dhawan shares picture of Dharma Productions new office",
-        date: "21 Mar 2016",
-        desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
-
-    }, {
-        img: "img/news/n1.jpg",
-        name: "Varun Dhawan shares picture of Dharma Productions new office",
-        date: "21 Mar 2016",
-        desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
-
-    }, {
-        img: "img/news/n2.jpg",
-        name: "Varun Dhawan shares picture of Dharma Productions new office",
-        date: "21 Mar 2016",
-        desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+        img: "img/news/n6.jpg",
+        name: "35 Years Of Dharma",
+        date: "08 Oct 2015",
+        desc: "Heart-warming storylines, Stellar megastar casts, Record box-office collections...A legacy that paved way into the hearts of the audience completes celebrates 35 glorious years today."
 
     }];
     NavigationService.getNews(function(data) {
@@ -920,55 +908,42 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         ];
 
         $scope.news = [{
-    img: "img/news/n1.jpg",
-    name: "Varun Dhawan shares picture of Dharma Productions new office",
-    date: "21 Mar 2016",
-    desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+            img: "img/news/n1.jpg",
+            name: "Kapoor & Sons out now!",
+            date: "28 Mar 2016",
+            desc: "The story that will tug at your heartstrings, tickle your funny bone and leave you wanting to love your family evermore."
 
-}, {
-    img: "img/news/n2.jpg",
-    name: "Bahubali bags The Best Film Of 2015 National Award",
-    date: "21 Mar 2016",
-    desc: "SS Rajamouli's Bahubali: The Beginning (also spelt as Baahubali), starring Prabhas and Rana Daggubati, has won the Best Feature Film at the 63rd National Film Award (NFA). "
+        }, {
+            img: "img/news/n2.jpg",
+            name: "Bahubali bags The Best Film Of 2015 National Award",
+            date: "28 Mar 2016",
+            desc: "Baahubali wins National Award for the best film in 2015! Congratulations to the team. We are proud partners! "
 
-}, {
-    img: "img/news/n3.jpg",
-    name: "Varun Dhawan shares picture of Dharma Productions new office",
-    date: "21 Mar 2016",
-    desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+        }, {
+            img: "img/news/n3.jpg",
+            name: "Baahubali added to the Top 10 World TV premiere list!",
+            date: "16 Nov 2015",
+            desc: "Baahubali storms television ratings as TAM reports add it to the Top 10 World TV premiere list! Huge congratulations to the team."
 
-}, {
-    img: "img/news/n1.jpg",
-    name: "Varun Dhawan shares picture of Dharma Productions new office",
-    date: "21 Mar 2016",
-    desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+        }, {
+            img: "img/news/n4.jpg",
+            name: "Shaandaar Out In Cinemas",
+            date: "21 Oct 2015",
+            desc: "Shaandaar starring Shahid Kapoor and Alia Bhatt hits the screens today. The movie is directed by Vikas Bahl and co produced by Fox Star Studios and Phantom films. "
 
-}, {
-    img: "img/news/n2.jpg",
-    name: "Varun Dhawan shares picture of Dharma Productions new office",
-    date: "21 Mar 2016",
-    desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+        }, {
+            img: "img/news/n5.jpg",
+            name: "Shaandaar's title track out now!",
+            date: "16 Sep 2015",
+            desc: "Shaandaar's title track 'Shaam Shaandaar' sung by Amit Trivedi was released today. The song is a grand celebration featuring Shahid Kapoor and Alia Bhatt."
 
-}, {
-    img: "img/news/n3.jpg",
-    name: "Varun Dhawan shares picture of Dharma Productions new office",
-    date: "21 Mar 2016",
-    desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
+        }, {
+            img: "img/news/n6.jpg",
+            name: "35 Years Of Dharma",
+            date: "08 Oct 2015",
+            desc: "Heart-warming storylines, Stellar megastar casts, Record box-office collections...A legacy that paved way into the hearts of the audience completes celebrates 35 glorious years today."
 
-}, {
-    img: "img/news/n1.jpg",
-    name: "Varun Dhawan shares picture of Dharma Productions new office",
-    date: "21 Mar 2016",
-    desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
-
-}, {
-    img: "img/news/n2.jpg",
-    name: "Varun Dhawan shares picture of Dharma Productions new office",
-    date: "21 Mar 2016",
-    desc: "After four years, Varun Dhawan is back at Dharma’s office. Though everything remains the same, the office is now a new place for all those who work there."
-
-}];
-
+        }];
     })
     .controller('NewsDetailCtrl', function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("news-detail");
