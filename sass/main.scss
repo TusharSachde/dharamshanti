@@ -1453,23 +1453,23 @@ input.form-control.ui-select-search{
     height: 60px !important;
     span {
         visibility: visible;
-        height: 76px;
-        bottom: -11px;
-        top: initial;
+        // height: 76px;
+        // bottom: -11px;
+        // top: initial;
     }
 }
-.fancybox-prev span {
-    background-position: -8px -66px;
-}
-.fancybox-next span {
-    background-position: -15px -140px;
-}
-.fancybox-close {
-    width: 60px;
-    height: 60px;
-    top: -50px;
-    right: -100px;
-}
+// .fancybox-prev span {
+//     background-position: -8px -66px;
+// }
+// .fancybox-next span {
+//     background-position: -15px -140px;
+// }
+// .fancybox-close {
+//     width: 60px;
+//     height: 60px;
+//     top: -50px;
+//     right: -100px;
+// }
 .fancybox-skin {
     background: transparent;
 }
