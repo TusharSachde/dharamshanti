@@ -410,7 +410,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.animationsEnabled = true;
         $scope.viewCastText = "VIEW";
-        TemplateService.removeLoaderOn(11);
+        TemplateService.removeLoaderOn(10);
 
         NavigationService.getMovieNews($stateParams.id, function(data) {
             console.log('getMovieNews', data);
@@ -453,7 +453,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             NavigationService.getMovieVideo($stateParams.id, function(data) {
                 $scope.movieVideo = data.data.videos;
                 console.log('getMovieVideo', $scope.movieVideo);
-                TemplateService.removeLoader();
+                // TemplateService.removeLoader();
             });
         }
         NavigationService.findOne($stateParams.id, function(data) {
