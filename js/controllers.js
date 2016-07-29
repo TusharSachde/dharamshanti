@@ -11,6 +11,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    TemplateService.removeLoaderOn(5);
 
     $scope.mySlides = [
         'img/banners/slide1.jpg',
@@ -23,22 +24,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     NavigationService.getAllUpcomingMovies(function(data) {
         $scope.AllUpcomingMovies = data.data;
         console.log('AllUpcomingMovies', $scope.AllUpcomingMovies);
+        TemplateService.removeLoader();
     });
     NavigationService.getAllRecentMovies(function(data) {
         $scope.AllRecentMovies = data.data;
         console.log('AllRecentMovies', $scope.AllRecentMovies);
+        TemplateService.removeLoader();
     });
     NavigationService.getAllSlides(function(data) {
         $scope.getAllSlides = data.data;
         console.log('getAllSlides', $scope.getAllSlides);
+        TemplateService.removeLoader();
     });
     NavigationService.getDharmaTvSlides(function(data) {
         $scope.getDharmaTvSlides = data.data[0];
         console.log('getDharmaTvSlides', $scope.getDharmaTvSlides);
+        TemplateService.removeLoader();
     });
     NavigationService.getAllUpcomingMoviesHome(function(data) {
         $scope.getAllUpcomingMovies = data.data;
         console.log('getAllUpcomingMovies', $scope.getAllUpcomingMovies);
+        TemplateService.removeLoader();
     });
 
 
@@ -143,7 +149,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.subscribeEmail = false;
     $scope.subscribe = function(email, form) {
         if (email && email !== '' && form.$valid) {
-            console.log('erdtfgh', email.length);
             NavigationService.subScribe(email, function(data) {
                 if (!data.value) {
                     if ($scope.subscribe.email) {
@@ -154,15 +159,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     $scope.subscribeEmail = true;
                     $scope.checkEmail = false;
                 }
-                console.log(email);
                 $scope.subscribe.email = "";
             });
         }
     };
-
-
-
-
 
 
     $scope.tabs = 'upcoming';
