@@ -58,7 +58,7 @@
                 </div>
                 <div class="synopsis" ng-if="tab=='synopsis'">
                     <!-- <div class="movie-inside-date bg-synopsis"> -->
-                    <div class="movie-inside-date bg-synopsis" ng-style="{'background':'url('+moviefindOne.cutImage2+') no-repeat ','background-size':'contain','background-position':'right bottom','padding-top':'20px','padding-bottom':'30px'}">
+                    <div class="movie-inside-date bg-synopsis mob-bg" ng-style="{'background':'url('+moviefindOne.cutImage2+') no-repeat ','background-size':'contain','background-position':'right bottom','padding-top':'20px','padding-bottom':'30px'}">
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="data-content">
@@ -101,16 +101,16 @@
 
                 </div>
                 <div class="" ng-if="tab=='cast'">
-                    <div class="movie-inside-date bg-cast cast-credit" ng-style="{'background':'url('+moviefindOne.cutImage+') no-repeat ','background-size':'contain','background-position':'right bottom','padding-top':'20px','padding-bottom':'30px'}">
+                    <div class="movie-inside-date bg-cast cast-credit mob-bg" ng-style="{'background':'url('+moviefindOne.cutImage+') no-repeat ','background-size':'contain','background-position':'right bottom','padding-top':'20px','padding-bottom':'30px'}">
                     <!-- <div class="movie-inside-date bg-cast cast-credit"> -->
                         <div class="box-pad">
                             <div class="row">
-                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                <div class="col-md-2 col-sm-2 col-xs-12">
                                     <div class="cast cast-mob">
                                         <h1 class="font-hammersmith color-black">CAST</h1>
                                     </div>
                                 </div>
-                                <div class="col-md-8 col-sm-8 col-xs-10">
+                                <div class="col-md-8 col-sm-8 col-xs-12">
                                     <div class="row">
                                         <div class="col-md-3 col-sm-6 movie-col col-xs-12" ng-repeat="item in movieCast track by $index" ng-if="item.type=='Cast'">
                                             <div class="all-cast text-center">
