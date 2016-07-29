@@ -79,14 +79,13 @@
 
                     <div class="movie-inside-curve m15-top" id="top-scroll"></div>
                     <div class="movie-inner-bg mrgin-20 ">
-                        <h1 class="font-karla text-cap color-black margin0 f24-sem">Deepika scares me as an actor:
-Ranbir Kapoor</h1>
-                        <span class="color-light-grey top-set">12 November 2015</span>
+                        <h1 class="font-karla text-cap color-black margin0 f24-sem">{{getOneNews.title}}</h1>
+                        <span class="color-light-grey top-set">{{getOneNews.date | date:'dd MMM yyyy'}}</span>
                         <div class="banner-news">
-                          <img src="img/news-banner.jpg" alt="Dharma Productions" class="img-responsive">
+                          <img ng-src="{{getOneNews.image | uploadpath}}" alt="Dharma Productions" class="img-responsive">
                         </div>
-                        <div class="news-data color-white">
-                          <p>Films as varied as “Raajneeti”, “Rockstar”, “Yeh Jawaani Hai Deewani” and “Barfi!” have been a window to his versatility. But Ranbir Kapoor says his “Tamasha” co-star and former girlfriend Deepika
+                        <div class="news-data color-white" ng-bind-html="getOneNews.text">
+                          <!-- <p>Films as varied as “Raajneeti”, “Rockstar”, “Yeh Jawaani Hai Deewani” and “Barfi!” have been a window to his versatility. But Ranbir Kapoor says his “Tamasha” co-star and former girlfriend Deepika
 Padukone, whom he calls a “mastikhor (fun-lover)”, “scares” him as an actor.</p>
 <p>
 “Deepika’s growth has been immense as an actor. It feels great whenever I work with her and I feel the most creatively satisfied working with her. I look up to her as an actor, and she scares me as an actor,” Ranbir said here during a media interaction.
@@ -106,7 +105,7 @@ understanding of cinema and life, and little bit baring of her soul which we are
 <p>For “Tamasha”, the two actors have been directed by Imtiaz Ali, with whom Ranbir has worked in
 “Rockstar” and Deepika has worked in “Love Aaj Kal”.</p>
 <p>“We couldn’t have asked for a better combination,” Ranbir said.</p>
-<p>The film, releasing on November 27, tells the journey of a man who loses himself by living according to the social conventions expected of him.</p>
+<p>The film, releasing on November 27, tells the journey of a man who loses himself by living according to the social conventions expected of him.</p> -->
                         </div>
                     </div>
                     <div class="share-section mt15">

@@ -870,7 +870,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         TemplateService.removeLoaderOn(1);
-        $scope.news = [];
+        $scope.news10 = [];
         $scope.filter = {};
         $scope.filter.pagenumber = 0;
         $scope.filter.pagesize = 9;
@@ -883,7 +883,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 if (data.value) {
                     _.each(data.data.data, function(n) {
                         n.date = new Date(n.date);
-                        $scope.news.push(n);
+                        $scope.news10.push(n);
                     });
 
                     $scope.lastpage = data.data.totalpages;
@@ -961,44 +961,43 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         }];
     })
-    .controller('NewsDetailCtrl', function($scope, TemplateService, NavigationService) {
+    .controller('NewsDetailCtrl', function($scope, TemplateService, NavigationService,$stateParams) {
         $scope.template = TemplateService.changecontent("news-detail");
         $scope.menutitle = NavigationService.makeactive("News Detail");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.news = [];
-        $scope.filter = {};
-        $scope.filter.pagenumber = 0;
-        $scope.filter.pagesize = 9;
-        $scope.filter.search = '';
-        $scope.noviewmore = true;
-
-        $scope.getNews = function(input) {
-            $scope.filter.pagenumber++;
-            NavigationService.getNewsHome(input, function(data) {
-                if (data.value) {
-                    _.each(data.data.data, function(n) {
-                        n.date = new Date(n.date);
-                        $scope.news.push(n);
-                    });
-
-                    $scope.lastpage = data.data.totalpages;
-                    if ($scope.lastpage <= $scope.filter.pagenumber) {
-                        $scope.noviewmore = false;
-                    }
-                }
-            });
-        };
-
-
-        // NavigationService.findAllSearchParam(function(data) {
-        //     $scope.findAllSearchParam = _.uniq(data.data);
+        // $scope.news = [];
+        // $scope.filter = {};
+        // $scope.filter.pagenumber = 0;
+        // $scope.filter.pagesize = 9;
+        // $scope.filter.search = '';
+        // $scope.noviewmore = true;
         //
-        //     console.log('findAllSearchParam', $scope.findAllSearchParam);
-        // });
+        // $scope.getNews = function(input) {
+        //     $scope.filter.pagenumber++;
+        //     NavigationService.getNewsHome(input, function(data) {
+        //         if (data.value) {
+        //             _.each(data.data.data, function(n) {
+        //                 n.date = new Date(n.date);
+        //                 $scope.news.push(n);
+        //             });
+        //
+        //             $scope.lastpage = data.data.totalpages;
+        //             if ($scope.lastpage <= $scope.filter.pagenumber) {
+        //                 $scope.noviewmore = false;
+        //             }
+        //         }
+        //     });
+        // };
 
 
-        $scope.getNews($scope.filter);
+        NavigationService.getOneNews($stateParams.id,function(data) {
+            $scope.getOneNews = data.data;
+            console.log('getOneNews', $scope.getOneNews);
+        });
+
+
+        // $scope.getNews($scope.filter);
         $scope.countries = [ // Taken from https://gist.github.com/unceus/6501985
             {
                 name: 'Kabhi Khushi Kabhi Gum',

@@ -280,7 +280,7 @@ console.log(email);
     getNewsHome: function(request, callback) {
       console.log("myrequest",request);
            $http({
-            url: adminurl + 'news/findlimited',
+            url: adminurl + 'news/findLimitedForBackend',
             method: 'POST',
             withCredentials: true,
             data:request
@@ -350,7 +350,17 @@ console.log(email);
             withCredentials: true
         }).success(callback);
     },
+    getOneNews: function(id, callback) {
+           $http({
+            url: adminurl + 'News/getOne',
+            method: 'POST',
+            withCredentials: true,
+            data: {
+                _id: id
+            }
 
+        }).success(callback);
+    },
 
 
 
