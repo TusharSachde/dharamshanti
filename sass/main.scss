@@ -128,10 +128,26 @@ a {
     @include display(flex);
 }
 .col-flex {
-    @include flex(0 0 20%);
+    @include flex(1);
     // flex: 0 0 20%;
-    max-width: 20%;
+    // max-width: 20%;
 }
+.mobile-row{
+  .col-flex {
+      @include flex(0 0 20%);
+      // flex: 0 0 20%;
+      max-width: 20%;
+  }
+}
+.my-col{
+  .col-flex {
+      width: 50%;
+      float: left;
+      flex: 1;
+  max-width: inherit;
+  }
+}
+
 //bootstrap forms
 /* Start writing sass here */
 .margin0 {
@@ -1640,6 +1656,9 @@ display: block;
     top: 50%;
     position: absolute;
     transform: translateY(-50%);
+}
+.mobileMovieTabs{
+  width: 120px !important;
 }
 @import "fancybox-override";
 @import "main2";
