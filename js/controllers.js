@@ -966,6 +966,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("News Detail");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        TemplateService.removeLoaderOn(1);
         // $scope.news = [];
         // $scope.filter = {};
         // $scope.filter.pagenumber = 0;
@@ -994,6 +995,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getOneNews($stateParams.id,function(data) {
             $scope.getOneNews = data.data;
             console.log('getOneNews', $scope.getOneNews);
+              TemplateService.removeLoader();
         });
 
 
