@@ -13,7 +13,7 @@ templateservicemod.service('TemplateService', function() {
         this.headermenu = "views/headermenu.html";
         this.header = "views/header.html";
         this.menu = "views/menu.html";
-        this.isLoader = true;
+        this.isLoader = false;
         this.slider = "views/slider.html";
         this.content = "views/content/content.html";
         this.footermenu = "views/footermenu.html";
@@ -24,11 +24,15 @@ templateservicemod.service('TemplateService', function() {
 
     this.removeLoader = function() {
         this.removeLoaderTemp++;
-        if (this.removeLoaderTemp == this.removeLoaderNum) {
+        if (this.removeLoaderTemp >= this.removeLoaderNum) {
             this.isLoader = false;
         }
     };
+    this.getLoader = function() {
+        this.isLoader = true;
+    };
     this.removeLoaderOn = function(num) {
+        this.isLoader = true;
         this.removeLoaderNum = num;
     };
 

@@ -338,6 +338,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("TV Inside");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        TemplateService.removeLoaderOn(2);
         //
         // NavigationService.getDharmatvOne($stateParams.id, function(data) {
         //     console.log('getDharmatvOne', data);
@@ -354,6 +355,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
             console.log(data2);
             $scope.allvideos = data2;
+            TemplateService.removeLoader();
         });
         // $scope.allMovieName=[];
 
@@ -368,12 +370,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.allMovieName = _.slice($scope.allMovieName, [0], [10]);
                 $scope.seeMore = true;
                 console.log($scope.allMovieName);
-
-
+                TemplateService.removeLoader();
                 // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
                 // console.log('chunk',$scope.MovieGal10);
             });
-        }
+        };
         $scope.seeLessMovieName();
         $scope.seeMoreMovieName = function() {
             $scope.seeMore = false;
@@ -385,6 +386,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         NavigationService.getAllTags(function(data) {
             $scope.getAllTags = data.data;
+            TemplateService.removeLoader();
         });
 
         $scope.searchdata = {};
@@ -479,11 +481,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.subCast = false;
         $scope.viewAllCast = function() {
             $scope.subCast = !$scope.subCast;
-            if($scope.subCast) {
-              $scope.viewCastText = "HIDE";
-            }
-            else {
-              $scope.viewCastText = "VIEW";
+            if ($scope.subCast) {
+                $scope.viewCastText = "HIDE";
+            } else {
+                $scope.viewCastText = "VIEW";
             }
             // NavigationService.getMovieCast($stateParams.id, function(data) {
             //     $scope.movieCast = data.data.cast;
@@ -1008,7 +1009,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Dharma Tv");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-
+        TemplateService.removeLoaderOn(2);
         $scope.mySlides = [
             'img/video-play.jpg',
             'img/video-play.jpg'
@@ -1021,6 +1022,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         NavigationService.getAllDharmaTvSlider(function(data) {
             $scope.getAllDharmaTvSlider = data.data;
+            TemplateService.removeLoader();
         });
         $scope.searchdata = {};
         $scope.nodata = false;
@@ -1040,13 +1042,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             var data = $filter('filter')(Allvideos, $scope.searchdata.search);
             console.log(data);
             groupIt(data);
+            TemplateService.getLoader();
 
         };
 
         function groupIt(alldata) {
             var videos = _.groupBy(alldata, "movie.name");
             delete videos.undefined;
-
+            TemplateService.removeLoader();
             $scope.AllDharmatv = videos;
         }
         // NavigationService.getAllDharmatvSearch({search:$stateParams.search}, function(data) {
