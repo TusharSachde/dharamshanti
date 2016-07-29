@@ -1056,8 +1056,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(Allvideos);
             var data = $filter('filter')(Allvideos, $scope.searchdata.search);
             console.log(data);
-            groupIt(data);
             TemplateService.getLoader();
+            groupIt(data);
+
 
         };
 
