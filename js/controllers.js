@@ -1047,7 +1047,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.callAll = function() {
             NavigationService.getAllDharmatv10(function(data) {
                 Allvideos = data.data;
-                groupIt(Allvideos);
+                if ($stateParams.search || $stateParams.search === "") {
+                    $scope.searchdata.search = $stateParams.search;
+                    $scope.doSearch();
+                } else {
+                    groupIt(Allvideos);
+                }
+
             });
         };
         $scope.callAll();
@@ -1058,8 +1064,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(data);
             TemplateService.getLoader();
             groupIt(data);
-
-
         };
 
         function groupIt(alldata) {
