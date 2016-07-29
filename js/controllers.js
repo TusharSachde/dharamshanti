@@ -407,15 +407,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Movie Inside");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+
         $scope.animationsEnabled = true;
         $scope.viewCastText = "VIEW";
+        TemplateService.removeLoaderOn(11);
 
         NavigationService.getMovieNews($stateParams.id, function(data) {
             console.log('getMovieNews', data);
             $scope.movieNews = data.data;
             _.each($scope.movieNews, function(n) {
                 n.date = new Date(n.date);
+
             });
+            TemplateService.removeLoader();
         });
 
 
@@ -424,6 +428,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log('MovieGal1', data);
             $scope.MovieGal = data.data.gallery;
             console.log($scope.MovieGal);
+            TemplateService.removeLoader();
             // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
             // console.log('chunk',$scope.MovieGal10);
         });
@@ -431,12 +436,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getMovieBehindTheScenes($stateParams.id, function(data) {
             $scope.movieBehindTheScenes = data.data.behindTheScenes;
             console.log('getMovieBehindTheScenes', $scope.movieBehindTheScenes);
+            TemplateService.removeLoader();
         });
         NavigationService.getMovieVideo($stateParams.id, function(data) {
             $scope.getMovieId = $stateParams.id;
             $scope.movieVideo = data.data.videos;
             console.log('getMovieVideo', $scope.movieVideo);
             $scope.movieVideo10 = _.chunk($scope.movieVideo, 6);
+            TemplateService.removeLoader();
         });
 
         console.log('rresdfghjdfghn', $scope.currenturl);
@@ -446,6 +453,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             NavigationService.getMovieVideo($stateParams.id, function(data) {
                 $scope.movieVideo = data.data.videos;
                 console.log('getMovieVideo', $scope.movieVideo);
+                TemplateService.removeLoader();
             });
         }
         NavigationService.findOne($stateParams.id, function(data) {
@@ -454,17 +462,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.moviefindOne.cutImage2 = $filter('uploadpath')($scope.moviefindOne.cutImage2);
             $scope.moviefindOne.cutImage = $filter('uploadpath')($scope.moviefindOne.cutImage);
             console.log($scope.moviefindOne.cutImage2);
-
             console.log('moviefindOne', $scope.moviefindOne);
+            TemplateService.removeLoader();
         });
         NavigationService.getMovieSynopsisAndNote($stateParams.id, function(data) {
             $scope.movieSynopsisAndNote = data.data;
             console.log('movieSynopsisAndNote', $scope.movieSynopsisAndNote);
+            TemplateService.removeLoader();
         });
 
         NavigationService.getMovieAwards($stateParams.id, function(data) {
             $scope.MovieAwards = data.data;
             console.log('MovieAwards', $scope.MovieAwards);
+            TemplateService.removeLoader();
             // $scope.MovieAwards10 = _.groupBy($scope.MovieAwards, "title", "year");
             // console.log('MovieAwards', $scope.MovieAwards10);
 
@@ -477,6 +487,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     $scope.isSubCast = true;
                 }
             })
+            TemplateService.removeLoader();
         });
         $scope.subCast = false;
         $scope.viewAllCast = function() {
@@ -495,10 +506,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getMovieCrew($stateParams.id, function(data) {
             $scope.movieCrew = data.data.crew;
             console.log('movieCrew', $scope.movieCrew);
+            TemplateService.removeLoader();
         });
         NavigationService.getMovieWallpaper($stateParams.id, function(data) {
             $scope.movieWallpaper = data.data.wallpaper;
             console.log('movieWallpaper', $scope.movieWallpaper);
+            TemplateService.removeLoader();
         });
 
 
@@ -856,6 +869,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("News Events");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        TemplateService.removeLoaderOn(1);
         $scope.news = [];
         $scope.filter = {};
         $scope.filter.pagenumber = 0;
@@ -877,6 +891,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                         $scope.noviewmore = false;
                     }
                 }
+                TemplateService.removeLoader();
             });
         };
 
@@ -1113,6 +1128,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Movies");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        TemplateService.removeLoaderOn(1);
         // $scope.upcomingrelease = [{
         //     img: "img/movie-banner-dam.png",
         //     date: "10 March 2017",
@@ -1174,6 +1190,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getMovieDetails(function(data) {
             populateData(data.data);
             allMovies = data.data;
+            TemplateService.removeLoader();
 
         });
 
