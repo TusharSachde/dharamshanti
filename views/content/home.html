@@ -14,7 +14,7 @@
             <li class="mr2 {{classp}} font-hammersmith" ng-click="tabchanges('upcoming',1); scrollDown()">
                 <h1 class="margin0">UPCOMING</h1>
             </li>
-            <li class="{{classv}} font-hammersmith" ng-click="tabchanges('released',2)">
+            <li class="{{classv}} font-hammersmith" ng-click="tabchanges('released',2);  scrollDown()">
                 <h1 class="margin0">RELEASED</h1>
             </li>
         </ul>
@@ -40,7 +40,7 @@
         <li class="mr2 {{classp}} font-hammersmith" ng-click="tabchanges('upcoming',1); scrollDown()">
             <h1 class="margin0">UPCOMING</h1>
         </li>
-        <li class="{{classv}} font-hammersmith" ng-click="tabchanges('released',2)">
+        <li class="{{classv}} font-hammersmith" ng-click="tabchanges('released',2); scrolldown">
             <h1 class="margin0">RELEASED</h1>
         </li>
     </ul>
@@ -101,7 +101,7 @@
                 <img ng-src="{{item.recentSmall|uploadpath}}" alt="Dharma Productions" class="img-responsive">
             </div>
             <div class="movie-names">
-                <h4 class="text-up color-grey">{{item.name}}</h4>
+                <h4 class="text-up color-grey">{{item.name}}({{item.year}})</h4>
             </div>
         </div>
     </div>
