@@ -2,7 +2,7 @@ var initMap = {};
 var calculateAndDisplayRoute = {};
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'wu.masonry', 'ksSwiper', 'imageupload', 'ui.select'])
 
-.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
     //Used to name the .html file
 
     console.log("Testing Consoles");
@@ -154,11 +154,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     if ($scope.subscribe.email) {
                         $scope.checkEmail = true;
                         $scope.subscribeEmail = false;
+                      $timeout(function () {
+                        $scope.checkEmail = false;
+                      }, 2000);
+
                     }
                 } else {
-                  console.log('in else');
-                    $scope.subscribeEmail = true;
-                    $scope.checkEmail = false;
+                  $scope.checkEmail = false;
+                  $scope.subscribeEmail = true;
+                  $timeout(function () {
+                    $scope.subscribeEmail = false;
+                  }, 2000);
+
+
                 }
                 $scope.subscribe.email = "";
             });
