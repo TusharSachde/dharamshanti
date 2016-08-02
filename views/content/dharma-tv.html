@@ -59,7 +59,7 @@
                         <div class="title hidden-lg hidden-md hidden-sm visible-xs">
                             <h1 class="ml-7 color-primary font-hammersmith line45 f55 text-up">{{movie | shorten : 20}}</h1>
                         </div>
-                        <div class="upcoming-slider tv-all-slider text-shadow">
+                        <div class="upcoming-slider tv-all-slider text-shadow cl-flex">
                             <flex-slider flex-slide="item in videos track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
                                 <li class="makePointer">
                                     <div class="video-box" ui-sref="tv-inside({id:item.movie._id})">

@@ -1701,7 +1701,16 @@ font-size: 16px;
 .f55{
   font-size: 55px;
 }
+
 @import "fancybox-override";
+.cl-flex{
+  .flex-direction-nav .flex-disabled {
+  opacity: 0!important;
+  filter: alpha(opacity=0);
+  cursor: default;
+  z-index: -1;
+  }
+}
 @import "main2";
 @import "timeline";
 @import "mobile";
