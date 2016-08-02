@@ -1718,6 +1718,11 @@ font-size: 16px;
   z-index: -1;
   }
 }
+.w60{
+  img{
+    width: 60px;
+  }
+}
 @import "main2";
 @import "timeline";
 @import "mobile";
