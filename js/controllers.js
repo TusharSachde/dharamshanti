@@ -150,12 +150,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.subscribe = function(email, form) {
         if (email && email !== '' && form.$valid) {
             NavigationService.subScribe(email, function(data) {
-                if (!data.value) {
+                if (data.data.message == 'already exist') {
                     if ($scope.subscribe.email) {
                         $scope.checkEmail = true;
                         $scope.subscribeEmail = false;
                     }
                 } else {
+                  console.log('in else');
                     $scope.subscribeEmail = true;
                     $scope.checkEmail = false;
                 }
@@ -1170,7 +1171,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                                 name: 'Ranbir Kapoor',
                                 code: 'RK'
                             }
-                        ];  
+                        ];
 
         $scope.video = [{
             img: "img/movie/m11.jpg",
@@ -1302,6 +1303,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         }];
         $scope.allvideos = _.chunk($scope.allvideos, 5);
+
+
+
+        NavigationService.getAllMovieName(function(data) {
+            $scope.allMovieName = data.data;
+            // movieNameArray = _.cloneDeep($scope.allMovieName);
+            // $scope.allMovieName = _.chunk($scope.allMovieName,10);
+            // $scope.allMovieName = _.slice($scope.allMovieName, [0], [10]);
+            // $scope.seeMore = true;
+            console.log('edrtghjfghjk',$scope.allMovieName);
+            // TemplateService.removeLoader();
+            // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
+            // console.log('chunk',$scope.MovieGal10);
+        });
     })
 
 .controller('languageCtrl', function($scope, TemplateService, $translate, $rootScope) {
