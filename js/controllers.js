@@ -1153,6 +1153,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //   });
 
 
+                     $scope.countries = [ // Taken from https://gist.github.com/unceus/6501985
+                            {
+                                name: 'Kabhi Khushi Kabhi Gum',
+                                code: 'kkk'
+                            }, {
+                                name: 'Bahubali',
+                                code: 'BH'
+                            }, {
+                                name: 'Varun Dhawan',
+                                code: 'AA'
+                            }, {
+                                name: 'Deepika',
+                                code: 'D'
+                            }, {
+                                name: 'Ranbir Kapoor',
+                                code: 'RK'
+                            }
+                        ];  
 
         $scope.video = [{
             img: "img/movie/m11.jpg",
