@@ -13,7 +13,7 @@
                     <div class="search-img">
                         <img src="img/search.png" alt="Dharma Productions">
                     </div>
-                    <input type="search" name="name" ng-change="doSearch();" ng-model="searchdata.search" value="" class="search-in" placeholder="Search for your favourite movie">
+                    <input type="search" name="name" ng-change="doSearch();" ng-model="searchdata.search" value="" class="search-in" placeholder="Search for your favourite movie or actor">
                     <div class="search-img2" ng-if="getsearch" ng-click="viewSearch();">
                         <img src="img/error.png" alt="Dharma Productions">
                     </div>
@@ -28,7 +28,7 @@
             </section>
             <div >
                 <div ng-show="(searchdata.search == '' || !searchdata.search)" class="video-player mt15 tv-all-slider marg-arrow mob-mt-15" ng-if="getAllDharmaTvSlider.length > 0">
-                    <flex-slider flex-slide="s in getAllDharmaTvSlider track by $index" prev-text="" next-text="">
+                    <flex-slider flex-slide="s in getAllDharmaTvSlider track by $index" prev-text="" next-text="" startAt="0">
                     <li>
                       <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{s.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
 
@@ -53,8 +53,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="upcoming-movie pb-short" ng-repeat="(movie,videos) in AllDharmatv">
-                        <div class="title">
-                            <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">{{movie|shorten:20}}</h1>
+                        <div class="title hidden-xs">
+                            <h1 class="ml-7 color-primary font-hammersmith line45 f55 text-up">{{movie}}</h1>
+                        </div>
+                        <div class="title hidden-lg hidden-md hidden-sm visible-xs">
+                            <h1 class="ml-7 color-primary font-hammersmith line45 f55 text-up">{{movie | shorten : 20}}</h1>
                         </div>
                         <div class="upcoming-slider tv-all-slider text-shadow">
                             <flex-slider flex-slide="item in videos track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">

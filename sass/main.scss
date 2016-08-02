@@ -1581,7 +1581,7 @@ img{
 }
 .pb-short{
   padding-top: 100px;
-padding-bottom: 50px;
+padding-bottom: 20px;
 }
 .makePointer {
   cursor:pointer;
@@ -1692,6 +1692,14 @@ font-size: 16px;
     color: #ffffff;
     background-color: #f37021;
 }
+}
+.flexslider .slides > li:only-child{
+  .flex-direction-nav{
+    display: none;
+  }
+}
+.f55{
+  font-size: 55px;
 }
 @import "fancybox-override";
 @import "main2";
