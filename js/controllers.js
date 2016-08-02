@@ -1268,6 +1268,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.DoSearch = function(search) {
             console.log(search);
             console.log(allMovies);
+            $scope.viewAll = true;
             var data = $filter('filter')(allMovies, {name:search});
             console.log(data);
             populateData(data);
