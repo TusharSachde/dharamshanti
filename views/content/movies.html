@@ -9,7 +9,7 @@
                     <div class="search-rslt mt15" ng-if="getsearch">
                         <span class="color-primary">Displaying Result For '{{searchdata.search}}'</span>
                     </div>
-                    <div class="search-movie dh-relative text-shadow search-movie-mar">
+                    <div class="search-movie dh-relative search-movie-mar">
                         <div class="search-img">
                             <img src="img/search-grey.png" alt="Dharma Productions" class="doneLoading">
                         </div>
@@ -17,23 +17,23 @@
                         <div class="search-img2" ng-if="getsearch" ng-click="viewSearch();">
                             <img src="img/error2.png" alt="Dharma Productions">
                         </div> -->
+                        <div class="movie-search-pg">
+                          <ui-select ng-model="movie.selected" ng-change="DoSearch(movie.selected.name)" style="width: 100%;" title="Search Movie" class="search-drop">
+                    <ui-select-match placeholder="Search">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices repeat="movie in allMovieName | filter: $select.search">
+                      <div class="movi-src-rslt">
+                        <div class="display-inline">
+                          <img src="img/movie-search.png" alt="">
+                        </div>
+                        <div class="display-inline ml15">
+                            <span ng-bind-html="movie.name | highlight: $select.search"></span>
+                        </div>
+                      </div>
+                    </ui-select-choices>
+                </ui-select>
+                        </div>
+                    </div>
 
-                    </div>
-                    <div class="movie-search-pg">
-                      <ui-select ng-model="movie.selected" ng-change="DoSearch(movie.selected.name)" style="width: 100%;" title="Search Movie" class="search-drop">
-                <ui-select-match placeholder="Search">{{$select.selected.name}}</ui-select-match>
-                <ui-select-choices repeat="movie in allMovieName | filter: $select.search">
-                  <div class="movi-src-rslt">
-                    <div class="display-inline">
-                      <img src="img/movie-search.png" alt="">
-                    </div>
-                    <div class="display-inline ml15">
-                        <span ng-bind-html="movie.name | highlight: $select.search"></span>
-                    </div>
-                  </div>
-                </ui-select-choices>
-            </ui-select>
-                    </div>
                 </div>
             </div>
         </div>
