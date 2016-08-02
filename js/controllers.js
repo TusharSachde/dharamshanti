@@ -1130,7 +1130,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }];
 
     })
-    .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $stateParams, $filter) {
+    .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $stateParams, $filter,$timeout) {
         $scope.template = TemplateService.changecontent("movies");
         $scope.menutitle = NavigationService.makeactive("Movies");
         TemplateService.title = $scope.menutitle;
@@ -1223,17 +1223,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.MovieDetails = data;
             $scope.movieList = _.groupBy($scope.MovieDetails, "releaseType");
             console.log($scope.movieList);
-            array = _.cloneDeep($scope.movieList.Past);
-            $scope.movieList.Recent = _.chunk($scope.movieList.Recent, 4);
+
+              $scope.movieList.Recent = _.chunk($scope.movieList.Recent, 4);
+
+
             for (var i = 0; i < $scope.movieList.Recent.length; i++) {
+              console.log("CHECKING");
                 $scope.movieList.Recent[i] = _.chunk($scope.movieList.Recent[i], 4);
             }
+            if( $scope.movieList.Past) {
+              $scope.movieList.PastMore = _.takeRight($scope.movieList.Past, $scope.movieList.Past.length - 10);
+              $scope.movieList.PastMore = _.chunk($scope.movieList.PastMore, 5);
+              $scope.movieList.Past = $scope.movieList.Past.splice(0, 10);
 
-            $scope.movieList.PastMore = _.takeRight($scope.movieList.Past, $scope.movieList.Past.length - 10);
-            $scope.movieList.PastMore = _.chunk($scope.movieList.PastMore, 5);
-            $scope.movieList.Past = $scope.movieList.Past.splice(0, 10);
-
-            $scope.movieList.Past = _.chunk($scope.movieList.Past, 5);
+              $scope.movieList.Past = _.chunk($scope.movieList.Past, 5);
+            }
+            $scope.showRecent = false;
+            $timeout(function() {
+              $scope.showRecent = true;
+            },100);
         }
         $scope.searchdata = {};
         $scope.searchdata.search = $stateParams.search;
@@ -1250,8 +1258,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.getsearch = false;
         $scope.searchdata.search = [];
         $scope.DoSearch = function(search) {
-
-            var data = $filter('filter')(allMovies, search);
+            console.log(search);
+            console.log(allMovies);
+            var data = $filter('filter')(allMovies, {name:search});
+            console.log(data);
             populateData(data);
         };
 

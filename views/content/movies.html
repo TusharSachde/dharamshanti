@@ -19,8 +19,10 @@
                         </div> -->
 
                     </div>
+                    {{movie}}
+                    {{movie.selected}}
                     <div class="movie-search-pg">
-                      <ui-select ng-model="country.selected" style="width: 100%;" title="Search Movie" class="search-drop">
+                      <ui-select ng-model="movie.selected" ng-change="DoSearch(movie.selected.name)" style="width: 100%;" title="Search Movie" class="search-drop">
                 <ui-select-match placeholder="Search">{{$select.selected.name}}</ui-select-match>
                 <ui-select-choices repeat="movie in allMovieName | filter: $select.search">
                   <div class="movi-src-rslt">
@@ -96,8 +98,8 @@
                               RECENT RELEASES
                             </h1>
                                 </div>
-                                <div class="upcoming-slider slider-right ">
-                                    <flex-slider flex-slide="item in movieList.Recent track by $index " animation="slide " animationloop="true " move="1 ">
+                                <div class="upcoming-slider slider-right " ng-if="showRecent" >
+                                    <flex-slider  flex-slide="item in movieList.Recent track by $index " animation="slide " animationloop="true " move="1 ">
                                         <a ui-sref="movie-inside({id:item._id})">
                                             <li>
                                                 <div class="row " ng-repeat="datas in item track by $index">
