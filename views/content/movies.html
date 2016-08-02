@@ -19,8 +19,6 @@
                         </div> -->
 
                     </div>
-                    {{movie}}
-                    {{movie.selected}}
                     <div class="movie-search-pg">
                       <ui-select ng-model="movie.selected" ng-change="DoSearch(movie.selected.name)" style="width: 100%;" title="Search Movie" class="search-drop">
                 <ui-select-match placeholder="Search">{{$select.selected.name}}</ui-select-match>
