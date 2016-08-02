@@ -1660,6 +1660,39 @@ display: block;
 .mobileMovieTabs{
   width: 120px !important;
 }
+.movie-search-pg{
+  .ui-select-toggle{
+        height: 50px;
+        .caret{
+          display: none;
+        }
+  }
+  .btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #f37021;
+}
+.btn{
+  padding: 12px 0px 0px 38px;
+font-size: 16px;
+}
+.form-control{
+  padding: 12px 0px 0px 38px;
+font-size: 16px;
+}
+.ui-select-choices-row>a {
+
+    font-size: 16px;
+}
+.ui-select-bootstrap .ui-select-choices-row.active>a {
+    background-color: #f37021;
+}
+.ui-select-bootstrap .ui-select-choices-row>a:hover, .ui-select-bootstrap .ui-select-choices-row>a:focus {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #f37021;
+}
+}
 @import "fancybox-override";
 @import "main2";
 @import "timeline";
