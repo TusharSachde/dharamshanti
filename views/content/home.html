@@ -243,9 +243,9 @@
 <h1 class="f90 font-hammersmith color-white margin0 line45">NEWS</h1>
 </div>
 <div class="news-slider slider-right mob-hide">
-<!-- <flex-slider flex-slide="item in News track by $index" animation="slide" item-width="300" item-margin="60" animationloop="true" move="1">
+<flex-slider flex-slide="item in News track by $index" animation="slide" item-width="300" item-margin="60" animationloop="true" move="1">
 <li>
-    <a href="">
+    <a ui-sref="news-detail({id:item._id})">
         <div class="video-box ">
             <div class="video-slide-img">
                 <img ng-src="{{item.image|uploadpath}}" alt="Dharma Productions" class="img-responsive">
@@ -262,8 +262,8 @@
         </div>
     </a>
 </li>
-</flex-slider> -->
-<flex-slider flex-slide="item in news track by $index" animation="slide" item-width="300" item-margin="60" animationloop="true" move="1">
+</flex-slider>
+<!-- <flex-slider flex-slide="item in news track by $index" animation="slide" item-width="300" item-margin="60" animationloop="true" move="1">
     <li>
         <a href="">
             <div class="video-box ">
@@ -282,7 +282,7 @@
             </div>
         </a>
     </li>
-</flex-slider>
+</flex-slider> -->
 </div>
 </div>
 </section>
