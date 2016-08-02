@@ -58,7 +58,7 @@
         <div class="row-flex text-center hidden-xs">
             <div class="col-flex" ng-repeat="item in AllUpcomingMovies track by $index">
                 <div class="img-pads">
-                    <a ui-sref="movies">
+                    <a ui-sref="movie-inside({id:item._id})">
                         <img ng-src="{{item.upcomingSmall|uploadpath}}" alt="Dharma Productions" class="img-responsive"></a>
                 </div>
                 <div class="movie-names">
@@ -70,7 +70,7 @@
         <div class="mob-slider hidden-md hidden-sm hidden-lg visible-xs">
             <flex-slider flex-slide="item in AllUpcomingMovies track by $index" animation="slide" item-width="207" item-margin="20" animationloop="true" move="1">
             <li>
-                <a href="">
+                <a ui-sref="movie-inside({id:item._id})">
                     <div class="img-pads">
                         <img ng-src="{{item.upcomingSmall|uploadpath}}" alt="Dharma Productions" class="img-responsive">
                     </div>
@@ -97,7 +97,7 @@
     <!-- desktop -->
     <div class="row-flex text-center hidden-xs">
         <div class="col-flex" ng-repeat="item in AllRecentMovies track by $index">
-            <div class="img-pads">
+            <div class="img-pads" ui-sref="movie-inside({id:item._id})">
                 <img ng-src="{{item.recentSmall|uploadpath}}" alt="Dharma Productions" class="img-responsive">
             </div>
             <div class="movie-names">
@@ -109,7 +109,7 @@
     <div class="mob-slider hidden-md hidden-sm hidden-lg visible-xs">
         <flex-slider flex-slide="item in AllRecentMovies track by $index" animation="slide" item-width="207" item-margin="20" animationloop="true" move="1">
             <li>
-                <a href="">
+                <a ui-sref="movie-inside({id:item._id})">
                     <div class="img-pads">
                         <img ng-src="{{item.recentSmall|uploadpath}}" alt="Dharma Productions" class="img-responsive">
                     </div>
