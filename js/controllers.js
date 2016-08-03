@@ -154,17 +154,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     if ($scope.subscribe.email) {
                         $scope.checkEmail = true;
                         $scope.subscribeEmail = false;
-                      $timeout(function () {
-                        $scope.checkEmail = false;
-                      }, 2000);
+                        $timeout(function() {
+                            $scope.checkEmail = false;
+                        }, 2000);
 
                     }
                 } else {
-                  $scope.checkEmail = false;
-                  $scope.subscribeEmail = true;
-                  $timeout(function () {
-                    $scope.subscribeEmail = false;
-                  }, 2000);
+                    $scope.checkEmail = false;
+                    $scope.subscribeEmail = true;
+                    $timeout(function() {
+                        $scope.subscribeEmail = false;
+                    }, 2000);
 
 
                 }
@@ -404,7 +404,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.getsearch = false;
         // $scope.searchdata.search = [];
         $scope.viewSearch = function() {
-          $scope.searchdata.search = "";
+            $scope.searchdata.search = "";
             // $scope.getsearch = false;
         };
 
@@ -971,7 +971,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         }];
     })
-    .controller('NewsDetailCtrl', function($scope, TemplateService, NavigationService,$stateParams) {
+    .controller('NewsDetailCtrl', function($scope, TemplateService, NavigationService, $stateParams) {
         $scope.template = TemplateService.changecontent("news-detail");
         $scope.menutitle = NavigationService.makeactive("News Detail");
         TemplateService.title = $scope.menutitle;
@@ -1002,10 +1002,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // };
 
 
-        NavigationService.getOneNews($stateParams.id,function(data) {
+        NavigationService.getOneNews($stateParams.id, function(data) {
             $scope.getOneNews = data.data;
             console.log('getOneNews', $scope.getOneNews);
-              TemplateService.removeLoader();
+            TemplateService.removeLoader();
         });
 
 
@@ -1139,13 +1139,75 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }];
 
     })
-    .controller('Dharma140Ctrl', function($scope, TemplateService, NavigationService, $stateParams, $filter,$timeout) {
+    .controller('Dharma140Ctrl', function($scope, TemplateService, NavigationService, $stateParams, $filter, $timeout) {
         $scope.template = TemplateService.changecontent("dharma140");
         $scope.menutitle = NavigationService.makeactive("Dharma@140");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-      })
-    .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $stateParams, $filter,$timeout) {
+
+        $scope.hashtags = [{
+            tag: "lifeatdharma"
+        }, {
+            tag: "baarbaardekho"
+        }, {
+            tag: "ramlakhan"
+        }, {
+            tag: "shaandar"
+        }, {
+            tag: "brothers"
+        }];
+
+        $scope.tweets = [{
+            username: "TarunMansukhani",
+            name: 'TARUN MANSUKHANI',
+            userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
+            day: 'May 9',
+            time: '6:06AM',
+            msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
+            img: 'https://pbs.twimg.com/media/CnUafNAWYAAgbrU.jpg:large'
+        },{
+            username: "TarunMansukhani",
+            name: 'TARUN MANSUKHANI',
+            userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
+            day: 'May 9',
+            time: '6:06AM',
+            msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
+            img: ''
+        },{
+            username: "TarunMansukhani",
+            name: 'TARUN MANSUKHANI',
+            userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
+            day: 'May 9',
+            time: '6:06AM',
+            msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
+            img: 'https://pbs.twimg.com/media/CnUafNAWYAAgbrU.jpg:large'
+        },{
+            username: "TarunMansukhani",
+            name: 'TARUN MANSUKHANI',
+            userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
+            day: 'May 9',
+            time: '6:06AM',
+            msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
+            img: ''
+        },{
+            username: "TarunMansukhani",
+            name: 'TARUN MANSUKHANI',
+            userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
+            day: 'May 9',
+            time: '6:06AM',
+            msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
+            img: 'https://pbs.twimg.com/media/CnUafNAWYAAgbrU.jpg:large'
+        },{
+            username: "TarunMansukhani",
+            name: 'TARUN MANSUKHANI',
+            userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
+            day: 'May 9',
+            time: '6:06AM',
+            msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
+            img: ''
+        }];
+    })
+    .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $stateParams, $filter, $timeout) {
         $scope.template = TemplateService.changecontent("movies");
         $scope.menutitle = NavigationService.makeactive("Movies");
         TemplateService.title = $scope.menutitle;
@@ -1169,24 +1231,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //   });
 
 
-                     $scope.countries = [ // Taken from https://gist.github.com/unceus/6501985
-                            {
-                                name: 'Kabhi Khushi Kabhi Gum',
-                                code: 'kkk'
-                            }, {
-                                name: 'Bahubali',
-                                code: 'BH'
-                            }, {
-                                name: 'Varun Dhawan',
-                                code: 'AA'
-                            }, {
-                                name: 'Deepika',
-                                code: 'D'
-                            }, {
-                                name: 'Ranbir Kapoor',
-                                code: 'RK'
-                            }
-                        ];
+        $scope.countries = [ // Taken from https://gist.github.com/unceus/6501985
+            {
+                name: 'Kabhi Khushi Kabhi Gum',
+                code: 'kkk'
+            }, {
+                name: 'Bahubali',
+                code: 'BH'
+            }, {
+                name: 'Varun Dhawan',
+                code: 'AA'
+            }, {
+                name: 'Deepika',
+                code: 'D'
+            }, {
+                name: 'Ranbir Kapoor',
+                code: 'RK'
+            }
+        ];
 
         $scope.video = [{
             img: "img/movie/m11.jpg",
@@ -1239,24 +1301,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.movieList = _.groupBy($scope.MovieDetails, "releaseType");
             console.log($scope.movieList);
 
-              $scope.movieList.Recent = _.chunk($scope.movieList.Recent, 4);
+            $scope.movieList.Recent = _.chunk($scope.movieList.Recent, 4);
 
 
             for (var i = 0; i < $scope.movieList.Recent.length; i++) {
-              console.log("CHECKING");
+                console.log("CHECKING");
                 $scope.movieList.Recent[i] = _.chunk($scope.movieList.Recent[i], 4);
             }
-            if( $scope.movieList.Past) {
-              $scope.movieList.PastMore = _.takeRight($scope.movieList.Past, $scope.movieList.Past.length - 10);
-              $scope.movieList.PastMore = _.chunk($scope.movieList.PastMore, 5);
-              $scope.movieList.Past = $scope.movieList.Past.splice(0, 10);
+            if ($scope.movieList.Past) {
+                $scope.movieList.PastMore = _.takeRight($scope.movieList.Past, $scope.movieList.Past.length - 10);
+                $scope.movieList.PastMore = _.chunk($scope.movieList.PastMore, 5);
+                $scope.movieList.Past = $scope.movieList.Past.splice(0, 10);
 
-              $scope.movieList.Past = _.chunk($scope.movieList.Past, 5);
+                $scope.movieList.Past = _.chunk($scope.movieList.Past, 5);
             }
             $scope.showRecent = false;
             $timeout(function() {
-              $scope.showRecent = true;
-            },100);
+                $scope.showRecent = true;
+            }, 100);
         }
         $scope.searchdata = {};
         $scope.searchdata.search = $stateParams.search;
@@ -1276,7 +1338,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(search);
             console.log(allMovies);
             $scope.viewAll = true;
-            var data = $filter('filter')(allMovies, {name:search});
+            var data = $filter('filter')(allMovies, {
+                name: search
+            });
             console.log(data);
             populateData(data);
         };
@@ -1338,7 +1402,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // $scope.allMovieName = _.chunk($scope.allMovieName,10);
             // $scope.allMovieName = _.slice($scope.allMovieName, [0], [10]);
             // $scope.seeMore = true;
-            console.log('edrtghjfghjk',$scope.allMovieName);
+            console.log('edrtghjfghjk', $scope.allMovieName);
             // TemplateService.removeLoader();
             // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
             // console.log('chunk',$scope.MovieGal10);
