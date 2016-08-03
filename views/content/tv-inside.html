@@ -14,7 +14,7 @@
                             <img src="img/search.png" alt="Dharma Productions">
                         </div>
                         <input type="search" name="name" value="" class="search-in" placeholder="Search for your favourite movie" ng-model="searchdata.search">
-                        <div class="search-img2" ng-if="getsearch" ng-click="viewSearch();">
+                        <div class="search-img2" ng-if="searchdata.search!=''" ng-click="viewSearch();">
                             <img src="img/error.png" alt="Dharma Productions">
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col-md-8 col-sm-8 col-xs-7">
                         <div class="tv-inside mt60">
-                            <div class="title">
+                            <div class="title" ng-if="searchdata.search==''">
                                 <h1 class="ml-7 color-primary font-hammersmith line45 f90 text-up">{{allvideos[0].movie.name | shorten : 10}}</h1>
                             </div>
                         </div>

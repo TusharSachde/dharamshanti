@@ -404,7 +404,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.getsearch = false;
         // $scope.searchdata.search = [];
         $scope.viewSearch = function() {
-            $scope.getsearch = false;
+          $scope.searchdata.search = "";
+            // $scope.getsearch = false;
         };
 
 
