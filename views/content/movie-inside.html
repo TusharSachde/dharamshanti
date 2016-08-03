@@ -18,7 +18,7 @@
 
                             <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{moviefindOne.theatricalTrailerUrl}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" data-fancybox-type="iframe">
                                 <img ng-src="{{moviefindOne.theatricalTrailerImage|uploadpath}}" alt="Dharma Productions" class="img-responsive margin-auto width100" ng-if="(moviefindOne.theatricalTrailerImage || moviefindOne.theatricalTrailerImage != '')">
-                                  <img ng-src="{{moviefindOne.theatricalTrailerUrl|youtubethumb}}" alt="Dharma Productions" class="img-responsive width100" ng-if="!(moviefindOne.theatricalTrailerImage || moviefindOne.theatricalTrailerImage != '')">
+                                <img ng-src="{{moviefindOne.theatricalTrailerUrl|youtubethumb}}" alt="Dharma Productions" class="img-responsive width100" ng-if="!(moviefindOne.theatricalTrailerImage || moviefindOne.theatricalTrailerImage != '')">
                                 <div class="dh-absulate middle">
                                     <img src="img/play-small-btn.jpg" alt="Dharma Productions">
                                 </div>
@@ -63,7 +63,7 @@
                             <div class="col-md-8">
                                 <div class="data-content">
                                     <p ng-bind-html="movieSynopsisAndNote.synopsis">
-                                      
+
                                     </p>
                                     <!-- <p>
                               Yeh Jawaani Hai Deewani is the story of the relationship between two characters, Bunny (Ranbir Kapoor) & Naina (Deepika Padukone), at two separate but defining times in their lives... first, when they are just out of college and standing on the crossroads
@@ -102,7 +102,7 @@
                 </div>
                 <div class="" ng-if="tab=='cast'">
                     <div class="movie-inside-date bg-cast cast-credit mob-bg" ng-style="{'background':'url('+moviefindOne.cutImage+') no-repeat ','background-size':'contain','background-position':'right bottom','padding-top':'20px','padding-bottom':'30px'}">
-                    <!-- <div class="movie-inside-date bg-cast cast-credit"> -->
+                        <!-- <div class="movie-inside-date bg-cast cast-credit"> -->
                         <div class="box-pad">
                             <div class="row">
                                 <div class="col-md-2 col-sm-2 col-xs-12">
@@ -131,20 +131,21 @@
 
                                     <!-- //viewmore -->
                                     <div class="row mt30" ng-if="subCast">
-                                      <div class="other-cast">
-                                        <ul class=" margin0">
-                                          <li ng-repeat="item in movieCast track by $index" ng-if="item.type=='Sub-cast'">
-                                            <div class="first-cast">
-                                              <span class="color-dark f18 text-cap">{{item.actor}}</span><br>
-                                                <span class="color-primary text-up font-bold">{{item.name}}</span>
-                                            </div>
+                                        <div class="other-cast">
+                                            <ul class=" margin0">
+                                                <li ng-repeat="item in movieCast track by $index" ng-if="item.type=='Sub-cast'">
+                                                    <div class="first-cast">
+                                                        <span class="color-dark f18 text-cap">{{item.actor}}</span>
+                                                        <br>
+                                                        <span class="color-primary text-up font-bold">{{item.name}}</span>
+                                                    </div>
 
-                                          </li>
-                                        </ul>
-                                      </div>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                     <!-- //viewmore -->
-                                    <div class="text-center mt60" >
+                                    <div class="text-center mt60">
                                         <div class="btn-view-more ">
                                             <a class="btn-1 font-hammersmith btn color-primary display-inline" ng-click="viewAllCast();">
                                                 <svg>
@@ -283,7 +284,7 @@
                             <div class="col-md-11 col-sm-11 col-xs-12">
                                 <div class="all-movies masonry-width">
                                     <div masonry preserve-order masonry-options="{ fitWidth: 'true'}" class="margin-auto">
-                                        <div class="masonry-brick" ng-repeat="item in MovieGal track by $index"  ng-show="item.image!='' || item.image">
+                                        <div class="masonry-brick" ng-repeat="item in MovieGal track by $index" ng-show="item.image!='' || item.image">
                                             <div class="masonry-box">
                                                 <a href="{{item.image|uploadpath}}" fancybox-box rel="gallery1"> <img ng-src="{{item.image|uploadpath:400}}" alt="Dharma Production"></a>
 
@@ -364,19 +365,21 @@
                                 <div class="row">
                                     <div class="col-md-4 pad5 col-sm-4 col-xs-12" ng-repeat="item in movieVideo10[0] track by $index">
                                         <div class="video-play-box dh-relative">
+                                            <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{item.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1">
 
-                                            <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" class="img-responsive width100" ng-if="(item.thumbnail || item.thumbnail != '')">
-                                            <img ng-src="{{item.url|youtubethumb}}" alt="Dharma Productions" class="img-responsive width100" ng-if="!(item.thumbnail || item.thumbnail != '')">
+                                                <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" class="img-responsive width100" ng-if="(item.thumbnail || item.thumbnail != '')">
+                                                <img ng-src="{{item.url|youtubethumb}}" alt="Dharma Productions" class="img-responsive width100" ng-if="!(item.thumbnail || item.thumbnail != '')">
 
-                                            <div class="overlay dh-absulate">
-                                                <div class="pos-middle">
-                                                    <span class="color-white font-hammersmith">{{item.name}}</span>
-                                                </div>
+                                                <div class="overlay dh-absulate">
+                                                    <div class="pos-middle">
+                                                        <span class="color-white font-hammersmith">{{item.name}}</span>
+                                                    </div>
 
-                                                <div class="bottom-right dh-absulate ply-post">
-                                                    <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{item.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"><img src="img/play-small-btn.jpg" alt="Dharma Productions"></a>
-                                                </div>
+                                                    <div class="bottom-right dh-absulate ply-post">
+                                                        <img src="img/play-small-btn.jpg" alt="Dharma Productions">
                                             </div>
+                                            </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -477,9 +480,9 @@
                             <div class="row">
                                 <div class="col-md-11 col-sm-10 col-xs-12">
                                     <div class="row">
-                                        <div class="col-md-4 pad5 col-sm-6 col-xs-12" ng-repeat="item in movieWallpaper track by $index"  ng-if="item.type=='Desktop'" ng-show="item.image || item.image!= ''">
+                                        <div class="col-md-4 pad5 col-sm-6 col-xs-12" ng-repeat="item in movieWallpaper track by $index" ng-if="item.type=='Desktop'" ng-show="item.image || item.image!= ''">
                                             <div class="all-wall">
-                                                <div class="desktop dh-relative" >
+                                                <div class="desktop dh-relative">
                                                     <img ng-src="{{item.image|uploadpath:400}}" alt="Dharma productions" class="img-responsive width100">
                                                     <div class="download dh-absulate">
                                                         <a href="{{item.image|uploadpath}}" download><img src="img/download.png" alt="Dharma productions"></a>
@@ -572,29 +575,29 @@
                                                     <h1 class="font-karla color-primary pl10">Won</h1>
                                                 </div>
                                                 <div ng-repeat="data1 in data.award">
-                                                <div class="col-md-7 col-sm-7 col-xs-6">
-                                                    <div class="awards-name">
-                                                        <ul class="padding0 list-none color-black">
-                                                            <li><span>{{data1.awardname}}</span></li>
-                                                            <!-- <li><span>Best Background Score</span></li>
+                                                    <div class="col-md-7 col-sm-7 col-xs-6">
+                                                        <div class="awards-name">
+                                                            <ul class="padding0 list-none color-black">
+                                                                <li><span>{{data1.awardname}}</span></li>
+                                                                <!-- <li><span>Best Background Score</span></li>
                                              <li><span>Best Screenplay</span></li>
                                              <li><span>Best Choreography</span></li> -->
-                                                        </ul>
+                                                            </ul>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-4 col-sm-4 col-xs-6">
-                                                    <div class="awards-name">
-                                                        <ul class="padding0 list-none color-primary">
-                                                            <li><span>{{data1.winner}}</span></li>
-                                                            <!-- <li><span>Pritam Chakraborty</span></li>
+                                                    <div class="col-md-4 col-sm-4 col-xs-6">
+                                                        <div class="awards-name">
+                                                            <ul class="padding0 list-none color-primary">
+                                                                <li><span>{{data1.winner}}</span></li>
+                                                                <!-- <li><span>Pritam Chakraborty</span></li>
                                              <li><span>Ayan Mukherjee</span> </li>
                                              <li><span>Remo</span> -->
-                                                            <p class="color-black f12 line0">{{data1.note}}</p>
-                                                            </li>
-                                                        </ul>
+                                                                <p class="color-black f12 line0">{{data1.note}}</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                              </div>
                                             </div>
                                         </uib-accordion-group>
                                         <!-- <uib-accordion-group is-open="accordian[1].isFirstOpen">
