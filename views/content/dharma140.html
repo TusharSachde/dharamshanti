@@ -7,11 +7,15 @@
                 Unit fond out what's trending in the Dharma World.</p>
         </div>
         <div class="dharma140">
-            <flex-slider slide="h in hashtags track by $index" animation="slide" item-width="180" item-margin="20" animationloop="false" reverse="false" move="1">
-            <li class="text-center">
-                <div class="hashtagged font-hammersmith">#{{h.tag}}</div>
-            </li>
-        </flex-slider>
+            <div class="relative">
+              <button class="btn btn-clear pull-right"><i class="fa fa-3x fa-angle-right"></i></button>
+              <button class="btn btn-clear pull-left"><i class="fa fa-3x fa-angle-left"></i></button>
+              <ul class="handlers">
+                <li ng-repeat="h in hashtags">
+                  <div class="hashtagged font-hammersmith">#{{h.tag}}</div>
+                </li>
+              </ul>
+            </div>
 
         <div class="masonry-king">
             <div masonry>

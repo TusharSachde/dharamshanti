@@ -99,6 +99,11 @@
     }
 }
 @media (max-width: $screen-sm-max) {
+  .masonry-king {
+      .masonry-brick {
+        width: 48%;
+      }
+  }
   .loaderHeader img {
     z-index: 100000;
     width: 100px;
@@ -165,9 +170,6 @@
         position: absolute;
         left: 11%;
         top: -7px;
-    }
-    .content p {
-        font-size: 25px;
     }
     .cd-timeline-content span {
         font-size: 25px;
@@ -385,6 +387,17 @@
 
 }
 @media (max-width: $screen-xs-max) {
+  .masonry-king {
+      .masonry-brick {
+        width: 100%;
+        +.masonry-brick {
+          padding-left: 0px;
+        }
+      }
+  }
+  .super-big {
+    font-size: 40px;
+  }
   .loaderHeader img {
     z-index: 100000;
     width: 100px;
@@ -655,7 +668,7 @@ width: 50%;
 float: left;
 flex: 1;
 max-width: inherit;
-}    
+}
 }
 @media (max-width:480px) {
   .col-flex {

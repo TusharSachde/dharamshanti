@@ -26,6 +26,7 @@ $border-radius-small: 0 !default;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 body {
     padding-top: 0;
+    -webkit-font-smoothing: antialiased;
 }
 img.loading {
     text-align: center;
@@ -1740,6 +1741,110 @@ height: 50px;
 }
 .home-contact{
       padding: 50px 0px;
+}
+.dark-bg {
+    background-color: #171717;
+    color: #818181;
+}
+.white-color {
+  color: white;
+}
+.padder-up {
+  padding-top: 120px;
+}
+.hashtagged {
+  @include transition(all 300ms ease);
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 6px;
+  display: inline-block;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: -2px;
+}
+.masonry-king {
+    margin: 30px 0 0;
+    .masonry-brick {
+      width: 32%;
+      padding-bottom: 10px;
+      +.masonry-brick {
+        padding-left: 10px;
+      }
+    }
+}
+.super-big {
+    text-transform: uppercase;
+    font-size: 90px;
+    margin: 0 0 10px;
+}
+.tweet-holder {
+    background-color: #f4f4f4;
+    color: #171717;
+    padding: 10px;
+    box-shadow: -4px 4px 0px $brand-primary;
+    p {
+      margin: 0;
+    }
+}
+.item-avatar {
+  padding-left: 60px;
+  position: relative;
+  margin-bottom: 10px;
+  .imaged {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: #e6e6e6;
+    left: 0;
+    top: -15px;
+    border-radius: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  h3 {
+    margin: 15px 0 0px;
+    font-size: 14px;
+    word-wrap: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+.text-upper {
+    text-transform: uppercase;
+}
+.primary-color {
+  color: $brand-primary;
+}
+.tweet-img {
+    margin: -10px;
+    img {
+      width: 100%;
+    }
+}
+.active .hashtagged, .hashtagged:hover {
+    background-color: $brand-primary;
+    color: white;
+}
+.handlers {
+    margin: 50px 40px 0;
+    padding: 0 30px;
+    list-style: none;
+    border-bottom: 2px solid;
+    overflow: hidden;
+    >li {
+      display: table-cell;
+      +li {
+        margin-left: 15px;
+      }
+    }
+}
+.relative {
+    position: relative;
+}
+.btn-clear {
+  @include button-variant(#818181, transparent, transparent);
 }
 @import "main2";
 @import "timeline";
