@@ -607,7 +607,7 @@ a {
 .dharma-title-bg {
     background: url(../img/dharma-title-bg.jpg)no-repeat;
     background-size: cover;
-    padding: 200px 0 50px;
+    padding: 200px 0 0px;
 }
 .footer-data {
     ul {
@@ -1588,7 +1588,7 @@ padding-bottom: 20px;
   cursor:pointer;
 }
 .black-bg {
-    background-color: #000;
+    background-color: $black;
 }
 .pb40{
   padding-bottom: 40px;
@@ -1631,7 +1631,7 @@ display: block;
 .news-data{
   padding: 10px 0px 20px 0px;
   p{
-    color: #000;
+    color: $black;
   }
 }
 .line50{
@@ -1671,27 +1671,34 @@ display: block;
   .btn-default {
     color: #333;
     background-color: #fff;
-    border-color: #f37021;
+    border-color: $brand-primary;
 }
 .btn{
   padding: 12px 0px 0px 38px;
 font-size: 16px;
 }
 .form-control{
-  padding: 12px 0px 0px 38px;
+  padding: 0px 0px 0px 38px;
 font-size: 16px;
+height: 50px;
+}
+.text-muted {
+    color: #777777;
+    display: block;
+    padding-top: 12px;
 }
 .ui-select-choices-row>a {
 
     font-size: 16px;
 }
 .ui-select-bootstrap .ui-select-choices-row.active>a {
-    background-color: #f37021;
+    background-color: $brand-primary;
+    font-size: 18px;
 }
 .ui-select-bootstrap .ui-select-choices-row>a:hover, .ui-select-bootstrap .ui-select-choices-row>a:focus {
     text-decoration: none;
     color: #ffffff;
-    background-color: #f37021;
+    background-color: $brand-primary;
       font-size:18px;
 }
 .search-drop.ui-select-container.ui-select-bootstrap.dropdown{
@@ -1722,6 +1729,17 @@ font-size: 16px;
   img{
     width: 60px;
   }
+}
+.h40{
+  height: 40px;
+
+}
+.h70{
+  height:70px;
+  overflow: hidden;
+}
+.home-contact{
+      padding: 50px 0px;
 }
 @import "main2";
 @import "timeline";
