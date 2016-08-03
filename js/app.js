@@ -78,6 +78,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             url: "/overview",
             templateUrl: "views/template.html",
             controller: 'OverviewCtrl'
+        })
+        .state('dharma140', {
+            url: "/dharma140",
+            templateUrl: "views/template.html",
+            controller: 'Dharma140Ctrl'
         });
     $urlRouterProvider.otherwise("/home");
     $locationProvider.html5Mode(isproduction);

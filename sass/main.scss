@@ -1656,7 +1656,7 @@ display: block;
     width: 100px;
     top: 50%;
     position: absolute;
-    transform: translateY(-50%);
+    @include transform(translateX(-50%));
 }
 .mobileMovieTabs{
   width: 120px !important;
