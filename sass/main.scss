@@ -215,10 +215,10 @@ a {
     margin: 0 60px;
 }
 .head-curve {
-    background: url(../img/head-curve.png)no-repeat;
+    background: url(../img/head-curve.png)no-repeat center;
     height: 30px;
-    background-size: 100% 100%;
-    background-position-y: -15px;
+    background-size: cover;
+      background-position-y: -10px;
     margin: -1px 60px;
 }
 .font-hammersmith {
