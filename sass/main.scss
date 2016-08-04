@@ -1743,8 +1743,14 @@ height: 50px;
       padding: 50px 0px;
 }
 .dark-bg {
-    background-color: #171717;
+    background-color: #010101;
     color: #818181;
+    &.insta-bg {
+      background-image: url('../img/dharm-insta.jpg');
+      background-size: 100% auto;
+      background-position: top center;
+      background-repeat: no-repeat;
+    }
 }
 .white-color {
   color: white;
@@ -1845,6 +1851,13 @@ height: 50px;
 }
 .btn-clear {
   @include button-variant(#818181, transparent, transparent);
+}
+
+.dharma-insta {
+  h2 {
+      font-size: 45px;
+      margin-bottom: 0px;
+  }
 }
 @import "main2";
 @import "timeline";

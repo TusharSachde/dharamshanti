@@ -1143,6 +1143,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }];
 
     })
+    .controller('DharmaInstaCtrl', function($scope, TemplateService, NavigationService, $stateParams, $filter, $timeout) {
+        $scope.template = TemplateService.changecontent("dharma-insta");
+        $scope.menutitle = NavigationService.makeactive("Dharma Insta");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+      })
     .controller('Dharma140Ctrl', function($scope, TemplateService, NavigationService, $stateParams, $filter, $timeout) {
         $scope.template = TemplateService.changecontent("dharma140");
         $scope.menutitle = NavigationService.makeactive("Dharma@140");
