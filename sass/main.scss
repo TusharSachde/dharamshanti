@@ -1747,7 +1747,7 @@ height: 50px;
     color: #818181;
     &.insta-bg {
       background-image: url('../img/dharm-insta.jpg');
-      background-size: 100% auto;
+      background-size: 50% auto;
       background-position: top center;
       background-repeat: no-repeat;
     }
@@ -1858,6 +1858,34 @@ height: 50px;
       font-size: 45px;
       margin-bottom: 0px;
   }
+}
+.insta-tv-box {
+  position: relative;
+  max-width: 350px;
+  margin: 0 auto
+}
+.tv-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.full-image {
+  width: 100%;
+  position: relative;
+}
+.center-in {
+  position: absolute;
+  width: 32px;
+  height: auto;
+  cursor: pointer;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%, -50%));
 }
 @import "main2";
 @import "timeline";

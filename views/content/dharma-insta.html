@@ -12,9 +12,9 @@
                     <br>5 lucky winners will get a chance to win Dharma Merchandise.</p>
 
                 <div class="insta-tv-box">
-                    <div class="tv-img"></div>
-                    <div class="play-box"><i class="fa fa-play primary-color"></i></div>
-                    <img src="img/srk-pose.jpg">
+                    <div class="tv-img" style="background-image: url('img/srk-pose.jpg')"></div>
+                    <img src="img/play-btn.jpg" class="center-in">
+                    <img src="img/tv-box.png" class="full-image">
                 </div>
 
                 <h2 class="primary-color text-upper font-hammersmith">#DHARMAINSTAPOSE</h2>
@@ -23,7 +23,7 @@
 
             <div class="masonry-king">
                 <div masonry>
-                    <div class="masonry-brick" ng-repeat="t in tweets">
+                    <div class="masonry-brick" ng-repeat="t in posts">
                         <div class="tweet-holder">
                             <div class="tweet-img" ng-if="t.img">
                                 <img ng-src="{{t.img}}">

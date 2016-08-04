@@ -1148,6 +1148,56 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Dharma Insta");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+
+        $scope.posts = [{
+            username: "TarunMansukhani",
+            name: 'TARUN MANSUKHANI',
+            userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
+            day: 'May 9',
+            time: '6:06AM',
+            msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
+            img: 'https://pbs.twimg.com/media/CnUafNAWYAAgbrU.jpg:large'
+        },{
+            username: "TarunMansukhani",
+            name: 'TARUN MANSUKHANI',
+            userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
+            day: 'May 9',
+            time: '6:06AM',
+            msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
+            img: 'https://pbs.twimg.com/media/CnUafNAWYAAgbrU.jpg:large'
+        },{
+            username: "TarunMansukhani",
+            name: 'TARUN MANSUKHANI',
+            userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
+            day: 'May 9',
+            time: '6:06AM',
+            msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
+            img: 'https://pbs.twimg.com/media/CnUafNAWYAAgbrU.jpg:large'
+        },{
+            username: "TarunMansukhani",
+            name: 'TARUN MANSUKHANI',
+            userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
+            day: 'May 9',
+            time: '6:06AM',
+            msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
+            img: 'https://pbs.twimg.com/media/CnUafNAWYAAgbrU.jpg:large'
+        },{
+            username: "TarunMansukhani",
+            name: 'TARUN MANSUKHANI',
+            userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
+            day: 'May 9',
+            time: '6:06AM',
+            msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
+            img: 'https://pbs.twimg.com/media/CnUafNAWYAAgbrU.jpg:large'
+        },{
+            username: "TarunMansukhani",
+            name: 'TARUN MANSUKHANI',
+            userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
+            day: 'May 9',
+            time: '6:06AM',
+            msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
+            img: 'https://pbs.twimg.com/media/CnUafNAWYAAgbrU.jpg:large'
+        }];
       })
     .controller('Dharma140Ctrl', function($scope, TemplateService, NavigationService, $stateParams, $filter, $timeout) {
         $scope.template = TemplateService.changecontent("dharma140");
