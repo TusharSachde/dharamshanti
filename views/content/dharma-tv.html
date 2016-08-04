@@ -14,7 +14,7 @@
                         <img src="img/search.png" alt="Dharma Productions">
                     </div>
                     <input type="search" name="name" ng-change="doSearch();" ng-model="searchdata.search" value="" class="search-in" placeholder="Search for your favourite movie or actor">
-                    <div class="search-img2" ng-if="getsearch" ng-click="viewSearch();">
+                    <div class="search-img2" ng-if="searchdata.search" ng-click="viewSearch();">
                         <img src="img/error.png" alt="Dharma Productions">
                     </div>
                 </div>

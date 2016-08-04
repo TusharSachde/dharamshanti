@@ -1050,6 +1050,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.getAllDharmaTvSlider = data.data;
             TemplateService.removeLoader();
         });
+        $scope.viewSearch = function() {
+            $scope.searchdata.search = "";
+            // $scope.getsearch = false;
+        };
         $scope.searchdata = {};
         $scope.nodata = false;
         $scope.getsearch = false;
