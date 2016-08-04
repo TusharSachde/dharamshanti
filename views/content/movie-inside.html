@@ -30,15 +30,15 @@
             <div class="movie-tabs">
                 <div class="all-tabs hidden-xs">
                     <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn {{classa}}" ng-click="tabchange('synopsis',1)">Synopsis </button>
-                        <button type="button" class="btn {{classb}}" ng-click="tabchange('cast',2)"> CAST & CREDITS</button>
-                        <button type="button" class="btn {{classc}}" ng-click="tabchange('news',3)"> News</button>
-                        <button type="button" class="btn {{classd}}" ng-click="tabchange('gallery',4)">Gallery</button>
-                        <button type="button" class="btn {{classe}}" ng-click="tabchange('scene',5)">behind the scenes</button>
+                        <button type="button" class="btn {{classa}}" ng-click="tabchange('synopsis',1)" ng-class="{'my-disable':movieSynopsisAndNote.synopsis.length<=0}" ng-disabled="movieSynopsisAndNote.synopsis.length<=0">Synopsis </button>
+                        <button type="button" class="btn {{classb}}" ng-click="tabchange('cast',2)" ng-class="{'my-disable': movieCast.length<=0}" ng-disabled="movieCast.length<=0"> CAST & CREDITS</button>
+                        <button type="button" class="btn {{classc}}" ng-click="tabchange('news',3)" ng-class="{'my-disable': movieNews.length<=0}" ng-disabled="movieNews.length<=0"> News</button>
+                        <button type="button" class="btn {{classd}}" ng-class="{'my-disable': MovieGal.length<=0}" ng-click="tabchange('gallery',4)" ng-disabled="MovieGal.length<=0">Gallery</button>
+                        <button type="button" class="btn {{classe}}" ng-click="tabchange('scene',5)" ng-class="{'my-disable': movieBehindTheScenes.length<=0}" ng-disabled="movieBehindTheScenes.length<=0">behind the scenes</button>
 
-                        <button type="button" class="btn {{classf}}" ng-click="tabchange('video',6)"> VIDEOS </button>
-                        <button type="button" class="btn {{classg}}" ng-click="tabchange('wallpapper',7)">WALLPAPERS </button>
-                        <button type="button" class="btn {{classh}}" ng-click="tabchange('awards',8)"> AWARDS </button>
+                        <button type="button" class="btn {{classf}}" ng-click="tabchange('video',6)" ng-class="{'my-disable': movieVideo10.length<=0}" ng-disabled="movieVideo10.length<=0"> VIDEOS </button>
+                        <button type="button" class="btn {{classg}}" ng-click="tabchange('wallpapper',7)" ng-class="{'my-disable': movieWallpaper.length<=0}" ng-disabled="movieWallpaper.length<=0">WALLPAPERS </button>
+                        <button type="button" class="btn {{classh}}" ng-click="tabchange('awards',8)" ng-class="{'my-disable': !equals({}, MovieAwards)}" ng-disabled="!equals({}, MovieAwards)"> AWARDS </button>
                     </div>
                 </div>
                 <div class="mob-slider hidden-md hidden-sm hidden-lg visible-xs">
@@ -278,7 +278,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="gallery" ng-if="tab=='gallery'">
+                <div ng-if="tab=='gallery'" >
                     <div class="movie-inside-date bg-cast cast-credit" ng-style="{'background':'url('+moviefindOne.cutImage+') no-repeat ','background-size':'contain','background-position':'right bottom','padding-top':'20px','padding-bottom':'30px'}">
                         <div class="row">
                             <div class="col-md-11 col-sm-11 col-xs-12">
@@ -555,6 +555,7 @@
                             <div class="col-md-11 col-sm-10 col-xs-12">
                                 <div class="movie-award">
                                     <uib-accordion close-others="true">
+
                                         <uib-accordion-group is-open="accordian[$index].isFirstOpen" ng-repeat="data in MovieAwards">
                                             <uib-accordion-heading class="mob-font">
                                                 <!-- <h4>Zee Cine Awards</h4> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> -->
