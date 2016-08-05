@@ -173,6 +173,7 @@ firstapp.filter('cut', function() {
     return value + (tail || ' …');
   };
 })
+
 firstapp.directive('uploadImage', function($http, $filter) {
     return {
         templateUrl: 'views/directive/uploadFile.html',

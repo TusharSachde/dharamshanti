@@ -248,7 +248,7 @@
     <a ui-sref="news-detail({id:item._id})">
         <div class="video-box ">
             <div class="video-slide-img">
-                <img ng-src="{{item.image|uploadpath}}" alt="Dharma Productions" class="img-responsive">
+                <img ng-src="{{item.image|serverpath:300:224:'cover'}}" alt="Dharma Productions" class="img-responsive">
             </div>
             <div class="video-name mt20 h40">
                 <h4 class="color-white margin0">{{item.title|cut:true:55}}</h4>

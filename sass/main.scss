@@ -713,6 +713,12 @@ a {
 .tab-active {
     padding: 70px 0 80px;
 }
+.scroll-over{
+  height: 400px;
+    overflow: auto;
+    overflow-x: auto;
+
+}
 .movie-inside-curve {
     background: url(../img/movie-inside-bg.png)no-repeat;
     height: 20px;
@@ -723,11 +729,12 @@ a {
 }
 .movie-inside-bg {
     background: url("../img/main3.jpg");
-    padding: 620px 60px 0;
+    padding-top:50%;
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: top center !important;
     background-attachment: fixed !important;
+    padding-bottom: 60px;
 }
 .width100 {
     width: 100%;
