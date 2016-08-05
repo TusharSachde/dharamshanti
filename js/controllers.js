@@ -1280,6 +1280,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             time: '6:06AM',
             quest: 'Why was Kal Ho Na Ho shot in New York and not London?',
             answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting'
+        },{
+            name: 'TARUN MANSUKHANI',
+            userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
+            day: 'May 9',
+            time: '6:06AM',
+            quest: 'Why was Kal Ho Na Ho shot in New York and not London?',
+            answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting'
         }];
     })
     .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $stateParams, $filter, $timeout) {

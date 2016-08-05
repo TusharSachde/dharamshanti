@@ -1953,9 +1953,10 @@ height: 50px;
   }
   .tweet-holder {
     box-shadow: none;
+    padding: 15px 35px;
   }
   .masonry-king .masonry-brick {
-    width: 48%;
+    width: 49%;
   }
 }
 .btn-grand {
@@ -1965,6 +1966,12 @@ height: 50px;
 .quest {
     font-size: 17px;
     font-weight: 700;
+}
+.anst {
+  text-align: justify;
+}
+.pady-bot {
+  padding-bottom: 20px;
 }
 @import "main2";
 @import "timeline";
