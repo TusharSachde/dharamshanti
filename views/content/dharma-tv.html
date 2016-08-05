@@ -30,9 +30,9 @@
                 <div ng-show="(searchdata.search == '' || !searchdata.search)" class="video-player mt15 tv-all-slider marg-arrow mob-mt-15" ng-if="getAllDharmaTvSlider.length > 0">
                     <flex-slider flex-slide="s in getAllDharmaTvSlider track by $index" prev-text="" next-text="" startAt="0">
                     <li>
-                      <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{s.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+                        <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{s.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
 
-                        <div class="video-play dh-relative">
+                            <div class="video-play dh-relative">
 
                                 <img src="{{s.image|uploadpath}}" alt="Dharma Productions" class="img-responsive"/>
                                 <div class="play-btn text-center dh-absulate middle mob-width-auto">
@@ -41,8 +41,8 @@
 
                                 </div>
 
-                        </div>
-                            </a>
+                            </div>
+                        </a>
                     </li>
                 </flex-slider>
 
@@ -60,7 +60,7 @@
                             <h1 class="ml-7 color-primary font-hammersmith line45 f55 text-up">{{movie | shorten : 20}}</h1>
                         </div>
                         <div class="upcoming-slider tv-all-slider text-shadow cl-flex">
-                            <flex-slider flex-slide="item in videos track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
+                            <flex-slider flex-slide="item in videos track by $index" ng-if="videos.length>4" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
                                 <li class="makePointer">
                                     <div class="video-box" ui-sref="tv-inside({id:item.movie._id})">
                                         <div class="video-slide-img em-box">
@@ -75,6 +75,21 @@
                                     </div>
                                 </li>
                             </flex-slider>
+                            <div ng-if="videos.length<=4" >
+                              <li class="makePointer" ng-repeat="item in videos track by $index">
+                                  <div class="video-box" ui-sref="tv-inside({id:item.movie._id})">
+                                      <div class="video-slide-img em-box">
+                                          <a >
+                                              <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" ng-if="(item.thumbnail || item.thumbnail != '')">
+                                              <img ng-src="{{item.url|youtubethumb}}" alt="Dharma Productions" class="img-responsive width100" ng-if="!(item.thumbnail || item.thumbnail != '')">
+                                          </a>
+                                      </div>
+                                      <div class="video-names mt10">
+                                          <span class="color-white text-cap">{{item.title | shorten : 60}}</span>
+                                      </div>
+                                  </div>
+                              </li>
+                            </div>
                         </div>
                         <div class="btn-view-all mt40 mobile-text-center">
 
