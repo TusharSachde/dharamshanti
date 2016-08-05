@@ -75,8 +75,9 @@
                                     </div>
                                 </li>
                             </flex-slider>
-                            <div ng-if="videos.length<=4" >
-                              <li class="makePointer" ng-repeat="item in videos track by $index">
+                            <div ng-if="videos.length<=4" class="row">
+                              <div class="col-md-3"  ng-repeat="item in videos track by $index">
+                              <li class="makePointer">
                                   <div class="video-box" ui-sref="tv-inside({id:item.movie._id})">
                                       <div class="video-slide-img em-box">
                                           <a >
@@ -89,6 +90,7 @@
                                       </div>
                                   </div>
                               </li>
+                              </div>
                             </div>
                         </div>
                         <div class="btn-view-all mt40 mobile-text-center">
