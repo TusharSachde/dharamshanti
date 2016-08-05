@@ -7,6 +7,7 @@
 @import "../bower_components/fancyBox/source/jquery.fancybox.css";
 @import "../bower_components/swiper/dist/css/swiper.min.css";
 @import "../bower_components/angular-ui-select/dist/select.css";
+@import "../bower_components/fancyBox/source/helpers/jquery.fancybox-thumbs.css";
 /* Bootstrap Variables Goes Here */
 $brand-primary: #f37021 !default;
 $brand-success: #84ce3c !default;
@@ -1922,6 +1923,11 @@ height: 50px;
     background: rgba(0, 0, 0, 0.25);
     top: 0;
     left: 0;
+  }
+  #fancybox-thumbs ul li img{
+
+      opacity: 1;
+
   }
 @import "main2";
 @import "timeline";
