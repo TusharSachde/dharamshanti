@@ -1923,19 +1923,45 @@ height: 50px;
     max-width: 140px;
 }
 .blackoverlay {
-    height: 100%;
-    width: 100%;
-    z-index: 9;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.25);
-    top: 0;
-    left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.25);
+  top: 0;
+  left: 0;
+}
+#fancybox-thumbs ul li img{
+  opacity: 1;
+}
+.btn-primary.btn-outline {
+  color: $brand-primary;
+  border: 2px solid $brand-primary;
+  background-color: transparent;
+  &:hover, &:focus {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+    color: white;
   }
-  #fancybox-thumbs ul li img{
-
-      opacity: 1;
-
+}
+.dharma-you {
+  .item-avatar h3 {
+    margin: 35px 0 0px;
   }
+  .item-avatar .imaged {
+    top: -30px;
+  }
+  .tweet-holder {
+    box-shadow: none;
+  }
+  .masonry-king .masonry-brick {
+    width: 48%;
+  }
+}
+.btn-grand {
+  font-size: 22px;
+  margin: 30px 0 20px;
+}
 @import "main2";
 @import "timeline";
 @import "mobile";
