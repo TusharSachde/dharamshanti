@@ -22,7 +22,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         'img/banners/mob-slider.jpg'
     ];
     NavigationService.getAllUpcomingMovies(function(data) {
-        $scope.AllUpcomingMovies = data.data;
+        $scope.AllUpcomingMovies = _.orderBy(data.data,"year");
         console.log('AllUpcomingMovies', $scope.AllUpcomingMovies);
         TemplateService.removeLoader();
     });
@@ -1085,6 +1085,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             var videos = _.groupBy(alldata, "movie.name");
             delete videos.undefined;
             TemplateService.removeLoader();
+            console.log(videos);
             $scope.AllDharmatv = videos;
         }
         // NavigationService.getAllDharmatvSearch({search:$stateParams.search}, function(data) {
