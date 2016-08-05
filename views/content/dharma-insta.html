@@ -7,7 +7,7 @@
                 <p class="descriptive">Lorem Ipsum is simply dummy text of the printing and typesetting
                     <br>industry.</p>
 
-                <h2 class="primary-color text-upper font-hammersmith">Contest 01</h2>
+                <h2 class="primary-color text-upper font-hammersmith mter">Contest 01</h2>
                 <p>Upload a video enacting SRK’S Signature move with the #dharmainstapose.
                     <br>5 lucky winners will get a chance to win Dharma Merchandise.</p>
 
@@ -24,10 +24,18 @@
             <div class="masonry-king">
                 <div masonry>
                     <div class="masonry-brick" ng-repeat="t in posts">
+                      <div class="relative top-padder">
+                      <div class="text-center">
+                          <img src="img/tv-antena.png" class="antena-top">
+                      </div>
+                        <div class="tweet-img" ng-if="t.img">
+                          <div class="blackoverlay"></div>
+                            <img ng-src="{{t.img}}">
+                            <img src="img/play-btn.jpg" class="center-in">
+                        </div>
+                      </div>
                         <div class="tweet-holder">
-                            <div class="tweet-img" ng-if="t.img">
-                                <img ng-src="{{t.img}}">
-                            </div>
+
                             <div class="item-avatar">
                                 <div class="imaged" style="background-image: url('{{t.userImg}}');"></div>
                                 <h3>
