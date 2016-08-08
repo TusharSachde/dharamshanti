@@ -178,7 +178,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mobile-row ">
+                    <div class="mobile-row hidden-xs">
                         <div class="row-flex text-center " ng-repeat="videos in movieList.Past track by $index">
                             <div class="col-flex " ng-repeat="item in videos track by $index ">
                                 <a ui-sref="movie-inside({id:item._id})">
@@ -192,8 +192,21 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="mobile-row " ng-show="viewAll">
+                    <div class="mob-slider hidden-md hidden-sm hidden-lg visible-xs" ng-repeat="videos in movieList.Past track by $index">
+                        <flex-slider flex-slide="item in videos track by $index " animation="slide" item-width="207" item-margin="20" animationloop="true" move="1">
+                        <li>
+                            <a ui-sref="movie-inside({id:item._id})">
+                                <div class="img-pads">
+                                    <img ng-src="{{item.smallImage|uploadpath}}" alt="Dharma Productions" class="img-responsive">
+                                </div>
+                                <div class="movie-names">
+                                    <h4 class="text-up color-grey">{{item.name|shorten : 20}}<br>({{item.year}})</h4>
+                                </div>
+                            </a>
+                        </li>
+                    </flex-slider>
+                </div>
+                    <!-- <div class="mobile-row " ng-show="viewAll">
                         <div class="row-flex text-center " ng-repeat="videos in movieList.PastMore track by $index">
                             <div class="col-flex " ng-repeat="item in videos track by $index ">
                                 <a ui-sref="movie-inside({id:item._id})">
@@ -206,7 +219,7 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="text-center " ng-show="searchdata.search == '' && !viewAll">
                         <div class="dh-relative ">
                             <div class="btn-view-more mt15 mb20 text-center ">
