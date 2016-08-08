@@ -1449,7 +1449,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.nodata = false;
         $scope.getsearch = false;
         $scope.searchdata.search = [];
+        // $scope.mySearchFor=false;
         $scope.DoSearch = function(search) {
+          $scope.mySearchFor=search;
+            console.log('rdftghrtfg',$scope.mySearchFor);
             console.log(search);
             console.log(allMovies);
             $scope.viewAll = true;
@@ -1460,8 +1463,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             populateData(data);
         };
 
-        $scope.viewSearch = function() {
-            $scope.getsearch = false;
+        $scope.viewSearch = function(moviename) {
+          console.log(moviename);
+          $scope.moviename = '';
+          $scope.mySearchFor = '';
+          NavigationService.getMovieDetails(function(data) {
+              populateData(data.data);
+              allMovies = data.data;
+              TemplateService.removeLoader();
+
+          });
+          // console.log('rdftghrtfgviewSearchClick',$scope.mySearchFor);
+            // $scope.mySearchFor = '';
+            // $scope.viewAll = false;
+            //   console.log('rdftghrtfgviewSearchClick',$scope.mySearchFor);
         };
 
 

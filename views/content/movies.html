@@ -6,8 +6,8 @@
                     <div class="head-title">
                         <h1 class="color-primary f120 text-up font-hammersmith">Movies</h1>
                     </div>
-                    <div class="search-rslt mt15">
-                        <span class="color-primary">Displaying Result For '{{$select.selected.name}}'</span>
+                    <div class="search-rslt mt15" ng-if="mySearchFor">
+                        <span class="color-primary">Displaying Result For '{{mySearchFor}}'</span>
                     </div>
                     <div class="search-movie dh-relative search-movie-mar">
                         <div class="search-img">
@@ -37,7 +37,7 @@
                     </ui-select-choices>
                 </ui-select>
                         </div>
-                        <div class="search-img2" ng-if="getsearch" ng-click="viewSearch();">
+                        <div class="search-img2" ng-if="mySearchFor" ng-click="viewSearch(mySearchFor);">
                             <img src="img/error-2.png" alt="Dharma Productions">
                         </div>
                     </div>
@@ -53,6 +53,7 @@
     </section>
 
     <section ng-if="getsearch==false">
+
 
         <section class=" dharma-top-pad tv-all-slider slider-nav" ng-if="movieList.Upcoming && movieList.Upcoming!='' &&  movieList.Upcoming.length>0">
             <div class="container ">
