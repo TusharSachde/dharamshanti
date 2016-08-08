@@ -432,7 +432,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             TemplateService.removeLoader();
         });
 
-
+        // $scope.tabs = {["tabname":"Synopsis",
+        //                 "class":"classa",
+        //                 "ngclass":"{'my-disable':movieSynopsisAndNote.synopsis.length<=0}",
+        //                 "ngdissable":$scope.movieSynopsisAndNote.synopsis.length<=0
+        // ]}
 
         NavigationService.getMovieGal($stateParams.id, function(data) {
             console.log('MovieGal1', data);

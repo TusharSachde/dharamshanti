@@ -28,16 +28,23 @@
                 </div>
             </div>
             <div class="movie-tabs">
+              <!-- FOR WEBSITE -->
                 <div class="all-tabs hidden-xs">
                     <div class="btn-group" role="group" aria-label="...">
                         <button type="button" class="btn {{classa}}" ng-click="tabchange('synopsis',1)" ng-class="{'my-disable':movieSynopsisAndNote.synopsis.length<=0}" ng-disabled="movieSynopsisAndNote.synopsis.length<=0">Synopsis </button>
+
                         <button type="button" class="btn {{classb}}" ng-click="tabchange('cast',2)" ng-class="{'my-disable': movieCast.length<=0}" ng-disabled="movieCast.length<=0"> CAST & CREDITS</button>
+
                         <button type="button" class="btn {{classc}}" ng-click="tabchange('news',3)" ng-class="{'my-disable': movieNews.length<=0}" ng-disabled="movieNews.length<=0"> News</button>
+
                         <button type="button" class="btn {{classd}}" ng-class="{'my-disable': MovieGal.length<=0}" ng-click="tabchange('gallery',4)" ng-disabled="MovieGal.length<=0">Gallery</button>
+
                         <button type="button" class="btn {{classe}}" ng-click="tabchange('scene',5)" ng-class="{'my-disable': movieBehindTheScenes.length<=0}" ng-disabled="movieBehindTheScenes.length<=0">behind the scenes</button>
 
                         <button type="button" class="btn {{classf}}" ng-click="tabchange('video',6)" ng-class="{'my-disable': movieVideo10.length<=0}" ng-disabled="movieVideo10.length<=0"> VIDEOS </button>
+
                         <button type="button" class="btn {{classg}}" ng-click="tabchange('wallpapper',7)" ng-class="{'my-disable': movieWallpaper.length<=0}" ng-disabled="movieWallpaper.length<=0">WALLPAPERS </button>
+
                         <button type="button" class="btn {{classh}}" ng-click="tabchange('awards',8)" ng-class="{'my-disable': !equals({}, MovieAwards)}" ng-disabled="!equals({}, MovieAwards)"> AWARDS </button>
                     </div>
                 </div>
