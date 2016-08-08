@@ -307,6 +307,9 @@
     .mt15 {
         margin-top: 7px;
     }
+    .m24-mob{
+      margin-top: 24px;
+    }
     .head-bg {
         padding: 5px 10px 0;
         margin: 0 10px;
@@ -672,8 +675,14 @@ max-width: inherit;
 .home-contact {
 padding: 0px 0px 30px 0px;
 }
+.data-content p {
+    font-size: 14px;
+}
 }
 @media (max-width:480px) {
+  .data-content p {
+    font-size: 14px;
+}
   .home-contact {
 padding: 0px 0px 30px 0px;
 }
