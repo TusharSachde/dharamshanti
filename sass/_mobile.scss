@@ -669,8 +669,14 @@ float: left;
 flex: 1;
 max-width: inherit;
 }
+.home-contact {
+padding: 0px 0px 30px 0px;
+}
 }
 @media (max-width:480px) {
+  .home-contact {
+padding: 0px 0px 30px 0px;
+}
   .col-flex {
 width: 50%;
 float: left;
@@ -925,7 +931,7 @@ max-width: inherit;
         padding-top: 18px;
     }
     .dharma-title-bg {
-        padding: 40px 0 50px;
+        padding: 40px 0 0px;
         background-size: contain;
     }
     .pad-inner {

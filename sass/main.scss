@@ -1973,6 +1973,11 @@ height: 50px;
 .pady-bot {
   padding-bottom: 20px;
 }
+.no-ar{
+  .flex-direction-nav {
+    display: none;
+}
+}
 @import "main2";
 @import "timeline";
 @import "mobile";

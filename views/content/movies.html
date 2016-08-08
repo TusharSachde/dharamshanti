@@ -56,7 +56,7 @@
                             <div class="title ">
                                 <h1 class="ml15 mb0 color-primary font-hammersmith f55 line50">UPCOMING RELEASES</h1>
                             </div>
-                            <div class="upcoming-slider mob-arrow ">
+                            <div class="upcoming-slider mob-arrow no-ar">
                                 <flex-slider flex-slide="item in movieList.Upcoming track by $index " animation="slide " animationloop="true " move="1 ">
                                     <li>
                                         <div class="video-box ">
@@ -100,7 +100,7 @@
                             </h1>
                                 </div>
                                 <div class="upcoming-slider slider-right " ng-if="showRecent" >
-                                    <flex-slider  flex-slide="item in movieList.Recent track by $index " animation="slide " animationloop="true " move="1 ">
+                                    <!-- <flex-slider  flex-slide="item in movieList.Recent track by $index " animation="slide " animationloop="true " move="1 ">
                                         <a ui-sref="movie-inside({id:item._id})">
                                             <li>
                                                 <div class="row " ng-repeat="datas in item track by $index">
@@ -119,7 +119,24 @@
                                                 </div>
                                             </li>
 
-                                    </flex-slider>
+                                    </flex-slider> -->
+                                    <div class="div-none-slide" ng-repeat="item in movieList.Recent track by $index">
+                                      <div class="row" ng-repeat="datas in item track by $index">
+                                        <div class="col-md-6 col-sm-6 col-xs-12" ng-repeat="data in datas track by $index ">
+                                          <a ui-sref="movie-inside({id:data._id})">
+                                              <div class="video-box mb20 common-class ">
+                                                  <div class="video-slide-img img-pads ">
+                                                      <img ng-src="{{data.mediumImage|uploadpath}} " alt="Dharma Productions " class="img-responsive">
+                                                  </div>
+                                                  <div class="video-name font-karla text-up ">
+                                                      <span>{{data.name | shorten : 60}} ({{data.year}})</span>
+                                                  </div>
+                                              </div>
+                                          </a>
+                                        </div>
+                                      </div>
+                                    </div>
+
                                 </div>
                                 <!-- <div class="upcoming-slider slider-right ">
                             <flex-slider flex-slide="videobreak in video track by $index " animation="slide " animationloop="true " move="1 ">

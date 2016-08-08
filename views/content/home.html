@@ -75,7 +75,7 @@
                         <img ng-src="{{item.upcomingSmall|uploadpath}}" alt="Dharma Productions" class="img-responsive">
                     </div>
                     <div class="movie-names">
-                        <h4 class="text-up color-grey">{{item.name}}</h4>
+                        <h4 class="text-up color-grey">{{item.name|shorten : 20}}<br>({{item.year}})</h4>
                     </div>
                 </a>
             </li>
@@ -114,7 +114,7 @@
                         <img ng-src="{{item.recentSmall|uploadpath}}" alt="Dharma Productions" class="img-responsive">
                     </div>
                     <div class="movie-names">
-                        <h4 class="text-up color-grey">{{item.name}}</h4>
+                        <h4 class="text-up color-grey">{{item.name|shorten : 20}}<br>({{item.year}})</h4>
                     </div>
                 </a>
             </li>
@@ -154,7 +154,7 @@
             <div class="play-btn text-center dh-absulate middle">
 
                 <!-- <img ng-src="{{getDharmaTvSlides[0].image|uploadpath}}" alt="Dharma Productions" class="img-responsive margin-auto width100"> -->
-                <div class="dh-absulate ply-post">
+                <div class="dh-absulate middle">
                     <img src="img/play-btn.jpg" alt="Dharma Productions">
                 </div>
             </a>
