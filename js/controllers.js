@@ -453,6 +453,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.movieVideo = data.data.videos;
             console.log('getMovieVideo', $scope.movieVideo);
             $scope.movieVideo10 = _.chunk($scope.movieVideo, 6);
+                console.log('movieVideo1000000000000000000', $scope.movieVideo10);
             TemplateService.removeLoader();
         });
 
