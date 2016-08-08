@@ -536,42 +536,58 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             name: "Synopsis",
             class: "classa",
             tab: "synopsis",
-            id: "1"
+            id: "1",
+            ngclass:"movieSynopsisAndNote.synopsis.length>=0"
+            // ngdisabled:"movieSynopsisAndNote.synopsis.length>=0"
         }, {
             name: "CAST & CREDITS",
             class: "classsb",
             tab: "cast",
-            id: "2"
+            id: "2",
+            ngclass:"movieCast.length>=0"
+            // ngdisabled:"movieCast.length>=0"
         }, {
-            name: "News",
+            name: "News disabled",
             class: "classc",
             tab: "news",
-            id: "3"
+            id: "3",
+            ngclass:"movieNews.length>=0"
+            // ngdisabled:"movieNews.length>=0"
         }, {
             name: "Gallery",
             class: "classd",
             tab: "gallery",
-            id: "4"
+            id: "4",
+            ngclass:"MovieGal.length>=0"
+            // ngdisabled:"MovieGal.length>=0"
         }, {
             name: "behind the scenes",
             class: "classe",
             tab: "scene",
-            id: "5"
+            id: "5",
+            ngclass:"movieBehindTheScenes.length>=0"
+            // ngdisabled:"movieBehindTheScenes.length>=0"
         }, {
             name: "VIDEOS",
             class: "classf",
             tab: "video",
-            id: "6"
+            id: "6",
+            ngclass:"movieVideo10.length>=0"
+            // ngdisabled:"movieVideo10.length>=0"
         }, {
             name: "WALLPAPERS",
             class: "classg",
             tab: "wallpapper",
-            id: "7"
+            id: "7",
+            ngclass:"movieWallpaper.length>=0"
+            // ngdisabled:"movieWallpaper.length>=0"
         }, {
             name: "AWARDS",
             class: "classh",
             tab: "awards",
-            id: "8"
+            id: "8",
+            ngclass:"!equals({}, MovieAwards)"
+            // ngdisabled:"!equals({}, MovieAwards)"
         }]
         $(window).scroll(function() {
             if ($(this).scrollTop() > 500) {
@@ -579,6 +595,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             } else {
                 $('.back-to-top ').fadeOut();
             }
+        });
+
+        $(document).ready(function(){
+          console.log("tab");
+          if($scope.tabing.class == 'classa') {
+            $scope.movieSynopsisAndNote.synopsis.length<=0
+          }else if($scope.tabing.class == 'classb') {
+            $scope.movieCast.length<=0
+          }else if($scope.tabing.class == 'classc') {
+            $scope.movieNews.length<=0;
+          }
         });
 
         $scope.open = function(size) {

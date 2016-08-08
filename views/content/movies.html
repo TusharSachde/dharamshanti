@@ -6,8 +6,8 @@
                     <div class="head-title">
                         <h1 class="color-primary f120 text-up font-hammersmith">Movies</h1>
                     </div>
-                    <div class="search-rslt mt15" ng-if="getsearch">
-                        <span class="color-primary">Displaying Result For '{{searchdata.search}}'</span>
+                    <div class="search-rslt mt15">
+                        <span class="color-primary">Displaying Result For '{{$select.selected.name}}'</span>
                     </div>
                     <div class="search-movie dh-relative search-movie-mar">
                         <div class="search-img">
@@ -22,6 +22,7 @@
                     <ui-select-match placeholder="Search">{{$select.selected.name}}</ui-select-match>
                     <ui-select-choices repeat="movie in allMovieName | filter: $select.search">
                       <div class="movi-src-rslt">
+
                         <div class="display-inline w60">
                           <!-- <img src="img/movie-search.png" alt=""> -->
                           <img ng-src="{{movie.smallImage|uploadpath}}" alt="" ng-if="movie.releaseType=='Past'">
@@ -30,12 +31,13 @@
                         </div>
                         <div class="display-inline ml15">
                             <span ng-bind-html="movie.name | highlight: $select.search"></span>
+                            ({{movie.year| highlight: $select.search}})
                         </div>
                       </div>
                     </ui-select-choices>
                 </ui-select>
                         </div>
-                        <div class="search-img2" ng-if="searchdata.search" ng-click="viewSearch();">
+                        <div class="search-img2" ng-if="getsearch" ng-click="viewSearch();">
                             <img src="img/error-2.png" alt="Dharma Productions">
                         </div>
                     </div>
@@ -51,6 +53,7 @@
     </section>
 
     <section ng-if="getsearch==false">
+
         <section class=" dharma-top-pad tv-all-slider slider-nav" ng-if="movieList.Upcoming && movieList.Upcoming!='' &&  movieList.Upcoming.length>0">
             <div class="container ">
                 <div class="row ">
@@ -239,6 +242,7 @@
         </section>
     </section>
     <section ng-if="getsearch || mysearch.length>0">
+      now search
         <div class="container">
             <div class="row ">
                 <!-- drtfghujedrfghj{{mysearch[0]}} -->

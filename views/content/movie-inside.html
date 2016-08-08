@@ -55,8 +55,10 @@
                             <flex-slider flex-slide="item in tabing track by $index" animation="slide" item-width="120" item-margin="10" animationloop="true" move="2">
 
                                 <li class="text-center mobileMovieTabs">
-                                    <button type="button" class="btn {{item.class}}" ng-click="tabchange(item.tab,item.id)">{{item.name}} </button>
+                                    <button type="button" class="btn {{item.class}}" ng-click="tabchange(item.tab,item.id)">{{item.name}}</button>
                                 </li>
+
+                                <!-- ng-disabled="item.ngdisabled" ng-class="{'my-disable': item.ngclass}" -->
 
                             </flex-slider>
                         </div>
