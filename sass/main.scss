@@ -1860,7 +1860,8 @@ height: 50px;
     position: relative;
 }
 .my-disable{
-   color: grey !important;
+  color: #090909 !important;
+  opacity: 0.4 !important;
 }
 .btn-clear {
   @include button-variant(#818181, transparent, transparent);
