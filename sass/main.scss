@@ -1686,8 +1686,14 @@ display: block;
   padding: 12px 0px 0px 38px;
 font-size: 16px;
 }
+span.ui-select-placeholder.text-muted.ng-binding {
+    padding-top: 0;
+}
+input.form-control.ui-select-search.ng-pristine.ng-valid.ng-empty.ng-touched {
+    padding: 0px 0px 0px 38px;
+}
 .form-control{
-  padding: 0px 0px 0px 38px;
+  padding: 12px 0px 0px 38px;
 font-size: 16px;
 height: 50px;
 }
