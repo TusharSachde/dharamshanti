@@ -30,7 +30,7 @@
                         </div>
                         <div class="display-inline ml15">
                             <span ng-bind-html="movie.name | highlight: $select.search"></span>
-                            ({{movie.year| highlight: $select.search}})
+                            <span ng-if="movie.year">({{movie.year| highlight: $select.search}})</span>
                         </div>
                       </div>
                     </ui-select-choices>
