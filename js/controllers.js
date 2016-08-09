@@ -1424,6 +1424,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.movieList.Recent[i] = _.chunk($scope.movieList.Recent[i], 4);
             }
             if ($scope.movieList.Past) {
+                $scope.movieList.PastViewAll=$scope.movieList.Past;
                 $scope.movieList.PastMore = _.takeRight($scope.movieList.Past, $scope.movieList.Past.length - 10);
                 $scope.movieList.PastMore = _.chunk($scope.movieList.PastMore, 5);
                 $scope.movieList.Past = $scope.movieList.Past.splice(0, 10);
@@ -1444,6 +1445,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.viewAll = false;
 
         $scope.showViewAll = function() {
+          console.log($scope.movieList.PastViewAll);
+          $scope.movieList.Past = _.chunk($scope.movieList.PastViewAll, 5);
+                console.log($scope.movieList.Past);
             $scope.viewAll = true;
         };
         $scope.nodata = false;
