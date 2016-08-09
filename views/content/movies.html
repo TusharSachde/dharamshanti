@@ -18,11 +18,10 @@
                             <img src="img/error2.png" alt="Dharma Productions">
                         </div> -->
                         <div class="movie-search-pg">
-                          <ui-select ng-model="movie.selected" ng-change="DoSearch(movie.selected.name)" style="width: 100%;" title="Search Movie" class="search-drop">
+                          <ui-select ng-model="movie.selected" ng-change="DoSearch(movie.selected.name,movie.selected._id)" style="width: 100%;" title="Search Movie" class="search-drop">
                     <ui-select-match placeholder="Search">{{$select.selected.name}}</ui-select-match>
-                    <ui-select-choices repeat="movie in allMovieName | filter: $select.search">
+                    <ui-select-choices repeat="movie in allMovieName | filter: $select.search" >
                       <div class="movi-src-rslt">
-
                         <div class="display-inline w60">
                           <!-- <img src="img/movie-search.png" alt=""> -->
                           <img ng-src="{{movie.smallImage|uploadpath}}" alt="" ng-if="movie.releaseType=='Past'">
