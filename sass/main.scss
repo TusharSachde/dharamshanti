@@ -246,7 +246,7 @@ a {
 .custom-menu {
     li {
         a {
-            padding: 0 12px !important;
+            padding: 5px 12px !important;
         }
     }
 }
@@ -539,7 +539,7 @@ a {
     }
 }
 .bg-sun {
-    background: url(../img/dharma-sun.png)no-repeat $brand-primary;
+    background: url(../img/Half-Sun-With-BG.gif)no-repeat $brand-primary;
     background-position: left top;
     margin-top: -66px;
     padding: 215px 0 60px 215px;
@@ -1690,8 +1690,8 @@ font-size: 16px;
 span.ui-select-placeholder.text-muted.ng-binding {
     padding-top: 0;
 }
-input.form-control.ui-select-search.ng-pristine.ng-valid.ng-empty.ng-touched {
-    padding: 0px 0px 0px 38px;
+input.form-control.ui-select-search {
+    padding: 0px 0px 0px 38px !important;
 }
 .form-control{
   padding: 12px 0px 0px 38px;
@@ -2014,8 +2014,9 @@ height: 50px;
 }
 .custom-menu{
   .dropdown-menu{
-        left: -25px;
-        padding: 0px;
+        top: 31px;
+    left: -38px;
+padding: 0px;
       li{
 &:hover{
   a{
@@ -2031,7 +2032,20 @@ text-transform: uppercase;
 
         }
       }
-
+&:before{
+  position: absolute;
+top: -8%;
+left: 45%;
+margin-top: -3px;
+width: 0;
+height: 0;
+border-bottom: 10px solid;
+border-right: 10px solid rgba(0, 0, 0, 0);
+border-left: 10px solid rgba(0, 0, 0, 0);
+color: #fff;
+content: "";
+pointer-events: none;
+}
   }
 }
 
