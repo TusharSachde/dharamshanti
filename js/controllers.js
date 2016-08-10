@@ -22,7 +22,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         'img/banners/mob-slider.jpg'
     ];
     NavigationService.getAllUpcomingMovies(function(data) {
-        $scope.AllUpcomingMovies = _.orderBy(data.data,"year");
+        $scope.AllUpcomingMovies = _.orderBy(data.data, "year");
         console.log('AllUpcomingMovies', $scope.AllUpcomingMovies);
         TemplateService.removeLoader();
     });
@@ -201,9 +201,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
         $(window).scrollTop(0);
     });
-    $scope.showSub = function(menu){
-menu.show = !menu.show;
-}
+    $scope.showSub = function(menu) {
+        menu.show = !menu.show;
+    }
 })
 
 .controller('OverviewCtrl', function($scope, TemplateService, NavigationService) {
@@ -460,7 +460,7 @@ menu.show = !menu.show;
             $scope.movieVideo = data.data.videos;
             console.log('getMovieVideo', $scope.movieVideo);
             $scope.movieVideo10 = _.chunk($scope.movieVideo, 6);
-                console.log('movieVideo1000000000000000000', $scope.movieVideo10);
+            console.log('movieVideo1000000000000000000', $scope.movieVideo10);
             TemplateService.removeLoader();
         });
 
@@ -490,9 +490,8 @@ menu.show = !menu.show;
         });
         $scope.MovieAwards = [];
         NavigationService.getMovieAwards($stateParams.id, function(data) {
-            if(_.isArray(data.data))
-            {
-              $scope.MovieAwards = data.data;
+            if (_.isArray(data.data)) {
+                $scope.MovieAwards = data.data;
             }
 
             console.log('MovieAwards', $scope.MovieAwards);
@@ -544,57 +543,57 @@ menu.show = !menu.show;
             class: "classa",
             tab: "synopsis",
             id: "1",
-            ngclass:"movieSynopsisAndNote.synopsis.length>=0"
-            // ngdisabled:"movieSynopsisAndNote.synopsis.length>=0"
+            ngclass: "movieSynopsisAndNote.synopsis.length>=0"
+                // ngdisabled:"movieSynopsisAndNote.synopsis.length>=0"
         }, {
             name: "CAST & CREDITS",
             class: "classsb",
             tab: "cast",
             id: "2",
-            ngclass:"movieCast.length>=0"
-            // ngdisabled:"movieCast.length>=0"
+            ngclass: "movieCast.length>=0"
+                // ngdisabled:"movieCast.length>=0"
         }, {
             name: "News disabled",
             class: "classc",
             tab: "news",
             id: "3",
-            ngclass:"movieNews.length>=0"
-            // ngdisabled:"movieNews.length>=0"
+            ngclass: "movieNews.length>=0"
+                // ngdisabled:"movieNews.length>=0"
         }, {
             name: "Gallery",
             class: "classd",
             tab: "gallery",
             id: "4",
-            ngclass:"MovieGal.length>=0"
-            // ngdisabled:"MovieGal.length>=0"
+            ngclass: "MovieGal.length>=0"
+                // ngdisabled:"MovieGal.length>=0"
         }, {
             name: "behind the scenes",
             class: "classe",
             tab: "scene",
             id: "5",
-            ngclass:"movieBehindTheScenes.length>=0"
-            // ngdisabled:"movieBehindTheScenes.length>=0"
+            ngclass: "movieBehindTheScenes.length>=0"
+                // ngdisabled:"movieBehindTheScenes.length>=0"
         }, {
             name: "VIDEOS",
             class: "classf",
             tab: "video",
             id: "6",
-            ngclass:"movieVideo10.length>=0"
-            // ngdisabled:"movieVideo10.length>=0"
+            ngclass: "movieVideo10.length>=0"
+                // ngdisabled:"movieVideo10.length>=0"
         }, {
             name: "WALLPAPERS",
             class: "classg",
             tab: "wallpapper",
             id: "7",
-            ngclass:"movieWallpaper.length>=0"
-            // ngdisabled:"movieWallpaper.length>=0"
+            ngclass: "movieWallpaper.length>=0"
+                // ngdisabled:"movieWallpaper.length>=0"
         }, {
             name: "AWARDS",
             class: "classh",
             tab: "awards",
             id: "8",
-            ngclass:"!equals({}, MovieAwards)"
-            // ngdisabled:"!equals({}, MovieAwards)"
+            ngclass: "!equals({}, MovieAwards)"
+                // ngdisabled:"!equals({}, MovieAwards)"
         }]
         $(window).scroll(function() {
             if ($(this).scrollTop() > 500) {
@@ -604,15 +603,15 @@ menu.show = !menu.show;
             }
         });
 
-        $(document).ready(function(){
-          console.log("tab");
-          if($scope.tabing.class == 'classa') {
-            $scope.movieSynopsisAndNote.synopsis.length<=0
-          }else if($scope.tabing.class == 'classb') {
-            $scope.movieCast.length<=0
-          }else if($scope.tabing.class == 'classc') {
-            $scope.movieNews.length<=0;
-          }
+        $(document).ready(function() {
+            console.log("tab");
+            if ($scope.tabing.class == 'classa') {
+                $scope.movieSynopsisAndNote.synopsis.length <= 0
+            } else if ($scope.tabing.class == 'classb') {
+                $scope.movieCast.length <= 0
+            } else if ($scope.tabing.class == 'classc') {
+                $scope.movieNews.length <= 0;
+            }
         });
 
         $scope.open = function(size) {
@@ -947,51 +946,52 @@ menu.show = !menu.show;
             });
         };
 
-        $scope.goYear=false;
-        $scope.goMonth=false;
- function callMe(){
-    $scope.news10=[];
-   NavigationService.getNewsHomeSearch($scope.filter, function(data) {
-       if (data.value) {
-         console.log(data.data.data);
-           _.each(data.data.data, function(n) {
-               n.date = new Date(n.date);
-               $scope.news10.push(n);
-           });
+        $scope.goYear = false;
+        $scope.goMonth = false;
 
-           $scope.lastpage = data.data.totalpages;
-           if ($scope.lastpage <= $scope.filter.pagenumber) {
-               $scope.noviewmore = false;
-           }
-       }
-       TemplateService.removeLoader();
-   });
- }
+        function callMe() {
+            $scope.news10 = [];
+            NavigationService.getNewsHomeSearch($scope.filter, function(data) {
+                if (data.value) {
+                    console.log(data.data.data);
+                    _.each(data.data.data, function(n) {
+                        n.date = new Date(n.date);
+                        $scope.news10.push(n);
+                    });
+
+                    $scope.lastpage = data.data.totalpages;
+                    if ($scope.lastpage <= $scope.filter.pagenumber) {
+                        $scope.noviewmore = false;
+                    }
+                }
+                TemplateService.removeLoader();
+            });
+        }
 
         $scope.getNews10 = function(name) {
-          $scope.filter.search = name;
-          callMe();
+            $scope.filter.search = name;
+            callMe();
         };
         $scope.getNewsYear = function(year) {
-          $scope.getYear=year;
-          $scope.goYear=true;
-          console.log(year);
-          $scope.filter.year = year;
-          // callMe();
+            $scope.getYear = year;
+            $scope.goYear = true;
+            console.log(year);
+            $scope.filter.year = year;
+            // callMe();
         };
         $scope.getNewsMonth = function(month) {
-          $scope.getMonth=month;
-          $scope.goMonth=true;
-          console.log(month);
-          $scope.filter.month = month;
-          // callMe();
+            $scope.getMonth = month;
+            $scope.goMonth = true;
+            console.log(month);
+            $scope.filter.month = month;
+            // callMe();
         };
 
-        $scope.goSearch = function(month,year) {
-          console.log(month);
-$scope.filter.month = month;
-$scope.filter.year = year;
-          callMe();
+        $scope.goSearch = function(month, year) {
+            console.log(month);
+            $scope.filter.month = month;
+            $scope.filter.year = year;
+            callMe();
         };
 
 
@@ -1013,9 +1013,9 @@ $scope.filter.year = year;
             console.log('edrtghjfghjk', $scope.allMovieName);
         });
 
-        NavigationService.getMonthYear(function(data){
-          $scope.monthYear=data.data;
-          console.log('$scope.monthYear',$scope.monthYear);
+        NavigationService.getMonthYear(function(data) {
+            $scope.monthYear = data.data;
+            console.log('$scope.monthYear', $scope.monthYear);
         })
 
         // NavigationService.findAllSearchParam(function(data) {
@@ -1270,7 +1270,7 @@ $scope.filter.year = year;
             time: '6:06AM',
             msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
             img: 'https://pbs.twimg.com/media/CnUafNAWYAAgbrU.jpg:large'
-        },{
+        }, {
             username: "TarunMansukhani",
             name: 'TARUN MANSUKHANI',
             userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
@@ -1278,7 +1278,7 @@ $scope.filter.year = year;
             time: '6:06AM',
             msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
             img: 'https://pbs.twimg.com/media/CnUafNAWYAAgbrU.jpg:large'
-        },{
+        }, {
             username: "TarunMansukhani",
             name: 'TARUN MANSUKHANI',
             userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
@@ -1286,7 +1286,7 @@ $scope.filter.year = year;
             time: '6:06AM',
             msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
             img: 'https://pbs.twimg.com/media/CnUafNAWYAAgbrU.jpg:large'
-        },{
+        }, {
             username: "TarunMansukhani",
             name: 'TARUN MANSUKHANI',
             userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
@@ -1294,7 +1294,7 @@ $scope.filter.year = year;
             time: '6:06AM',
             msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
             img: 'https://pbs.twimg.com/media/CnUafNAWYAAgbrU.jpg:large'
-        },{
+        }, {
             username: "TarunMansukhani",
             name: 'TARUN MANSUKHANI',
             userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
@@ -1302,7 +1302,7 @@ $scope.filter.year = year;
             time: '6:06AM',
             msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
             img: 'https://pbs.twimg.com/media/CnUafNAWYAAgbrU.jpg:large'
-        },{
+        }, {
             username: "TarunMansukhani",
             name: 'TARUN MANSUKHANI',
             userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
@@ -1311,7 +1311,7 @@ $scope.filter.year = year;
             msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
             img: 'https://pbs.twimg.com/media/CnUafNAWYAAgbrU.jpg:large'
         }];
-      })
+    })
     .controller('Dharma140Ctrl', function($scope, TemplateService, NavigationService, $stateParams, $filter, $timeout) {
         $scope.template = TemplateService.changecontent("dharma140");
         $scope.menutitle = NavigationService.makeactive("Dharma@140");
@@ -1338,7 +1338,7 @@ $scope.filter.year = year;
             time: '6:06AM',
             msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
             img: 'https://pbs.twimg.com/media/CnUafNAWYAAgbrU.jpg:large'
-        },{
+        }, {
             username: "TarunMansukhani",
             name: 'TARUN MANSUKHANI',
             userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
@@ -1346,7 +1346,7 @@ $scope.filter.year = year;
             time: '6:06AM',
             msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
             img: ''
-        },{
+        }, {
             username: "TarunMansukhani",
             name: 'TARUN MANSUKHANI',
             userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
@@ -1354,7 +1354,7 @@ $scope.filter.year = year;
             time: '6:06AM',
             msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
             img: 'https://pbs.twimg.com/media/CnUafNAWYAAgbrU.jpg:large'
-        },{
+        }, {
             username: "TarunMansukhani",
             name: 'TARUN MANSUKHANI',
             userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
@@ -1362,7 +1362,7 @@ $scope.filter.year = year;
             time: '6:06AM',
             msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
             img: ''
-        },{
+        }, {
             username: "TarunMansukhani",
             name: 'TARUN MANSUKHANI',
             userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
@@ -1370,7 +1370,7 @@ $scope.filter.year = year;
             time: '6:06AM',
             msg: 'Dharma. Upgraded to Version 3.0 To new beginnings!!!',
             img: 'https://pbs.twimg.com/media/CnUafNAWYAAgbrU.jpg:large'
-        },{
+        }, {
             username: "TarunMansukhani",
             name: 'TARUN MANSUKHANI',
             userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
@@ -1393,7 +1393,7 @@ $scope.filter.year = year;
             time: '6:06AM',
             quest: 'Why was Kal Ho Na Ho shot in New York and not London?',
             answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting'
-        },{
+        }, {
             name: 'TARUN MANSUKHANI',
             userImg: 'https://pbs.twimg.com/profile_images/581418336765878272/cWzXUfYW_400x400.jpg',
             day: 'May 9',
@@ -1504,7 +1504,7 @@ $scope.filter.year = year;
                 $scope.movieList.Recent[i] = _.chunk($scope.movieList.Recent[i], 4);
             }
             if ($scope.movieList.Past) {
-                $scope.movieList.PastViewAll=$scope.movieList.Past;
+                $scope.movieList.PastViewAll = $scope.movieList.Past;
                 $scope.movieList.PastMore = _.takeRight($scope.movieList.Past, $scope.movieList.Past.length - 10);
                 $scope.movieList.PastMore = _.chunk($scope.movieList.PastMore, 5);
                 $scope.movieList.Past = $scope.movieList.Past.splice(0, 10);
@@ -1525,19 +1525,21 @@ $scope.filter.year = year;
         $scope.viewAll = false;
 
         $scope.showViewAll = function() {
-          console.log($scope.movieList.PastViewAll);
-          $scope.movieList.Past = _.chunk($scope.movieList.PastViewAll, 5);
-                console.log($scope.movieList.Past);
+            console.log($scope.movieList.PastViewAll);
+            $scope.movieList.Past = _.chunk($scope.movieList.PastViewAll, 5);
+            console.log($scope.movieList.Past);
             $scope.viewAll = true;
         };
         $scope.nodata = false;
         $scope.getsearch = false;
         $scope.searchdata.search = [];
         // $scope.mySearchFor=false;
-        $scope.DoSearch = function(search,id) {
-          $state.go('movie-inside',{ id:id});
-          $scope.mySearchFor=search;
-            console.log('rdftghrtfg',$scope.mySearchFor);
+        $scope.DoSearch = function(search, id) {
+            $state.go('movie-inside', {
+                id: id
+            });
+            $scope.mySearchFor = search;
+            console.log('rdftghrtfg', $scope.mySearchFor);
             console.log(search);
             console.log(id);
             console.log(allMovies);
@@ -1550,16 +1552,16 @@ $scope.filter.year = year;
         };
 
         $scope.viewSearch = function(moviename) {
-          console.log(moviename);
-          $scope.moviename = '';
-          $scope.mySearchFor = '';
-          NavigationService.getMovieDetails(function(data) {
-              populateData(data.data);
-              allMovies = data.data;
-              TemplateService.removeLoader();
+            console.log(moviename);
+            $scope.moviename = '';
+            $scope.mySearchFor = '';
+            NavigationService.getMovieDetails(function(data) {
+                populateData(data.data);
+                allMovies = data.data;
+                TemplateService.removeLoader();
 
-          });
-          // console.log('rdftghrtfgviewSearchClick',$scope.mySearchFor);
+            });
+            // console.log('rdftghrtfgviewSearchClick',$scope.mySearchFor);
             // $scope.mySearchFor = '';
             // $scope.viewAll = false;
             //   console.log('rdftghrtfgviewSearchClick',$scope.mySearchFor);
