@@ -937,6 +937,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         };
 
+        NavigationService.getMonthYear(function(data){
+          $scope.monthYear=data.data;
+          console.log('$scope.monthYear',$scope.monthYear);
+        })
 
         // NavigationService.findAllSearchParam(function(data) {
         //     $scope.findAllSearchParam = _.uniq(data.data);

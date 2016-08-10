@@ -1,6 +1,6 @@
-var adminurl = "http://104.199.151.75:82/";
+// var adminurl = "http://104.199.151.75:82/";
 // var adminurl = "http://localhost:82/";
-// var adminurl = "http://192.168.1.110:82/";
+var adminurl = "http://192.168.1.109:82/";
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
 var uploadurl = imgurl;
@@ -359,6 +359,13 @@ console.log(email);
                 _id: id
             }
 
+        }).success(callback);
+    },
+    getMonthYear: function(callback) {
+        $http({
+            url: adminurl + 'news/getMonthYear',
+            method: 'POST',
+            withCredentials: true
         }).success(callback);
     },
 

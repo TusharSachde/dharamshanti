@@ -35,9 +35,9 @@
                            <img src="img/select-arrow.png" alt="">
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                           <li><a href="">Jan</a></li>
-                           <li><a href="">Feb</a></li>
-                           <li><a href="">March</a></li>+
+                           <li ng-repeat="data in monthYear.month"><a href="">{{data}}</a></li>
+                           <!-- <li><a href="">Feb</a></li>
+                           <li><a href="">March</a></li>+ -->
 
                         </ul>
                      </div>
@@ -56,9 +56,9 @@
                            <img src="img/select-arrow.png" alt="">
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                           <li><a href="">2016</a></li>
-                           <li><a href="">2015</a></li>
-                           <li><a href="">2014</a></li>
+                           <li ng-repeat="data in monthYear.year"><a href="">{{data}}</a></li>
+                           <!-- <li><a href="">2015</a></li>
+                           <li><a href="">2014</a></li> -->
 
                         </ul>
                      </div>
