@@ -287,6 +287,16 @@ console.log(email);
             }).success(callback);
 
     },
+    getNewsHomeSearch: function(request, callback) {
+      console.log("myrequest",request);
+           $http({
+            url: adminurl + 'news/findLimited',
+            method: 'POST',
+            withCredentials: true,
+            data:request
+            }).success(callback);
+
+    },
     getAllMovieName: function(callback) {
 
         $http({

@@ -45,7 +45,7 @@
 
                         <button type="button" class="btn {{classg}}" ng-click="tabchange('wallpapper',7)" ng-class="{'my-disable': movieWallpaper.length<=0}" ng-disabled="movieWallpaper.length<=0">WALLPAPERS </button>
 
-                        <button type="button" class="btn {{classh}}" ng-click="tabchange('awards',8)" ng-class="{'my-disable': !equals({}, MovieAwards)}" ng-disabled="!equals({}, MovieAwards)"> AWARDS </button>
+                        <button type="button" class="btn {{classh}}" ng-click="tabchange('awards',8)" ng-class="{'my-disable': MovieAwards.length  == 0}"> AWARDS </button>
                     </div>
                 </div>
                 <div class="mob-slider hidden-md hidden-sm hidden-lg visible-xs">
