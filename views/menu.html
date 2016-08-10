@@ -1,5 +1,5 @@
 <ul class="nav navbar-nav mt18 custom-menu">
-  <li ng-repeat="menu in navigation" class="{{menu.classis}} hidden-xs">
+  <li ng-repeat="menu in navigation" class="{{menu.classis}}">
     <a ui-sref="{{menu.anchor}}" ng-if="menu.anchor" class="text-up color-white font-hammersmith">{{menu.name}}</a>
     <a href="{{menu.link}}" ng-if="menu.link">{{menu.name}}</a>
     <ul class="dropdown-menu" ng-if="menu.subnav!='';">
@@ -9,6 +9,7 @@
       </li>
     </ul>
   </li>
+
   <li class="hidden-md hidden-lg hidden-sm">
     <div class="head-social dh-list pull-right mt15">
       <ul class="padding0 margin0">
