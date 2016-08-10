@@ -20,7 +20,15 @@ var navigationservice = angular.module('navigationservice', [])
     name: "Overview",
     classis: "active",
     anchor: "overview",
-    subnav: []
+    subnav: [{
+      name: "About Us",
+      classis: "active",
+      anchor: "overview",
+    },{
+      name: "Dharma Journey",
+      classis: "active",
+      anchor: "dharma-journey",
+    }]
   },
   {
     name: "Movies",

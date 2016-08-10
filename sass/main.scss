@@ -2012,6 +2012,29 @@ height: 50px;
 .pd4{
   padding: 0px 4%;
 }
+.custom-menu{
+  .dropdown-menu{
+        left: -25px;
+        padding: 0px;
+      li{
+&:hover{
+  a{
+    color:$black !important;
+    text-transform: uppercase;
+        background-color: #f37021;
+  }
+}
+        a{
+color:$black !important;
+text-transform: uppercase;
+    padding: 10px 15px !important;
+
+        }
+      }
+
+  }
+}
+
 @import "main2";
 @import "timeline";
 @import "mobile";
