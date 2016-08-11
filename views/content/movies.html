@@ -241,7 +241,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mobile-row hidden-xs" ng-show="viewAll">
+            <div class="mobile-row hidden-xs" ng-if="viewAll">
                 <div class="row-flex text-center " ng-repeat="videos in movieList.PastMore track by $index">
                     <div class="col-flex " ng-repeat="item in videos track by $index ">
                         <a ui-sref="movie-inside({id:item._id})">
@@ -257,7 +257,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mob-slider hidden-md hidden-sm hidden-lg visible-xs" ng-repeat="videos in movieList.PastMore track by $index" ng-show="viewAll">
+            <div class="mob-slider hidden-md hidden-sm hidden-lg visible-xs" ng-repeat="videos in movieList.PastMore track by $index" ng-if="viewAll">
                 <flex-slider flex-slide="item in videos track by $index " animation="slide" item-width="207" item-margin="20" animationloop="true" move="1">
                     <li>
                         <a ui-sref="movie-inside({id:item._id})">
