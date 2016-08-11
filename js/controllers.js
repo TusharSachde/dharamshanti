@@ -1650,11 +1650,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.viewAll = false;
 
         $scope.showViewAll = function() {
-            console.log('fghjfgbhnjtfgh');
-            console.log($scope.movieList.PastViewAll);
-            $scope.movieList.Past = _.chunk($scope.movieList.PastViewAll, 5);
-            console.log($scope.movieList.Past);
-            $scope.viewAll = true;
+              $scope.viewAll = true;
         };
         $scope.nodata = false;
         $scope.getsearch = false;
