@@ -13,10 +13,10 @@
                             <img src="img/search.png" alt="Dharma Productions">
                         </div>
                         <!-- <input type="search" name="name" value="" class="search-date" placeholder="Search"> -->
-                        <ui-select ng-model="filter.search" ng-enter="getNews(filter.search)" style="width: 100%;" title="Choose a country" class="search-drop">
+                        <ui-select ng-model="movie.selected" ng-change="getNews10(movie.selected.name)" style="width: 100%;" title="Choose a country" class="search-drop">
                             <ui-select-match placeholder="Search">{{$select.selected.name}}</ui-select-match>
-                            <ui-select-choices repeat="country in findAllSearchParam | filter: $select.search">
-                                <span ng-bind-html="country | highlight: $select.search"></span>
+                            <ui-select-choices repeat="movie in allMovieName | filter: $select.search">
+                                <span ng-bind-html="movie.name | highlight: $select.search"></span>
                             </ui-select-choices>
                         </ui-select>
                     </div>
@@ -29,18 +29,19 @@
       <option  value="March"><a href="">March</a></option>
 
     </select> -->
-                            <div class="dropdown custom-dropdown">
-                                <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    Month
-                                    <img src="img/select-arrow.png" alt="">
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <li><a href="">Jan</a></li>
-                                    <li><a href="">Feb</a></li>
-                                    <li><a href="">March</a></li>
+    <div class="dropdown custom-dropdown">
+       <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <span ng-if="!getMonth">Month</span>
+          <span ng-if="getMonth">{{getMonth}}</span>
+          <img src="img/select-arrow.png" alt="">
+       </button>
+       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li ng-repeat="data in month"><a ng-click="getNewsMonth(data)">{{data}}</a></li>
+          <!-- <li><a href="">Feb</a></li>
+          <li><a href="">March</a></li>+ -->
 
-                                </ul>
-                            </div>
+       </ul>
+    </div>
                         </div>
                         <div class="display-inline date-select ml15">
                             <!-- <select class="form-control">
@@ -51,20 +52,25 @@
 
                             </select> -->
                             <div class="dropdown custom-dropdown">
-                                <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    Year
-                                    <img src="img/select-arrow.png" alt="">
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <li><a href="">2016</a></li>
-                                    <li><a href="">2015</a></li>
-                                    <li><a href="">2014</a></li>
+                               <button class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                  <span ng-if="!getYear">Year</span>
+                                  <span ng-if="getYear">{{getYear}}</span>
+                                  <img src="img/select-arrow.png" alt="">
+                               </button>
+                               <!-- <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                  Year
+                                  <img src="img/select-arrow.png" alt="">
+                               </button> -->
+                               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                  <li ng-repeat="data in monthYear.year|orderBy:'-'"><a ng-click="getNewsYear(data)">{{data}}</a></li>
+                                  <!-- <li><a href="">2015</a></li>
+                                  <li><a href="">2014</a></li> -->
 
-                                </ul>
+                               </ul>
                             </div>
                         </div>
                         <div class="btn-go display-inline ml15">
-                            <button class="btn" type="submit">Go</button>
+                            <button class="btn" type="submit" ng-click="goSearch(getMonth,getYear)">Go</button>
                         </div>
                     </div>
                 </div>
@@ -72,7 +78,7 @@
         </div>
     </div>
 
-    <section>
+    <section ng-if="!getSearchNews">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -120,6 +126,11 @@ understanding of cinema and life, and little bit baring of her soul which we are
                         <button type="button" name="button"><i class="fa fa-google-plus"></i>google+</button>
                       </div>
                     </div>
+
+
+<!-- ------------------------------related Articles--------------------------------- -->
+
+
                     <!-- <div class="row mt40 pb40">
                       <h1 class="color-white font-hammersmith text-up line45 margin0 ml15">Related Articles</h1>
                       <div class="col-md-4 col-sm-4 col-xs-12 mob-top-em" >
@@ -174,9 +185,90 @@ Of 2015 National Award</h4>
                         </div>
                       </div>
                     </div> -->
+
+<!-- ----------------------------------------End of related Articles-------------------------------------------->
+
                 </div>
             </div>
         </div>
         </div>
     </section>
+
+
+
+<!-- ------------------------------------------------search UI----------------------------------- -->
+
+    <section>
+       <div class="container" ng-if="getSearchNews">
+          <div class="row">
+             <div class="col-xs-12">
+                <div class="all-movies custom-box mob-mt-top">
+                   <div masonry preserve-order masonry-options="{ fitWidth: 'true'}" class="margin-auto">
+                      <div class="masonry-brick" ng-repeat="item in news10 track by $index">
+                        <a ui-sref="news-detail({id:item._id})">
+                         <!-- <div class="masonry-box">
+                            <img ng-src="{{item.image| uploadpath}}" alt="Dharma Production">
+                            <div class="padd10">
+                               <div class="news-title mt10">
+                                  <h4 class="margin0">{{item.title|shorten:50}}</h4>
+                               </div>
+                               <div class="news-date">
+                                  <span class="f12">{{item.date| date:'d MMM y' }}</span>
+                               </div>
+                               <div class="news-descp mt10" ng-bind-html="item.text |shorten:150">
+
+                               </div>
+                            </div>
+                         </div> -->
+                         <div class="masonry-box">
+                     <img ng-src="{{item.image | uploadpath}}" alt="Dharma Production">
+                     <div class="padd10">
+                         <div class="news-title">
+                             <h4 class="margin0">{{item.title}}</h4>
+                         </div>
+                         <div class="news-date">
+                             <span class="f12">{{item.date | date:'dd MMM yyyy'}}</span>
+                         </div>
+                         <div class="news-descp mt10" ng-bind-html="item.text">
+                             <!-- <p>{{item.text}}</p> -->
+                         </div>
+                     </div>
+                 </div>
+               </a>
+                      </div>
+                   </div>
+                   <div class="text-center cast-credit" ng-if="!forViewMore">
+                      <div class="text-center btn-view-news mt40">
+
+                         <a class="btn-1 font-hammersmith btn color-primary" ng-click="ViewMore(myTotal)">
+                            <svg>
+                               <rect x="0" y="0" fill="none" width="100%" height="100%" />
+                            </svg>
+                            VIEW MORE
+                         </a>
+                      </div>
+                   </div>
+                   <!-- <div class="text-center cast-credit" ng-if="!noviewmore">
+                      <div class="text-center btn-view-news mt40">
+
+                         <a class="btn-1 font-hammersmith btn color-primary" ng-click="ViewMore(myTotal)">
+                            <svg>
+                               <rect x="0" y="0" fill="none" width="100%" height="100%" />
+                            </svg>
+                            VIEW MORE{{noviewmore}}
+                         </a>
+                      </div>
+                   </div> -->
+                </div>
+              </div>
+
+    <div ng-if="noNewsFound"><center><strong><h1>No News Found</h1></strong></center></div>
+             </div>
+          </div>
+       </div>
+       <!-- <div ng-if="noNewsFound"><center><strong><h1>No News Found</h1></strong></center></div> -->
+    </section>
+
+<!-- ------------------------------------------------End of search UI----------------------------------- -->
+
 </section>

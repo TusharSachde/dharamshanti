@@ -45,7 +45,7 @@
 
                         <button type="button" class="btn {{classg}}" ng-click="tabchange('wallpapper',7)" ng-class="{'my-disable': movieWallpaper.length<=0}" ng-disabled="movieWallpaper.length<=0">WALLPAPERS </button>
 
-                        <button type="button" class="btn {{classh}}" ng-click="tabchange('awards',8)" ng-class="{'my-disable': MovieAwards.length  == 0}"> AWARDS </button>
+                        <button type="button" class="btn {{classh}}" ng-click="tabchange('awards',8)" ng-class="{'my-disable': MovieAwards.length  == 0}" ng-disabled="MovieAwards.length  == 0"> AWARDS </button>
                     </div>
                 </div>
                 <div class="mob-slider hidden-md hidden-sm hidden-lg visible-xs">
@@ -55,7 +55,7 @@
                             <flex-slider flex-slide="item in tabing track by $index" animation="slide" item-width="120" item-margin="10" animationloop="true" move="2">
 
                                 <li class="text-center mobileMovieTabs">
-                                    <button type="button" class="btn {{item.class}}" ng-click="tabchange(item.tab,item.id)">{{item.name}}</button>
+                                    <button type="button" class="btn {{item.class}}" ng-click="tabchange(item.tab,item.id)" ng-class="{'my-disable': {{item.ngclass}}}" ng-disabled="{{item.ngdisabled}}" >{{item.name}}</button>
                                 </li>
 
                                 <!-- ng-disabled="item.ngdisabled" ng-class="{'my-disable': item.ngclass}" -->
