@@ -19,6 +19,9 @@
                                 <span ng-bind-html="movie.name | highlight: $select.search"></span>
                             </ui-select-choices>
                         </ui-select>
+                        <div class="search-img2" ng-if="searchdata.search" ng-click="viewSearch();">
+                            <img src="img/error3.png" alt="Dharma Productions">
+                        </div>
                     </div>
                     <div class="mt15 mobile-text-center">
                         <div class="display-inline date-select">
