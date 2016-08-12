@@ -1189,6 +1189,7 @@ input.form-control.ui-select-search{
         border: none;
         border-bottom: 1px solid #fff;
         padding: 0 0 5px;
+            font-size: 20px;
     }
     img {
         padding-left: 15px;
@@ -2017,6 +2018,8 @@ height: 50px;
         top: 31px;
     left: -38px;
 padding: 0px;
+    box-shadow: 1px 1px 9px hsla(0, 4%, 32%, 0.23);
+    border:none;
       li{
 &:hover{
   a{
@@ -2048,7 +2051,12 @@ pointer-events: none;
 }
   }
 }
-
+.ui-select-match {
+  outline: 0;
+}
+.btn-default-focus{
+  box-shadow: none;
+}
 @import "main2";
 @import "timeline";
 @import "mobile";
