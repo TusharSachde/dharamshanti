@@ -2073,6 +2073,10 @@ button.navbar-toggle.collapsed {
         }
     }
 }
+.fancybox-overlay {
+    background-color: rgba(0,0,0,.75);
+    background: rgba(0,0,0,.75);
+}
 @import "main2";
 @import "timeline";
 @import "mobile";
