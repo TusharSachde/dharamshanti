@@ -694,8 +694,24 @@
     .data-content p {
         font-size: 14px;
     }
+    .m20-main{
+          margin-top: 20px!important;
+    }
+    .f-50-main{
+      font-size: 50px !important;
+    }
 }
 @media (max-width:480px) {
+  .add-show {
+
+    bottom: 30px;
+  }
+  .f-50-main{
+    font-size: 50px !important;
+  }
+  .m20-main{
+        margin-top: 20px!important;
+  }
     .data-content p {
         font-size: 14px;
     }
@@ -748,8 +764,8 @@
         margin-left: 7px;
     }
     .pb-short {
-        padding-top: 25px;
-        padding-bottom: 50px;
+      padding-top: 60px;
+padding-bottom: 0px;
     }
     .all-tabs .btn-group button {
         font-size: 14px;

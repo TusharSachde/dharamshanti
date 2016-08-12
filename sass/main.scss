@@ -2058,6 +2058,21 @@ pointer-events: none;
 .btn-default-focus{
   box-shadow: none;
 }
+.navbar-default .navbar-toggle:focus {
+    background-color: #fff;
+    span{
+      background-color:$brand-primary !important;
+    }
+}
+button.navbar-toggle.collapsed {
+    background: transparent !important;
+    &:focus {
+
+        span{
+          background-color:$white !important;
+        }
+    }
+}
 @import "main2";
 @import "timeline";
 @import "mobile";

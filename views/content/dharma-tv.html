@@ -75,8 +75,8 @@
                                     </div>
                                 </li>
                             </flex-slider>
-                            <div ng-if="videos.length<=4" class="row">
-                              <div class="col-md-3"  ng-repeat="item in videos track by $index">
+                            <div ng-if="videos.length<=4" class="row ">
+                              <div class="col-md-3 hidden-xs"  ng-repeat="item in videos track by $index">
                               <li class="makePointer">
                                   <div class="video-box" ui-sref="tv-inside({id:item.movie._id})">
                                       <div class="video-slide-img em-box">
@@ -91,7 +91,27 @@
                                   </div>
                               </li>
                               </div>
+                              <div class="hidden-md hidden-lg hidden-sm visible-xs">
+                              <flex-slider flex-slide="item in videos track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
+                                  <li class="makePointer">
+                                      <div class="video-box" ui-sref="tv-inside({id:item.movie._id})">
+                                          <div class="video-slide-img em-box">
+                                              <a >
+                                                  <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" ng-if="(item.thumbnail || item.thumbnail != '')">
+                                                  <img ng-src="{{item.url|youtubethumb}}" alt="Dharma Productions" class="img-responsive width100" ng-if="!(item.thumbnail || item.thumbnail != '')">
+                                              </a>
+                                          </div>
+                                          <div class="video-names mt10">
+                                              <span class="color-white text-cap">{{item.title | shorten : 60}}</span>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </flex-slider>
                             </div>
+                            </div>
+
+
+
                         </div>
                         <div class="btn-view-all mt40 mobile-text-center">
 
