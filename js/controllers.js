@@ -540,9 +540,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         // console.log('movieSynopsisAndNote', $scope.movieSynopsisAndNote);
         // console.log('sbhjdbfhjsvdfhsvdhfvsdhv',$scope.movieSynopsisAndNote);
-        $timeout(function() {
-            console.log($scope.movieSynopsisAndNote.synopsis);
-            $scope.tabing = [{
+        // $timeout(function() {
+        //     console.log($scope.movieSynopsisAndNote.synopsis);
+        $scope.tabing = [{
                 name: "Synopsis",
                 class: "classa",
                 tab: "synopsis",
@@ -551,7 +551,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 ngdisabled: "movieSynopsisAndNote.synopsis ==''"
             }, {
                 name: "CAST & CREDITS",
-                class: "classsb",
+                class: "classb",
                 tab: "cast",
                 id: "2",
                 ngclass: "movieCast.length<=0",
@@ -599,7 +599,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 ngclass: "!equals({}, MovieAwards)",
                 ngdisabled: "!equals({}, MovieAwards)"
             }]
-        }, 1000);
+            // }, 1000);
 
         $(window).scroll(function() {
             if ($(this).scrollTop() > 500) {
@@ -672,7 +672,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.tabchanges = function(tabs, a) {
             //        console.log(tab);
             $scope.tabs = tabs;
-            if (a == 1) {
+            if (a == 2) {
 
                 $scope.classp = "active-list";
                 $scope.classv = '';
@@ -695,10 +695,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.classg = '';
         $scope.classh = '';
 
+
+
+
         $scope.tabchange = function(tab, a) {
-            //        console.log(tab);
+            console.log(tab);
+            console.log(a);
+            console.log($scope.tabing);
             $scope.tab = tab;
             if (a == 1) {
+
 
                 $scope.classa = "active-list";
                 $scope.classb = '';
@@ -780,7 +786,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.classh = 'active-list';
             }
         };
-
+        $scope.tabchangeMob = function(selected, id) {
+            console.log("tabchangeMob", selected, id);
+            $scope.tab = selected;
+            _.each($scope.tabing, function(key) {
+                key.activemob = false;
+            });
+            $scope.tabing[id].activemob = true;
+        };
+        $scope.tabchangeMob($scope.tabing[0].tab, 0);
         $scope.cast = [{
             img: "img/cast/c1.png",
             name: "Ranbir Kapoor",
@@ -1650,7 +1664,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.viewAll = false;
 
         $scope.showViewAll = function() {
-              $scope.viewAll = true;
+            $scope.viewAll = true;
         };
         $scope.nodata = false;
         $scope.getsearch = false;
