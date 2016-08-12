@@ -19,7 +19,7 @@
                                 <span ng-bind-html="movie.name | highlight: $select.search"></span>
                             </ui-select-choices>
                         </ui-select>
-                        <div class="search-img2" ng-if="searchdata.search" ng-click="viewSearch();">
+                        <div class="search-img2" ng-if="crossdisplay" ng-click="closeCross();">
                             <img src="img/error3.png" alt="Dharma Productions">
                         </div>
                     </div>

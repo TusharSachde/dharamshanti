@@ -932,7 +932,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
 
     })
-    .controller('NewsEventsCtrl', function($scope, TemplateService, NavigationService) {
+    .controller('NewsEventsCtrl', function($scope, TemplateService, NavigationService,$state) {
         $scope.template = TemplateService.changecontent("news-events");
         $scope.menutitle = NavigationService.makeactive("News Events");
         TemplateService.title = $scope.menutitle;
@@ -947,6 +947,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.filter.month = 0;
         $scope.noviewmore = false;
         $scope.noNewsFound = false;
+        $scope.movie = {};
 
         // $scope.getNews = function(input) {
         //
@@ -1003,8 +1004,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         }
         callMe();
+
+        $scope.closeCross=function(){
+          // $state.reload();
+          $scope.filter.search = '';
+          $scope.movie.selected ="";
+          $scope.crossdisplay=false;
+            callMe();
+        }
+        $scope.crossdisplay=false;
         $scope.getNews10 = function(name) {
+            console.log(name);
+          $scope.crossdisplay=true;
             $scope.filter.search = name;
+
             callMe();
         };
         $scope.getNewsYear = function(year) {
@@ -1219,8 +1232,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 TemplateService.removeLoader();
             });
         }
-
+        $scope.movie={};
+  $scope.crossdisplay=true;
+        $scope.closeCross=function(){
+          // $state.reload();
+          $scope.filter.search = '';
+          $scope.movie.selected ="";
+          $scope.crossdisplay=false;
+            callMe();
+        }
         $scope.getNews10 = function(name) {
+          $scope.crossdisplay=true;
             $scope.filter.search = name;
             console.log($scope.filter.search);
             callMe();
