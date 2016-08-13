@@ -401,11 +401,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             TemplateService.removeLoader();
         });
 
+
         $scope.searchdata = {};
         $scope.searchdata.search = "";
         $scope.nodata = false;
         $scope.getsearch = false;
         // $scope.searchdata.search = [];
+        if($stateParams.search){
+          $scope.searchdata.search=$stateParams.search;
+      }
         $scope.viewSearch = function() {
             $scope.searchdata.search = "";
             // $scope.getsearch = false;
@@ -415,7 +419,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.allvideos = [];
 
     })
-    .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService, $uibModal, $stateParams, $filter, $window, $timeout) {
+    .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService, $uibModal, $stateParams, $filter, $window, $timeout, $state) {
         $scope.template = TemplateService.changecontent("movie-inside");
         $scope.menutitle = NavigationService.makeactive("Movie Inside");
         TemplateService.title = $scope.menutitle;
@@ -443,8 +447,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         NavigationService.getMovieGal($stateParams.id, function(data) {
             console.log('MovieGal1', data);
-            $scope.MovieGal = data.data.gallery;
-            console.log($scope.MovieGal);
+            $scope.MovieGal = data.data[0].gallery;
             TemplateService.removeLoader();
             // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
             // console.log('chunk',$scope.MovieGal10);
@@ -460,7 +463,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.movieVideo = data.data.videos;
             console.log('getMovieVideo', $scope.movieVideo);
             $scope.movieVideo10 = _.chunk($scope.movieVideo, 6);
-            console.log('movieVideo1000000000000000000', $scope.movieVideo10);
             TemplateService.removeLoader();
         });
 
@@ -486,6 +488,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.movieSynopsisAndNote = [];
 
         NavigationService.getMovieSynopsisAndNote($stateParams.id, function(data) {
+          $scope.myid=$stateParams.id;
             $scope.movieSynopsisAndNote = data.data;
             console.log('movieSynopsisAndNote', $scope.movieSynopsisAndNote);
             TemplateService.removeLoader();
@@ -548,56 +551,64 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 tab: "synopsis",
                 id: "1",
                 ngclass: "movieSynopsisAndNote.synopsis ==''",
-                ngdisabled: "movieSynopsisAndNote.synopsis ==''"
+                ngdisabled: "movieSynopsisAndNote.synopsis ==''",
+                index:0
             }, {
                 name: "CAST & CREDITS",
                 class: "classb",
                 tab: "cast",
                 id: "2",
                 ngclass: "movieCast.length<=0",
-                ngdisabled: "movieCast.length<=0"
+                ngdisabled: "movieCast.length<=0",
+                index:1
             }, {
                 name: "News",
                 class: "classc",
                 tab: "news",
                 id: "3",
                 ngclass: "movieNews.length<=0",
-                ngdisabled: "movieNews.length<=0"
+                ngdisabled: "movieNews.length<=0",
+                index:2
             }, {
                 name: "Gallery",
                 class: "classd",
                 tab: "gallery",
                 id: "4",
                 ngclass: "MovieGal.length<=0",
-                ngdisabled: "MovieGal.length<=0"
+                ngdisabled: "MovieGal.length<=0",
+                index:3
             }, {
                 name: "behind the scenes",
                 class: "classe",
                 tab: "scene",
                 id: "5",
                 ngclass: "movieBehindTheScenes.length<=0",
-                ngdisabled: "movieBehindTheScenes.length<=0"
+                ngdisabled: "movieBehindTheScenes.length<=0",
+                index:4
             }, {
                 name: "VIDEOS",
                 class: "classf",
                 tab: "video",
                 id: "6",
                 ngclass: "movieVideo10.length<=0",
-                ngdisabled: "movieVideo10.length<=0"
+                ngdisabled: "movieVideo10.length<=0",
+                index:5
             }, {
                 name: "WALLPAPERS",
                 class: "classg",
                 tab: "wallpapper",
                 id: "7",
                 ngclass: "movieWallpaper.length<=0",
-                ngdisabled: "movieWallpaper.length<=0"
+                ngdisabled: "movieWallpaper.length<=0",
+                index:6
             }, {
                 name: "AWARDS",
                 class: "classh",
                 tab: "awards",
                 id: "8",
                 ngclass: "!equals({}, MovieAwards)",
-                ngdisabled: "!equals({}, MovieAwards)"
+                ngdisabled: "!equals({}, MovieAwards)",
+                index:7
             }]
             // }, 1000);
 
@@ -697,8 +708,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 
+        $scope.tabchange = function(tab, a, id) {
 
-        $scope.tabchange = function(tab, a) {
             console.log(tab);
             console.log(a);
             console.log($scope.tabing);
@@ -789,12 +800,28 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.tabchangeMob = function(selected, id) {
             console.log("tabchangeMob", selected, id);
             $scope.tab = selected;
+            $scope.tabid = id;
             _.each($scope.tabing, function(key) {
                 key.activemob = false;
             });
             $scope.tabing[id].activemob = true;
         };
         $scope.tabchangeMob($scope.tabing[0].tab, 0);
+        $scope.tabchangeByURl = function (text) {
+          var id =_.find($scope.tabing,function (key) {
+            return key.tab == text;
+          }).id;
+          var tabindex =_.find($scope.tabing,function (key) {
+            return key.tab == text;
+          }).index;
+          $scope.tabchange(text,id);
+          $scope.tabchangeMob(text,tabindex);
+
+        }
+        if($stateParams.tab){
+          $scope.tabchangeByURl($stateParams.tab);
+
+        }
         $scope.cast = [{
             img: "img/cast/c1.png",
             name: "Ranbir Kapoor",
@@ -932,7 +959,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
 
     })
-    .controller('NewsEventsCtrl', function($scope, TemplateService, NavigationService,$state) {
+    .controller('NewsEventsCtrl', function($scope, TemplateService, NavigationService, $state, $filter) {
         $scope.template = TemplateService.changecontent("news-events");
         $scope.menutitle = NavigationService.makeactive("News Events");
         TemplateService.title = $scope.menutitle;
@@ -980,11 +1007,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 } else {
                     $scope.noviewmore = false;
                 }
-                $scope.myTotal = data.data.total;
+                // $scope.myTotal = data.data.total;
                 console.log(data.data.total);
                 if (data.value) {
                     console.log(data.data.data);
-                    if (data.data.data && data.data.data.length > 0) {
+                    if (data.data.data.length > 0) {
                         _.each(data.data.data, function(n) {
                             n.date = new Date(n.date);
                             $scope.news10.push(n);
@@ -1005,17 +1032,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
         callMe();
 
-        $scope.closeCross=function(){
-          // $state.reload();
-          $scope.filter.search = '';
-          $scope.movie.selected ="";
-          $scope.crossdisplay=false;
+        $scope.closeCross = function() {
+            // $state.reload();
+            $scope.filter.search = '';
+            $scope.movie.selected = "";
+            $scope.crossdisplay = false;
             callMe();
         }
-        $scope.crossdisplay=false;
+        $scope.crossdisplay = false;
         $scope.getNews10 = function(name) {
             console.log(name);
-          $scope.crossdisplay=true;
+            $scope.crossdisplay = true;
             $scope.filter.search = name;
 
             callMe();
@@ -1067,12 +1094,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getMonthYear(function(data) {
             $scope.monthYear = data.data;
             $scope.month = data.data.month;
+
+
             $scope.month = $scope.month.sort();
             $scope.month = $scope.month.sort(function(a, b) {
                 return b - a
             });
             $scope.month = $scope.month.reverse();
-            console.log('$scope.monthYear', $scope.monthYear);
+            // $scope.month = $filter('getMonthAlpha')($scope.month);
+            console.log('$scope.month', $scope.month);
         })
 
         // NavigationService.findAllSearchParam(function(data) {
@@ -1200,18 +1230,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.getSearchNews = true;
             $scope.news10 = [];
             NavigationService.getNewsHomeSearch($scope.filter, function(data) {
+                $scope.myTotal = data.data.total;
+                console.log($scope.myTotal);
                 if ($scope.filter.pagesize >= $scope.myTotal) {
                     $scope.forViewMore = true;
                 } else {
                     $scope.forViewMore = false;
                 }
-                $scope.myTotal = data.data.total;
+
                 console.log(data);
                 console.log($scope.filter);
                 if (data.value) {
 
-                    console.log(data.data.data);
-                    if (data.data.data && data.data.data.length > 0) {
+                    console.log(data.data.data.length);
+                    if (data.data.data.length > 0) {
+                        $scope.noNewsFound = false;
                         console.log('herefghfghgh');
                         _.each(data.data.data, function(n) {
                             n.date = new Date(n.date);
@@ -1232,17 +1265,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 TemplateService.removeLoader();
             });
         }
-        $scope.movie={};
-  $scope.crossdisplay=true;
-        $scope.closeCross=function(){
-          // $state.reload();
-          $scope.filter.search = '';
-          $scope.movie.selected ="";
-          $scope.crossdisplay=false;
+        $scope.movie = {};
+        $scope.crossdisplay = false;
+        $scope.closeCross = function() {
+            // $state.reload();
+            $scope.filter.search = '';
+            $scope.movie.selected = "";
+            $scope.crossdisplay = false;
             callMe();
         }
         $scope.getNews10 = function(name) {
-          $scope.crossdisplay=true;
+            $scope.crossdisplay = true;
             $scope.filter.search = name;
             console.log($scope.filter.search);
             callMe();
@@ -1344,14 +1377,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         };
         $scope.callAll();
-        $scope.doSearch = function() {
-            console.log($scope.searchdata.search);
-            console.log(Allvideos);
-            var data = $filter('filter')(Allvideos, $scope.searchdata.search);
-            console.log(data);
-            TemplateService.getLoader();
-            groupIt(data);
-        };
+        // if($stateParams.search){
+        //   $scope.searchdata.search=$stateParams.search;
+          $scope.doSearch = function() {
+              console.log($scope.searchdata.search);
+              console.log(Allvideos);
+              var data = $filter('filter')(Allvideos, $scope.searchdata.search);
+              console.log(data);
+              TemplateService.getLoader();
+              groupIt(data);
+          };
+        // }
+
 
         function groupIt(alldata) {
             var videos = _.groupBy(alldata, "movie.name");
@@ -1360,6 +1397,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(videos);
             $scope.AllDharmatv = videos;
         }
+        console.log('heeeeeeeeeeeeeeeeeeeee',$scope.searchdata.search);
         // NavigationService.getAllDharmatvSearch({search:$stateParams.search}, function(data) {
         //     console.log("mydata", data);
         //     console.log('statepar', $scope.searchdata.search);

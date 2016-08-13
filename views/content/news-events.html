@@ -55,11 +55,11 @@
                             <div class="dropdown custom-dropdown">
                                 <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                     <span ng-if="!getMonth">Month</span>
-                                    <span ng-if="getMonth">{{getMonth}}</span>
+                                    <span ng-if="getMonth">{{getMonth | getMonthAlpha}}</span>
                                     <img src="img/select-arrow.png" alt="">
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <li ng-repeat="data in month"><a ng-click="getNewsMonth(data)">{{data}}</a></li>
+                                    <li ng-repeat="data in month"><a ng-click="getNewsMonth(data)">{{data| getMonthAlpha}}</a></li>
                                     <!-- <li><a href="">Feb</a></li>
                            <li><a href="">March</a></li>+ -->
 

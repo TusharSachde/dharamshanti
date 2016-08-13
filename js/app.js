@@ -44,6 +44,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'TvInsideCtrl'
         })
+        .state('tv-insideSearch', {
+            url: "/tv-inside/:id/:search",
+            templateUrl: "views/template.html",
+            controller: 'TvInsideCtrl'
+        })
         .state('dharma-world', {
             url: "/dharma-world",
             templateUrl: "views/template.html",
@@ -71,6 +76,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
         })
         .state('movie-inside', {
             url: "/movie-inside/:id",
+            templateUrl: "views/template.html",
+            controller: 'MovieInsideCtrl'
+        })
+        .state('movie-insideTab', {
+            url: "/movie-inside/:id/:tab",
             templateUrl: "views/template.html",
             controller: 'MovieInsideCtrl'
         })
@@ -148,6 +158,59 @@ firstapp.filter('shorten', function() {
                 return value;
             } else {
                 return value.slice(0, limit - 2) + "..";
+
+            }
+
+    }
+})
+firstapp.filter('getMonthAlpha', function() {
+    return function(value) {
+      var month="";
+        if (value){
+          switch(value){
+            case 1:
+            month="Jan";
+            break;
+            case 2:
+            month="Feb";
+            break;
+            case 3:
+            month="Mar";
+            break;
+            case 4:
+            month="Apr";
+            break;
+            case 5:
+            month="May";
+            break;
+            case 6:
+            month="Jun";
+            break;
+            case 7:
+            month="Jul";
+            break;
+            case 8:
+            month="Aug";
+            break;
+            case 9:
+            month="Sept";
+            break;
+            case 10:
+            month="Oct";
+            break;
+            case 11:
+            month="Nov";
+            break;
+            case 12:
+            month="Dec";
+            break;
+            case 'All':
+            month="All";
+            break;
+          };
+                return month;
+            } else {
+                return month;
 
             }
 
