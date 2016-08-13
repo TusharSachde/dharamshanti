@@ -16,20 +16,22 @@ var uploadurl = imgurl;
 var navigationservice = angular.module('navigationservice', [])
 
 .factory('NavigationService', function($http) {
-  var navigation = [{
-    name: "Overview",
-    classis: "active",
-    anchor: "overview",
-    subnav: [{
-      name: "About Us",
+  var navigation = [
+    {
+      name: "Overview",
       classis: "active",
-      anchor: "overview",
-    },{
-      name: "Dharma Journey",
-      classis: "active",
-      anchor: "dharma-journey",
-    }]
-  },
+      noanchor: "overview",
+      subnav: []
+      // subnav: [{
+      //   name: "About Us",
+      //   classis: "active",
+      //   anchor: "overview",
+      // },{
+      //   name: "Dharma Journey",
+      //   classis: "active",
+      //   anchor: "dharma-journey",
+      // }]
+    },
   {
     name: "Movies",
     classis: "active",
@@ -177,6 +179,17 @@ console.log(email);
     getMovieNews: function(id, callback) {
            $http({
             url: adminurl + 'Movie/getMovieNews',
+            method: 'POST',
+            withCredentials: true,
+            data: {
+                _id: id
+            }
+
+        }).success(callback);
+    },
+    getMovieFinal: function(id, callback) {
+           $http({
+            url: adminurl + 'Movie/getOneMovie',
             method: 'POST',
             withCredentials: true,
             data: {

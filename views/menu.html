@@ -1,6 +1,7 @@
 <ul class="nav navbar-nav mt18 custom-menu" ng-controller="headerctrl">
   <li ng-repeat="menu in navigation" class="{{menu.classis}} hidden-xs">
     <a ui-sref="{{menu.anchor}}" ng-if="menu.anchor" class="text-up color-white font-hammersmith">{{menu.name}}</a>
+    <a  ng-if="menu.noanchor" class="text-up color-white font-hammersmith">{{menu.name}}</a>
     <a href="{{menu.link}}" ng-if="menu.link">{{menu.name}}</a>
     <ul class="dropdown-menu" ng-if="menu.subnav!='';">
       <li ng-repeat="submenu in menu.subnav">

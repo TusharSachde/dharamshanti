@@ -62,7 +62,7 @@
                                 <img ng-src="{{item.upcomingSmall|uploadpath}}" alt="Dharma Productions" class="img-responsive"></a>
                         </div>
                         <div class="movie-names">
-                            <h4 class="text-up color-grey">{{item.name|shorten : 20}}<br>({{item.year}})</h4>
+                            <h4 class="text-up color-grey">{{item.name|shorten : 20}}<br>({{item.month|getMonthAlpha}} {{item.year}})</h4>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                                     <img ng-src="{{item.upcomingSmall|uploadpath}}" alt="Dharma Productions" class="img-responsive">
                                 </div>
                                 <div class="movie-names">
-                                    <h4 class="text-up color-grey">{{item.name|shorten : 20}}<br>({{item.year}})</h4>
+                                    <h4 class="text-up color-grey">{{item.name|shorten : 20}}<br>({{item.month|getMonthAlpha}} {{item.year}})</h4>
                                 </div>
                             </a>
                         </li>
@@ -101,7 +101,7 @@
                             <img ng-src="{{item.recentSmall|uploadpath}}" alt="Dharma Productions" class="img-responsive">
                         </div>
                         <div class="movie-names">
-                            <h4 class="text-up color-grey">{{item.name|shorten : 20}}<br>({{item.year}})</h4>
+                            <h4 class="text-up color-grey">{{item.name|shorten : 20}}<br>({{item.month|getMonthAlpha}} {{item.year}})</h4>
                         </div>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                                     <img ng-src="{{item.recentSmall|uploadpath}}" alt="Dharma Productions" class="img-responsive">
                                 </div>
                                 <div class="movie-names">
-                                    <h4 class="text-up color-grey">{{item.name|shorten : 20}}<br>({{item.year}})</h4>
+                                    <h4 class="text-up color-grey">{{item.name|shorten : 20}}<br>({{item.month|getMonthAlpha}} {{item.year}})</h4>
                                 </div>
                             </a>
                         </li>
