@@ -407,9 +407,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.nodata = false;
         $scope.getsearch = false;
         // $scope.searchdata.search = [];
-        if($stateParams.search){
-          $scope.searchdata.search=$stateParams.search;
-      }
+        if ($stateParams.search) {
+            $scope.searchdata.search = $stateParams.search;
+        }
         $scope.viewSearch = function() {
             $scope.searchdata.search = "";
             // $scope.getsearch = false;
@@ -428,94 +428,51 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.animationsEnabled = true;
         $scope.viewCastText = "VIEW";
         TemplateService.removeLoaderOn(10);
-
-        NavigationService.getMovieNews($stateParams.id, function(data) {
-            console.log('getMovieNews', data);
-            $scope.movieNews = data.data;
-            _.each($scope.movieNews, function(n) {
-                n.date = new Date(n.date);
-
-            });
-            TemplateService.removeLoader();
-        });
-
-        // $scope.tabs = {["tabname":"Synopsis",
-        //                 "class":"classa",
-        //                 "ngclass":"{'my-disable':movieSynopsisAndNote.synopsis.length<=0}",
-        //                 "ngdissable":$scope.movieSynopsisAndNote.synopsis.length<=0
-        // ]}
-
-        NavigationService.getMovieGal($stateParams.id, function(data) {
-            console.log('MovieGal1', data);
-            $scope.MovieGal = data.data[0].gallery;
-            TemplateService.removeLoader();
-            // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
-            // console.log('chunk',$scope.MovieGal10);
-        });
-
-        NavigationService.getMovieBehindTheScenes($stateParams.id, function(data) {
-            $scope.movieBehindTheScenes = data.data.behindTheScenes;
-            console.log('getMovieBehindTheScenes', $scope.movieBehindTheScenes);
-            TemplateService.removeLoader();
-        });
-        NavigationService.getMovieVideo($stateParams.id, function(data) {
-            $scope.getMovieId = $stateParams.id;
-            $scope.movieVideo = data.data.videos;
-            console.log('getMovieVideo', $scope.movieVideo);
-            $scope.movieVideo10 = _.chunk($scope.movieVideo, 6);
-            TemplateService.removeLoader();
-        });
-
-        console.log('rresdfghjdfghn', $scope.currenturl);
         $scope.getAllvideo = false;
-        $scope.moreVideo = function() {
-            $scope.getAllvideo = true;
-            NavigationService.getMovieVideo($stateParams.id, function(data) {
-                $scope.movieVideo = data.data.videos;
-                console.log('getMovieVideo', $scope.movieVideo);
-                // TemplateService.removeLoader();
-            });
-        }
-        NavigationService.findOne($stateParams.id, function(data) {
-            $scope.moviefindOne = data.data;
+        $scope.isSubCast = false;
+        NavigationService.newGetOneMovie($stateParams.id, function(data) {
+            $scope.myid = $stateParams.id;
+            $scope.moviefindOne = data.data.movie;
             $scope.moviefindOne.backgroundImage = $filter('uploadpath')($scope.moviefindOne.backgroundImage);
             $scope.moviefindOne.cutImage2 = $filter('uploadpath')($scope.moviefindOne.cutImage2);
             $scope.moviefindOne.cutImage = $filter('uploadpath')($scope.moviefindOne.cutImage);
             console.log($scope.moviefindOne.cutImage2);
             console.log('moviefindOne', $scope.moviefindOne);
             TemplateService.removeLoader();
-        });
-        $scope.movieSynopsisAndNote = [];
-
-        NavigationService.getMovieSynopsisAndNote($stateParams.id, function(data) {
-          $scope.myid=$stateParams.id;
-            $scope.movieSynopsisAndNote = data.data;
-            console.log('movieSynopsisAndNote', $scope.movieSynopsisAndNote);
-            TemplateService.removeLoader();
-        });
-        console.log('after', $scope.movieSynopsisAndNote);
-        $scope.MovieAwards = [];
-        NavigationService.getMovieAwards($stateParams.id, function(data) {
-            if (_.isArray(data.data)) {
-                $scope.MovieAwards = data.data;
-            }
-
-            console.log('MovieAwards', $scope.MovieAwards);
-            TemplateService.removeLoader();
-            // $scope.MovieAwards10 = _.groupBy($scope.MovieAwards, "title", "year");
-            // console.log('MovieAwards', $scope.MovieAwards10);
-
-        });
-        $scope.isSubCast = false;
-        NavigationService.getMovieCast($stateParams.id, function(data) {
-            $scope.movieCast = data.data.cast;
+            $scope.getOneMovie = data.data;
+            // TemplateService.removeLoader();
+            $scope.movieCast = data.data.movie.cast;
             _.each($scope.movieCast, function(n) {
                 if (n.type == 'Sub-cast') {
                     $scope.isSubCast = true;
                 }
+                TemplateService.removeLoader();
+                $scope.movieCrew = data.data.crew;
+                TemplateService.removeLoader();
+                $scope.MovieGal = data.data.gallery;
+                TemplateService.removeLoader();
+                $scope.movieBehindTheScenes = data.data.behindTheScenes;
+                TemplateService.removeLoader();
+                $scope.movieVideo = data.data.videos;
+                console.log('getMovieVideo', $scope.movieVideo);
+                $scope.movieVideo10 = _.chunk($scope.movieVideo, 6);
+                TemplateService.removeLoader();
+                $scope.movieWallpaper = data.data.wallpaper;
+                TemplateService.removeLoader();
+                $scope.movieNews = data.data.news;
+                    _.each($scope.movieNews, function(n) {
+                        n.date = new Date(n.date);
+                    });
+                TemplateService.removeLoader();
+                if (_.isArray(data.data.award)) {
+                    $scope.MovieAwards = data.data.award;
+                }
+                TemplateService.removeLoader();
+
             })
-            TemplateService.removeLoader();
-        });
+            // TemplateService.removeLoader();
+        })
+
         $scope.subCast = false;
         $scope.viewAllCast = function() {
             $scope.subCast = !$scope.subCast;
@@ -524,27 +481,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             } else {
                 $scope.viewCastText = "VIEW";
             }
-            // NavigationService.getMovieCast($stateParams.id, function(data) {
-            //     $scope.movieCast = data.data.cast;
-            //     console.log('movieCast', $scope.movieCast);
-            // });
         }
-
-        NavigationService.getMovieCrew($stateParams.id, function(data) {
-            $scope.movieCrew = data.data.crew;
-            console.log('movieCrew', $scope.movieCrew);
-            TemplateService.removeLoader();
-        });
-        NavigationService.getMovieWallpaper($stateParams.id, function(data) {
-            $scope.movieWallpaper = data.data.wallpaper;
-            console.log('movieWallpaper', $scope.movieWallpaper);
-            TemplateService.removeLoader();
-        });
-
-        // console.log('movieSynopsisAndNote', $scope.movieSynopsisAndNote);
-        // console.log('sbhjdbfhjsvdfhsvdhfvsdhv',$scope.movieSynopsisAndNote);
-        // $timeout(function() {
-        //     console.log($scope.movieSynopsisAndNote.synopsis);
         $scope.tabing = [{
                 name: "Synopsis",
                 class: "classa",
@@ -552,7 +489,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 id: "1",
                 ngclass: "movieSynopsisAndNote.synopsis ==''",
                 ngdisabled: "movieSynopsisAndNote.synopsis ==''",
-                index:0
+                index: 0
             }, {
                 name: "CAST & CREDITS",
                 class: "classb",
@@ -560,7 +497,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 id: "2",
                 ngclass: "movieCast.length<=0",
                 ngdisabled: "movieCast.length<=0",
-                index:1
+                index: 1
             }, {
                 name: "News",
                 class: "classc",
@@ -568,7 +505,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 id: "3",
                 ngclass: "movieNews.length<=0",
                 ngdisabled: "movieNews.length<=0",
-                index:2
+                index: 2
             }, {
                 name: "Gallery",
                 class: "classd",
@@ -576,7 +513,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 id: "4",
                 ngclass: "MovieGal.length<=0",
                 ngdisabled: "MovieGal.length<=0",
-                index:3
+                index: 3
             }, {
                 name: "behind the scenes",
                 class: "classe",
@@ -584,7 +521,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 id: "5",
                 ngclass: "movieBehindTheScenes.length<=0",
                 ngdisabled: "movieBehindTheScenes.length<=0",
-                index:4
+                index: 4
             }, {
                 name: "VIDEOS",
                 class: "classf",
@@ -592,7 +529,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 id: "6",
                 ngclass: "movieVideo10.length<=0",
                 ngdisabled: "movieVideo10.length<=0",
-                index:5
+                index: 5
             }, {
                 name: "WALLPAPERS",
                 class: "classg",
@@ -600,7 +537,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 id: "7",
                 ngclass: "movieWallpaper.length<=0",
                 ngdisabled: "movieWallpaper.length<=0",
-                index:6
+                index: 6
             }, {
                 name: "AWARDS",
                 class: "classh",
@@ -608,7 +545,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 id: "8",
                 ngclass: "!equals({}, MovieAwards)",
                 ngdisabled: "!equals({}, MovieAwards)",
-                index:7
+                index: 7
             }]
             // }, 1000);
 
@@ -807,19 +744,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.tabing[id].activemob = true;
         };
         $scope.tabchangeMob($scope.tabing[0].tab, 0);
-        $scope.tabchangeByURl = function (text) {
-          var id =_.find($scope.tabing,function (key) {
-            return key.tab == text;
-          }).id;
-          var tabindex =_.find($scope.tabing,function (key) {
-            return key.tab == text;
-          }).index;
-          $scope.tabchange(text,id);
-          $scope.tabchangeMob(text,tabindex);
+        $scope.tabchangeByURl = function(text) {
+            var id = _.find($scope.tabing, function(key) {
+                return key.tab == text;
+            }).id;
+            var tabindex = _.find($scope.tabing, function(key) {
+                return key.tab == text;
+            }).index;
+            $scope.tabchange(text, id);
+            $scope.tabchangeMob(text, tabindex);
 
         }
-        if($stateParams.tab){
-          $scope.tabchangeByURl($stateParams.tab);
+        if ($stateParams.tab) {
+            $scope.tabchangeByURl($stateParams.tab);
 
         }
         $scope.cast = [{
@@ -1379,14 +1316,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.callAll();
         // if($stateParams.search){
         //   $scope.searchdata.search=$stateParams.search;
-          $scope.doSearch = function() {
-              console.log($scope.searchdata.search);
-              console.log(Allvideos);
-              var data = $filter('filter')(Allvideos, $scope.searchdata.search);
-              console.log(data);
-              TemplateService.getLoader();
-              groupIt(data);
-          };
+        $scope.doSearch = function() {
+            console.log($scope.searchdata.search);
+            console.log(Allvideos);
+            var data = $filter('filter')(Allvideos, $scope.searchdata.search);
+            console.log(data);
+            TemplateService.getLoader();
+            groupIt(data);
+        };
         // }
 
 
@@ -1397,7 +1334,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(videos);
             $scope.AllDharmatv = videos;
         }
-        console.log('heeeeeeeeeeeeeeeeeeeee',$scope.searchdata.search);
+        console.log('heeeeeeeeeeeeeeeeeeeee', $scope.searchdata.search);
         // NavigationService.getAllDharmatvSearch({search:$stateParams.search}, function(data) {
         //     console.log("mydata", data);
         //     console.log('statepar', $scope.searchdata.search);

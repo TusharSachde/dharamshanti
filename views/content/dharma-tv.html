@@ -57,12 +57,12 @@
                             <h1 class="ml-7 color-primary font-hammersmith line45 f55 text-up">{{movie}}</h1>
                         </div>
                         <div class="title hidden-lg hidden-md hidden-sm visible-xs">
-                            <h1 class="ml-7 color-primary font-hammersmith line45 f55 text-up">{{movie | shorten : 20}}</h1>
+                            <h1 class="ml-7 color-primary font-hammersmith line45 f55 text-up">{{movie | shorten : 20}}1111111</h1>
                         </div>
                         <div class="upcoming-slider tv-all-slider text-shadow cl-flex">
                             <flex-slider flex-slide="item in videos track by $index" ng-if="videos.length>4" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
                                 <li class="makePointer">
-                                    <div class="video-box" ui-sref="tv-inside({id:item.movie._id})">
+                                    <div class="video-box" ui-sref="tv-insideSearch({id:item.movie._id,search:searchdata.search})">
                                         <div class="video-slide-img em-box">
                                             <a >
                                                 <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" ng-if="(item.thumbnail || item.thumbnail != '')">
@@ -78,7 +78,7 @@
                             <div ng-if="videos.length<=4" class="row ">
                               <div class="col-md-3 hidden-xs"  ng-repeat="item in videos track by $index">
                               <li class="makePointer">
-                                  <div class="video-box" ui-sref="tv-inside({id:item.movie._id})">
+                                  <div class="video-box" ui-sref="tv-insideSearch({id:item.movie._id,search:searchdata.search})">
                                       <div class="video-slide-img em-box">
                                           <a >
                                               <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" ng-if="(item.thumbnail || item.thumbnail != '')">
@@ -94,7 +94,7 @@
                               <div class="hidden-md hidden-lg hidden-sm visible-xs">
                               <flex-slider flex-slide="item in videos track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
                                   <li class="makePointer">
-                                      <div class="video-box" ui-sref="tv-inside({id:item.movie._id})">
+                                      <div class="video-box" ui-sref="tv-insideSearch({id:item.movie._id,search:searchdata.search})">
                                           <div class="video-slide-img em-box">
                                               <a >
                                                   <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" ng-if="(item.thumbnail || item.thumbnail != '')">

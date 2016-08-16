@@ -243,9 +243,9 @@ console.log(email);
 
         }).success(callback);
     },
-    getMovieSynopsisAndNote: function(id, callback) {
+    newGetOneMovie: function(id, callback) {
            $http({
-            url: adminurl + 'Movie/getMovieSynopsisAndNote',
+            url: adminurl + 'Movie/getOneMovie',
             method: 'POST',
             withCredentials: true,
             data: {
