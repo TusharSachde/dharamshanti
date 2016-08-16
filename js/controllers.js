@@ -1117,15 +1117,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.getSearchNews = false;
         NavigationService.getOneNews($stateParams.id, function(data) {
-            $scope.getOneNews = data.data;
+            $scope.getOneNews = data.data.data;
             console.log('getOneNews', $scope.getOneNews);
+            $scope.getOneRelated = data.data.related;
             TemplateService.removeLoader();
         });
-        NavigationService.getOneRelated($stateParams.id, function(data) {
-            $scope.getOneRelated = data.data;
-            console.log('getOneRelated11111111111112222222222222222', $scope.getOneRelated);
-            TemplateService.removeLoader();
-        });
+        // NavigationService.getOneRelated($stateParams.id, function(data) {
+        //     $scope.getOneRelated = data.data;
+        //     console.log('getOneRelated11111111111112222222222222222', $scope.getOneRelated);
+        //     TemplateService.removeLoader();
+        // });
 
 
         // $scope.getNews($scope.filter);

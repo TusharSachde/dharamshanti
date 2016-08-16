@@ -383,7 +383,7 @@ console.log(email);
     },
     getOneNews: function(id, callback) {
            $http({
-            url: adminurl + 'News/getOne',
+            url: adminurl + 'News/getOneNews',
             method: 'POST',
             withCredentials: true,
             data: {
