@@ -45,7 +45,7 @@
 
                         <button type="button" class="btn {{classg}}" ng-click="tabchange('wallpapper',7,myid)" ng-class="{'my-disable': movieWallpaper.length<=0}" ng-disabled="movieWallpaper.length<=0" ui-sref= "movie-insideTab({id:myid,tab:'wallpapper'})">WALLPAPERS </button>
 
-                        <button type="button" class="btn {{classh}}" ng-click="tabchange('awards',8,myid)" ng-class="{'my-disable': MovieAwards.length  == 0}" ng-disabled="MovieAwards.length  == 0" ui-sref= "movie-insideTab({id:myid,tab:'awards'})"> AWARDS </button>
+                        <button type="button" class="btn {{classh}}" ng-click="tabchange('awards',8,myid)" ng-class="{'my-disable': MovieAwards.length  == 0}" ng-hide="MovieAwards.length  == 0" ui-sref= "movie-insideTab({id:myid,tab:'awards'})"> AWARDS </button>
                     </div>
                 </div>
                 <div class="mob-slider hidden-md hidden-sm hidden-lg visible-xs">
