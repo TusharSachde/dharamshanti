@@ -399,6 +399,17 @@ console.log(email);
             withCredentials: true
         }).success(callback);
     },
+    getOneRelated: function(id,callback) {
+      console.log(id);
+        $http({
+            url: adminurl + 'news/getOneArticle',
+            method: 'POST',
+            withCredentials: true,
+            data: {
+                _id: id
+            }
+        }).success(callback);
+    },
 
 
 
