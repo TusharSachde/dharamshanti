@@ -1468,6 +1468,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
+        NavigationService.getAllTwitter(function(data){
+          $scope.getAllTwitterTag=data.data;
+          console.log($scope.getAllTwitterTag);
+        })
+        $scope.selectOneHashTag=function(id){
+          NavigationService.getOneHashTag(id,function(data){
+            $scope.getOneHashTag=data.data;
+            console.log($scope.getOneHashTag);
+          })
+        }
+
         $scope.hashtags = [{
             tag: "lifeatdharma"
         }, {

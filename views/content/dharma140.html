@@ -11,8 +11,8 @@
               <button class="btn btn-clear pull-right"><i class="fa fa-3x fa-angle-right"></i></button>
               <button class="btn btn-clear pull-left"><i class="fa fa-3x fa-angle-left"></i></button>
               <ul class="handlers">
-                <li ng-repeat="h in hashtags">
-                  <div class="hashtagged font-hammersmith">#{{h.tag}}</div>
+                <li ng-repeat="h in getAllTwitterTag">
+                  <div class="hashtagged font-hammersmith" ng-click="getOneHashTag();">{{h.hashTags}}</div>
                 </li>
               </ul>
             </div>
