@@ -40,9 +40,9 @@
                                 <div class="imaged" style="background-image: url('{{t.userImg}}');"></div>
                                 <h3>
                                     <span class="text-upper primary-color">{{t.name}}</span>@{{t.name}}</h3>
-                                <span>{{t.timeStamp}}
+                                <span>{{t.timeStamp|date:'MMM d'}}
                                     |
-                                    {{t.timeStamp}}</span>
+                                    {{t.timeStamp|date:'h:mm a'}}</span>
                             </div>
                             <div class="post-holder">
                                 {{t.content}}
