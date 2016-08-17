@@ -13,7 +13,7 @@
                             <img src="img/search.png" alt="Dharma Productions">
                         </div>
                         <!-- <input type="search" name="name" value="" class="search-date" placeholder="Search"> -->
-                        <ui-select ng-model="movie.selected" ng-change="getNews10(movie.selected.name)" style="width: 100%;" title="Choose a country" class="search-drop">
+                        <ui-select ng-model="movie.selected" ng-change="getNews10(movie.selected.name)" style="width: 100%;" title="Choose a country" class="search-drop f-c">
                             <ui-select-match placeholder="Search">{{$select.selected.name}}</ui-select-match>
                             <ui-select-choices repeat="movie in allMovieName | filter: $select.search">
                                 <span ng-bind-html="movie.name | highlight: $select.search"></span>

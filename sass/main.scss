@@ -2107,6 +2107,15 @@ button.navbar-toggle.collapsed {
   line-height: 23px;
   cursor: pointer;
 }
+.f-c{
+  .form-control{
+    background-color: #da4f0a;
+border: 1px solid #da4f0a;
+@include placeholder {
+    color: $white;
+}
+  }
+}
 @import "main2";
 @import "timeline";
 @import "mobile";
