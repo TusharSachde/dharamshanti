@@ -1,6 +1,6 @@
-// var adminurl = "http://104.199.151.75:82/";
+var adminurl = "http://104.199.151.75:82/";
 // var adminurl = "http://dharma.com/";
-var adminurl = "http://192.168.0.107:82/";
+// var adminurl = "http://192.168.0.107:82/";
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
 var uploadurl = imgurl;

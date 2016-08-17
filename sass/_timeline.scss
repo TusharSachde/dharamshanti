@@ -249,7 +249,8 @@ display: block;
 	@include MQ(L) {
 		padding: 0em;
 		width: 35%;
-    height: 180px;
+    min-height: 100px;
+      max-height: 180px;
     overflow: hidden;
 		&::before {
 			top: 50%;
