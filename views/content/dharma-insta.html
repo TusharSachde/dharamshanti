@@ -23,14 +23,14 @@
 
             <div class="masonry-king">
                 <div masonry>
-                    <div class="masonry-brick" ng-repeat="t in posts">
+                    <div class="masonry-brick" ng-repeat="t in myPosts">
                       <div class="relative top-padder">
                       <div class="text-center">
                           <img src="img/tv-antena.png" class="antena-top">
                       </div>
-                        <div class="tweet-img" ng-if="t.img">
+                        <div class="tweet-img" ng-if="t.thumbnail">
                           <div class="blackoverlay"></div>
-                            <img ng-src="{{t.img}}">
+                            <img ng-src="{{t.thumbnail}}">
                             <img src="img/play-btn.jpg" class="center-in">
                         </div>
                       </div>
@@ -39,13 +39,13 @@
                             <div class="item-avatar">
                                 <div class="imaged" style="background-image: url('{{t.userImg}}');"></div>
                                 <h3>
-                                    <span class="text-upper primary-color">{{t.name}}</span>@{{t.username}}</h3>
-                                <span>{{t.day}}
+                                    <span class="text-upper primary-color">{{t.name}}</span>@{{t.name}}</h3>
+                                <span>{{t.timeStamp}}
                                     |
-                                    {{t.time}}</span>
+                                    {{t.timeStamp}}</span>
                             </div>
                             <div class="post-holder">
-                                {{t.msg}}
+                                {{t.content}}
                             </div>
                         </div>
                     </div>

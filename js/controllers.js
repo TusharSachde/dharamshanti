@@ -1403,6 +1403,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
+        $scope.postFilter={};
+        $scope.postFilter.pagenumber=1;
+        $scope.postFilter.pagesize=18;
+
+        NavigationService.getAllPosts($scope.postFilter,function(data){
+          $scope.myPosts=data.data.data;
+          console.log($scope.myPosts);
+        })
+
         $scope.posts = [{
             username: "TarunMansukhani",
             name: 'TARUN MANSUKHANI',

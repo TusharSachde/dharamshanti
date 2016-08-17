@@ -1,6 +1,6 @@
-var adminurl = "http://104.199.151.75:82/";
-// var adminurl = "http://localhost:82/";
-// var adminurl = "http://192.168.1.113:82/";
+// var adminurl = "http://104.199.151.75:82/";
+// var adminurl = "http://dharma.com/";
+var adminurl = "http://192.168.0.107:82/";
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
 var uploadurl = imgurl;
@@ -410,7 +410,14 @@ console.log(email);
             }
         }).success(callback);
     },
-
+    getAllPosts: function(filterdata,callback) {
+        $http({
+            url: adminurl + 'dharmainsta/getAllInstaPosts',
+            method: 'POST',
+            withCredentials: true,
+            data:filterdata
+        }).success(callback);
+    },
 
 
   };
