@@ -443,34 +443,34 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // TemplateService.removeLoader();
             $scope.movieCast = data.data.movie.cast;
             _.each($scope.movieCast, function(n) {
-                if (n.type == 'Sub-cast') {
-                    $scope.isSubCast = true;
-                }
-                TemplateService.removeLoader();
-                $scope.movieCrew = data.data.crew;
-                TemplateService.removeLoader();
-                $scope.MovieGal = data.data.gallery;
-                TemplateService.removeLoader();
-                $scope.movieBehindTheScenes = data.data.behindTheScenes;
-                TemplateService.removeLoader();
-                $scope.movieVideo = data.data.videos;
-                console.log('getMovieVideo', $scope.movieVideo);
-                $scope.movieVideo10 = _.chunk($scope.movieVideo, 6);
-                TemplateService.removeLoader();
-                $scope.movieWallpaper = data.data.wallpaper;
-                TemplateService.removeLoader();
-                $scope.movieNews = data.data.news;
+                    if (n.type == 'Sub-cast') {
+                        $scope.isSubCast = true;
+                    }
+                    TemplateService.removeLoader();
+                    $scope.movieCrew = data.data.crew;
+                    TemplateService.removeLoader();
+                    $scope.MovieGal = data.data.gallery;
+                    TemplateService.removeLoader();
+                    $scope.movieBehindTheScenes = data.data.behindTheScenes;
+                    TemplateService.removeLoader();
+                    $scope.movieVideo = data.data.videos;
+                    console.log('getMovieVideo', $scope.movieVideo);
+                    $scope.movieVideo10 = _.chunk($scope.movieVideo, 6);
+                    TemplateService.removeLoader();
+                    $scope.movieWallpaper = data.data.wallpaper;
+                    TemplateService.removeLoader();
+                    $scope.movieNews = data.data.news;
                     _.each($scope.movieNews, function(n) {
                         n.date = new Date(n.date);
                     });
-                TemplateService.removeLoader();
-                if (_.isArray(data.data.award)) {
-                    $scope.MovieAwards = data.data.award;
-                }
-                TemplateService.removeLoader();
+                    TemplateService.removeLoader();
+                    if (_.isArray(data.data.award)) {
+                        $scope.MovieAwards = data.data.award;
+                    }
+                    TemplateService.removeLoader();
 
-            })
-            // TemplateService.removeLoader();
+                })
+                // TemplateService.removeLoader();
         })
 
         $scope.subCast = false;
@@ -894,7 +894,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Dharma World");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-
+        NavigationService.getAllTwitter(function(data) {
+            $scope.getAllTwitterTag = data.data;
+            $scope.getFirstId = data.data[0]._id;
+            console.log($scope.getFirstId);
+            // $scope.selectOneHashTag($scope.getFirstId);
+            console.log($scope.getAllTwitterTag);
+        })
     })
     .controller('NewsEventsCtrl', function($scope, TemplateService, NavigationService, $state, $filter) {
         $scope.template = TemplateService.changecontent("news-events");
@@ -1403,13 +1409,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-        $scope.postFilter={};
-        $scope.postFilter.pagenumber=1;
-        $scope.postFilter.pagesize=18;
+        $scope.postFilter = {};
+        $scope.postFilter.pagenumber = 1;
+        $scope.postFilter.pagesize = 18;
 
-        NavigationService.getAllPosts($scope.postFilter,function(data){
-          $scope.myPosts=data.data.data;
-          console.log($scope.myPosts);
+        NavigationService.getAllPosts($scope.postFilter, function(data) {
+            $scope.myPosts = data.data.data;
+            console.log($scope.myPosts);
         })
 
         $scope.posts = [{
@@ -1468,16 +1474,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-        NavigationService.getAllTwitter(function(data){
-          $scope.getAllTwitterTag=data.data;
-          console.log($scope.getAllTwitterTag);
+        NavigationService.getAllTwitter(function(data) {
+            $scope.getAllTwitterTag = data.data;
+            console.log($scope.getAllTwitterTag);
+            $scope.selectOneHashTag($stateParams.id);
+
         })
-        $scope.selectOneHashTag=function(id){
-          NavigationService.getOneHashTag(id,function(data){
-            $scope.getOneHashTag=data.data;
-            console.log($scope.getOneHashTag);
-          })
-        }
+          $scope.isMatch=false;
+          // $scope.getClass = "";
+        $scope.selectOneHashTag = function(id) {
+            console.log(id);
+            _.each($scope.getAllTwitterTag,function (key) {
+              if(key._id == id){
+                key.isMatch = true;
+
+              }else{
+                key.isMatch = false;
+
+              }
+            });
+            console.log($scope.getAllTwitterTag);
+            NavigationService.getOneHashTag(id, function(data) {
+                $scope.getOneHashTag = data.data.statuses;
+                _.each($scope.getOneHashTag,function(key){
+                  // console.log(key);
+                  key.created_at=new Date(key.created_at);
+                  // if(key._id==id){
+                  //     $scope.isMatch=true;
+                  // }else{
+                  //     $scope.isMatch=false;
+                  // }
+                  //
+                })
+                console.log('rdftghjderfghnj', $scope.getOneHashTag);
+            })
+        };
 
         $scope.hashtags = [{
             tag: "lifeatdharma"
@@ -1573,8 +1604,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
 
         $scope.submitForm = function(data) {
-          console.log(data);
+            console.log(data);
         };
+
+        $scope.formData = {};
+        $scope.saveYou = function(formData) {
+
+            NavigationService.youSave($scope.formData, function(data) {
+                if (data.value == true) {
+                    // $state.go('country-list');
+                }
+
+            });
+        }
     })
     .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $stateParams, $filter, $timeout, $state) {
         $scope.template = TemplateService.changecontent("movies");

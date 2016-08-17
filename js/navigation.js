@@ -1,6 +1,6 @@
 // var adminurl = "http://104.199.151.75:82/";
 // var adminurl = "http://dharma.com/";
-var adminurl = "http://192.168.0.107:82/";
+var adminurl = "http://192.168.0.107:85/";
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
 var uploadurl = imgurl;
@@ -425,14 +425,25 @@ console.log(email);
             withCredentials: true
         }).success(callback);
     },
-    // getAllTwitter: function(callback) {
-    //     $http({
-    //         url: adminurl + 'dharma140/getHash',
-    //         method: 'POST',
-    //         withCredentials: true
-    //     }).success(callback);
-    // },
-
+    getOneHashTag: function(id,callback) {
+        $http({
+            url: adminurl + 'dharma140/getHash',
+            method: 'POST',
+            withCredentials: true,
+            data: {
+                _id: id
+            }
+        }).success(callback);
+    },
+    youSave: function(formData, callback) {
+        // console.log('form data: ', formData);
+        $http({
+            url: adminurl + 'dharmanyou/save',
+            method: 'POST',
+            withCredentials: true,
+            data: formData
+        }).success(callback);
+    },
 
   };
 });

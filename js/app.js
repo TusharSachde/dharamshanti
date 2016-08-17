@@ -90,7 +90,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'OverviewCtrl'
         })
         .state('dharma140', {
-            url: "/dharma140",
+            url: "/dharma140/:id",
             templateUrl: "views/template.html",
             controller: 'Dharma140Ctrl'
         })
