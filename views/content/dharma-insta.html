@@ -23,7 +23,7 @@
 
             <div class="masonry-king">
                 <div masonry>
-                    <div class="masonry-brick" ng-repeat="t in myPosts">
+                    <div class="masonry-brick" ng-repeat="t in myPosts" ng-if="t.status==true">
                       <div class="relative top-padder">
                       <div class="text-center">
                           <img src="img/tv-antena.png" class="antena-top">
@@ -46,6 +46,7 @@
                             </div>
                             <div class="post-holder">
                                 {{t.content}}
+                                <pre>{{t.status}}</pre>
                             </div>
                         </div>
                     </div>
