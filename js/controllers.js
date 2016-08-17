@@ -1480,31 +1480,31 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.selectOneHashTag($stateParams.id);
 
         })
-          $scope.isMatch=false;
-          // $scope.getClass = "";
+        $scope.isMatch = false;
+        // $scope.getClass = "";
         $scope.selectOneHashTag = function(id) {
             console.log(id);
-            _.each($scope.getAllTwitterTag,function (key) {
-              if(key._id == id){
-                key.isMatch = true;
+            _.each($scope.getAllTwitterTag, function(key) {
+                if (key._id == id) {
+                    key.isMatch = true;
 
-              }else{
-                key.isMatch = false;
+                } else {
+                    key.isMatch = false;
 
-              }
+                }
             });
             console.log($scope.getAllTwitterTag);
             NavigationService.getOneHashTag(id, function(data) {
                 $scope.getOneHashTag = data.data.statuses;
-                _.each($scope.getOneHashTag,function(key){
-                  // console.log(key);
-                  key.created_at=new Date(key.created_at);
-                  // if(key._id==id){
-                  //     $scope.isMatch=true;
-                  // }else{
-                  //     $scope.isMatch=false;
-                  // }
-                  //
+                _.each($scope.getOneHashTag, function(key) {
+                    // console.log(key);
+                    key.created_at = new Date(key.created_at);
+                    // if(key._id==id){
+                    //     $scope.isMatch=true;
+                    // }else{
+                    //     $scope.isMatch=false;
+                    // }
+                    //
                 })
                 console.log('rdftghjderfghnj', $scope.getOneHashTag);
             })
@@ -1577,6 +1577,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Dharma & You");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+
+        NavigationService.dharmaYouAll(function(data) {
+            $scope.dharmaPosts = data.data;
+            console.log($scope.dharmaPosts);
+        });
 
         $scope.posts = [{
             name: 'TARUN MANSUKHANI',

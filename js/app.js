@@ -354,7 +354,8 @@ firstapp.directive('fancybox', function($compile, $parse) {
                     autoSize: false,
                     closeClick: false,
                     openEffect: 'none',
-                    closeEffect: 'none'
+                    closeEffect: 'none',
+                    padding: 0
                 });
             }, 100);
         }

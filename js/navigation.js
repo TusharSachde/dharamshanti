@@ -1,6 +1,6 @@
-// var adminurl = "http://104.199.151.75:82/";
+var adminurl = "http://104.199.151.75:82/";
 // var adminurl = "http://dharma.com/";
-var adminurl = "http://192.168.0.107:85/";
+// var adminurl = "http://192.168.0.107:85/";
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
 var uploadurl = imgurl;
@@ -421,6 +421,13 @@ console.log(email);
     getAllTwitter: function(callback) {
         $http({
             url: adminurl + 'dharma140/getAll',
+            method: 'POST',
+            withCredentials: true
+        }).success(callback);
+    },
+    dharmaYouAll: function(callback) {
+        $http({
+            url: adminurl + 'dharmanyou/getAll',
             method: 'POST',
             withCredentials: true
         }).success(callback);
