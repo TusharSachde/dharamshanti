@@ -390,6 +390,9 @@
     }
 }
 @media (max-width: $screen-xs-max) {
+  .btn-grand {
+    font-size: 14px;
+  }
   .mob-mn{
     li{
       a{
@@ -410,12 +413,12 @@
     //         padding-left: 10px;
     //     }
     // }
+    .dharma-you .masonry-king .masonry-brick {
+      width: 100%;
+    }
     .masonry-king {
         .masonry-brick {
             width: 100%;
-            +.masonry-brick {
-                padding-left: 0;
-            }
         }
     }
     .super-big {

@@ -1530,7 +1530,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             img: ''
         }];
     })
-    .controller('DharmaYouCtrl', function($scope, TemplateService, NavigationService) {
+    .controller('DharmaYouCtrl', function($scope, TemplateService, NavigationService, $uibModal) {
         $scope.template = TemplateService.changecontent("dharma-you");
         $scope.menutitle = NavigationService.makeactive("Dharma & You");
         TemplateService.title = $scope.menutitle;
@@ -1551,6 +1551,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             quest: 'Why was Kal Ho Na Ho shot in New York and not London?',
             answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting'
         }];
+        $scope.openModal = function() {
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl: 'views/modal/dharma-you.html',
+                controller: 'DharmaYouCtrl',
+                size: 'lg',
+                windowClass: 'dharma-you-modal',
+            });
+        };
+
+        $scope.submitForm = function(data) {
+          console.log(data);
+        };
     })
     .controller('MoviesCtrl', function($scope, TemplateService, NavigationService, $stateParams, $filter, $timeout, $state) {
         $scope.template = TemplateService.changecontent("movies");
