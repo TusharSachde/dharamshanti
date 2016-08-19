@@ -1611,15 +1611,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.submitForm = function(data) {
             console.log(data);
         };
-
+$scope.questionSubmit=false;
         $scope.formData = {};
         $scope.saveYou = function(formData) {
-
             NavigationService.youSave($scope.formData, function(data) {
                 if (data.value == true) {
-                    // $state.go('country-list');
+                  $scope.questionSubmit=true;
                 }
-
             });
         }
     })
