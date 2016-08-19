@@ -18,12 +18,12 @@
                                 <h3 class="text-upper primary-color">{{t.user}}</h3>
                             </div>
                             <p class="quest">Q: {{t.question}}</p>
-                            <p>{{t.timeStamp|date:'MMM d'}} | {{t.timeStamp|date:'h:mm a'}}</p>
+                            <p>{{t.questionTimestamp|date:'MMM d'}} | {{t.questionTimestamp|date:'h:mm a'}}</p>
                             <div class="pady-bot"></div>
                             <div class="answer-repeat">
                                 <div class="item-avatar">
                                     <div class="imaged" style="background-image: url('{{t.image|uploadpath}}');"></div>
-                                    <h3 class="text-upper primary-color">{{t.name}}</h3>
+                                    <h3 class="text-upper primary-color">{{t.user}}</h3>
                                 </div>
                                 <p class="anst">{{t.answer}}</p>
                             </div>
