@@ -102,6 +102,37 @@
     }
 }
 @media (max-width: $screen-sm-max) {
+  .qsn-bg2 {
+
+    padding: 20px 10px 25px 16px;
+
+}
+.img-set2 {
+    position: absolute;
+    width: 200px;
+    bottom: 16px;
+    left: -18px;
+}
+.main-dir2 {
+    position: absolute;
+    /* width: 271px; */
+    bottom: 23px;
+    left: 190px;
+    z-index: 99;
+}
+  .main-dir {
+    position: absolute;
+    width: 300px;
+    bottom: 20px;
+    right: 45px;
+    z-index: 9;
+}
+  .img-set {
+    position: absolute;
+    width: 200px;
+    bottom: 18px;
+    right: 12px;
+}
     .masonry-king {
         .masonry-brick {
             width: 48%;
@@ -703,8 +734,87 @@
     .f-50-main{
       font-size: 50px !important;
     }
+    .img-set {
+        position: absolute;
+        width: 200px;
+        bottom: 12px;
+        width: 130px;
+    }
+  .main-dir {
+      position: absolute;
+        width: inherit;
+      bottom: 26px;
+      right: 114px;
+      z-index: 9;
+  }
+  .qsn-bg {
+      padding: 25px 10px 36px 25px;
+  }
+  .main-qsn-ans {
+      padding: 0px 20px 100px 20px;
+  }
+  .main-qsn-ans2 {
+      padding: 0px 20px 100px 20px;
+  }
+  .main-dir2 {
+    position: absolute;
+    bottom: 38px;
+    left: 123px;
+    z-index: 99;
+}
+.img-set2 {
+    position: absolute;
+    width: 130px;
+    bottom: 11px;
+    left: -10px;
+}
+.qsn-bg2 {
+    padding: 25px 10px 36px 16px;
+}
+.btn-grand {
+    font-size: 10px;
+}
 }
 @media (max-width:480px) {
+  .btn-grand {
+    font-size: 9px;
+}
+  .qsn-bg2 {
+    padding: 25px 10px 55px 18px !important;
+}
+  .main-dir2 {
+    position: absolute;
+    bottom: 38px;
+    left: 115px;
+    z-index: 99;
+}
+.img-set2 {
+    position: absolute;
+    width: 125px;
+    bottom: 11px;
+    left: -10px;
+}
+  .img-set {
+      position: absolute;
+      bottom: 12px;
+      width: 125px;
+  }
+.main-dir {
+    position: absolute;
+      width: inherit;
+    bottom: 26px;
+    right: 114px;
+    z-index: 9;
+}
+.main-qsn-ans2 {
+    padding: 0px 20px 100px 20px;
+}
+.qsn-bg {
+    padding: 25px 10px 55px 25px;
+}
+.main-qsn-ans {
+    padding: 0px 20px 100px 20px;
+}
   .add-show {
 
     bottom: 30px;

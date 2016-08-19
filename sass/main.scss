@@ -2135,14 +2135,67 @@ border: 1px solid #da4f0a;
   background-position: top center;
   background-size: 100% 100%;
     padding: 20px 10px 25px 25px;
+    position: relative;
+
+}
+.qsn-bg2{
+  @extend .qsn-bg;
+    background: url(../img/qsn-bg2.png);
+    background-position: top center;
+    background-size: 100% 100%;
 }
 .main-qsn {
     border-bottom: 1px solid grey;
 }
-.img-set{
-  // background: url(../img/karan-johar.png);
-  // background-size: cover;
+.main-sec {
+  position: relative;
+  /* padding-right: 300px; */
+  overflow: hidden;
 }
+.main-qsn-ans {
+      padding: 0px 400px 0px 20px;
+}
+.main-qsn-ans2 {
+      padding: 0px 20px 0px 400px;
+}
+
+.main-dir {
+    position: absolute;
+    width: 300px;
+    bottom: 10px;
+    right: 45px;
+    z-index: 9;
+}
+.img-set {
+  position: absolute;
+  width: 200px;
+  bottom: 3px;
+  right: 12px;
+}
+.img-set2 {
+    position: absolute;
+    width: 200px;
+    bottom: 4px;
+    left: -12px;
+}
+.main-ans {
+    padding: 0px 0px 30px 0px;
+}
+.main-ans2 {
+    padding: 0px 0px 30px 0px;
+}
+.main-dir2 {
+    position: absolute;
+    /* width: 271px; */
+    bottom: 10px;
+    left: 218px;
+    z-index: 99;
+}
+.dharma-you {
+    padding-bottom: 70px;
+        padding-top: 35px;
+}
+
 @import "main2";
 @import "timeline";
 @import "mobile";
