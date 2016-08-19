@@ -1581,6 +1581,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.dharmaYouAll(function(data) {
             $scope.dharmaPosts = data.data;
             console.log($scope.dharmaPosts);
+            $scope.enableData=_.groupBy($scope.dharmaPosts,"status");
+            console.log($scope.enableData.true);
+              $scope.dharmaPosts = [];
+            $scope.dharmaPosts = $scope.enableData.true;
+            console.log('before chunk',$scope.dharmaPosts);
+            $scope.dharmaPosts = _.chunk($scope.dharmaPosts, 2);
+            console.log($scope.dharmaPosts);
         });
 
         $scope.posts = [{
@@ -1611,12 +1618,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.submitForm = function(data) {
             console.log(data);
         };
-$scope.questionSubmit=false;
+        $scope.questionSubmit = false;
         $scope.formData = {};
         $scope.saveYou = function(formData) {
             NavigationService.youSave($scope.formData, function(data) {
                 if (data.value == true) {
-                  $scope.questionSubmit=true;
+                    $scope.questionSubmit = true;
                 }
             });
         }
