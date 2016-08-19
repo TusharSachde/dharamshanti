@@ -8,29 +8,40 @@
         </div>
 
         <div class="dharma-you">
-            <div class="masonry-king">
-                <div masonry>
-                    <div class="masonry-brick" ng-repeat="t in dharmaPosts">
-                        <div class="tweet-holder">
-                            <div class="item-avatar">
-                              <!-- <div class="imaged"><img ng-src="{{t.image|uploadpath}}" alt=""></div> -->
-                                <div class="imaged" style="background-image: url('{{t.image|uploadpath}}');"></div>
-                                <h3 class="text-upper primary-color">{{t.user}}</h3>
-                            </div>
-                            <p class="quest">Q: {{t.question}}</p>
-                            <p>{{t.questionTimestamp|date:'MMM d'}} | {{t.questionTimestamp|date:'h:mm a'}}</p>
-                            <div class="pady-bot"></div>
-                            <div class="answer-repeat">
-                                <div class="item-avatar">
-                                    <div class="imaged" style="background-image: url('{{t.image|uploadpath}}');"></div>
-                                    <h3 class="text-upper primary-color">{{t.user}}</h3>
-                                </div>
-                                <p class="anst">{{t.answer}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="qsn-bg">
+<div class="row">
+
+    <div class="col-md-7">
+<div class="main-qsn-ans">
+  <div class="main-qsn">
+    <h4 class="font-karla font-bold color-black">Q: Why was Kal Ho Na Ho shot in New York and not London?</h4>
+    <p class="font-karla color-primary ml23">Zarna Parekh <span class="color-grey">May 9 | 6:06 AM</span></p>
+  </div>
+  <div class="main-ans mt15">
+    <p class="color-black">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    </p>
+  </div>
+</div>
+    </div>
+  
+    <div class="col-md-2">
+      <div class="dh-relative">
+        <div class="main-dir">
+          <Span class="color-black">Response by -</Span>
+          <p class="color-primary margin0 text-up">KARAN JOHAR <span class="text-cap">(Director)</span></p>
+          <span class="color-black">May 9   |   6:06 AM</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="img-set">
+        <img src="img/karan-johar.png" alt="Dharma Productions" class="img-responsive">
+      </div>
+    </div>
+
+  </div>
+</div>
         </div>
     </div>
 </div>

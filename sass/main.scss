@@ -1222,6 +1222,9 @@ input.form-control.ui-select-search{
 .ml15 {
     margin-left: 15px;
 }
+.ml23 {
+    margin-left:23px;
+}
 .btn-go {
     button {
         background: transparent;
@@ -1772,6 +1775,12 @@ height: 50px;
       background-repeat: no-repeat;
     }
 }
+.dark-bg{
+  background-image: url('../img/you-bg.jpg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .white-color {
   color: white;
 }
@@ -2119,6 +2128,20 @@ border: 1px solid #da4f0a;
     color: $white;
 }
   }
+}
+.qsn-bg{
+  background: url(../img/qsn-bg.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 100%;
+    padding: 20px 10px 25px 25px;
+}
+.main-qsn {
+    border-bottom: 1px solid grey;
+}
+.img-set{
+  // background: url(../img/karan-johar.png);
+  // background-size: cover;
 }
 @import "main2";
 @import "timeline";
