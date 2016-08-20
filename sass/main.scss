@@ -2195,7 +2195,18 @@ border: 1px solid #da4f0a;
     padding-bottom: 70px;
         padding-top: 35px;
 }
-
+.my-main-btn{
+  background: transparent;
+    border: none;
+    padding: 7px 7px;
+border-radius: 25px;
+    &:focus{
+      background: $dark-primary;
+      outline: 0;
+      padding: 7px 7px;
+border-radius: 25px;
+    }
+}
 @import "main2";
 @import "timeline";
 @import "mobile";
