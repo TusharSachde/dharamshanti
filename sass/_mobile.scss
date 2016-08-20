@@ -102,6 +102,24 @@
     }
 }
 @media (max-width: $screen-sm-max) {
+  .my-main-btn {
+    background: transparent;
+    border: none;
+    padding: 7px 5px;
+    border-radius: 25px;
+}
+  .main-pad0{
+    padding: 0px;
+
+
+  }
+  .fl-main{
+    float: left !important;
+        margin-top: 3px !important;
+  }
+  .w15{
+    width: 15px;
+  }
   .qsn-bg2 {
 
     padding: 20px 10px 25px 16px;
@@ -351,7 +369,7 @@
         background-position-y: -10px;
     }
     .head-social ul li {
-        padding: 0 2px;
+        padding: 0 0px;
     }
     .subscribe {
         margin: -45px 10px 0;

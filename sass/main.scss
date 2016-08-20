@@ -2207,6 +2207,27 @@ border-radius: 25px;
 border-radius: 25px;
     }
 }
+.my-search{
+  width: 25%;
+    position: absolute;
+    right: 140px;
+    top: 60px;
+    .search-img {
+
+    top: 10px;
+
+}
+.search-img2 {
+
+    top: 8px;
+
+}
+.movie-search-pg .form-control {
+    padding: 9px 0px 0px 38px;
+    font-size: 16px;
+    height: 40px;
+}
+}
 @import "main2";
 @import "timeline";
 @import "mobile";
