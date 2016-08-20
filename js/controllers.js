@@ -1427,6 +1427,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log($scope.myPosts);
         })
 
+        NavigationService.getAllConfig(function(data){
+          $scope.getInstaConfig = data.data;
+          console.log('$scope.getInstaConfig',$scope.getInstaConfig);
+        })
+
         $scope.posts = [{
             username: "TarunMansukhani",
             name: 'TARUN MANSUKHANI',
@@ -1733,6 +1738,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log($scope.movieList.PastViewAll);
             console.log($scope.movieList.Past);
             $scope.movieList.Recent = _.chunk($scope.movieList.Recent, 4);
+            // $scope.movieList.Recent = _.sort($scope.movieList.Recent, 4);
+            console.log('  $scope.movieList.Recent', $scope.movieList.Recent);
 
 
             for (var i = 0; i < $scope.movieList.Recent.length; i++) {

@@ -452,6 +452,13 @@ console.log(email);
             data: formData
         }).success(callback);
     },
+    getAllConfig: function(callback) {
+        $http({
+            url: adminurl + 'NewConfig/getAll',
+            method: 'POST',
+            withCredentials: true
+        }).success(callback);
+    },
 
   };
 });

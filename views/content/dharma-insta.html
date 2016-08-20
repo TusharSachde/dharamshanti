@@ -7,6 +7,29 @@
                 <p class="descriptive">Lorem Ipsum is simply dummy text of the printing and typesetting
                     <br>industry.</p>
 
+                <h2 class="primary-color text-upper font-hammersmith mter">{{getInstaConfig[0].title}}</h2>
+                <p ng-bind-html="getInstaConfig[0].description"></p>
+                <!-- <p>{{getInstaConfig[0].description}}</p> -->
+                <!-- <p>Upload a video enacting SRK’S Signature move with the #dharmainstapose.
+                    <br>5 lucky winners will get a chance to win Dharma Merchandise.</p> -->
+
+                <div class="insta-tv-box">
+                    <div class="tv-img" style="background-image: url('{{getInstaConfig[0].thumbnail|uploadpath}}');"></div>
+                    <!-- <img ng-src="{{getInstaConfig[0].thumbnail|uploadpath}}" height="360"> -->
+                    <a class="various fancybox.iframe" fancybox rel="gallery1" href="{{getInstaConfig[0].url}}" rel="movies" data-fancybox-type="iframe">
+                    <img src="img/play-btn.jpg" class="center-in">
+                    <img src="img/tv-box.png" class="full-image">
+                    </a>
+                </div>
+
+                <h2 class="primary-color text-upper font-hammersmith">#DHARMAINSTAPOSE</h2>
+                <p>Shortlisted Entries</p>
+            </div>
+            <!-- <div class="text-center white-color">
+                <h1 class="super-big font-hammersmith">Dharma Insta</h1>
+                <p class="descriptive">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    <br>industry.</p>
+
                 <h2 class="primary-color text-upper font-hammersmith mter">Contest 01</h2>
                 <p>Upload a video enacting SRK’S Signature move with the #dharmainstapose.
                     <br>5 lucky winners will get a chance to win Dharma Merchandise.</p>
@@ -19,7 +42,7 @@
 
                 <h2 class="primary-color text-upper font-hammersmith">#DHARMAINSTAPOSE</h2>
                 <p>Shortlisted Entries</p>
-            </div>
+            </div> -->
 
             <div class="masonry-king">
                 <div masonry>

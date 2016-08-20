@@ -129,7 +129,7 @@
                                     </flex-slider> -->
                             <div class="div-none-slide" ng-repeat="item in movieList.Recent track by $index">
                                 <div class="row" ng-repeat="datas in item track by $index">
-                                    <div class="col-md-6 col-sm-6 col-xs-12" ng-repeat="data in datas track by $index ">
+                                    <div class="col-md-6 col-sm-6 col-xs-12" ng-repeat="data in datas | orderBy: '-upcomingOrder' track by $index ">
                                         <a ui-sref="movie-inside({id:data._id})">
                                             <div class="video-box mb20 common-class ">
                                                 <div class="video-slide-img img-pads ">
@@ -187,6 +187,7 @@
             <div class="mobile-row hidden-xs">
                 <div class="row-flex text-center " ng-repeat="videos in movieList.Past track by $index">
                     <div class="col-flex " ng-repeat="item in videos track by $index ">
+                    
                         <a ui-sref="movie-inside({id:item._id})">
                             <div class="img-pads ">
                                 <img ng-src="{{item.smallImage|uploadpath}} " alt="Dharma Productions " class="img-responsive ">
