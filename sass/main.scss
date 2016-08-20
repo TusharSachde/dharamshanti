@@ -1043,6 +1043,9 @@ width: auto;
     @include placeholder {
         color: $white;
     }
+    &:focus {
+      @include placeholder { color: transparent };
+    }
 }
 .search-date {
     @extend .search-in;
