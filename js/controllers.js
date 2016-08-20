@@ -1306,6 +1306,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
         $scope.viewSearch = function() {
             $scope.searchdata.search = "";
+            $scope.callAll();
             // $scope.getsearch = false;
         };
         $scope.searchdata = {};
@@ -1328,13 +1329,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.callAll();
         // if($stateParams.search){
         //   $scope.searchdata.search=$stateParams.search;
+        $scope.noMovieFound = false;
         $scope.doSearch = function() {
             console.log($scope.searchdata.search);
             console.log(Allvideos);
             var data = $filter('filter')(Allvideos, $scope.searchdata.search);
+            console.log('allvideo', Allvideos);
             console.log(data);
             TemplateService.getLoader();
             groupIt(data);
+
         };
         // }
 
@@ -1344,9 +1348,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             delete videos.undefined;
             TemplateService.removeLoader();
             console.log(videos);
+            if (Object.keys(videos).length == 0) {
+                $scope.noMovieFound = true;
+            }else{
+              $scope.noMovieFound = false;
+            }
             $scope.AllDharmatv = videos;
         }
-        console.log('heeeeeeeeeeeeeeeeeeeee', $scope.searchdata.search);
+        // console.log('heeeeeeeeeeeeeeeeeeeee', $scope.searchdata.search);
         // NavigationService.getAllDharmatvSearch({search:$stateParams.search}, function(data) {
         //     console.log("mydata", data);
         //     console.log('statepar', $scope.searchdata.search);
@@ -1581,11 +1590,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.dharmaYouAll(function(data) {
             $scope.dharmaPosts = data.data;
             console.log($scope.dharmaPosts);
-            $scope.enableData=_.groupBy($scope.dharmaPosts,"status");
+            $scope.enableData = _.groupBy($scope.dharmaPosts, "status");
             console.log($scope.enableData.true);
-              $scope.dharmaPosts = [];
+            $scope.dharmaPosts = [];
             $scope.dharmaPosts = $scope.enableData.true;
-            console.log('before chunk',$scope.dharmaPosts);
+            console.log('before chunk', $scope.dharmaPosts);
             $scope.dharmaPosts = _.chunk($scope.dharmaPosts, 2);
             console.log($scope.dharmaPosts);
         });
