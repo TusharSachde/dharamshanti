@@ -226,7 +226,7 @@ firstapp.filter('rawHtml', ['$sce',
 firstapp.filter('cut', function() {
   return function(value, wordwise, max, tail) {
     if (!value) return '';
-    console.log("dfahsdkfgakhfgjfh");
+    // console.log("dfahsdkfgakhfgjfh");
     max = parseInt(max, 10);
     if (!max) return value;
     if (value.length <= max) return value;

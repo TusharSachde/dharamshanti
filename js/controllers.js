@@ -23,27 +23,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     ];
     NavigationService.getAllUpcomingMovies(function(data) {
         $scope.AllUpcomingMovies = _.orderBy(data.data, "year");
-        console.log('AllUpcomingMovies', $scope.AllUpcomingMovies);
+        // console.log('AllUpcomingMovies', $scope.AllUpcomingMovies);
         TemplateService.removeLoader();
     });
     NavigationService.getAllRecentMovies(function(data) {
         $scope.AllRecentMovies = data.data;
-        console.log('AllRecentMovies', $scope.AllRecentMovies);
+        // console.log('AllRecentMovies', $scope.AllRecentMovies);
         TemplateService.removeLoader();
     });
     NavigationService.getAllSlides(function(data) {
         $scope.getAllSlides = data.data;
-        console.log('getAllSlides', $scope.getAllSlides);
+        // console.log('getAllSlides', $scope.getAllSlides);
         TemplateService.removeLoader();
     });
     NavigationService.getDharmaTvSlides(function(data) {
         $scope.getDharmaTvSlides = data.data[0];
-        console.log('getDharmaTvSlides', $scope.getDharmaTvSlides);
+        // console.log('getDharmaTvSlides', $scope.getDharmaTvSlides);
         TemplateService.removeLoader();
     });
     NavigationService.getAllUpcomingMoviesHome(function(data) {
         $scope.getAllUpcomingMovies = data.data;
-        console.log('getAllUpcomingMovies', $scope.getAllUpcomingMovies);
+        // console.log('getAllUpcomingMovies', $scope.getAllUpcomingMovies);
         TemplateService.removeLoader();
     });
 
@@ -140,7 +140,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         _.each($scope.News, function(value) {
             value.date = new Date(value.date);
         });
-        console.log('News', $scope.News);
+        // console.log('News', $scope.News);
     });
 
     $scope.subscribe = {};
@@ -196,14 +196,34 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('headerctrl', function($scope, TemplateService) {
+.controller('headerctrl', function($scope, TemplateService, NavigationService, $state) {
     $scope.template = TemplateService;
+    NavigationService.getAllMovieName(function(data) {
+        $scope.allMovieName = data.data;
+        console.log('*********************', $scope.allMovieName);
+    });
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
         $(window).scrollTop(0);
     });
     $scope.showSub = function(menu) {
         menu.show = !menu.show;
+        $scope.navigation = NavigationService.getnav();
     }
+    $scope.headerSearch = false;
+        $scope.crossdisplay = true;
+    $scope.getHeaderSearch=function(){
+      $scope.headerSearch = true;
+    }
+    $scope.closeCross = function() {
+      $scope.headerSearch = false;
+    }
+    $scope.DoSearch = function(search, id) {
+        $state.go('movie-inside', {
+            id: id
+        });
+      };
+
+
 })
 
 .controller('OverviewCtrl', function($scope, TemplateService, NavigationService) {
@@ -1350,8 +1370,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(videos);
             if (Object.keys(videos).length == 0) {
                 $scope.noMovieFound = true;
-            }else{
-              $scope.noMovieFound = false;
+            } else {
+                $scope.noMovieFound = false;
             }
             $scope.AllDharmatv = videos;
         }
@@ -1427,9 +1447,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log($scope.myPosts);
         })
 
-        NavigationService.getAllConfig(function(data){
-          $scope.getInstaConfig = data.data;
-          console.log('$scope.getInstaConfig',$scope.getInstaConfig);
+        NavigationService.getAllConfig(function(data) {
+            $scope.getInstaConfig = data.data;
+            console.log('$scope.getInstaConfig', $scope.getInstaConfig);
         })
 
         $scope.posts = [{
