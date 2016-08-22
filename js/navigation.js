@@ -26,7 +26,7 @@ var navigationservice = angular.module('navigationservice', [])
       subnav: [{
         name: "About Us",
         classis: "active",
-        anchor: "overview",
+        anchor: "",
       },{
         name: "Dharma Journey",
         classis: "active",
@@ -62,7 +62,7 @@ var navigationservice = angular.module('navigationservice', [])
         },{
           name: "Fancorner",
           classis: "active",
-          anchor: "fancorner",
+          anchor: "",
         },{
           name: "Dharma Insta",
           classis: "active",
