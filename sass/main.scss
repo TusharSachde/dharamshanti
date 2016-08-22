@@ -1281,6 +1281,9 @@ input.form-control.ui-select-search{
             border-right: 1px solid #1e395d;
             margin-right: 15px;
         }
+        &:focus{
+          outline: 0;
+        }
     }
 }
 .info-icon {
