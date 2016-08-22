@@ -55,10 +55,12 @@ var navigationservice = angular.module('navigationservice', [])
           name: "Dharma @ 140",
           classis: "active",
           anchor: "dharma140",
+          isId:"yes",
         },{
           name: "Dharma & You",
           classis: "active",
           anchor: "dharma-you",
+          isId:"no",
         },{
           name: "Fancorner",
           classis: "active",
@@ -67,6 +69,7 @@ var navigationservice = angular.module('navigationservice', [])
           name: "Dharma Insta",
           classis: "active",
           anchor: "dharma-insta",
+          isId:"no",
         }]
   },{
     name: "News & Events",

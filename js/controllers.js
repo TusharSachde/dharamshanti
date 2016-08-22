@@ -202,6 +202,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.allMovieName = data.data;
         console.log('*********************', $scope.allMovieName);
     });
+    NavigationService.getAllTwitter(function(data) {
+        $scope.getAllTwitterTag = data.data;
+        $scope.getFirstId = data.data[0]._id;
+        console.log($scope.getFirstId);
+        // $scope.selectOneHashTag($scope.getFirstId);
+        console.log($scope.getAllTwitterTag);
+    })
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
         $(window).scrollTop(0);
     });
