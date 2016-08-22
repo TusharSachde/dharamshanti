@@ -52,7 +52,7 @@
     <div class="movie-search-pg">
       <ui-select ng-model="movie.selected" ng-change="DoSearch(movie.selected.name,movie.selected._id)" style="width: 100%;" title="Search Movie" class="search-drop">
           <ui-select-match placeholder="Search">{{$select.selected.name}}</ui-select-match>
-          <ui-select-choices repeat="movie in allMovieName | filter: $select.search">
+          <ui-select-choices repeat="movie in allMovieName | filter: {name:$select.search}">
               <div class="movi-src-rslt">
                   <div class="display-inline w60">
                       <!-- <img src="img/movie-search.png" alt=""> -->
@@ -62,7 +62,7 @@
                   </div>
                   <div class="display-inline ml15">
                       <span ng-bind-html="movie.name | highlight: $select.search"></span>
-                      <span ng-if="movie.year">({{movie.year| highlight: $select.search}})</span>
+                      <span ng-if="movie.year">({{movie.year}})</span>
                   </div>
               </div>
           </ui-select-choices>

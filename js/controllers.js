@@ -1365,6 +1365,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
         function groupIt(alldata) {
+          console.log(alldata);
             var videos = _.groupBy(alldata, "movie.name");
             delete videos.undefined;
             TemplateService.removeLoader();
@@ -1375,6 +1376,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.noMovieFound = false;
             }
             $scope.AllDharmatv = videos;
+            console.log('****************************',$scope.AllDharmatv);
         }
         // console.log('heeeeeeeeeeeeeeeeeeeee', $scope.searchdata.search);
         // NavigationService.getAllDharmatvSearch({search:$stateParams.search}, function(data) {

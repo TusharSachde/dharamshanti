@@ -19,7 +19,7 @@
 
                         <ui-select ng-model="movie.selected" ng-change="getNews10($select.selected.name)" style="width: 100%;" title="Search Movie" class="search-drop f-c">
                             <ui-select-match placeholder="Search">{{$select.selected.name}}</ui-select-match>
-                            <ui-select-choices repeat="movie in allMovieName | filter: $select.search">
+                            <ui-select-choices repeat="movie in allMovieName | filter: {name:$select.search}">
                                 <div class="movi-src-rslt">
                                     <div class="display-inline w60">
                                         <!-- <img ng-src="{{movie.smallImage|uploadpath}}" alt="" ng-if="movie.releaseType=='Past'">
