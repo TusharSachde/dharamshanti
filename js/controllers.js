@@ -213,23 +213,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $(window).scrollTop(0);
     });
     $scope.showSub = function(menu) {
-      console.log("show sub");
+        console.log("show sub");
         menu.show = !menu.show;
         // $scope.navigation = NavigationService.getnav();
     }
     $scope.headerSearch = false;
-        $scope.crossdisplay = true;
-    $scope.getHeaderSearch=function(){
-      $scope.headerSearch = true;
+    $scope.crossdisplay = true;
+    $scope.getHeaderSearch = function() {
+        $scope.headerSearch = true;
     }
     $scope.closeCross = function() {
-      $scope.headerSearch = false;
+        $scope.headerSearch = false;
     }
     $scope.DoSearch = function(search, id) {
         $state.go('movie-inside', {
             id: id
         });
-      };
+    };
 
 
 })
@@ -1360,8 +1360,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.noMovieFound = false;
         $scope.doSearch = function() {
             console.log($scope.searchdata.search);
-            console.log(Allvideos);
-            var data = $filter('filter')(Allvideos, $scope.searchdata.search);
+            console.log(Allvideos, "Movies");
+            var data1 = $filter('filter')(Allvideos, {
+                title: $scope.searchdata.search
+            });
+            var data2 = $filter('filter')(Allvideos, {
+                movie: {
+                    name: $scope.searchdata.search
+                }
+            });
+            var data3 = $filter('filter')(Allvideos, {
+                tag: $scope.searchdata.search
+            });
+            var data = _.union(data1,data2,data3);
+            data = _.orderBy(data,"movie.name");
             console.log('allvideo', Allvideos);
             console.log(data);
             TemplateService.getLoader();
@@ -1372,7 +1384,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
         function groupIt(alldata) {
-          console.log(alldata);
+            console.log(alldata);
             var videos = _.groupBy(alldata, "movie.name");
             delete videos.undefined;
             TemplateService.removeLoader();
@@ -1383,7 +1395,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.noMovieFound = false;
             }
             $scope.AllDharmatv = videos;
-            console.log('****************************',$scope.AllDharmatv);
+            console.log('****************************', $scope.AllDharmatv);
         }
         // console.log('heeeeeeeeeeeeeeeeeeeee', $scope.searchdata.search);
         // NavigationService.getAllDharmatvSearch({search:$stateParams.search}, function(data) {
