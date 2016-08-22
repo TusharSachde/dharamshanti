@@ -22,16 +22,16 @@ var navigationservice = angular.module('navigationservice', [])
       name: "Overview",
       classis: "active",
       noanchor: "overview",
-      subnav: []
-      // subnav: [{
-      //   name: "About Us",
-      //   classis: "active",
-      //   anchor: "overview",
-      // },{
-      //   name: "Dharma Journey",
-      //   classis: "active",
-      //   anchor: "dharma-journey",
-      // }]
+
+      subnav: [{
+        name: "About Us",
+        classis: "active",
+        anchor: "overview",
+      },{
+        name: "Dharma Journey",
+        classis: "active",
+        anchor: "dharma-journey",
+      }]
     },
   {
     name: "Movies",
@@ -50,7 +50,24 @@ var navigationservice = angular.module('navigationservice', [])
     name: "Dharma World",
     classis: "active",
     anchor: "dharma-world",
-    subnav: []
+
+        subnav: [{
+          name: "Dharma @ 140",
+          classis: "active",
+          anchor: "dharma140",
+        },{
+          name: "Dharma & You",
+          classis: "active",
+          anchor: "dharma-you",
+        },{
+          name: "Fancorner",
+          classis: "active",
+          anchor: "fancorner",
+        },{
+          name: "Dharma Insta",
+          classis: "active",
+          anchor: "dharma-insta",
+        }]
   },{
     name: "News & Events",
     classis: "active",

@@ -206,8 +206,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $(window).scrollTop(0);
     });
     $scope.showSub = function(menu) {
+      console.log("show sub");
         menu.show = !menu.show;
-        $scope.navigation = NavigationService.getnav();
+        // $scope.navigation = NavigationService.getnav();
     }
     $scope.headerSearch = false;
         $scope.crossdisplay = true;

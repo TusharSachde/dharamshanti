@@ -249,7 +249,7 @@ a {
 .custom-menu {
     li {
         a {
-            padding: 5px 12px !important;
+            padding: 10px 12px !important;
         }
     }
 }
@@ -2053,11 +2053,12 @@ height: 50px;
 }
 .custom-menu{
   .dropdown-menu{
-        top: 31px;
-    left: -38px;
-padding: 0px;
-    box-shadow: 1px 1px 9px hsla(0, 4%, 32%, 0.23);
-    border:none;
+        top: 37px;
+  left: 50%;
+  padding: 0px;
+  box-shadow: 1px 1px 9px rgba(85, 78, 78, 0.23);
+  border: none;
+  transform: translateX(-50%);
       li{
 &:hover{
   a{
@@ -2075,7 +2076,7 @@ text-transform: uppercase;
       }
 &:before{
   position: absolute;
-top: -8%;
+top: -7px;
 left: 45%;
 margin-top: -3px;
 width: 0;
@@ -2248,6 +2249,9 @@ border-radius: 25px;
     font-size: 16px;
     height: 40px;
 }
+}
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+    max-height: 365px;
 }
 @import "main2";
 @import "timeline";
