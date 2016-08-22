@@ -367,7 +367,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
 
         /// MAX til here
-        $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCn9ypqFNxdXt9Zu2YqLcdD1Xdt2wNul9s&callback=initMap", function(data, textStatus, jqxhr) {
+        $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyBs0hI-Mn4vt_Ipsl_Q2vTUVK86026h2YM&callback=initMap", function(data, textStatus, jqxhr) {
             console.log("Load was performed.");
         });
 
