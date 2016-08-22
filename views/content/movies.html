@@ -187,7 +187,7 @@
             <div class="mobile-row hidden-xs">
                 <div class="row-flex text-center " ng-repeat="videos in movieList.Past track by $index">
                     <div class="col-flex " ng-repeat="item in videos track by $index ">
-                    
+
                         <a ui-sref="movie-inside({id:item._id})">
                             <div class="img-pads ">
                                 <img ng-src="{{item.smallImage|uploadpath}} " alt="Dharma Productions " class="img-responsive ">

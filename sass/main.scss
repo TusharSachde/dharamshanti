@@ -1059,6 +1059,21 @@ width: auto;
     left: 10px;
         z-index: 99;
 }
+.movie-search-pg{
+  input{
+    &:focus {
+      @include placeholder { color: transparent };
+    }
+  }
+}
+.news-search{
+  input{
+    &:focus {
+      @include placeholder { color: transparent };
+    }
+  }
+}
+
 .news-search{
   .ui-select-match {
     background: transparent;
