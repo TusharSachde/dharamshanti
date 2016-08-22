@@ -792,8 +792,18 @@
 .btn-grand {
     font-size: 10px;
 }
+.no-ar{
+  .flex-direction-nav {
+    display: none;
+}
+}
 }
 @media (max-width:480px) {
+  .no-ar{
+    .flex-direction-nav {
+      display: none;
+  }
+  }
   .btn-grand {
     font-size: 9px;
 }
