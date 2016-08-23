@@ -2306,6 +2306,14 @@ border-radius: 25px;
 .role-name {
     min-height: 50px;
 }
+.modal-dialog {
+    position: absolute;
+      width: 900px;
+    margin: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) !important;
+}
 @import "main2";
 @import "timeline";
 @import "mobile";
