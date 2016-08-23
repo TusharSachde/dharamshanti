@@ -15,7 +15,7 @@
                         <div class="search-img2" ng-if="crossdisplay" ng-click="closeCross();">
                             <img src="img/error3.png" alt="Dharma Productions">
                         </div>
-                        <input type="search" name="name" value="" class="search-date" placeholder="Search">
+                        <input type="search" name="name" ng-change="doSearch();" ng-model="filter.search" value="" class="search-date" placeholder="Search">
 
 
                     </div>
@@ -116,7 +116,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="text-center cast-credit" ng-if="!noviewmore">
+                        <div class="text-center cast-credit" ng-if="!forViewMore && !noNewsFound">
                             <div class="text-center btn-view-news mt40">
 
                                 <a class="btn-1 font-hammersmith btn color-primary" ng-click="ViewMore(myTotal)">

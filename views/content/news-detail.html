@@ -12,7 +12,7 @@
                         <div class="search-img">
                             <img src="img/search.png" alt="Dharma Productions">
                         </div>
-              <input type="search" name="name" value="" class="search-date" placeholder="Search">
+              <input type="search" name="name" ng-change="doSearch();" ng-model="filter.search" value="" class="search-date" placeholder="Search">
                         <div class="search-img2" ng-if="crossdisplay" ng-click="closeCross();">
                             <img src="img/error3.png" alt="Dharma Productions">
                         </div>
