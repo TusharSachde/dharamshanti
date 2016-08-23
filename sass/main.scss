@@ -879,6 +879,11 @@ width: auto;
                     padding: 8px 5px;
                     border-radius: 100%;
                     margin: 10px 0;
+                      @include transition(all 0.3s ease-in-out);
+                    &:hover{
+                      background: $brand-primary;
+                        @include transition(all 0.3s ease-in-out);
+                    }
                 }
             }
         }
@@ -2300,6 +2305,14 @@ border-radius: 25px;
 }
 .role-name {
     min-height: 50px;
+}
+.modal-dialog {
+    position: absolute;
+      width: 900px;
+    margin: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) !important;
 }
 @import "main2";
 @import "timeline";
