@@ -797,8 +797,25 @@
     display: none;
 }
 }
+.m-w-m{
+  width:210px;
+margin: 0 auto;
+}
 }
 @media (max-width:480px) {
+  .m-zero{
+    margin-top: 0px;
+  }
+  .zoom-m{
+        zoom: 0.5;
+  }
+  .mob-web-font-10 p {
+    font-size: 6px !important;
+}
+  .m-w-m{
+    width: 130px;
+margin: 0 auto;
+  }
   .no-ar{
     .flex-direction-nav {
       display: none;

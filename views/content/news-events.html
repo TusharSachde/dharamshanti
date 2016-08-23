@@ -15,32 +15,8 @@
                         <div class="search-img2" ng-if="crossdisplay" ng-click="closeCross();">
                             <img src="img/error3.png" alt="Dharma Productions">
                         </div>
-                        <!-- <input type="search" name="name" value="" class="search-date" placeholder="Search"> -->
+                        <input type="search" name="name" value="" class="search-date" placeholder="Search">
 
-                        <ui-select ng-model="movie.selected" ng-change="getNews10($select.selected.name)" style="width: 100%;" title="Search Movie" class="search-drop f-c">
-                            <ui-select-match placeholder="Search">{{$select.selected.name}}</ui-select-match>
-                            <ui-select-choices repeat="movie in allMovieName | filter: {name:$select.search}">
-                                <div class="movi-src-rslt">
-                                    <div class="display-inline w60">
-                                        <!-- <img ng-src="{{movie.smallImage|uploadpath}}" alt="" ng-if="movie.releaseType=='Past'">
-                  <img ng-src="{{movie.recentSmall|uploadpath}}" alt="" ng-if="movie.releaseType=='Recent'">
-                  <img ng-src="{{movie.upcomingSmall|uploadpath}}" alt="" ng-if="movie.releaseType=='Upcoming'"> -->
-                                    </div>
-                                    <div class="display-inline ml15">
-                                        <span ng-bind-html="movie.name | highlight: $select.search"></span>
-                                        <!-- <span ng-if="movie.year">({{movie.year| highlight: $select.search}})</span> -->
-                                    </div>
-                                </div>
-                            </ui-select-choices>
-                        </ui-select>
-
-
-                        <!-- <ui-select ng-model="filter.search" ng-enter="getNews(filter.search)" style="width: 100%;" title="Choose a country" class="search-drop">
-                     <ui-select-match placeholder="Search">{{$select.selected.name}}</ui-select-match>
-                     <ui-select-choices repeat="country in findAllSearchParam | filter: $select.search">
-                        <span ng-bind-html="country | highlight: $select.search"></span>
-                     </ui-select-choices>
-                  </ui-select> -->
 
                     </div>
                     <div class="mt15 mobile-text-center">
