@@ -1494,6 +1494,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Dharma Insta");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+                  TemplateService.removeLoaderOn(2);
 
         $scope.postFilter = {};
         $scope.postFilter.pagenumber = 1;
@@ -1502,11 +1503,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getAllPosts($scope.postFilter, function(data) {
             $scope.myPosts = data.data.data;
             console.log($scope.myPosts);
+              TemplateService.removeLoader();
         })
 
         NavigationService.getAllConfig(function(data) {
             $scope.getInstaConfig = data.data;
             console.log('$scope.getInstaConfig', $scope.getInstaConfig);
+              TemplateService.removeLoader();
         })
 
         $scope.posts = [{
@@ -1564,11 +1567,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Dharma@140");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        TemplateService.removeLoaderOn(2);
 
         NavigationService.getAllTwitter(function(data) {
             $scope.getAllTwitterTag = data.data;
             console.log($scope.getAllTwitterTag);
             $scope.selectOneHashTag($stateParams.id);
+            TemplateService.removeLoader();
 
         })
         $scope.isMatch = false;
@@ -1598,7 +1603,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     //
                 })
                 console.log('rdftghjderfghnj', $scope.getOneHashTag);
-            })
+                  TemplateService.removeLoader();
+            });
+
         };
 
         $scope.hashtags = [{
@@ -1668,6 +1675,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Dharma & You");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+          TemplateService.removeLoaderOn(1);
 
         NavigationService.dharmaYouAll(function(data) {
             $scope.dharmaPosts = data.data;
@@ -1679,6 +1687,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log('before chunk', $scope.dharmaPosts);
             $scope.dharmaPosts = _.chunk($scope.dharmaPosts, 2);
             console.log($scope.dharmaPosts,"Postsss");
+                TemplateService.removeLoader();
         });
 
         $scope.posts = [{
