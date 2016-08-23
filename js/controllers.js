@@ -2,7 +2,7 @@ var initMap = {};
 var calculateAndDisplayRoute = {};
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'wu.masonry', 'ksSwiper', 'imageupload', 'ui.select'])
 
-.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
+.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $filter) {
     //Used to name the .html file
 
     console.log("Testing Consoles");
@@ -43,7 +43,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
     NavigationService.getAllUpcomingMoviesHome(function(data) {
         $scope.getAllUpcomingMovies = data.data;
-        // console.log('getAllUpcomingMovies', $scope.getAllUpcomingMovies);
+        $scope.getAllUpcomingMovies=$filter('limitTo')($scope.getAllUpcomingMovies, 20);
+        console.log('getAllUpcomingMovies', $scope.getAllUpcomingMovies);
         TemplateService.removeLoader();
     });
 
@@ -910,6 +911,33 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             desc: "SS Rajamouli's Bahubali: The Beginning (also spelt as Baahubali), starring Prabhas and Rana Daggubati, has won the Best Feature Film at the 63rd National Film Award (NFA). "
 
         }]
+        $scope.$on('$viewContentLoaded', function(event) {
+            $timeout(function() {
+
+                ! function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0],
+                        p = /^http:/.test(d.location) ? 'http' : 'https';
+                    if (!d.getElementById(id)) {
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = p + "://platform.twitter.com/widgets.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }
+                }(document, "script", "twitter-wjs");
+
+                (function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+
+
+            }, 0);
+        });
+
     })
     .controller('ContactUsCtrl', function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("contact-us");

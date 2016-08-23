@@ -344,6 +344,7 @@ firstapp.directive('fancybox', function($compile, $parse) {
         replace: false,
         link: function($scope, element, attrs) {
             $element = $(element);
+            console.log(attrs,"FancyBox");
             setTimeout(function() {
                 $(".various").fancybox({
                     maxWidth: 800,
