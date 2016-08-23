@@ -185,7 +185,7 @@
                 </div>
             </div>
             <div class="mobile-row hidden-xs">
-                <div class="row-flex text-center " ng-repeat="videos in movieList.Past track by $index">
+                <div class="row-flex text-center " ng-repeat="videos in movieList.Past | orderBy:'-upcomingOrder' track by $index">
                     <div class="col-flex " ng-repeat="item in videos track by $index ">
 
                         <a ui-sref="movie-inside({id:item._id})">
