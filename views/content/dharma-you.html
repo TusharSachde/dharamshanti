@@ -103,7 +103,7 @@
                             <div class="dh-relative">
                                 <div class="main-dir">
                                     <Span class="color-black">Response by -</Span>
-                                    <p class="color-primary margin0 text-up">{{t[0].dharmaAnswerUser}}
+                                    <p class="color-primary margin0 text-up">{{t[0].dharmaAnswerUser.name}}
                                        <!-- <span class="text-cap">(Director)</span></p> -->
                                     <span class="color-black">{{t[0].answerTimestamp|date:'MMM d'}} | {{t[0].answerTimestamp|date:'h:mm a'}}</span>
                                 </div>
@@ -112,7 +112,7 @@
 
                             <div class="dh-relative">
                               <div class="img-set">
-                                  <img ng-src="{{t[0].image|uploadpath}}" alt="Dharma Productions" class="img-responsive">
+                                  <img ng-src="{{t[0].dharmaAnswerUser.image|uploadpath}}" alt="Dharma Productions" class="img-responsive">
                               </div>
                             </div>
                         </div>
@@ -140,7 +140,7 @@
                             <div class="dh-relative">
                                 <div class="main-dir2">
                                     <Span class="color-black">Response by -</Span>
-                                    <p class="color-primary margin0 text-up">{{t[1].dharmaAnswerUser}}
+                                    <p class="color-primary margin0 text-up">{{t[1].dharmaAnswerUser.name}}
                                       <!-- <span class="text-cap">(Director)</span></p> -->
                                     <span class="color-black">{{t[1].answerTimestamp|date:'MMM d'}} | {{t[1].answerTimestamp|date:'h:mm a'}}</span>
                                 </div>
@@ -149,7 +149,7 @@
 
                             <div class="dh-relative">
                               <div class="img-set2">
-                                  <img src="{{t[1].image|uploadpath}}" alt="Dharma Productions" class="img-responsive">
+                                  <img src="{{t[1].dharmaAnswerUser.image|uploadpath}}" alt="Dharma Productions" class="img-responsive">
                               </div>
                             </div>
                         </div>

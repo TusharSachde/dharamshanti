@@ -459,7 +459,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.removeLoaderOn(10);
         $scope.getAllvideo = false;
         $scope.isSubCast = false;
+            $scope.myUrl='';
         NavigationService.newGetOneMovie($stateParams.id, function(data) {
+
+      $scope.myUrl=window.location.href;
+                console.log('llllllllllooooooooooooooccccccccccccccc',$scope.myUrl);
             $scope.myid = $stateParams.id;
             $scope.moviefindOne = data.data.movie;
             $scope.moviefindOne.backgroundImage = $filter('uploadpath')($scope.moviefindOne.backgroundImage);
@@ -586,6 +590,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $('.back-to-top ').fadeOut();
             }
         });
+
+
 
         // $(document).ready(function() {
         //     console.log("tab");
@@ -1672,7 +1678,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.dharmaPosts = $scope.enableData.true;
             console.log('before chunk', $scope.dharmaPosts);
             $scope.dharmaPosts = _.chunk($scope.dharmaPosts, 2);
-            console.log($scope.dharmaPosts);
+            console.log($scope.dharmaPosts,"Postsss");
         });
 
         $scope.posts = [{
