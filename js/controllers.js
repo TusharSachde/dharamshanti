@@ -571,9 +571,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 class: "classh",
                 tab: "awards",
                 id: "8",
-                ngclass: "!equals({}, MovieAwards)",
-                ngdisabled: "!equals({}, MovieAwards)",
-                index: 7
+                ngclass: "MovieAwards.length  == 0",
+                ngdisabled: "MovieAwards.length  == 0",
+                index: 7,
+                nghide: "MovieAwards.length  == 0"
             }]
             // }, 1000);
 
