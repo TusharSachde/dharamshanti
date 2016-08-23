@@ -140,13 +140,13 @@ understanding of cinema and life, and little bit baring of her soul which we are
                         <div class="black-bg">
                            <img ng-src="{{article.image|uploadpath}}" alt="Dharma Production" class="img-responsive">
                            <div class="padd10">
-                              <div class="news-title mt10">
-                                 <h4 class="margin0">{{article.title}}</h4>
+                              <div class="news-title mt10 h40">
+                                 <h4 class="margin0">{{article.title|cut:true:55}}</h4>
                               </div>
                               <div class="news-date">
                                  <span class="f12">{{article.date| date:'dd MMM yyyy'}}</span>
                               </div>
-                              <div class="news-descp mt10" ng-bind-html="article.text">
+                              <div class="news-descp mt10 h70" ng-bind-html="article.text|cut:true:100">
                                 <!-- <p>SS Rajamouli's "Bahubali: The Beginning" (also spelt as Baahubali), starring Prabhas and Rana Daggubati, has won the Best Feature Film at the 63rd National Film Award (NFA). </p> -->
                               </div>
                            </div>
