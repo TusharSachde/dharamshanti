@@ -1,5 +1,6 @@
 // var adminurl = "http://104.199.151.75:82/";
 var adminurl = "http://104.154.89.21:85/";
+// var adminurl = "http://localhost:85/";
 // var adminurl = "http://dharma.com/";
 // var adminurl = "http://192.168.0.107:85/";
 var imgurl = adminurl + "upload/";
@@ -27,10 +28,12 @@ var navigationservice = angular.module('navigationservice', [])
         name: "About Us",
         classis: "active",
         anchor: "",
+        isId:"no",
       },{
         name: "Dharma Journey",
         classis: "active",
         anchor: "dharma-journey",
+        isId:"no",
       }]
     },
   {
