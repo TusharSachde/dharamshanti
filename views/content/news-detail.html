@@ -137,7 +137,7 @@ understanding of cinema and life, and little bit baring of her soul which we are
                     <div class="row mt40 pb40" ng-if="getOneRelated.length>0">
                       <h1 class="color-white font-hammersmith text-up line45 margin0 ml15">Related Articles</h1>
                       <div class="col-md-4 col-sm-4 col-xs-12 mob-top-em" ng-repeat="article in getOneRelated">
-                        <div class="black-bg">
+                        <div class="black-bg makePointer" ui-sref="news-detail({id:article._id})">
                            <img ng-src="{{article.image|uploadpath}}" alt="Dharma Production" class="img-responsive">
                            <div class="padd10">
                               <div class="news-title mt10 h40">
