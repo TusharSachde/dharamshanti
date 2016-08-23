@@ -1632,6 +1632,9 @@ padding-bottom: 20px;
 .pb40{
   padding-bottom: 40px;
 }
+.pb70{
+      padding-bottom: 70px;
+}
 .share-section{
   button{
     background: #fff;
@@ -2214,8 +2217,7 @@ border: 1px solid #da4f0a;
     z-index: 99;
 }
 .dharma-you {
-    padding-bottom: 70px;
-        padding-top: 35px;
+
 }
 .my-main-btn{
   background: transparent;
@@ -2255,6 +2257,46 @@ border-radius: 25px;
 }
 .w15{
   width: 18px;
+}
+
+.st_twitter_large{
+  .stButton .stLarge {
+      display: inline-block;
+      height: 35px !important;
+      width: 35px !important;
+      position: relative;
+      background-image: url(../img/tw.png)!important;
+      &:hover{
+        opacity: .75;
+  background-position: -35px !important;
+      }
+  }
+}
+.st_facebook_large{
+  .stButton .stLarge {
+      display: inline-block;
+      height: 35px !important;
+      width: 35px !important;
+      position: relative;
+      background-image: url(../img/fb.png)!important;
+      &:hover{
+        opacity: .75;
+  background-position: -35px !important;
+      }
+  }
+}
+.st_googleplus_large{
+  .stButton .stLarge {
+      display: inline-block;
+      height: 35px !important;
+      width: 35px !important;
+      position: relative;
+      background-image: url(../img/gg.png)!important;
+      &:hover{
+        opacity: .75;
+  background-position: -35px !important;
+      }
+  }
 }
 @import "main2";
 @import "timeline";
