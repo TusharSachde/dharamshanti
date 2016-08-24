@@ -2325,6 +2325,9 @@ border-radius: 25px;
 .main-msg{
   margin-top: 15px;
 }
+.content {
+    min-height: 450px;
+}
 @import "main2";
 @import "timeline";
 @import "mobile";
