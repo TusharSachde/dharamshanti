@@ -1,12 +1,12 @@
 {
-  "name": "AngularFrameworkFrontend",
-  "description": "AngularFrameworkFrontend",
+  "name": "dharamshanti",
+  "description": "Absolute",
   "main": "gulpfile.js",
   "authors": [
     "chintan@wohlig.com"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/WohligTechnology/AngularFrameworkFrontend",
+  "homepage": "https://github.com/WohligTechnology/dharamshanti",
   "moduleType": [],
   "ignore": [
     "**/.*",

@@ -2325,6 +2325,7 @@ border-radius: 25px;
 .main-msg{
   margin-top: 15px;
 }
+
 .tv-all-slider{
   .flex-direction-nav a{
     top:70% !important;
@@ -2334,6 +2335,9 @@ border-radius: 25px;
   .flex-direction-nav a{
     top:50% !important;
   }
+
+.content {
+    min-height: 450px;
 }
 @import "main2";
 @import "timeline";

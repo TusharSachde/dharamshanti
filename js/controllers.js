@@ -487,7 +487,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.newGetOneMovie($stateParams.id, function(data) {
 
             $scope.myUrl = window.location.href;
-            // console.log('llllllllllooooooooooooooccccccccccccccc',$scope.myUrl);
+            // console.log($scope.myUrl);
             $scope.myid = $stateParams.id;
             $scope.moviefindOne = data.data.movie;
             $scope.moviefindOne.backgroundImage = $filter('uploadpath')($scope.moviefindOne.backgroundImage);
