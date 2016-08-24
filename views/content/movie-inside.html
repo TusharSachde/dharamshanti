@@ -35,7 +35,7 @@
 
                         <button type="button" class="btn {{classb}}" ng-click="tabchange('cast',2,myid)" ng-class="{'my-disable': movieCast.length<=0}" ng-disabled="movieCast.length<=0" ui-sref= "movie-insideTab({id:myid,tab:'cast'})"> CAST & CREDITS</button>
 
-                        <button type="button" class="btn {{classc}}" ng-click="tabchange('news',3,myid)" ng-class="{'my-disable': movieNews.length<=0}" ng-disabled="movieNews.length<=0" ui-sref= "movie-insideTab({id:myid,tab:'news'})"> News</button>
+                        <button type="button" class="btn {{classc}}" ng-click="tabchange('news',3,myid)" ng-class="{'my-disable': movieNews.length<=0}" ng-hide="movieNews.length<=0" ui-sref= "movie-insideTab({id:myid,tab:'news'})"> News</button>
 
                         <button type="button" class="btn {{classd}}" ng-class="{'my-disable': MovieGal.length<=0}" ng-click="tabchange('gallery',4,myid)" ng-disabled="MovieGal.length<=0" ui-sref= "movie-insideTab({id:myid,tab:'gallery'})">Gallery</button>
 

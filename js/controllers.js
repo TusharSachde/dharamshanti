@@ -1127,7 +1127,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(month);
             $scope.filter.month = month;
             $scope.filter.year = year;
+
             callMe();
+              // TemplateService.removeLoader();
         };
 
 
