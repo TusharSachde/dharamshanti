@@ -2,10 +2,20 @@ var initMap = {};
 var calculateAndDisplayRoute = {};
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'wu.masonry', 'ksSwiper', 'imageupload', 'ui.select'])
 
-.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $filter) {
+.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $filter,$uibModal) {
     //Used to name the .html file
 
     console.log("Testing Consoles");
+
+    $scope.openModal = function() {
+        var modalInstance = $uibModal.open({
+            animation: $scope.animationsEnabled,
+            templateUrl: 'views/modal/subscribe.html',
+            controller: 'HomeCtrl',
+            size: 'lg',
+            windowClass: 'subscribe-modal',
+        });
+    };
 
     $scope.template = TemplateService.changecontent("home");
     $scope.menutitle = NavigationService.makeactive("Home");

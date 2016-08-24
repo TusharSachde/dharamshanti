@@ -33,11 +33,12 @@
                             <div class="title hidden-md hidden-sm hiiden-lg visible-xs" ng-if="searchdata.search==''">
                                 <h1 class="ml-7 color-primary font-hammersmith line45 f55 text-up">{{allvideos[0].movie.name | shorten : 10}}</h1>
                             </div>
+
                         </div>
                         <div class="text-shadow">
                             <div class="row">
                                 <div class="col-md-4 padding0 col-sm-4 col-sx-12" ng-repeat="item in allvideos | filter:searchdata.search">
-                                    <div class="tv-box">
+                                    <div class="tv-box ">
 
                                         <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{item.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
                                             <div class="img-inside-box em-box">
@@ -109,6 +110,26 @@
 
                             </ul>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-8 col-sm-8 col-xs-7">
+                      <div class="tv-inside mt60">
+                          <div class="title hidden-xs" >
+                              <h1 class="ml-7 color-primary font-hammersmith f55 text-up" style="line-height: 56%">OK JAANU</h1>
+                          </div>
+                          <div class="title hidden-md hidden-sm hiiden-lg visible-xs" ng-if="searchdata.search==''">
+                              <h1 class="ml-7 color-primary font-hammersmith f55 text-up" style="line-height: 56%">OK JAANU</h1>
+                          </div>
+
+                      </div>
+                      <div class="text-shadow">
+                        <div class="row">
+                        <div class="col-md-8">
+                            <h2 class="color-white">No Videos Yet</h2>
+                        </div>
+                        </div>
+                      </div>
                     </div>
                 </div>
             </div>
