@@ -292,7 +292,7 @@ firstapp.directive('uploadImage', function($http, $filter) {
                     },
                     transformRequest: angular.identity
                 }).success(function(data) {
-                    console.log("success");
+                    // console.log("success");
                     if ($scope.callback) {
                         $scope.callback(data);
                     } else {
@@ -349,7 +349,7 @@ firstapp.directive('fancybox', function($compile, $parse) {
         replace: false,
         link: function($scope, element, attrs) {
             $element = $(element);
-            console.log(attrs,"FancyBox");
+            // console.log(attrs,"FancyBox");
             setTimeout(function() {
                 $(".various").fancybox({
                     maxWidth: 800,

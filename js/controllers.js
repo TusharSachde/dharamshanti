@@ -2,7 +2,7 @@ var initMap = {};
 var calculateAndDisplayRoute = {};
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'wu.masonry', 'ksSwiper', 'imageupload', 'ui.select'])
 
-.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $filter,$uibModal) {
+.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $filter, $uibModal) {
     //Used to name the .html file
 
     console.log("Testing Consoles");
@@ -211,14 +211,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.template = TemplateService;
     NavigationService.getAllMovieName(function(data) {
         $scope.allMovieName = data.data;
-        console.log('*********************', $scope.allMovieName);
+        // console.log('*********************', $scope.allMovieName);
     });
     NavigationService.getAllTwitter(function(data) {
         $scope.getAllTwitterTag = data.data;
         $scope.getFirstId = data.data[0]._id;
-        console.log($scope.getFirstId);
+        // console.log($scope.getFirstId);
         // $scope.selectOneHashTag($scope.getFirstId);
-        console.log($scope.getAllTwitterTag);
+        // console.log($scope.getAllTwitterTag);
     })
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
         $(window).scrollTop(0);
@@ -397,14 +397,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //     console.log("$scope.allvideos", $scope.allvideos.videos);
         // });
 
-$scope.goMovie=false;
+        $scope.goMovie = false;
         NavigationService.getAllDharmatv10(function(data) {
             var data2 = _.filter(data.data, function(video) {
                 if (video.movie && video.movie._id) {
                     return video.movie._id == $stateParams.id;
                 }
             });
-            console.log(data2);
+            // console.log(data2);
             $scope.allvideos = data2;
             TemplateService.removeLoader();
         });
@@ -420,7 +420,8 @@ $scope.goMovie=false;
                 // $scope.allMovieName = _.chunk($scope.allMovieName,10);
                 $scope.allMovieName = _.slice($scope.allMovieName, [0], [10]);
                 $scope.seeMore = true;
-                console.log($scope.allMovieName);
+
+                // console.log($scope.allMovieName);
                 TemplateService.removeLoader();
                 // $scope.MovieGal10 = _.chunk($scope.MovieGal, 4);
                 // console.log('chunk',$scope.MovieGal10);
@@ -432,7 +433,7 @@ $scope.goMovie=false;
             $scope.seeLess = true;
             // $scope.allMovieName = {}
             $scope.allMovieName = movieNameArray;
-            console.log('dfgyhujkdrftgh', $scope.allMovieName);
+            // console.log('dfgyhujkdrftgh', $scope.allMovieName);
         }
 
         NavigationService.getAllTags(function(data) {
@@ -440,7 +441,16 @@ $scope.goMovie=false;
             TemplateService.removeLoader();
         });
 
+        $scope.goToMovie = function(id, name) {
+            $scope.goMovie = true;
+              $scope.currentMovie = name;
+            $state.go('tv-inside', {
+                id: id
+            });
+            console.log(id, name);
 
+
+        };
         $scope.searchdata = {};
         $scope.searchdata.search = "";
         $scope.nodata = false;
@@ -456,17 +466,8 @@ $scope.goMovie=false;
 
 
         $scope.allvideos = [];
-$scope.currentMovie='';
-        $scope.goToMovie = function(id,name){
-          $stateParams.id=id;
-          $state.go('tv-inside', {
-              id: id
-          });
-          console.log(id,name);
-          $scope.goMovie=true;
-          $scope.currentMovie=name;
+        $scope.currentMovie = '';
 
-        };
         // $scope.goToMovie($stateParams.id,$scope.currentMovie);
 
     })
@@ -499,37 +500,37 @@ $scope.currentMovie='';
             // TemplateService.removeLoader();
             $scope.movieCast = data.data.movie.cast;
             _.each($scope.movieCast, function(n) {
-                    if (n.type == 'Sub-cast') {
-                        $scope.isSubCast = true;
-                    }
-                    // TemplateService.removeLoader();
-                    $scope.movieCrew = data.data.crew;
-                  });
-                    // TemplateService.removeLoader();
-                    $scope.MovieGal = data.data.gallery;
-                    // TemplateService.removeLoader();
-                    $scope.movieBehindTheScenes = data.data.behindTheScenes;
-                    // TemplateService.removeLoader();
-                    $scope.movieVideo = data.data.videos;
-                    console.log('getMovieVideo', $scope.movieVideo);
-                    $scope.movieVideo10 = _.chunk($scope.movieVideo, 6);
-                    // TemplateService.removeLoader();
-                    $scope.movieWallpaper = data.data.wallpaper;
-                    // TemplateService.removeLoader();
-
-                    // TemplateService.removeLoader();
-                    if (_.isArray(data.data.award)) {
-                        $scope.MovieAwards = data.data.award;
-                    }
-                    // TemplateService.removeLoader();
-
-
-                $scope.movieNews = data.data.news;
-                _.each($scope.movieNews, function(n) {
-                    n.date = new Date(n.date);
-                    console.log($scope.movieNews,'$scope.movieNews');
-                });
+                if (n.type == 'Sub-cast') {
+                    $scope.isSubCast = true;
+                }
                 // TemplateService.removeLoader();
+                $scope.movieCrew = data.data.crew;
+            });
+            // TemplateService.removeLoader();
+            $scope.MovieGal = data.data.gallery;
+            // TemplateService.removeLoader();
+            $scope.movieBehindTheScenes = data.data.behindTheScenes;
+            // TemplateService.removeLoader();
+            $scope.movieVideo = data.data.videos;
+            console.log('getMovieVideo', $scope.movieVideo);
+            $scope.movieVideo10 = _.chunk($scope.movieVideo, 6);
+            // TemplateService.removeLoader();
+            $scope.movieWallpaper = data.data.wallpaper;
+            // TemplateService.removeLoader();
+
+            // TemplateService.removeLoader();
+            if (_.isArray(data.data.award)) {
+                $scope.MovieAwards = data.data.award;
+            }
+            // TemplateService.removeLoader();
+
+
+            $scope.movieNews = data.data.news;
+            _.each($scope.movieNews, function(n) {
+                n.date = new Date(n.date);
+                console.log($scope.movieNews, '$scope.movieNews');
+            });
+            // TemplateService.removeLoader();
         })
 
         $scope.subCast = false;
@@ -1155,7 +1156,7 @@ $scope.currentMovie='';
             $scope.filter.year = year;
 
             callMe();
-              // TemplateService.removeLoader();
+            // TemplateService.removeLoader();
         };
 
 
@@ -1396,10 +1397,10 @@ $scope.currentMovie='';
             $scope.filter.search = '';
             $scope.movie.selected = "";
             if ($scope.filter.month || $scope.filter.year) {
-              console.log('gosearch');
-                $scope.goSearch($scope.filter.month,$scope.filter.year);
+                console.log('gosearch');
+                $scope.goSearch($scope.filter.month, $scope.filter.year);
             } else {
-              console.log('newsdetail runn');
+                console.log('newsdetail runn');
                 newsDetail();
             }
 

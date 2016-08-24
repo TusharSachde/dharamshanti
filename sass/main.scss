@@ -2325,6 +2325,16 @@ border-radius: 25px;
 .main-msg{
   margin-top: 15px;
 }
+.tv-all-slider{
+  .flex-direction-nav a{
+    top:70% !important;
+  }
+}
+.non-top{
+  .flex-direction-nav a{
+    top:50% !important;
+  }
+}
 @import "main2";
 @import "timeline";
 @import "mobile";
