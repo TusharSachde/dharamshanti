@@ -23,8 +23,7 @@
         </div>
 
         <section>
-          <pre>{{allvideos.length}}</pre>
-            <div class="container" ng-if="allvideos.length > 0 && !goMovie">
+            <div class="container" ng-if="allvideos.length > 0">
                 <div class="row">
                     <div class="col-md-8 col-sm-8 col-xs-7">
                         <div class="tv-inside mt60">
@@ -67,7 +66,8 @@
                             <h3 class="color-primary">OTHER MOVIES</h3>
                             <ul class="list-none color-white padding0">
                                 <li ng-repeat="name in allMovieName">
-                                    <a ng-click="goToMovie(name._id,name.name)">{{name.name}}</a>
+                                  <!-- <a ng-click="goToMovie(name._id,name.name)">{{name.name}}</a> -->
+                                    <a ui-sref="tv-inside({id:name._id})">{{name.name}}</a>
                                 </li>
                                 <!-- <li><a href="">Brothers</a></li>
             <li><a href="">Hasee Toh Phasee</a></li>
@@ -115,7 +115,7 @@
                 </div>
 
             </div>
-    <div class="container" ng-if="goMovie || allvideos.length == 0">
+    <div class="container" ng-if="allvideos.length == 0">
       <div class="row">
         <div class="col-md-8 col-sm-8 col-xs-7">
             <div class="tv-inside mt60">

@@ -397,9 +397,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //     console.log("$scope.allvideos", $scope.allvideos.videos);
         // });
 
-        $scope.goMovie = false;
+        // $scope.goMovie = false;
+      $scope.getDharmaTV = function () {
         NavigationService.getAllDharmatv10(function(data) {
-            var data2 = _.filter(data.data, function(video) {
+              var data2 = _.filter(data.data, function(video) {
                 if (video.movie && video.movie._id) {
                     return video.movie._id == $stateParams.id;
                 }
@@ -408,6 +409,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.allvideos = data2;
             TemplateService.removeLoader();
         });
+      }
+      if($stateParams.id){
+        $scope.getDharmaTV();
+
+      }
         // $scope.allMovieName=[];
 
         $scope.seeMore = false;
@@ -420,6 +426,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 // $scope.allMovieName = _.chunk($scope.allMovieName,10);
                 $scope.allMovieName = _.slice($scope.allMovieName, [0], [10]);
                 $scope.seeMore = true;
+                if($stateParams.id){
+                  $scope.currentMovie = _.find($scope.allMovieName,function (key) {
+                    // $scope.goMovie=false;
+                    return key._id == $stateParams.id;
+                  }).name;
+                }
 
                 // console.log($scope.allMovieName);
                 TemplateService.removeLoader();
@@ -442,14 +454,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
         $scope.goToMovie = function(id, name) {
-            $scope.goMovie = true;
-              $scope.currentMovie = name;
+            // $scope.goMovie = true;
+            // $scope.currentMovie = name;
             $state.go('tv-inside', {
                 id: id
             });
             console.log(id, name);
-
-
         };
         $scope.searchdata = {};
         $scope.searchdata.search = "";
