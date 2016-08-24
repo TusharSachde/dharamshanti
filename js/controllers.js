@@ -1018,16 +1018,16 @@ var AllNews=[];
               // } else {
               //     groupIt(Allvideos);
               // }
-              //   $scope.myTotal = data.data.total;
-              //   if ($scope.filter.pagesize >= $scope.myTotal) {
-              //       $scope.noviewmore = true;
-              //   } else {
-              //       $scope.noviewmore = false;
-              //   }
-                // $scope.myTotal = data.data.total;
+                $scope.myTotal = data.data.total;
+                if ($scope.filter.pagesize >= $scope.myTotal) {
+                    $scope.forViewMore = true;
+                } else {
+                    $scope.forViewMore = false;
+                }
+                $scope.myTotal = data.data.total;
                 console.log(data.data.total);
                 if (data.value) {
-                    console.log(data.data.data);
+                    console.log(data.data.data,'///////////');
                     if (data.data.data.length > 0) {
                       $scope.noNewsFound = false;
                         _.each(data.data.data, function(n) {
@@ -1068,6 +1068,17 @@ var AllNews=[];
             // console.log('allvideo', Allvideos);
             console.log(data);
             $scope.news10 = data;
+            console.log($scope.news10.length,"$scope.news10.length");
+            if($scope.news10.length==0){
+                $scope.noNewsFound = true;
+                // $scope.crossdisplay = true;
+            }else{
+                $scope.noNewsFound = false;
+                  // $scope.crossdisplay = false;
+            }
+            if($scope.filter.search.length==0){
+              $scope.crossdisplay = false;
+            }
             // TemplateService.getLoader();
             // groupIt(data);
 
@@ -1119,18 +1130,32 @@ var AllNews=[];
         };
 
 
+        // $scope.ViewMore = function(myTotal) {
+        //     console.log(myTotal);
+        //     if ($scope.filter.pagesize < myTotal) {
+        //       $scope.forViewMore = true;
+        //         console.log('in iffffffffff');
+        //         // $scope.noviewmore = true;
+        //         $scope.filter.pagesize = myTotal;
+        //         callMe();
+        //         console.log($scope.filter.pagesize);
+        //     } else {
+        //       $scope.forViewMore = false;
+        //         $scope.noviewmore = false;
+        //     }
+        //
+        //
+        // };
+
         $scope.ViewMore = function(myTotal) {
             console.log(myTotal);
             if ($scope.filter.pagesize < myTotal) {
-              $scope.forViewMore = true;
-                console.log('in iffffffffff');
-                // $scope.noviewmore = true;
+                $scope.forViewMore = true;
                 $scope.filter.pagesize = myTotal;
                 callMe();
                 console.log($scope.filter.pagesize);
             } else {
-              $scope.forViewMore = false;
-                $scope.noviewmore = false;
+                $scope.forViewMore = false;
             }
 
 
@@ -1230,12 +1255,18 @@ var AllNews=[];
 
 
         $scope.getSearchNews = false;
-        NavigationService.getOneNews($stateParams.id, function(data) {
-            $scope.getOneNews = data.data.data;
-            console.log('getOneNews', $scope.getOneNews);
-            $scope.getOneRelated = data.data.related;
-            TemplateService.removeLoader();
-        });
+        function newsDetail(){
+          NavigationService.getOneNews($stateParams.id, function(data) {
+              $scope.getOneNews = data.data.data;
+              console.log('getOneNews', $scope.getOneNews);
+              $scope.getOneRelated = data.data.related;
+              TemplateService.removeLoader();
+          });
+        };
+
+
+        newsDetail();
+
         // NavigationService.getOneRelated($stateParams.id, function(data) {
         //     $scope.getOneRelated = data.data;
         //     console.log('getOneRelated11111111111112222222222222222', $scope.getOneRelated);
@@ -1329,11 +1360,13 @@ var AllNews=[];
         // $scope.crossdisplay = false;
         $scope.closeCross = function() {
             // $state.reload();
+              $scope.getSearchNews = false;
+              $scope.noNewsFound = false;
               $scope.crossdisplay = false;
             $scope.filter.search = '';
             $scope.movie.selected = "";
 
-            callMe();
+          newsDetail();
         }
         $scope.getNews10 = function(name) {
             // $scope.crossdisplay = true;
@@ -1416,6 +1449,18 @@ var AllNews=[];
             // console.log('allvideo', Allvideos);
             console.log(data);
             $scope.news10 = data;
+            if($scope.news10.length==0){
+                $scope.noNewsFound = true;
+                // $scope.crossdisplay = true;
+            }else{
+                $scope.noNewsFound = false;
+                  // $scope.crossdisplay = false;
+            }
+            if($scope.filter.search.length==0){
+              newsDetail();
+              $scope.crossdisplay = false;
+                $scope.noNewsFound = false;
+            }
             // TemplateService.getLoader();
             // groupIt(data);
 
