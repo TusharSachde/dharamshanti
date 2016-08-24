@@ -43,7 +43,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
     NavigationService.getAllUpcomingMoviesHome(function(data) {
         $scope.getAllUpcomingMovies = data.data;
-        $scope.getAllUpcomingMovies=$filter('limitTo')($scope.getAllUpcomingMovies, 20);
+        $scope.getAllUpcomingMovies = $filter('limitTo')($scope.getAllUpcomingMovies, 20);
         console.log('getAllUpcomingMovies', $scope.getAllUpcomingMovies);
         TemplateService.removeLoader();
     });
@@ -453,18 +453,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Movie Inside");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-  TemplateService.removeLoaderOn(1);
+        TemplateService.removeLoaderOn(1);
 
         $scope.animationsEnabled = true;
         $scope.viewCastText = "VIEW";
 
         $scope.getAllvideo = false;
         $scope.isSubCast = false;
-            $scope.myUrl='';
+        $scope.myUrl = '';
         NavigationService.newGetOneMovie($stateParams.id, function(data) {
 
-      $scope.myUrl=window.location.href;
-                // console.log('llllllllllooooooooooooooccccccccccccccc',$scope.myUrl);
+            $scope.myUrl = window.location.href;
+            // console.log('llllllllllooooooooooooooccccccccccccccc',$scope.myUrl);
             $scope.myid = $stateParams.id;
             $scope.moviefindOne = data.data.movie;
             $scope.moviefindOne.backgroundImage = $filter('uploadpath')($scope.moviefindOne.backgroundImage);
@@ -983,7 +983,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.noNewsFound = false;
         $scope.crossdisplay = false;
         $scope.forViewMore = false;
-          $scope.noNewsFound = false;
+        $scope.noNewsFound = false;
         $scope.movie = {};
 
         // $scope.getNews = function(input) {
@@ -1007,17 +1007,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.goYear = false;
         $scope.goMonth = false;
-var AllNews=[];
+        var AllNews = [];
+
         function callMe() {
             $scope.news10 = [];
             NavigationService.getNewsHomeSearch($scope.filter, function(data) {
-              // Allvideos = data.data;
-              // if ($stateParams.search || $stateParams.search === "") {
-              //     $scope.searchdata.search = $stateParams.search;
-              //     $scope.doSearch();
-              // } else {
-              //     groupIt(Allvideos);
-              // }
+                // Allvideos = data.data;
+                // if ($stateParams.search || $stateParams.search === "") {
+                //     $scope.searchdata.search = $stateParams.search;
+                //     $scope.doSearch();
+                // } else {
+                //     groupIt(Allvideos);
+                // }
                 $scope.myTotal = data.data.total;
                 if ($scope.filter.pagesize >= $scope.myTotal) {
                     $scope.forViewMore = true;
@@ -1027,9 +1028,9 @@ var AllNews=[];
                 $scope.myTotal = data.data.total;
                 console.log(data.data.total);
                 if (data.value) {
-                    console.log(data.data.data,'///////////');
+                    console.log(data.data.data, '///////////');
                     if (data.data.data.length > 0) {
-                      $scope.noNewsFound = false;
+                        $scope.noNewsFound = false;
                         _.each(data.data.data, function(n) {
                             n.date = new Date(n.date);
                             $scope.news10.push(n);
@@ -1043,7 +1044,7 @@ var AllNews=[];
                         // }
                     } else {
                         $scope.news10 = [];
-                      $scope.noNewsFound = true;
+                        $scope.noNewsFound = true;
                     }
 
                 }
@@ -1063,21 +1064,21 @@ var AllNews=[];
             var data3 = $filter('filter')(AllNews, {
                 title: $scope.filter.search
             });
-            var data = _.union(data1,data3);
+            var data = _.union(data1, data3);
             // data = _.orderBy(data,"movie.name");
             // console.log('allvideo', Allvideos);
             console.log(data);
             $scope.news10 = data;
-            console.log($scope.news10.length,"$scope.news10.length");
-            if($scope.news10.length==0){
+            console.log($scope.news10.length, "$scope.news10.length");
+            if ($scope.news10.length == 0) {
                 $scope.noNewsFound = true;
                 // $scope.crossdisplay = true;
-            }else{
+            } else {
                 $scope.noNewsFound = false;
-                  // $scope.crossdisplay = false;
+                // $scope.crossdisplay = false;
             }
-            if($scope.filter.search.length==0){
-              $scope.crossdisplay = false;
+            if ($scope.filter.search.length == 0) {
+                $scope.crossdisplay = false;
             }
             // TemplateService.getLoader();
             // groupIt(data);
@@ -1086,7 +1087,7 @@ var AllNews=[];
 
         $scope.closeCross = function() {
             // $state.reload();
-              $scope.crossdisplay = false;
+            $scope.crossdisplay = false;
             $scope.filter.search = '';
             $scope.movie.selected = "";
 
@@ -1255,13 +1256,14 @@ var AllNews=[];
 
 
         $scope.getSearchNews = false;
-        function newsDetail(){
-          NavigationService.getOneNews($stateParams.id, function(data) {
-              $scope.getOneNews = data.data.data;
-              console.log('getOneNews', $scope.getOneNews);
-              $scope.getOneRelated = data.data.related;
-              TemplateService.removeLoader();
-          });
+
+        function newsDetail() {
+            NavigationService.getOneNews($stateParams.id, function(data) {
+                $scope.getOneNews = data.data.data;
+                console.log('getOneNews', $scope.getOneNews);
+                $scope.getOneRelated = data.data.related;
+                TemplateService.removeLoader();
+            });
         };
 
 
@@ -1308,11 +1310,11 @@ var AllNews=[];
         $scope.filter.year = 0;
         $scope.filter.month = 0;
         $scope.forViewMore = false;
-var AllNews=[];
+        var AllNews = [];
         $scope.goYear = false;
         $scope.goMonth = false;
         $scope.noNewsFound = false;
-          $scope.crossdisplay = false;
+        $scope.crossdisplay = false;
 
         function callMe() {
             // $scope.filter.pagenumber++;
@@ -1338,7 +1340,7 @@ var AllNews=[];
                         _.each(data.data.data, function(n) {
                             n.date = new Date(n.date);
                             $scope.news10.push(n);
-                              AllNews = $scope.news10;
+                            AllNews = $scope.news10;
                             console.log($scope.news10);
                         });
 
@@ -1355,18 +1357,24 @@ var AllNews=[];
                 TemplateService.removeLoader();
             });
         }
-          callMe();
+        callMe();
         $scope.movie = {};
         // $scope.crossdisplay = false;
         $scope.closeCross = function() {
             // $state.reload();
-              $scope.getSearchNews = false;
-              $scope.noNewsFound = false;
-              $scope.crossdisplay = false;
+            $scope.getSearchNews = false;
+            $scope.noNewsFound = false;
+            $scope.crossdisplay = false;
             $scope.filter.search = '';
             $scope.movie.selected = "";
+            if ($scope.filter.month || $scope.filter.year) {
+              console.log('gosearch');
+                $scope.goSearch($scope.filter.month,$scope.filter.year);
+            } else {
+              console.log('newsdetail runn');
+                newsDetail();
+            }
 
-          newsDetail();
         }
         $scope.getNews10 = function(name) {
             // $scope.crossdisplay = true;
@@ -1390,6 +1398,7 @@ var AllNews=[];
         };
 
         $scope.goSearch = function(month, year) {
+            $scope.getSearchNews = true;
             console.log(month);
             $scope.filter.month = month;
             $scope.filter.year = year;
@@ -1402,38 +1411,38 @@ var AllNews=[];
         });
 
         NavigationService.getMonthYear(function(data) {
-            $scope.monthYear = data.data;
-            $scope.month = data.data.month;
-            $scope.month = $scope.month.sort();
-            $scope.month = $scope.month.sort(function(a, b) {
-                return b - a
-            });
-            $scope.month = $scope.month.reverse();
-            console.log('cjdbsfsdjfhjsdkhf', $scope.month);
-            console.log('$scope.monthYear', $scope.monthYear);
-        })
-        // $scope.doSearch = function() {
-        //   $scope.getSearchNews = true;
-        //     // console.log($scope.searchdata.search);
-        //     console.log(AllNews, "AllNews************");
-        //     var data1 = $filter('filter')(AllNews, {
-        //         text: $scope.filter.search
-        //     });
-        //
-        //     var data3 = $filter('filter')(AllNews, {
-        //         title: $scope.filter.search
-        //     });
-        //     var data = _.union(data1,data3);
-        //     // data = _.orderBy(data,"movie.name");
-        //     // console.log('allvideo', Allvideos);
-        //     console.log(data);
-        //     $scope.news10 = data;
-        //     // TemplateService.getLoader();
-        //     // groupIt(data);
-        //
-        // };
+                $scope.monthYear = data.data;
+                $scope.month = data.data.month;
+                $scope.month = $scope.month.sort();
+                $scope.month = $scope.month.sort(function(a, b) {
+                    return b - a
+                });
+                $scope.month = $scope.month.reverse();
+                console.log('cjdbsfsdjfhjsdkhf', $scope.month);
+                console.log('$scope.monthYear', $scope.monthYear);
+            })
+            // $scope.doSearch = function() {
+            //   $scope.getSearchNews = true;
+            //     // console.log($scope.searchdata.search);
+            //     console.log(AllNews, "AllNews************");
+            //     var data1 = $filter('filter')(AllNews, {
+            //         text: $scope.filter.search
+            //     });
+            //
+            //     var data3 = $filter('filter')(AllNews, {
+            //         title: $scope.filter.search
+            //     });
+            //     var data = _.union(data1,data3);
+            //     // data = _.orderBy(data,"movie.name");
+            //     // console.log('allvideo', Allvideos);
+            //     console.log(data);
+            //     $scope.news10 = data;
+            //     // TemplateService.getLoader();
+            //     // groupIt(data);
+            //
+            // };
         $scope.doSearch = function() {
-          $scope.getSearchNews = true;
+            $scope.getSearchNews = true;
             $scope.crossdisplay = true;
             // console.log($scope.searchdata.search);
             console.log(AllNews, "AllNews************");
@@ -1444,22 +1453,24 @@ var AllNews=[];
             var data3 = $filter('filter')(AllNews, {
                 title: $scope.filter.search
             });
-            var data = _.union(data1,data3);
+            var data = _.union(data1, data3);
             // data = _.orderBy(data,"movie.name");
             // console.log('allvideo', Allvideos);
             console.log(data);
             $scope.news10 = data;
-            if($scope.news10.length==0){
+            if ($scope.news10.length == 0) {
+
                 $scope.noNewsFound = true;
-                // $scope.crossdisplay = true;
-            }else{
+            } else {
                 $scope.noNewsFound = false;
-                  // $scope.crossdisplay = false;
+                // $scope.crossdisplay = false;
             }
-            if($scope.filter.search.length==0){
-              newsDetail();
-              $scope.crossdisplay = false;
+            if ($scope.filter.search.length == 0) {
+
+                $scope.crossdisplay = false;
+                $scope.getSearchNews = false;
                 $scope.noNewsFound = false;
+                newsDetail();
             }
             // TemplateService.getLoader();
             // groupIt(data);
@@ -1540,8 +1551,8 @@ var AllNews=[];
             var data3 = $filter('filter')(Allvideos, {
                 tag: $scope.searchdata.search
             });
-            var data = _.union(data1,data2,data3);
-            data = _.orderBy(data,"movie.name");
+            var data = _.union(data1, data2, data3);
+            data = _.orderBy(data, "movie.name");
             console.log('allvideo', Allvideos);
             console.log(data);
             TemplateService.getLoader();
@@ -1627,7 +1638,7 @@ var AllNews=[];
         $scope.menutitle = NavigationService.makeactive("Dharma Insta");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-                  TemplateService.removeLoaderOn(2);
+        TemplateService.removeLoaderOn(2);
 
         $scope.postFilter = {};
         $scope.postFilter.pagenumber = 1;
@@ -1636,13 +1647,13 @@ var AllNews=[];
         NavigationService.getAllPosts($scope.postFilter, function(data) {
             $scope.myPosts = data.data.data;
             console.log($scope.myPosts);
-              TemplateService.removeLoader();
+            TemplateService.removeLoader();
         })
 
         NavigationService.getAllConfig(function(data) {
             $scope.getInstaConfig = data.data;
             console.log('$scope.getInstaConfig', $scope.getInstaConfig);
-              TemplateService.removeLoader();
+            TemplateService.removeLoader();
         })
 
         $scope.posts = [{
@@ -1736,7 +1747,7 @@ var AllNews=[];
                     //
                 })
                 console.log('rdftghjderfghnj', $scope.getOneHashTag);
-                  TemplateService.removeLoader();
+                TemplateService.removeLoader();
             });
 
         };
@@ -1808,7 +1819,7 @@ var AllNews=[];
         $scope.menutitle = NavigationService.makeactive("Dharma & You");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-          TemplateService.removeLoaderOn(1);
+        TemplateService.removeLoaderOn(1);
 
         NavigationService.dharmaYouAll(function(data) {
             $scope.dharmaPosts = data.data;
@@ -1819,8 +1830,8 @@ var AllNews=[];
             $scope.dharmaPosts = $scope.enableData.true;
             console.log('before chunk', $scope.dharmaPosts);
             $scope.dharmaPosts = _.chunk($scope.dharmaPosts, 2);
-            console.log($scope.dharmaPosts,"Postsss");
-                TemplateService.removeLoader();
+            console.log($scope.dharmaPosts, "Postsss");
+            TemplateService.removeLoader();
         });
 
         $scope.posts = [{

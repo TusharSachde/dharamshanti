@@ -74,7 +74,7 @@
             </div>
         </div>
     </div>
-    <section ng-if="!getSearchNews || filter.search.length==0">
+    <section ng-if="!getSearchNews">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -194,7 +194,7 @@ Of 2015 National Award</h4>
 <!-- ------------------------------------------------search UI----------------------------------- -->
 
     <section>
-       <div class="container" ng-if="getSearchNews && filter.search.length>0">
+       <div class="container" ng-if="getSearchNews">
           <div class="row">
              <div class="col-xs-12">
                 <div class="all-movies custom-box mob-mt-top">
