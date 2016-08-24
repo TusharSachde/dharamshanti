@@ -74,7 +74,6 @@
             </div>
         </div>
     </div>
-
     <section ng-if="!getSearchNews">
         <div class="container">
             <div class="row">
@@ -258,8 +257,11 @@ Of 2015 National Award</h4>
                 </div>
               </div>
 
-    <div ng-if="noNewsFound"><center><strong><h1>No News Found</h1></strong></center></div>
+    <!-- <div ng-if="noNewsFound" style="min-height:400px"><center><strong><h1>No News Found</h1></strong></center></div> -->
              </div>
+          </div>
+          <div ng-if="noNewsFound" style="min-height:400px">
+              <center><strong><h1>No news Found</h1></strong></center>
           </div>
        </div>
        <!-- <div ng-if="noNewsFound"><center><strong><h1>No News Found</h1></strong></center></div> -->
