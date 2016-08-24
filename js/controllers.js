@@ -506,6 +506,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     $scope.movieNews = data.data.news;
                     _.each($scope.movieNews, function(n) {
                         n.date = new Date(n.date);
+                        console.log($scope.movieNews,'$scope.movieNews');
                     });
                     // TemplateService.removeLoader();
                     if (_.isArray(data.data.award)) {
