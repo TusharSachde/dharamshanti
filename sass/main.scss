@@ -2149,6 +2149,7 @@ button.navbar-toggle.collapsed {
   color: white;
   line-height: 23px;
   cursor: pointer;
+  z-index: 99;
 }
 .f-c{
   .form-control{
@@ -2313,6 +2314,15 @@ border-radius: 25px;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) !important;
+}
+.shr-img{
+      margin-top: -30px;
+}
+.main-sub {
+    padding: 0px 20px;
+}
+.main-msg{
+  margin-top: 15px;
 }
 @import "main2";
 @import "timeline";
