@@ -49,6 +49,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'TvInsideCtrl'
         })
+        // .state('tv-insideMovie', {
+        //     url: "/tv-inside/:id/:search",
+        //     templateUrl: "views/template.html",
+        //     controller: 'TvInsideCtrl'
+        // })
         .state('dharma-world', {
             url: "/dharma-world",
             templateUrl: "views/template.html",

@@ -384,7 +384,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     })
-    .controller('TvInsideCtrl', function($scope, TemplateService, NavigationService, $stateParams) {
+    .controller('TvInsideCtrl', function($scope, TemplateService, NavigationService, $stateParams, $state) {
         $scope.template = TemplateService.changecontent("tv-inside");
         $scope.menutitle = NavigationService.makeactive("TV Inside");
         TemplateService.title = $scope.menutitle;
@@ -397,7 +397,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //     console.log("$scope.allvideos", $scope.allvideos.videos);
         // });
 
-
+$scope.goMovie=false;
         NavigationService.getAllDharmatv10(function(data) {
             var data2 = _.filter(data.data, function(video) {
                 if (video.movie && video.movie._id) {
@@ -456,6 +456,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
         $scope.allvideos = [];
+$scope.currentMovie='';
+        $scope.goToMovie = function(id,name){
+          $stateParams.id=id;
+          $state.go('tv-inside', {
+              id: id
+          });
+          console.log(id,name);
+          $scope.goMovie=true;
+          $scope.currentMovie=name;
+
+        };
+        // $scope.goToMovie($stateParams.id,$scope.currentMovie);
 
     })
     .controller('MovieInsideCtrl', function($scope, TemplateService, NavigationService, $uibModal, $stateParams, $filter, $window, $timeout, $state) {
@@ -492,6 +504,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     }
                     // TemplateService.removeLoader();
                     $scope.movieCrew = data.data.crew;
+                  });
                     // TemplateService.removeLoader();
                     $scope.MovieGal = data.data.gallery;
                     // TemplateService.removeLoader();
@@ -503,18 +516,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     // TemplateService.removeLoader();
                     $scope.movieWallpaper = data.data.wallpaper;
                     // TemplateService.removeLoader();
-                    $scope.movieNews = data.data.news;
-                    _.each($scope.movieNews, function(n) {
-                        n.date = new Date(n.date);
-                        console.log($scope.movieNews,'$scope.movieNews');
-                    });
+
                     // TemplateService.removeLoader();
                     if (_.isArray(data.data.award)) {
                         $scope.MovieAwards = data.data.award;
                     }
                     // TemplateService.removeLoader();
 
-                })
+
+                $scope.movieNews = data.data.news;
+                _.each($scope.movieNews, function(n) {
+                    n.date = new Date(n.date);
+                    console.log($scope.movieNews,'$scope.movieNews');
+                });
                 // TemplateService.removeLoader();
         })
 
@@ -550,7 +564,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 id: "3",
                 ngclass: "movieNews.length<=0",
                 ngdisabled: "movieNews.length<=0",
-                index: 2
+                index: 2,
+                nghide: "movieNews.length<=0"
             }, {
                 name: "Gallery",
                 class: "classd",

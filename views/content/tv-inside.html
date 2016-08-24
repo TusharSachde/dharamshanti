@@ -23,7 +23,7 @@
         </div>
 
         <section>
-            <div class="container" ng-if="allvideos.length > 0">
+            <div class="container" ng-if="allvideos.length > 0 || !goMovie">
                 <div class="row">
                     <div class="col-md-8 col-sm-8 col-xs-7">
                         <div class="tv-inside mt60">
@@ -66,7 +66,7 @@
                             <h3 class="color-primary">OTHER MOVIES</h3>
                             <ul class="list-none color-white padding0">
                                 <li ng-repeat="name in allMovieName">
-                                    <a ui-sref="tv-inside({id:name._id})">{{name.name}}</a>
+                                    <a ng-click="goToMovie(name._id,name.name)">{{name.name}}</a>
                                 </li>
                                 <!-- <li><a href="">Brothers</a></li>
             <li><a href="">Hasee Toh Phasee</a></li>
@@ -112,24 +112,47 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-8 col-sm-8 col-xs-7">
-                      <div class="tv-inside mt60">
-                          <div class="title hidden-xs" >
-                              <h1 class="ml-7 color-primary font-hammersmith f55 text-up" style="line-height: 56%">OK JAANU</h1>
-                          </div>
-                          <div class="title hidden-md hidden-sm hiiden-lg visible-xs" ng-if="searchdata.search==''">
-                              <h1 class="ml-7 color-primary font-hammersmith f55 text-up" style="line-height: 56%">OK JAANU</h1>
-                          </div>
 
+            </div>
+            <div class="row" ng-if="goMovie">
+              <div class="col-md-8 col-sm-8 col-xs-7">
+                  <div class="tv-inside mt60">
+                      <div class="title hidden-xs" >
+                          <h1 class="ml-7 color-primary font-hammersmith f55 text-up" style="line-height: 56%">{{currentMovie}}</h1>
                       </div>
-                      <div class="text-shadow">
-                        <div class="row">
-                        <div class="col-md-8">
-                            <h2 class="color-white">No Videos Yet</h2>
-                        </div>
-                        </div>
-                      </div>
+                      <!-- <div class="title hidden-md hidden-sm hiiden-lg visible-xs" ng-if="searchdata.search==''">
+                          <h1 class="ml-7 color-primary font-hammersmith f55 text-up" style="line-height: 56%">OK JAANU</h1>
+                      </div> -->
+
+                  </div>
+                  <div class="text-shadow">
+                    <div class="row">
+                    <div class="col-md-8">
+                        <h2 class="color-white">No Videos Yet</h2>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-5">
+                    <div class="border-left">
+                        <h3 class="color-primary">OTHER MOVIES</h3>
+                        <ul class="list-none color-white padding0">
+                            <li ng-repeat="name in allMovieName">
+                                <a ng-click="goToMovie(name._id,name.name)">{{name.name}}</a>
+                            </li>
+
+                        </ul>
+                        <a class="color-grey">
+                            <h4 ng-click="seeMoreMovieName();" ng-if="seeMore">See More</h4>
+                            <h4 ng-click="seeLessMovieName();" ng-if="seeLess && !seeMore">See Less</h4>
+                        </a>
+                        <h3 class="color-primary mt30">POPULAR TAGS</h3>
+                        <ul class="list-none color-white padding0">
+                            <li ng-repeat="name in getAllTags">
+                                <a ui-sref="dharma-tvsearch({search:name.name})">{{name.name}}</a>
+                            </li>
+
+                        </ul>
                     </div>
                 </div>
             </div>

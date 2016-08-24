@@ -28,7 +28,7 @@
             </section> -->
             <div class="no-ar">
                 <div ng-show="(searchdata.search == '' || !searchdata.search)" class="video-player mt15 tv-all-slider marg-arrow mob-mt-15" ng-if="getAllDharmaTvSlider.length > 0">
-                    <flex-slider flex-slide="s in getAllDharmaTvSlider track by $index" prev-text="" next-text="" startAt="0">
+                    <flex-slider flex-slide="s in getAllDharmaTvSlider |limitTo : 4 track by $index" prev-text="" next-text="" startAt="0">
                         <li>
                             <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{s.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
 
