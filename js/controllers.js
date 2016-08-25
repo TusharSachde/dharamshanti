@@ -162,20 +162,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         if (email && email !== '' && form.$valid) {
             NavigationService.subScribe(email, function(data) {
                 if (data.data.message == 'already exist') {
-                    if ($scope.subscribe.email) {
+                    // if ($scope.subscribe.email) {
                         $scope.checkEmail = true;
-                        $scope.subscribeEmail = false;
+                        // $scope.subscribeEmail = false;
                         $timeout(function() {
                             $scope.checkEmail = false;
                         }, 2000);
 
-                    }
+                    // }
                 } else {
+                  $scope.openModal();
                     $scope.checkEmail = false;
-                    $scope.subscribeEmail = true;
-                    $timeout(function() {
-                        $scope.subscribeEmail = false;
-                    }, 2000);
+                    // $scope.subscribeEmail = true;
+                    // $timeout(function() {
+                    //     $scope.subscribeEmail = false;
+                    // }, 2000);
 
 
                 }
