@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <div class="btn-go display-inline ml15">
-                            <button class="btn" type="submit" ng-click="goSearch(getMonth,getYear)">Go</button>
+                            <button class="btn" type="submit" ng-click="goSearch(getMonth,getYear)" ng-disabled="!getMonth || !getYear">Go</button>
                         </div>
                     </div>
                 </div>
@@ -131,7 +131,7 @@
                 </div>
             </div>
         </div>
-        <div ng-if="noNewsFound">
+        <div ng-if="noNewsFound" style="min-height:400px">
             <center><strong><h1>No news Found</h1></strong></center>
         </div>
     </section>

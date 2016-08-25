@@ -74,7 +74,6 @@
             </div>
         </div>
     </div>
-
     <section ng-if="!getSearchNews">
         <div class="container">
             <div class="row">
@@ -112,7 +111,7 @@ understanding of cinema and life, and little bit baring of her soul which we are
                         </div>
                     </div>
                     <div class="share-section mt15">
-                      <h4 class="color-white font-bold font-karla display-inline ">Share this articles on</h4>
+                      <h4 class="color-white font-bold font-karla display-inline ">Share this article on</h4>
                       <div class="display-inline">
                         <button type="button" name="button"><i class="fa fa-facebook"></i>facebook</button>
                       </div>
@@ -258,8 +257,11 @@ Of 2015 National Award</h4>
                 </div>
               </div>
 
-    <div ng-if="noNewsFound"><center><strong><h1>No News Found</h1></strong></center></div>
+    <!-- <div ng-if="noNewsFound" style="min-height:400px"><center><strong><h1>No News Found</h1></strong></center></div> -->
              </div>
+          </div>
+          <div ng-if="noNewsFound" style="min-height:400px">
+              <center><strong><h1>No news Found</h1></strong></center>
           </div>
        </div>
        <!-- <div ng-if="noNewsFound"><center><strong><h1>No News Found</h1></strong></center></div> -->

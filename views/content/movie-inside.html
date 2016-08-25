@@ -35,7 +35,7 @@
 
                         <button type="button" class="btn {{classb}}" ng-click="tabchange('cast',2,myid)" ng-class="{'my-disable': movieCast.length<=0}" ng-disabled="movieCast.length<=0" ui-sref= "movie-insideTab({id:myid,tab:'cast'})"> CAST & CREDITS</button>
 
-                        <button type="button" class="btn {{classc}}" ng-click="tabchange('news',3,myid)" ng-class="{'my-disable': movieNews.length<=0}" ng-disabled="movieNews.length<=0" ui-sref= "movie-insideTab({id:myid,tab:'news'})"> News</button>
+                        <button type="button" class="btn {{classc}}" ng-click="tabchange('news',3,myid)" ng-class="{'my-disable': movieNews.length<=0}" ng-hide="movieNews.length<=0" ui-sref= "movie-insideTab({id:myid,tab:'news'})"> News</button>
 
                         <button type="button" class="btn {{classd}}" ng-class="{'my-disable': MovieGal.length<=0}" ng-click="tabchange('gallery',4,myid)" ng-disabled="MovieGal.length<=0" ui-sref= "movie-insideTab({id:myid,tab:'gallery'})">Gallery</button>
 
@@ -171,15 +171,14 @@
                                     <div class="social-share pull-right">
                                         <span class="font-karla font-bold color-light-grey f18">share</span>
                                         <ul class="padding0">
-
                                             <li>
-                                                <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl | urlEncode}}" target="_blank"><i class="fa fa-facebook"></i></a>
                                             </li>
                                             <li>
-                                                <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                <a ng-href="https://twitter.com/intent/tweet?url={{myUrl | urlEncode}}" target="_blank"><i class="fa fa-twitter"></i></a>
                                             </li>
                                             <li>
-                                                <a href="" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                                <a ng-href="https://plus.google.com/share?url={{myUrl | urlEncode}}" target="_blank"><i class="fa fa-google-plus"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -307,15 +306,14 @@
                                 <div class="social-share float-right">
                                     <span class="font-karla font-bold color-light-grey f18">share</span>
                                     <ul class="padding0">
-
                                         <li>
-                                            <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
+                                            <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl | urlEncode}}" target="_blank"><i class="fa fa-facebook"></i></a>
                                         </li>
                                         <li>
-                                            <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
+                                            <a ng-href="https://twitter.com/intent/tweet?url={{myUrl | urlEncode}}" target="_blank"><i class="fa fa-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                            <a ng-href="https://plus.google.com/share?url={{myUrl | urlEncode}}" target="_blank"><i class="fa fa-google-plus"></i></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -398,15 +396,14 @@
                                 <div class="social-share pull-right">
                                     <span class="font-karla font-bold color-light-grey f18">share</span>
                                     <ul class="padding0">
-
                                         <li>
-                                            <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
+                                            <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl | urlEncode}}" target="_blank"><i class="fa fa-facebook"></i></a>
                                         </li>
                                         <li>
-                                            <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
+                                            <a ng-href="https://twitter.com/intent/tweet?url={{myUrl | urlEncode}}" target="_blank"><i class="fa fa-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                            <a ng-href="https://plus.google.com/share?url={{myUrl | urlEncode}}" target="_blank"><i class="fa fa-google-plus"></i></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -505,15 +502,14 @@
                                     <div class="social-share pull-right">
                                         <span class="font-karla font-bold color-light-grey f18">share</span>
                                         <ul class="padding0">
-
                                             <li>
-                                                <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl | urlEncode}}" target="_blank"><i class="fa fa-facebook"></i></a>
                                             </li>
                                             <li>
-                                                <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                <a ng-href="https://twitter.com/intent/tweet?url={{myUrl | urlEncode}}" target="_blank"><i class="fa fa-twitter"></i></a>
                                             </li>
                                             <li>
-                                                <a href="" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                                <a ng-href="https://plus.google.com/share?url={{myUrl | urlEncode}}" target="_blank"><i class="fa fa-google-plus"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -541,15 +537,14 @@
                                     <div class="social-share pull-right">
                                         <span class="font-karla font-bold color-light-grey f18">share</span>
                                         <ul class="padding0">
-
                                             <li>
-                                                <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl | urlEncode}}" target="_blank"><i class="fa fa-facebook"></i></a>
                                             </li>
                                             <li>
-                                                <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                <a ng-href="https://twitter.com/intent/tweet?url={{myUrl | urlEncode}}" target="_blank"><i class="fa fa-twitter"></i></a>
                                             </li>
                                             <li>
-                                                <a href="" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                                <a ng-href="https://plus.google.com/share?url={{myUrl | urlEncode}}" target="_blank"><i class="fa fa-google-plus"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -789,15 +784,14 @@
                                 <div class="social-share float-right">
                                     <span class="font-karla font-bold color-light-grey f18">share</span>
                                     <ul class="padding0">
-
                                         <li>
-                                            <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
+                                            <a ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl | urlEncode}}" target="_blank"><i class="fa fa-facebook"></i></a>
                                         </li>
                                         <li>
-                                            <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
+                                            <a ng-href="https://twitter.com/intent/tweet?url={{myUrl | urlEncode}}" target="_blank"><i class="fa fa-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                            <a ng-href="https://plus.google.com/share?url={{myUrl | urlEncode}}" target="_blank"><i class="fa fa-google-plus"></i></a>
                                         </li>
                                     </ul>
                                 </div>

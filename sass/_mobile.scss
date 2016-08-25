@@ -1,4 +1,9 @@
 @media (max-width:1200px) {
+  .modal-dialog {
+
+    width: auto;
+
+}
     .head-curve {
         background-size: 100% 100%;
         margin: -1px 35px;
@@ -439,6 +444,11 @@
     }
 }
 @media (max-width: $screen-xs-max) {
+  .modal-dialog {
+
+    width: auto;
+
+}
   .btn-grand {
     font-size: 14px;
   }
@@ -466,6 +476,7 @@
       width: 100%;
     }
     .masonry-king {
+          
         .masonry-brick {
             width: 100%;
         }
@@ -801,8 +812,30 @@
   width:210px;
 margin: 0 auto;
 }
+.modal-dialog {
+
+  width: auto;
+
+}
+.main-sub {
+    padding: 10px;
+}
+.text-c-m{
+  text-align: center;
+}
 }
 @media (max-width:480px) {
+  .text-c-m{
+    text-align: center;
+  }
+  .main-sub {
+      padding: 10px;
+  }
+  .modal-dialog {
+
+    width: auto;
+
+}
   .m-zero{
     margin-top: 0px;
   }

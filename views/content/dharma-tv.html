@@ -26,9 +26,9 @@
                     </h1>
                 </div>
             </section> -->
-            <div class="no-ar">
-                <div ng-show="(searchdata.search == '' || !searchdata.search)" class="video-player mt15 tv-all-slider marg-arrow mob-mt-15" ng-if="getAllDharmaTvSlider.length > 0">
-                    <flex-slider flex-slide="s in getAllDharmaTvSlider track by $index" prev-text="" next-text="" startAt="0">
+            <div class="">
+                <div ng-show="(searchdata.search == '' || !searchdata.search)" class="no-ar video-player mt15 tv-all-slider marg-arrow mob-mt-15" ng-if="getAllDharmaTvSlider.length > 0">
+                    <flex-slider flex-slide="s in getAllDharmaTvSlider track by $index" prev-text="" next-text="" startAt="0" tem-width="280" item-margin="0">
                         <li>
                             <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{s.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
 
@@ -60,50 +60,68 @@
                                 <h1 class="ml-7 color-primary font-hammersmith line45 f55 text-up">{{movie | shorten : 20}}</h1>
                             </div>
                             <div class="upcoming-slider tv-all-slider text-shadow cl-flex">
-                                <flex-slider flex-slide="item in videos track by $index" ng-if="videos.length>4" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
+                                <flex-slider flex-slide="item in videos | limitTo:4 track by $index" ng-if="videos.length>4" animation="slide" item-width="280" item-margin="0" animationloop="true" move="1">
                                     <li class="makePointer">
-                                        <div class="video-box" ui-sref="tv-insideSearch({id:item.movie._id,search:searchdata.search})">
+                                        <div class="video-box">
                                             <div class="video-slide-img em-box">
-                                                <a>
+                                              <a class="various fancybox.iframe" fancybox rel="gallery2" href="http://www.youtube.com/embed/{{item.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+                                                  <div class="img-inside-box em-box">
+
+                                                      <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" class="img-responsive width100" ng-if="item.thumbnail || item.thumbnail != ''">
+
+                                                      <img ng-src="{{item.url|youtubethumb}}" alt="Dharma Productions" class="img-responsive width100" ng-if="!(item.thumbnail || item.thumbnail != '')">
+                                                <!-- <a>
                                                     <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" ng-if="(item.thumbnail || item.thumbnail != '')">
                                                     <img ng-src="{{item.url|youtubethumb}}" alt="Dharma Productions" class="img-responsive width100" ng-if="!(item.thumbnail || item.thumbnail != '')">
-                                                </a>
+                                                </a> -->
                                             </div>
                                             <div class="video-names mt10">
                                                 <span class="color-white text-cap">{{item.title | shorten : 60}}</span>
-                                            </div>
+                                            </div></a>
                                         </div>
                                     </li>
                                 </flex-slider>
                                 <div ng-if="videos.length<=4" class="row ">
                                     <div class="col-md-3 hidden-xs" ng-repeat="item in videos track by $index">
                                         <li class="makePointer">
-                                            <div class="video-box" ui-sref="tv-insideSearch({id:item.movie._id,search:searchdata.search})">
+                                            <div class="video-box">
                                                 <div class="video-slide-img em-box">
-                                                    <a>
+                                                  <a class="various fancybox.iframe" fancybox rel="gallery2" href="http://www.youtube.com/embed/{{item.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+                                                      <div class="img-inside-box em-box">
+
+                                                          <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" class="img-responsive width100" ng-if="item.thumbnail || item.thumbnail != ''">
+
+                                                          <img ng-src="{{item.url|youtubethumb}}" alt="Dharma Productions" class="img-responsive width100" ng-if="!(item.thumbnail || item.thumbnail != '')">
+                                                    <!-- <a>
                                                         <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" ng-if="(item.thumbnail || item.thumbnail != '')">
                                                         <img ng-src="{{item.url|youtubethumb}}" alt="Dharma Productions" class="img-responsive width100" ng-if="!(item.thumbnail || item.thumbnail != '')">
-                                                    </a>
+                                                    </a> -->
                                                 </div>
                                                 <div class="video-names mt10">
                                                     <span class="color-white text-cap">{{item.title | shorten : 60}}</span>
-                                                </div>
+                                                </div></a>
                                             </div>
                                         </li>
                                     </div>
-                                    <div class="hidden-md hidden-lg hidden-sm visible-xs">
-                                        <flex-slider flex-slide="item in videos track by $index" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
+                                    <div class="hidden-md hidden-lg hidden-sm visible-xs non-top">
+                                        <flex-slider flex-slide="item in videos track by $index" animation="slide" item-width="280" item-margin="0" animationloop="true" move="1">
                                             <li class="makePointer">
-                                                <div class="video-box" ui-sref="tv-insideSearch({id:item.movie._id,search:searchdata.search})">
+                                                <div class="video-box">
                                                     <div class="video-slide-img em-box">
-                                                        <a>
+                                                      <a class="various fancybox.iframe" fancybox rel="gallery3" href="http://www.youtube.com/embed/{{item.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+                                                          <div class="img-inside-box em-box">
+
+                                                              <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" class="img-responsive width100" ng-if="item.thumbnail || item.thumbnail != ''">
+
+                                                              <img ng-src="{{item.url|youtubethumb}}" alt="Dharma Productions" class="img-responsive width100" ng-if="!(item.thumbnail || item.thumbnail != '')">
+                                                        <!-- <a>
                                                             <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" ng-if="(item.thumbnail || item.thumbnail != '')">
                                                             <img ng-src="{{item.url|youtubethumb}}" alt="Dharma Productions" class="img-responsive width100" ng-if="!(item.thumbnail || item.thumbnail != '')">
-                                                        </a>
+                                                        </a> -->
                                                     </div>
                                                     <div class="video-names mt10">
                                                         <span class="color-white text-cap">{{item.title | shorten : 60}}</span>
-                                                    </div>
+                                                    </div></a>
                                                 </div>
                                             </li>
                                         </flex-slider>
@@ -145,7 +163,7 @@
                 <div class="row">
                     <div class="col-md-3 padding0 col-sm-4 col-sx-12 " ng-repeat="item in AllDharmatv track by $index ">
                         <div class="tv-box" ng-if="item.videos.length > 0">
-                            <a class="various fancybox.iframe" fancybox rel="gallery1" href="http://www.youtube.com/embed/{{item.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
+                            <a class="various fancybox.iframe" fancybox rel="gallery3" href="http://www.youtube.com/embed/{{item.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1" rel="movies" data-fancybox-type="iframe">
                                 <img ng-src="{{item.thumbnail|uploadpath}}" alt="Dharma Productions" class="img-responsive width100" ng-if="(item.thumbnail || item.thumbnail != '')">
                                 <img ng-src="{{item.url|youtubethumb}}" alt="Dharma Productions" class="img-responsive width100" ng-if="!(item.thumbnail || item.thumbnail != '')">
 

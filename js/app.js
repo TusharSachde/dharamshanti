@@ -49,6 +49,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'TvInsideCtrl'
         })
+        // .state('tv-insideMovie', {
+        //     url: "/tv-inside/:id/:search",
+        //     templateUrl: "views/template.html",
+        //     controller: 'TvInsideCtrl'
+        // })
         .state('dharma-world', {
             url: "/dharma-world",
             templateUrl: "views/template.html",
@@ -287,7 +292,7 @@ firstapp.directive('uploadImage', function($http, $filter) {
                     },
                     transformRequest: angular.identity
                 }).success(function(data) {
-                    console.log("success");
+                    // console.log("success");
                     if ($scope.callback) {
                         $scope.callback(data);
                     } else {
@@ -344,7 +349,7 @@ firstapp.directive('fancybox', function($compile, $parse) {
         replace: false,
         link: function($scope, element, attrs) {
             $element = $(element);
-            console.log(attrs,"FancyBox");
+            // console.log(attrs,"FancyBox");
             setTimeout(function() {
                 $(".various").fancybox({
                     maxWidth: 800,
@@ -500,7 +505,9 @@ firstapp.directive('ngEnter', function() {
         });
     };
 });
-
+firstapp.filter('urlEncode', [function() {
+  return window.encodeURIComponent;
+}]);
 firstapp.config(function($translateProvider) {
     $translateProvider.translations('en', LanguageEnglish);
     $translateProvider.translations('hi', LanguageHindi);

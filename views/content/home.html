@@ -219,9 +219,7 @@
                                     <input type="email" class="form-control" placeholder="Email" ng-model="subscribe.email" required>
 
                                     <span class="input-group-btn go-btn">
-                            <button class="color-primary font-hammersmith" type="submit">Go</button>
-                        </span>
-                                </div>
+                                      <button class="color-primary font-hammersmith" type="submit" ng-click="openModal()">Go</button>
                                 <div ng-messages="subForm.email.$error" ng-messages-include="error-messages"></div>
                                 <h4 class="category-color" ng-if="subscribeEmail">Thankyou For Subscribing</h4>
                                 <h4 class="category-color" ng-if="checkEmail">This email already exists</h4>
