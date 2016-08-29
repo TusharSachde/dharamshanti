@@ -1,6 +1,6 @@
 var initMap = {};
 var calculateAndDisplayRoute = {};
-var abc={};
+var abc = {};
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'wu.masonry', 'ksSwiper', 'imageupload', 'ui.select'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $filter, $uibModal) {
@@ -33,11 +33,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         'img/banners/mob-slider.jpg'
     ];
     NavigationService.getAllUpcomingMovies(function(data) {
-        $scope.AllUpcomingMovies = _.orderBy(data.data,function(n) {
-          return -n.year;
+        $scope.AllUpcomingMovies = _.orderBy(data.data, function(n) {
+            var date2 = moment("1/" + n.month + "/" + n.year);
+            return -(date2.unix());
         });
-          abc=$scope.AllUpcomingMovies;
-        console.log(  $scope.AllUpcomingMovies);
         // console.log('AllUpcomingMovies', $scope.AllUpcomingMovies);
         TemplateService.removeLoader();
     });
@@ -168,15 +167,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             NavigationService.subScribe(email, function(data) {
                 if (data.data.message == 'already exist') {
                     // if ($scope.subscribe.email) {
-                        $scope.checkEmail = true;
-                        // $scope.subscribeEmail = false;
-                        $timeout(function() {
-                            $scope.checkEmail = false;
-                        }, 2000);
+                    $scope.checkEmail = true;
+                    // $scope.subscribeEmail = false;
+                    $timeout(function() {
+                        $scope.checkEmail = false;
+                    }, 2000);
 
                     // }
                 } else {
-                  $scope.openModal();
+                    $scope.openModal();
                     $scope.checkEmail = false;
                     // $scope.subscribeEmail = true;
                     // $timeout(function() {
@@ -404,22 +403,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // });
 
         // $scope.goMovie = false;
-      $scope.getDharmaTV = function () {
-        NavigationService.getAllDharmatv10(function(data) {
-              var data2 = _.filter(data.data, function(video) {
-                if (video.movie && video.movie._id) {
-                    return video.movie._id == $stateParams.id;
-                }
+        $scope.getDharmaTV = function() {
+            NavigationService.getAllDharmatv10(function(data) {
+                var data2 = _.filter(data.data, function(video) {
+                    if (video.movie && video.movie._id) {
+                        return video.movie._id == $stateParams.id;
+                    }
+                });
+                // console.log(data2);
+                $scope.allvideos = data2;
+                TemplateService.removeLoader();
             });
-            // console.log(data2);
-            $scope.allvideos = data2;
-            TemplateService.removeLoader();
-        });
-      }
-      if($stateParams.id){
-        $scope.getDharmaTV();
+        }
+        if ($stateParams.id) {
+            $scope.getDharmaTV();
 
-      }
+        }
         // $scope.allMovieName=[];
 
         $scope.seeMore = false;
@@ -432,11 +431,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 // $scope.allMovieName = _.chunk($scope.allMovieName,10);
                 $scope.allMovieName = _.slice($scope.allMovieName, [0], [10]);
                 $scope.seeMore = true;
-                if($stateParams.id){
-                  $scope.currentMovie = _.find($scope.allMovieName,function (key) {
-                    // $scope.goMovie=false;
-                    return key._id == $stateParams.id;
-                  }).name;
+                if ($stateParams.id) {
+                    $scope.currentMovie = _.find($scope.allMovieName, function(key) {
+                        // $scope.goMovie=false;
+                        return key._id == $stateParams.id;
+                    }).name;
                 }
 
                 // console.log($scope.allMovieName);
