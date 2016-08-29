@@ -1,5 +1,6 @@
 var initMap = {};
 var calculateAndDisplayRoute = {};
+var abc={};
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'wu.masonry', 'ksSwiper', 'imageupload', 'ui.select'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, $filter, $uibModal) {
@@ -32,7 +33,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         'img/banners/mob-slider.jpg'
     ];
     NavigationService.getAllUpcomingMovies(function(data) {
-        $scope.AllUpcomingMovies = _.orderBy(data.data, "year");
+        $scope.AllUpcomingMovies = _.orderBy(data.data,function(n) {
+          return -n.year;
+        });
+          abc=$scope.AllUpcomingMovies;
+        console.log(  $scope.AllUpcomingMovies);
         // console.log('AllUpcomingMovies', $scope.AllUpcomingMovies);
         TemplateService.removeLoader();
     });
