@@ -1426,16 +1426,12 @@ input.form-control.ui-select-search{
                 border-bottom-right-radius: 10px;
             }
             h1 {
-                @include background(linear-gradient($brand-primary, #fab185));
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+            color:$brand-primary;
             }
         }
         .active-tab {
             h1 {
-                @include background(linear-gradient($white, #949494));
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+              color:$white;
             }
         }
     }
