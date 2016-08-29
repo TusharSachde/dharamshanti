@@ -331,17 +331,17 @@ a {
     .flex-direction-nav a.flex-next:before {
         content: '';
         background: url("../img/r-arrow.png") no-repeat center;
-        width: 57px;
+        width: 70px;
         height: 100px;
     }
     .flex-direction-nav a.flex-prev:before {
         content: '';
         background: url("../img/l-arrow.png") no-repeat center;
-        width: 57px;
+        width: 70px;
         height: 100px;
     }
     .flex-direction-nav a {
-        width: 57px;
+        width: 70px;
         height: 100px;
         opacity: 1 !important;
     }
