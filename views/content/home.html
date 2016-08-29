@@ -56,7 +56,7 @@
             <div class="upcoming mobile-row" ng-if="tabs=='upcoming'">
                 <!-- desktop  -->
                 <div class="row-flex text-center hidden-xs">
-                    <div class="col-flex" ng-repeat="item in AllUpcomingMovies | orderBy: 'upcomingOrder' track by $index">
+                    <div class="col-flex" ng-repeat="item in AllUpcomingMovies">
                         <div class="img-pads">
                             <a ui-sref="movie-inside({id:item._id})">
                                 <img ng-src="{{item.upcomingSmall|uploadpath}}" alt="Dharma Productions" class="img-responsive"></a>
