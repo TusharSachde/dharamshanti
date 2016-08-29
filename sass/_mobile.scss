@@ -476,7 +476,7 @@
       width: 100%;
     }
     .masonry-king {
-          
+
         .masonry-brick {
             width: 100%;
         }
@@ -858,7 +858,10 @@ margin: 0 auto;
     font-size: 9px;
 }
   .qsn-bg2 {
-    padding: 25px 10px 55px 18px !important;
+    padding: 25px 10px 0px 25px;
+  background: #fff;
+  margin: 0px 0px 20px 0px;
+  border-radius: 8px;
 }
   .main-dir2 {
     position: absolute;
@@ -888,7 +891,10 @@ margin: 0 auto;
     padding: 0px 20px 100px 20px;
 }
 .qsn-bg {
-    padding: 25px 10px 55px 25px;
+  padding: 25px 10px 0px 25px;
+background: #fff;
+margin: 0px 0px 20px 0px;
+border-radius: 8px;
 }
 .main-qsn-ans {
     padding: 0px 20px 100px 20px;

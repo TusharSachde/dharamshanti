@@ -23,7 +23,7 @@ var navigationservice = angular.module('navigationservice', [])
       name: "Overview",
       classis: "active",
       noanchor: "overview",
-
+     class:"fa fa-angle-down",
       subnav: [{
         name: "About Us",
         classis: "active",
@@ -53,6 +53,7 @@ var navigationservice = angular.module('navigationservice', [])
     name: "Dharma World",
     classis: "active",
     anchor: "dharma-world",
+       class:"fa fa-angle-down",
 
         subnav: [{
           name: "Dharma @ 140",

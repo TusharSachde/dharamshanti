@@ -278,12 +278,12 @@ a {
             a {
                 i {
                     background: rgba(255, 255, 255, 0.66);
-                    font-size: 16px;
-                    border-radius: 100%;
-                    height: 25px;
-                    width: 25px;
-                    text-align: center;
-                    line-height: 25px;
+                    font-size: 14px;
+    border-radius: 100%;
+    height: 23px;
+    width: 23px;
+    text-align: center;
+    line-height: 24px;
                 }
             }
         }
@@ -330,13 +330,13 @@ a {
     }
     .flex-direction-nav a.flex-next:before {
         content: '';
-        background: url("../img/right-arrow.png") no-repeat center;
+        background: url("../img/r-arrow.png") no-repeat center;
         width: 57px;
         height: 100px;
     }
     .flex-direction-nav a.flex-prev:before {
         content: '';
-        background: url("../img/left-arrow.png") no-repeat center;
+        background: url("../img/l-arrow.png") no-repeat center;
         width: 57px;
         height: 100px;
     }
@@ -2196,7 +2196,7 @@ border: 1px solid #da4f0a;
 }
 .img-set {
   position: absolute;
-  width: 200px;
+      width: 180px;;
   bottom: 3px;
   right: 12px;
 }
@@ -2334,6 +2334,33 @@ border-radius: 25px;
 }
 .content {
     min-height: 450px;
+}
+.main-m-marg{
+      margin: 9px 12px 0px 0px;
+}
+.some-c{
+  text-align: center;
+    margin: 15 auto 0;
+    position: relative;
+    display: inline-block;
+}
+.pall10{
+  padding: 10px !important;
+}
+.h3-main{
+  h3{
+    line-height: 100%;
+  }
+
+}
+.subscribe-modal .modal-content {
+    border: 2px solid #f37021;
+    padding: 35px 25px;
+    border-radius: 20px;
+}
+.mn-o{
+  padding: 25px 0px 15px 0px;
+border: 2px solid #f37021;
 }
 @import "main2";
 @import "timeline";
