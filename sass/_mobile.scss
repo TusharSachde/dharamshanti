@@ -823,8 +823,16 @@ margin: 0 auto;
 .text-c-m{
   text-align: center;
 }
+.h3-main h3 {
+    line-height: 100%;
+    font-size: 16px;
+}
 }
 @media (max-width:480px) {
+  .h3-main h3 {
+    line-height: 100%;
+    font-size: 14px;
+}
   .text-c-m{
     text-align: center;
   }
