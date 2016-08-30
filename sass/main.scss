@@ -1896,6 +1896,7 @@ height: 50px;
     list-style: none;
     border-bottom: 2px solid;
     overflow: hidden;
+        overflow-x: auto;
     >li {
       display: table-cell;
       text-align: center;
