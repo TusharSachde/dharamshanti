@@ -35,7 +35,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     NavigationService.getAllUpcomingMovies(function(data) {
         $scope.AllUpcomingMovies = _.orderBy(data.data, function(n) {
             var date2 = moment("1/" + n.month + "/" + n.year);
-            return -(date2.unix());
+            return (date2.unix());
         });
         // console.log('AllUpcomingMovies', $scope.AllUpcomingMovies);
         TemplateService.removeLoader();
