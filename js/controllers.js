@@ -152,7 +152,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }];
     NavigationService.getNews(function(data) {
         $scope.News = data.data;
-        _.each($scope.News, function(value) {
+        console.log($scope.News);
+        $scope.limitedNews = $filter('limitTo')($scope.News, 10);
+        console.log($scope.limitedNews,"$scope.limitedNews");
+        _.each($scope.limitedNews, function(value) {
             value.date = new Date(value.date);
         });
         // console.log('News', $scope.News);
