@@ -1,4 +1,17 @@
 @media (max-width:1200px) {
+  .custom-menu li a {
+    padding: 5px 5px !important;
+    font-size: 11px;
+    min-height: 20px;
+}
+  .custom-menu .dropdown-menu {
+    top: 30px;
+
+
+}
+  .m-min-tp{
+        margin-top: -1px;
+  }
   .modal-dialog {
 
     width: auto;
@@ -48,7 +61,7 @@
         margin: 25px 35px 0 -10px;
     }
     .custom-menu li a {
-        padding: 0 10px !important;
+
         font-size: 13px;
     }
     .subscribe {
@@ -107,6 +120,11 @@
     }
 }
 @media (max-width: $screen-sm-max) {
+  .m-min-tp{
+    h1{
+      font-size: 30px;
+    }
+  }
   .my-main-btn {
     background: transparent;
     border: none;
@@ -356,7 +374,7 @@
         color: #f37021;
     }
     .custom-menu li a {
-        padding: 0 5px !important;
+        padding: 0 5px;
         font-size: 11px;
     }
     .mt15 {
@@ -442,8 +460,32 @@
             font-size: 13px !important;
         }
     }
+    .mn-org {
+    background-color: #f37021;
+    padding: 15px 20px 15px 20px;
+}
 }
 @media (max-width: $screen-xs-max) {
+  .mn-org {
+    background-color: #f37021;
+    padding: 15px 15px 15px 15px;
+}
+  .f14-min{
+    font-size: 14px !important;
+  }
+  .karan-img {
+    margin: 0px -5px;
+}
+  .data-abt{
+    p{
+      font-size: 13px;
+    }
+  }
+  .m-min-tp{
+    h1{
+      font-size: 18px;
+    }
+  }
   .modal-dialog {
 
     width: auto;

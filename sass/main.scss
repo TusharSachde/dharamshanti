@@ -746,6 +746,7 @@ a {
   background-repeat: no-repeat ;
   background-position: top center ;
   background-attachment: fixed;
+      padding-bottom: 70px;
 }
 .width100 {
     width: 100%;
@@ -2374,6 +2375,24 @@ border: 2px solid #f37021;
 }
 .top-pad-abt{
       padding: 23% 0px 21% 0px;
+}
+.karan-img{
+  margin: 0px -15px;
+}
+.mn-org{
+  background-color: $brand-primary;
+  padding: 15px 40px 15px 40px;
+}
+.top-min{
+  margin-top: -90px;
+z-index: 99;
+position: relative;
+}
+.pb30{
+  padding-bottom: 30px;
+}
+.pt20{
+      padding-top: 20px;
 }
 @import "main2";
 @import "timeline";
