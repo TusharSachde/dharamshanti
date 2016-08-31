@@ -1538,7 +1538,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
 
     })
-    .controller('DharmaTvCtrl', function($scope, TemplateService, NavigationService, $stateParams, $filter) {
+    .controller('DharmaTvCtrl', function($scope, TemplateService, NavigationService, $stateParams, $filter,$state) {
         $scope.template = TemplateService.changecontent("dharma-tv");
         $scope.menutitle = NavigationService.makeactive("Dharma Tv");
         TemplateService.title = $scope.menutitle;
@@ -1559,8 +1559,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             TemplateService.removeLoader();
         });
         $scope.viewSearch = function() {
-            $scope.searchdata.search = "";
-            $scope.callAll();
+            // $scope.searchdata.search = "";
+            // $scope.callAll();
+            if($stateParams.search){
+              $state.go('dharma-tv');
+            }else{
+              $scope.searchdata.search = "";
+              $scope.callAll();
+            }
             // $scope.getsearch = false;
         };
         $scope.searchdata = {};
