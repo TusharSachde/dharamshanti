@@ -2157,9 +2157,9 @@ pointer-events: none;
   box-shadow: none;
 }
 .navbar-default .navbar-toggle:focus {
-    background-color: #fff;
+    background-color: transparent;
     span{
-      background-color:$brand-primary !important;
+      background-color:#d0d0d0  !important;
     }
 }
 button.navbar-toggle.collapsed {
@@ -2167,7 +2167,7 @@ button.navbar-toggle.collapsed {
     &:focus {
 
         span{
-          background-color:$white !important;
+        background-color: #d0d0d0 !important;
         }
     }
 }
@@ -2442,6 +2442,9 @@ position: relative;
   .flex-direction-nav a{
     top:70% !important;
   }
+}
+.pb40{
+      padding-bottom: 40px;
 }
 @import "main2";
 @import "timeline";

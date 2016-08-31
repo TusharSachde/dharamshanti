@@ -464,8 +464,16 @@
     background-color: #f37021;
     padding: 15px 20px 15px 20px;
 }
+.tv-ain-tp .flex-direction-nav a {
+
+    display: none;
+}
 }
 @media (max-width: $screen-xs-max) {
+  .tv-ain-tp .flex-direction-nav a {
+
+      display: none;
+  }
   .mn-org {
     background-color: #f37021;
     padding: 15px 15px 15px 15px;
@@ -1146,9 +1154,9 @@ padding-bottom: 0px;
         background-repeat: repeat-y !important;
         background-attachment: inherit !important;
     }
-    .common-class .flex-control-nav {
-        display: none !important;
-    }
+    // .common-class .flex-control-nav {
+    //     display: none !important;
+    // }
     .dharma-movies-bg3 {
         padding: 1px 0 50px;
         background-size: 100% 100%;
