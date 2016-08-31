@@ -27,7 +27,7 @@ var navigationservice = angular.module('navigationservice', [])
       subnav: [{
         name: "About Us",
         classis: "active",
-        anchor: "",
+        anchor: "overview",
         isId:"no",
       },{
         name: "Dharma Journey",
