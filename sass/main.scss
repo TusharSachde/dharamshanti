@@ -740,6 +740,13 @@ a {
     background-attachment: fixed !important;
     // padding-bottom: 60px;
 }
+.abt-banner{
+  background: url("../img/abt.jpg");
+  background-size: cover;
+  background-repeat: no-repeat ;
+  background-position: top center ;
+  background-attachment: fixed;
+}
 .width100 {
     width: 100%;
 }
@@ -2364,6 +2371,9 @@ border-radius: 25px;
 .mn-o{
   padding: 25px 0px 15px 0px;
 border: 2px solid #f37021;
+}
+.top-pad-abt{
+      padding: 23% 0px 21% 0px;
 }
 @import "main2";
 @import "timeline";
