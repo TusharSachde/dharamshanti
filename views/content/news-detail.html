@@ -220,7 +220,10 @@ Of 2015 National Award</h4>
                </a>
                       </div>
                    </div>
-                   <div class="text-center cast-credit" ng-if="!forViewMore && !noNewsFound">
+                   <div ng-if="noNewsFound">
+                       <center><strong><h1>No news Found</h1></strong></center>
+                   </div>
+                   <!-- <div class="text-center cast-credit" ng-if="!forViewMore && !noNewsFound">
                       <div class="text-center btn-view-news mt40">
 
                          <a class="btn-1 font-hammersmith btn color-primary" ng-click="ViewMore(myTotal)">
@@ -230,7 +233,7 @@ Of 2015 National Award</h4>
                             VIEW MORE
                          </a>
                       </div>
-                   </div>
+                   </div> -->
                    <!-- <div class="text-center cast-credit" ng-if="!noviewmore">
                       <div class="text-center btn-view-news mt40">
 
@@ -249,9 +252,9 @@ Of 2015 National Award</h4>
              </div>
            </div>
           </div>
-          <div ng-if="noNewsFound" style="min-height:400px">
+          <!-- <div ng-if="noNewsFound" style="min-height:400px">
               <center><strong><h1>No news Found</h1></strong></center>
-          </div>
+          </div> -->
        </div>
        <!-- <div ng-if="noNewsFound"><center><strong><h1>No News Found</h1></strong></center></div> -->
     </section>

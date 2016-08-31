@@ -1405,7 +1405,7 @@ var i = 0;
                             _.each(data.data.data, function(n) {
                                 n.date = new Date(n.date);
                                 $scope.news10.push(n);
-                                AllNews = $scope.news10;
+                                // AllNews = $scope.news10;
 
                             });
                         } else {
@@ -1561,7 +1561,7 @@ var i = 0;
             $scope.news10 = [];
             callMe();
             if ($scope.filter.search.length == 0) {
-          
+
                   $scope.crossdisplay = false;
                   $scope.getSearchNews = false;
                   $scope.noNewsFound = false;

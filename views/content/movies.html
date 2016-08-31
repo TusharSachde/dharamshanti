@@ -68,7 +68,10 @@
                                 <li>
                                     <div class="video-box ">
                                         <div class="video-slide-img ">
-                                            <a ui-sref="movie-inside({id:item._id})">
+                                            <a ng-if="item.status==true" ui-sref="movie-inside({id:item._id})">
+                                                <img ng-src="{{item.bigImage|uploadpath}} " alt="Dharma Productions ">
+                                            </a>
+                                            <a ng-if="item.status==false">
                                                 <img ng-src="{{item.bigImage|uploadpath}} " alt="Dharma Productions ">
                                             </a>
                                         </div>
