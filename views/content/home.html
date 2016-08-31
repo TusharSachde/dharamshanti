@@ -56,13 +56,15 @@
             <div class="upcoming mobile-row" ng-if="tabs=='upcoming'">
                 <!-- desktop  -->
                 <div class="row-flex text-center hidden-xs">
-                    <div class="col-flex" ng-repeat="item in AllUpcomingMovies">
+                    <div class="col-flex" ng-repeat="item in AllUpcomingMovies track by $index">
                         <div class="img-pads">
                             <a ui-sref="movie-inside({id:item._id})">
                                 <img ng-src="{{item.upcomingSmall|uploadpath}}" alt="Dharma Productions" class="img-responsive"></a>
                         </div>
                         <div class="movie-names">
-                            <h4 class="text-up color-grey">{{item.name|shorten : 20}}<br>({{item.month|getMonthAlpha}} {{item.year}})</h4>
+                            <h4 class="text-up color-grey">{{item.name|shorten : 20}}
+                              <!-- <br>({{item.month|getMonthAlpha}} {{item.year}})</h4> -->
+                              <br>({{item.releasedate|date:'MM getMonthAlpha}} {{item.releaseDate|date:'yy'}})</h4>
                         </div>
                     </div>
                 </div>
@@ -81,7 +83,7 @@
                         </li>
                     </flex-slider>
                 </div>
-                <div class="dh-relative">
+                <div class="dh-relative" ng-if="AllUpcomingMovies.length>0">
                     <div class="btn-view-more mt15 ">
                         <a ui-sref="movies" class="btn-1 font-hammersmith btn color-primary float-right mobile-center">
                             <svg>
