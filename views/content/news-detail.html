@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <div class="btn-go display-inline ml15">
-                            <button class="btn" type="submit" ng-click="goSearch(getMonth,getYear)">Go</button>
+                            <button class="btn" type="submit" ng-click="doSearch()">Go</button>
                         </div>
                     </div>
                 </div>
@@ -195,6 +195,7 @@ Of 2015 National Award</h4>
 
     <section>
        <div class="container" ng-if="getSearchNews">
+           <div infinite-scroll='loadMore()' infinite-scroll-disabled="shouldscroll">
           <div class="row">
              <div class="col-xs-12">
                 <div class="all-movies custom-box mob-mt-top">
@@ -246,6 +247,7 @@ Of 2015 National Award</h4>
 
     <!-- <div ng-if="noNewsFound" style="min-height:400px"><center><strong><h1>No News Found</h1></strong></center></div> -->
              </div>
+           </div>
           </div>
           <div ng-if="noNewsFound" style="min-height:400px">
               <center><strong><h1>No news Found</h1></strong></center>

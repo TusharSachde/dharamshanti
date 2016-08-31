@@ -197,7 +197,7 @@ firstapp.filter('getMonthAlpha', function() {
             case 8:
             month="Aug";
             break;
-            case 9:
+            case 09:
             month="Sept";
             break;
             case 10:

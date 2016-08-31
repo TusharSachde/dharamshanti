@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <div class="btn-go display-inline ml15">
-                            <button class="btn" type="submit" ng-click="goSearch(getMonth,getYear)" ng-disabled="!getMonth || !getYear">Go</button>
+                            <button class="btn" type="submit" ng-click="doSearch()">Go</button>
                         </div>
                     </div>
                 </div>
@@ -79,6 +79,7 @@
 
     <section>
         <div class="container">
+              <div infinite-scroll='loadMore()' infinite-scroll-disabled="shouldscroll">
             <div class="row">
                 <div class="col-xs-12">
                     <div class="all-movies custom-box mob-mt-top" style="min-height:400px;">
@@ -103,7 +104,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="text-center cast-credit" ng-if="!forViewMore && !noNewsFound">
+                        <!-- <div class="text-center cast-credit" ng-if="!forViewMore && !noNewsFound">
                             <div class="text-center btn-view-news mt40">
 
                                 <a class="btn-1 font-hammersmith btn color-primary" ng-click="ViewMore(myTotal)">
@@ -113,13 +114,14 @@
                                     VIEW MORE
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
                         <div ng-if="noNewsFound">
                             <center><strong><h1>No news Found</h1></strong></center>
                         </div>
                     </div>
                 </div>
             </div>
+          </div>
         </div>
 
     </section>

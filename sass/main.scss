@@ -419,7 +419,7 @@ a {
         opacity: 1;
     }
     .flex-direction-nav .flex-next {
-        right: -76px !important;
+        right: -73px !important;
         opacity: 1;
     }
     .flexslider:hover .flex-direction-nav .flex-prev {
@@ -429,7 +429,7 @@ a {
     }
     .flexslider:hover .flex-direction-nav .flex-next {
         opacity: 1;
-        right: -76px !important;
+        right: -73px !important;
         outline: 0;
     }
     .flex-control-nav {
@@ -564,13 +564,13 @@ a {
         content: '';
         background: url("../img/right-white.png") no-repeat center;
         width: 32px;
-        height: 55px;
+        height: 50px;
     }
     .flex-direction-nav a.flex-prev:before {
         content: '';
         background: url("../img/left-white.png") no-repeat center;
         width: 32px;
-        height: 55px;
+        height: 50px;
     }
     .flex-direction-nav a {
         width: 32px;
