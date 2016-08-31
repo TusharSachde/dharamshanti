@@ -81,7 +81,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="all-movies custom-box mob-mt-top">
+                    <div class="all-movies custom-box mob-mt-top" style="min-height:400px;">
                         <div masonry preserve-order masonry-options="{ fitWidth: 'true'}" class="margin-auto">
                             <div class="masonry-brick" ng-repeat="item in news10 track by $index">
                                 <a ui-sref="news-detail({id:item._id})">
@@ -89,8 +89,8 @@
                                     <div class="masonry-box">
                                         <img ng-src="{{item.image | uploadpath}}" alt="Dharma Production">
                                         <div class="padd10">
-                                            <div class="news-title h40">
-                                                <h4 class="margin0">{{item.title |cut:true:55}}</h4>
+                                            <div class="news-title">
+                                                <h4 class="margin0">{{item.title}}</h4>
                                             </div>
                                             <div class="news-date">
                                                 <span class="f12">{{item.date | date:'dd MMM yyyy'}}</span>
@@ -114,12 +114,13 @@
                                 </a>
                             </div>
                         </div>
+                        <div ng-if="noNewsFound">
+                            <center><strong><h1>No news Found</h1></strong></center>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div ng-if="noNewsFound" style="min-height:400px">
-            <center><strong><h1>No news Found</h1></strong></center>
-        </div>
+
     </section>
 </section>

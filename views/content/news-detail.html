@@ -133,8 +133,8 @@ understanding of cinema and life, and little bit baring of her soul which we are
                         <div class="black-bg makePointer" ui-sref="news-detail({id:article._id})">
                            <img ng-src="{{article.image|uploadpath}}" alt="Dharma Production" class="img-responsive">
                            <div class="padd10">
-                              <div class="news-title mt10 h40">
-                                 <h4 class="margin0">{{article.title|cut:true:55}}</h4>
+                              <div class="news-title mt10">
+                                 <h4 class="margin0">{{article.title}}</h4>
                               </div>
                               <div class="news-date">
                                  <span class="f12">{{article.date| date:'dd MMM yyyy'}}</span>
@@ -205,8 +205,8 @@ Of 2015 National Award</h4>
                          <div class="masonry-box">
                      <img ng-src="{{item.image | uploadpath}}" alt="Dharma Production">
                      <div class="padd10">
-                         <div class="news-title h40">
-                             <h4 class="margin0">{{item.title |cut:true:55 }}</h4>
+                         <div class="news-title">
+                             <h4 class="margin0">{{item.title }}</h4>
                          </div>
                          <div class="news-date">
                              <span class="f12">{{item.date | date:'dd MMM yyyy'}}</span>
