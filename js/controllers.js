@@ -1419,13 +1419,13 @@ var i = 0;
 
             });
         }
-        callMe();
-        $scope.doSearch = function() {
-            $scope.crossdisplay = true;
-            $scope.news10 = [];
-            callMe();
-
-        };
+        // callMe();
+        // $scope.doSearch = function() {
+        //     $scope.crossdisplay = true;
+        //     $scope.news10 = [];
+        //     callMe();
+        //
+        // };
         $scope.movie = {};
         // $scope.crossdisplay = false;
         $scope.closeCross = function() {
@@ -1556,16 +1556,18 @@ var i = 0;
         // };
 
         $scope.doSearch = function() {
-            $scope.getSearchNews = true;
-            $scope.crossdisplay = true;
-            $scope.news10 = [];
-            callMe();
-            if ($scope.filter.search.length == 0) {
+
+            if ($scope.filter.search.length == 0 && !$scope.filter.month && !$scope.filter.year) {
 
                   $scope.crossdisplay = false;
                   $scope.getSearchNews = false;
                   $scope.noNewsFound = false;
                   newsDetail();
+              }else{
+                $scope.getSearchNews = true;
+                $scope.crossdisplay = true;
+                $scope.news10 = [];
+                callMe();
               }
 
         };
