@@ -790,7 +790,7 @@ a {
   background-repeat: no-repeat ;
   background-position: top center ;
   background-attachment: fixed;
-      padding-bottom: 70px;
+
 }
 .width100 {
     width: 100%;
@@ -2445,6 +2445,9 @@ position: relative;
 }
 .pb40{
       padding-bottom: 40px;
+}
+.video-slide-img.em-box {
+    height: 200px;
 }
 @import "main2";
 @import "timeline";

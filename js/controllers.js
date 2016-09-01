@@ -260,6 +260,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
 
 })
+.controller('PrivacyPolicyCtrl', function($scope, TemplateService, NavigationService) {
+    $scope.template = TemplateService.changecontent("privacy-policy");
+    $scope.menutitle = NavigationService.makeactive("Privacy Policy");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+})
 
 .controller('AwardsCtrl', function($scope, TemplateService, NavigationService) {
     $scope.template = TemplateService.changecontent("awards");

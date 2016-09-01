@@ -1,6 +1,6 @@
 <!-- for desktop -->
 <section scrolldown class="hidden-xs">
-    <div class="home-slider dh-relative">
+    <div class="home-slider dh-relative ">
         <flex-slider flex-slide="s in getAllSlides track by $index" prev-text="" next-text=""  >
             <li auto-heightfixed ><img ng-src="{{s.image|uploadpath}}" ui-sref="movie-inside({id:s.movie})" alt="Dharma Productions" auto-heightfixed></li>
         </flex-slider>
@@ -24,8 +24,8 @@
 </section>
 <!-- //for mobile -->
 <section scrolldown class="hidden-sm hidden-lg hidden-md visible-xs margin-top-minus">
-    <div class="home-slider dh-relative width-auto">
-        <flex-slider flex-slide="s in getAllSlides track by $index" prev-text="" next-text="">
+    <div class="home-slider dh-relative width-auto mo-bl-tp">
+        <flex-slider flex-slide="s in getAllSlides track by $index" prev-text="" next-text="" slideshowSpeed=3000>
             <li auto-heightfixed>
                 <img ng-src="{{s.mobileImage|uploadpath}}" alt="Dharma Productions" ui-sref="movie-inside" class="img-responsive" auto-height>
             </li>

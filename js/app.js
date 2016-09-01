@@ -79,6 +79,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'NewsDetailCtrl'
         })
+        .state('privacy-policy', {
+            url: "/privacy-policy",
+            templateUrl: "views/template.html",
+            controller: 'PrivacyPolicyCtrl'
+        })
         .state('movie-inside', {
             url: "/movie-inside/:id",
             templateUrl: "views/template.html",
@@ -362,8 +367,10 @@ firstapp.directive('fancybox', function($compile, $parse) {
                     openEffect: 'none',
                     closeEffect: 'none',
                     padding: 0
+
                 });
             }, 100);
+
         }
     };
 });
