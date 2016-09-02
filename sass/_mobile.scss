@@ -902,6 +902,9 @@ margin: 0 auto;
 }
 }
 @media (max-width:480px) {
+  .min-add{
+    bottom: 0 !important;
+  }
   .abt-banner {
     background: url("../img/abt.jpg");
     background-size: 100% auto;
